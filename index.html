@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lakshya's Violin Academy — Carnatic Violin for Young Learners</title>
+<meta name="description" content="Lakshya's Violin Academy — Carnatic Violin lessons for children in Chennai. Beginner-friendly, traditional, and taught with love.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif:wght@400;600&family=Crimson+Pro:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --saffron: #C8520A;
+    --saffron-light: #F5A623;
+    --saffron-pale: #FDF3E3;
+    --maroon: #7B1E1E;
+    --maroon-soft: #A94040;
+    --gold: #B8860B;
+    --gold-light: #F0C040;
+    --cream: #FBF6EE;
+    --cream-dark: #F2E8D5;
+    --brown: #4A2C0A;
+    --text-dark: #2C1A0A;
+    --text-mid: #5C3A1A;
+    --text-soft: #7A5A3A;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Noto Serif', serif; background: var(--cream); color: var(--text-dark); line-height: 1.7; }
+
+  nav {
+    background: var(--maroon);
+    padding: 0 2rem;
+    display: flex; align-items: center; justify-content: space-between;
+    position: sticky; top: 0; z-index: 100;
+    border-bottom: 3px solid var(--saffron-light);
+  }
+  .nav-brand { font-family: 'Playfair Display', serif; color: var(--gold-light); font-size: 1.2rem; font-weight: 700; padding: 1rem 0; letter-spacing: 0.5px; }
+  .nav-links { display: flex; gap: 1.5rem; }
+  .nav-links a { color: #F5DEB3; text-decoration: none; font-size: 0.9rem; padding: 1.2rem 0; border-bottom: 2px solid transparent; transition: color 0.2s, border-color 0.2s; }
+  .nav-links a:hover { color: var(--gold-light); border-bottom-color: var(--gold-light); }
+
+  .hero {
+    background: linear-gradient(135deg, var(--maroon) 0%, #5A1010 60%, #3A0A0A 100%);
+    position: relative; overflow: hidden;
+    padding: 5rem 3rem 4rem; text-align: center;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: radial-gradient(circle at 20% 50%, rgba(200,82,10,0.15) 0%, transparent 50%),
+                      radial-gradient(circle at 80% 50%, rgba(184,134,11,0.12) 0%, transparent 50%);
+  }
+  .hero-ornament { font-size: 2.5rem; color: var(--gold-light); opacity: 0.8; display: block; margin-bottom: 1rem; letter-spacing: 8px; }
+  .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 5vw, 3.5rem); color: #FFF8E7; font-weight: 700; line-height: 1.2; position: relative; margin-bottom: 0.5rem; }
+  .hero-title span { color: var(--gold-light); }
+  .hero-subtitle { font-family: 'Crimson Pro', serif; font-size: 1.3rem; color: #F5C8A0; font-style: italic; margin: 0.5rem 0 1.5rem; position: relative; }
+  .hero-tagline { font-size: 1rem; color: #D4A97A; max-width: 500px; margin: 0 auto 2rem; position: relative; line-height: 1.8; }
+  .divider-ornament { color: var(--gold-light); font-size: 1.4rem; letter-spacing: 12px; opacity: 0.7; margin: 1rem 0; display: block; position: relative; }
+  .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; position: relative; }
+  .btn-primary { background: var(--saffron); color: white; padding: 0.8rem 2rem; border: none; border-radius: 4px; font-family: 'Noto Serif', serif; font-size: 1rem; cursor: pointer; text-decoration: none; display: inline-block; transition: background 0.2s, transform 0.1s; border-bottom: 3px solid #8A3500; }
+  .btn-primary:hover { background: #A84208; transform: translateY(-1px); }
+  .btn-outline { background: transparent; color: var(--gold-light); padding: 0.8rem 2rem; border: 1.5px solid var(--gold-light); border-radius: 4px; font-family: 'Noto Serif', serif; font-size: 1rem; cursor: pointer; text-decoration: none; display: inline-block; transition: background 0.2s; }
+  .btn-outline:hover { background: rgba(240,192,64,0.1); }
+
+  section { padding: 4rem 2rem; }
+  .section-inner { max-width: 900px; margin: 0 auto; }
+  .section-label { font-size: 0.78rem; letter-spacing: 3px; text-transform: uppercase; color: var(--saffron); font-weight: 600; margin-bottom: 0.5rem; }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.6rem, 3vw, 2.2rem); color: var(--maroon); margin-bottom: 1rem; line-height: 1.3; }
+  .border-accent { width: 60px; height: 3px; background: linear-gradient(90deg, var(--saffron), var(--gold-light)); border-radius: 2px; margin-bottom: 1.5rem; }
+
+  .about { background: var(--cream); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 3rem; align-items: start; }
+  .about-visual { background: linear-gradient(145deg, var(--cream-dark), #E8D5B5); border: 2px solid var(--gold); border-radius: 6px; padding: 2.5rem 1.5rem; text-align: center; position: relative; overflow: hidden; }
+  .about-visual::before { content: '𝄞'; position: absolute; top: -10px; right: 10px; font-size: 5rem; color: var(--gold-light); opacity: 0.15; }
+  .violin-icon { font-size: 4rem; display: block; margin-bottom: 1rem; }
+  .about-name { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--maroon); font-weight: 700; }
+  .about-role { font-size: 0.9rem; color: var(--saffron); font-style: italic; margin-top: 0.3rem; }
+  .about-badges { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-top: 1rem; }
+  .badge { background: var(--maroon); color: #F5DEB3; padding: 3px 10px; border-radius: 3px; font-size: 0.75rem; letter-spacing: 0.5px; }
+  .about-text p { color: var(--text-mid); margin-bottom: 1rem; font-size: 1rem; }
+  .highlight-box { background: var(--saffron-pale); border-left: 3px solid var(--saffron); padding: 1rem 1.2rem; margin-top: 1rem; border-radius: 0 4px 4px 0; }
+  .highlight-box p { color: var(--text-mid); margin: 0; font-style: italic; font-size: 0.95rem; }
+
+  .courses { background: var(--cream-dark); }
+  .courses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+  .course-card { background: var(--cream); border: 1px solid #D4B896; border-top: 4px solid var(--saffron); border-radius: 6px; padding: 1.5rem; transition: transform 0.2s, box-shadow 0.2s; }
+  .course-card:nth-child(2) { border-top-color: var(--gold); }
+  .course-card:nth-child(3) { border-top-color: var(--maroon-soft); }
+  .course-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(74,44,10,0.1); }
+  .course-icon { font-size: 2rem; margin-bottom: 0.8rem; display: block; }
+  .course-title { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--maroon); margin-bottom: 0.5rem; font-weight: 600; }
+  .course-age { font-size: 0.78rem; color: var(--saffron); letter-spacing: 1px; text-transform: uppercase; font-weight: 600; margin-bottom: 0.7rem; }
+  .course-desc { font-size: 0.9rem; color: var(--text-soft); margin-bottom: 1rem; }
+  .course-topics { list-style: none; }
+  .course-topics li { font-size: 0.85rem; color: var(--text-mid); padding: 3px 0 3px 18px; position: relative; }
+  .course-topics li::before { content: '♩'; position: absolute; left: 0; color: var(--saffron-light); font-size: 0.8rem; }
+
+  .contact { background: var(--maroon); }
+  .contact .section-title { color: var(--gold-light); }
+  .contact .section-label { color: var(--saffron-light); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 3rem; align-items: start; margin-top: 1.5rem; }
+  .contact-info p { color: #D4A97A; margin-bottom: 0.5rem; font-size: 0.95rem; }
+  .contact-detail { display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.07); border: 1px solid rgba(240,192,64,0.25); border-radius: 4px; padding: 0.8rem 1rem; margin-bottom: 0.8rem; }
+  .contact-detail-icon { font-size: 1.2rem; }
+  .contact-detail-text { color: #F5DEB3; font-size: 0.9rem; }
+  .contact-detail-label { font-size: 0.75rem; color: #B8916A; display: block; }
+  .form-group { margin-bottom: 1rem; }
+  .form-group label { display: block; color: #D4A97A; font-size: 0.85rem; margin-bottom: 0.4rem; letter-spacing: 0.5px; }
+  .form-group input, .form-group select, .form-group textarea { width: 100%; background: rgba(255,255,255,0.08); border: 1px solid rgba(240,192,64,0.3); border-radius: 4px; padding: 0.65rem 0.9rem; color: #FFF8E7; font-family: 'Noto Serif', serif; font-size: 0.9rem; outline: none; transition: border-color 0.2s; }
+  .form-group input::placeholder, .form-group textarea::placeholder { color: #8A6A4A; }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold-light); }
+  .form-group select option { background: var(--maroon); color: #FFF8E7; }
+  .form-group textarea { resize: vertical; min-height: 80px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+
+  footer { background: #1A0A02; text-align: center; padding: 2rem; border-top: 2px solid var(--saffron); }
+  footer p { color: #7A5A3A; font-size: 0.85rem; }
+  footer span { color: var(--gold-light); }
+
+  @media (max-width: 640px) {
+    .about-grid, .contact-grid { grid-template-columns: 1fr; }
+    nav { flex-direction: column; padding: 0.5rem 1rem; }
+    .nav-links { gap: 1rem; flex-wrap: wrap; justify-content: center; padding-bottom: 0.5rem; }
+    .hero { padding: 3rem 1.5rem; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">🎻 Lakshya's Violin Academy</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#courses">Courses</a>
+    <a href="#contact">Enroll</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <span class="hero-ornament">✦ ✦ ✦</span>
+  <h1 class="hero-title">Lakshya's<br><span>Violin Academy</span></h1>
+  <p class="hero-subtitle">Carnatic Violin for Young Learners</p>
+  <span class="divider-ornament">— ♩ ♪ ♫ —</span>
+  <p class="hero-tagline">Where the timeless beauty of Carnatic music meets the joy of young minds. Learn violin the traditional way — with heart, patience, and devotion.</p>
+  <div class="hero-btns">
+    <a href="#contact" class="btn-primary">Enroll Now</a>
+    <a href="#courses" class="btn-outline">View Courses</a>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-visual">
+        <span class="violin-icon">🎻</span>
+        <div class="about-name">Lakshya</div>
+        <div class="about-role">Carnatic Violin Teacher</div>
+        <div class="about-badges">
+          <span class="badge">Carnatic Classical</span>
+          <span class="badge">Kids Specialist</span>
+          <span class="badge">Beginner Friendly</span>
+        </div>
+      </div>
+      <div class="about-text">
+        <div class="section-label">About the Academy</div>
+        <h2 class="section-title">Rooted in Tradition, Taught with Love</h2>
+        <div class="border-accent"></div>
+        <p>Lakshya's Violin Academy is dedicated to nurturing young musicians through the rich tradition of Carnatic classical music. We specialise in teaching violin to children using the beautiful Carnatic notation system — making it accessible, fun, and deeply rooted in our culture.</p>
+        <p>Every child who walks through our doors is treated as a unique learner. We move at their pace, celebrate every milestone, and help them build not just musical skills, but a lifelong love for the art.</p>
+        <div class="highlight-box">
+          <p>"Music is not just about notes — it is about feeling, devotion, and the joy of expression. We begin every journey with patience and care."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="courses" id="courses">
+  <div class="section-inner">
+    <div class="section-label">What We Teach</div>
+    <h2 class="section-title">Our Courses</h2>
+    <div class="border-accent"></div>
+    <p style="color: var(--text-soft); max-width: 600px;">All our courses use the Carnatic notation system and are designed specifically for beginners and young children. Lessons are available in-person and online.</p>
+    <div class="courses-grid">
+      <div class="course-card">
+        <span class="course-icon">🌱</span>
+        <div class="course-age">Ages 5–8 · Beginner</div>
+        <div class="course-title">Little Strings</div>
+        <p class="course-desc">A gentle, playful introduction to the violin for very young children.</p>
+        <ul class="course-topics">
+          <li>Parts of the violin</li>
+          <li>Proper posture &amp; bow hold</li>
+          <li>Open strings (Sa, Pa)</li>
+          <li>Simple Carnatic swaras</li>
+          <li>Fun songs &amp; rhymes</li>
+        </ul>
+      </div>
+      <div class="course-card">
+        <span class="course-icon">🎶</span>
+        <div class="course-age">Ages 8–12 · Foundation</div>
+        <div class="course-title">Swara Sadhana</div>
+        <p class="course-desc">Building a strong Carnatic foundation through systematic swara practice.</p>
+        <ul class="course-topics">
+          <li>Carnatic notation (Sa Ri Ga Ma)</li>
+          <li>Bow technique — détaché &amp; legato</li>
+          <li>Major scales in Carnatic style</li>
+          <li>Varisais (basic exercises)</li>
+          <li>Simple Geethams &amp; Swarajathis</li>
+        </ul>
+      </div>
+      <div class="course-card">
+        <span class="course-icon">🪔</span>
+        <div class="course-age">Ages 10+ · Developing</div>
+        <div class="course-title">Raga Pravesham</div>
+        <p class="course-desc">An introduction to ragas and expressive Carnatic playing.</p>
+        <ul class="course-topics">
+          <li>Introduction to basic ragas</li>
+          <li>Alankaras &amp; Tala awareness</li>
+          <li>Simple Krithis &amp; Keerthanas</li>
+          <li>Intonation &amp; expression</li>
+          <li>Performance preparation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="section-inner">
+    <div class="section-label">Get in Touch</div>
+    <h2 class="section-title">Enroll Your Child</h2>
+    <div class="border-accent"></div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <p>We'd love to welcome your child into Lakshya's Violin Academy. Fill in the form and we'll get back to you within 24 hours to schedule a free trial class.</p>
+        <br>
+        <div class="contact-detail">
+          <span class="contact-detail-icon">📍</span>
+          <div class="contact-detail-text">
+            <span class="contact-detail-label">Location</span>
+            Nandambakkam, Chennai
+          </div>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-icon">📱</span>
+          <div class="contact-detail-text">
+            <span class="contact-detail-label">WhatsApp / Phone</span>
+            +91 XXXXX XXXXX
+          </div>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-icon">✉️</span>
+          <div class="contact-detail-text">
+            <span class="contact-detail-label">Email</span>
+            lakshyaviolin@gmail.com
+          </div>
+        </div>
+        <div class="contact-detail">
+          <span class="contact-detail-icon">🕐</span>
+          <div class="contact-detail-text">
+            <span class="contact-detail-label">Class Timings</span>
+            Weekdays &amp; Weekends · Flexible slots
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Parent's Name</label>
+            <input type="text" placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label>Child's Name</label>
+            <input type="text" placeholder="Child's name">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Child's Age</label>
+            <input type="number" placeholder="e.g. 7">
+          </div>
+          <div class="form-group">
+            <label>Course Interest</label>
+            <select>
+              <option value="">Select a course</option>
+              <option>Little Strings (5–8 yrs)</option>
+              <option>Swara Sadhana (8–12 yrs)</option>
+              <option>Raga Pravesham (10+ yrs)</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Phone / WhatsApp</label>
+          <input type="tel" placeholder="+91 XXXXX XXXXX">
+        </div>
+        <div class="form-group">
+          <label>Message (optional)</label>
+          <textarea placeholder="Any questions or details you'd like to share..."></textarea>
+        </div>
+        <button class="btn-primary" style="width:100%; font-size:1rem; padding: 0.9rem;">Request Free Trial Class →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 <span>Lakshya's Violin Academy</span> · Nandambakkam, Chennai · Carnatic Violin for Young Learners</p>
+  <p style="margin-top: 0.5rem; font-size: 0.78rem;">♩ Where every note finds its voice ♩</p>
+</footer>
+
+</body>
+</html>
