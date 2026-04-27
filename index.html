@@ -444,23 +444,155 @@
     .ladder-bar-wrap, .lh-freq, .ladder-western, .lh-west { display: none; }
   }
 
-    .form-row { grid-template-columns: 1fr; }
+  /* ===== HAMBURGER NAV ===== */
+  .nav-toggle {
+    display: none;
+    flex-direction: column; justify-content: center;
+    gap: 5px; background: none; border: none;
+    cursor: pointer; padding: 0.5rem; margin-left: auto;
   }
+  .nav-toggle span {
+    display: block; width: 24px; height: 2px;
+    background: var(--gold-light); border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+  .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle.open span:nth-child(2) { opacity: 0; }
+  .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  /* ===== COMPREHENSIVE MOBILE STYLES ===== */
+  @media (max-width: 768px) {
+
+    /* --- Navigation --- */
+    nav {
+      flex-wrap: wrap;
+      padding: 0 1.2rem;
+      position: sticky; top: 0; z-index: 200;
+    }
+    .nav-brand { font-size: 1rem; padding: 0.9rem 0; flex: 1; }
+    .nav-toggle { display: flex; }
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      gap: 0;
+      border-top: 1px solid rgba(240,192,64,0.2);
+      padding-bottom: 0.5rem;
+    }
+    .nav-links.open { display: flex; }
+    .nav-links a {
+      padding: 0.75rem 0;
+      font-size: 0.95rem;
+      border-bottom: 1px solid rgba(240,192,64,0.1);
+    }
+    .nav-links a:last-child { border-bottom: none; }
+
+    /* --- Global section padding --- */
+    section { padding: 2.5rem 1.2rem; }
+    .section-inner { padding: 0; }
+
+    /* --- Hero --- */
+    .hero { padding: 3rem 1.2rem 2.5rem; }
+    .hero-ornament { font-size: 1.6rem; letter-spacing: 4px; }
+    .hero-tagline { font-size: 0.95rem; }
+    .hero-btns { flex-direction: column; align-items: center; gap: 0.8rem; }
+    .btn-primary, .btn-outline { width: 100%; max-width: 280px; text-align: center; padding: 0.9rem 1.5rem; }
+
+    /* --- About --- */
+    .about-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .about-visual { padding: 1.8rem 1rem; }
+
+    /* --- Courses --- */
+    .courses-grid { grid-template-columns: 1fr; }
+
+    /* --- Carnatic pillars --- */
+    .carnatic-pillars { grid-template-columns: 1fr 1fr; }
+    .swara-definition { grid-template-columns: 1fr; gap: 1rem; padding: 1.4rem; }
+    .sthana-grid { grid-template-columns: 1fr; gap: 0.8rem; }
+    .freq-pitch-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .sub-heading { font-size: 1.05rem; }
+
+    /* --- Swara ladder --- */
+    .ladder-bar-wrap, .lh-freq, .ladder-western, .lh-west { display: none; }
+    .ladder-header { display: none; }
+    .ladder-swara { width: 68px; padding: 0.5rem 0.6rem; }
+    .ladder-full { padding: 0.5rem 0.7rem; }
+    .ladder-full-name { font-size: 0.82rem; }
+    .ladder-full-meaning { font-size: 0.72rem; }
+
+    /* --- Strings section --- */
+    .strings-diagram-wrap { padding: 1rem 0.5rem; }
+    .strings-table { font-size: 0.8rem; }
+    .strings-table th, .strings-table td { padding: 0.5rem 0.6rem; }
+    .strings-table th:nth-child(3),
+    .strings-table td:nth-child(3) { display: none; }
+
+    /* --- Sa-Pa section --- */
+    .sapa-nodes { gap: 0; }
+    .sapa-circle { width: 62px; height: 62px; }
+    .sapa-circle-swara { font-size: 1.2rem; }
+    .sapa-circle.sa[style], .sapa-circle.pa { width: 62px !important; height: 62px !important; }
+    .sapa-circle-label { font-size: 0.52rem; }
+    .sapa-node-name { font-size: 0.62rem; max-width: 68px; }
+    .sapa-arrow { font-size: 1rem; padding: 0 1px; }
+    .sapa-significance { grid-template-columns: 1fr; }
+    .sapa-visual-wrap { padding: 1.5rem 1rem; }
+
+    /* --- Varisai section --- */
+    .varisai-card {
+      grid-template-columns: 44px 1fr;
+      padding: 1.2rem 1rem;
+      gap: 0.8rem;
+    }
+    .varisai-level { display: none; }
+    .varisai-num { font-size: 1.6rem; }
+    .varisai-name { font-size: 1rem; }
+    .science-banner { grid-template-columns: 1fr 1fr; gap: 0.8rem; padding: 1.5rem; }
+
+    /* --- Philosophy section --- */
+    .philosophy-values { grid-template-columns: 1fr 1fr; }
+    .philosophy-letter { padding: 1.4rem; }
+    .philosophy-hero { padding: 1.8rem 1rem; }
+
+    /* --- Contact --- */
+    .contact-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+    .form-row { grid-template-columns: 1fr; }
+
+    /* --- Footer --- */
+    footer { padding: 1.5rem 1.2rem; }
+    footer p { font-size: 0.78rem; }
+  }
+
+  @media (max-width: 420px) {
+    .nav-brand { font-size: 0.88rem; }
+    .carnatic-pillars { grid-template-columns: 1fr; }
+    .philosophy-values { grid-template-columns: 1fr; }
+    .science-banner { grid-template-columns: 1fr; }
+    .sapa-nodes { gap: 0; }
+    .sapa-circle { width: 52px; height: 52px; }
+    .sapa-arrow { font-size: 0.85rem; }
+    .strings-table th:nth-child(4),
+    .strings-table td:nth-child(4) { display: none; }
+  }
+
 </style>
 </head>
 <body>
 
 <nav>
   <div class="nav-brand">🎻 Lakshya's Violin Academy</div>
-  <div class="nav-links">
-    <a href="#about">About</a>
-    <a href="#courses">Courses</a>
-    <a href="#carnatic">Carnatic Music</a>
-    <a href="#strings">Strings</a>
-    <a href="#sapa">Sa–Pa</a>
-    <a href="#varisai">Lessons</a>
-    <a href="#philosophy">Our Belief</a>
-    <a href="#contact">Enroll</a>
+  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="navLinks">
+    <a href="#about" onclick="closeNav()">About</a>
+    <a href="#courses" onclick="closeNav()">Courses</a>
+    <a href="#carnatic" onclick="closeNav()">Carnatic Music</a>
+    <a href="#strings" onclick="closeNav()">Strings</a>
+    <a href="#sapa" onclick="closeNav()">Sa–Pa</a>
+    <a href="#varisai" onclick="closeNav()">Lessons</a>
+    <a href="#philosophy" onclick="closeNav()">Our Belief</a>
+    <a href="#contact" onclick="closeNav()">Enroll</a>
   </div>
 </nav>
 
@@ -1347,6 +1479,28 @@
   <p>© 2025 <span>Lakshya's Violin Academy</span> · Old Pallavaram, Chennai · Carnatic Violin for Young Learners</p>
   <p style="margin-top: 0.5rem; font-size: 0.78rem;">♩ Where every note finds its voice ♩</p>
 </footer>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const links  = document.getElementById('navLinks');
+
+  toggle.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    toggle.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open);
+  });
+
+  function closeNav() {
+    links.classList.remove('open');
+    toggle.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+
+  // Close nav when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('nav')) closeNav();
+  });
+</script>
 
 </body>
 </html>
