@@ -37,7 +37,49 @@
   .nav-links { display: flex; gap: 1.5rem; }
   .nav-links a { color: #F5DEB3; text-decoration: none; font-size: 0.9rem; padding: 1.2rem 0; border-bottom: 2px solid transparent; transition: color 0.2s, border-color 0.2s; }
   .nav-links a:hover { color: var(--gold-light); border-bottom-color: var(--gold-light); }
-
+/* ── Blog dropdown ── */
+.nav-item { position: relative; }
+.nav-item > a { display: flex; align-items: center; gap: 4px; }
+.nav-item > a::after { content: '▾'; font-size: 0.65rem; opacity: 0.7; }
+.nav-dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 3px);
+  left: 0;
+  min-width: 240px;
+  background: #5A1010;
+  border: 1px solid rgba(240,192,64,0.3);
+  border-top: 2px solid var(--saffron-light);
+  border-radius: 0 0 6px 6px;
+  z-index: 200;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+}
+.nav-item:hover .nav-dropdown,
+.nav-item:focus-within .nav-dropdown { display: block; }
+.nav-dropdown a {
+  display: block;
+  padding: 0.65rem 1rem !important;
+  border-bottom: 1px solid rgba(240,192,64,0.12) !important;
+  font-size: 0.85rem !important;
+  color: #F5DEB3 !important;
+  white-space: nowrap;
+}
+.nav-dropdown a:last-child { border-bottom: none !important; }
+.nav-dropdown a:hover { background: rgba(200,82,10,0.25) !important; color: var(--gold-light) !important; }
+.nav-dropdown-label {
+  display: block;
+  font-size: 0.65rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(240,192,64,0.5);
+  padding: 0.5rem 1rem 0.2rem;
+}
+@media (max-width: 768px) {
+  .nav-item > a::after { display: none; }
+  .nav-dropdown { display: block; position: static; background: transparent; border: none; box-shadow: none; min-width: unset; }
+  .nav-dropdown-label { display: none; }
+  .nav-dropdown a { padding: 0.6rem 0 0.6rem 1.2rem !important; color: #D4A97A !important; }
+}
   .hero {
     background: linear-gradient(135deg, var(--maroon) 0%, #5A1010 60%, #3A0A0A 100%);
     position: relative; overflow: hidden;
@@ -592,7 +634,15 @@
     <a href="#sapa" onclick="closeNav()">Sa–Pa</a>
     <a href="#varisai" onclick="closeNav()">Lessons</a>
     <a href="#philosophy" onclick="closeNav()">Our Belief</a>
-    <a href="#contact" onclick="closeNav()">Enroll</a>
+    v<div class="nav-item">
+  <a href="blog-sound-vibration-carnatic.html">Blog</a>
+  <div class="nav-dropdown">
+    <span class="nav-dropdown-label">Beginner's Corner</span>
+    <a href="blog-sound-vibration-carnatic.html">
+      🎵 &nbsp;Sound, Vibration &amp; Carnatic Music
+    </a>
+  </div>
+</div>    <a href="#contact" onclick="closeNav()">Enroll</a>
   </div>
 </nav>
 
