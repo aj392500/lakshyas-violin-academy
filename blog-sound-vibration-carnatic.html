@@ -107,6 +107,38 @@
     .nav-links a:hover { color: #F0C040; border-bottom-color: #F0C040; }
     .nav-links a.active { color: #F0C040; border-bottom-color: #F0C040; }
 
+    /* Blog dropdown */
+    .nav-links li.has-dropdown { position: relative; }
+    .nav-dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      min-width: 290px;
+      background: #5A1010;
+      border: 1px solid rgba(240,192,64,0.3);
+      border-top: 2px solid #F5A623;
+      border-radius: 0 0 6px 6px;
+      z-index: 300;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+      list-style: none;
+    }
+    .nav-links li.has-dropdown:hover .nav-dropdown,
+    .nav-links li.has-dropdown:focus-within .nav-dropdown { display: block; }
+    .nav-dropdown li a {
+      padding: 0.7rem 1rem !important;
+      font-size: 0.78rem !important;
+      text-transform: none !important;
+      letter-spacing: 0.01em !important;
+      border-bottom: 1px solid rgba(240,192,64,0.12);
+      white-space: nowrap;
+    }
+    .nav-dropdown li:last-child a { border-bottom: none; }
+    @media (max-width: 768px) {
+      .nav-dropdown { display: block; position: static; min-width: unset; background: transparent; border: none; box-shadow: none; }
+      .nav-dropdown li a { padding-left: 1.5rem !important; }
+    }
+
     @media (max-width: 768px) {
       .site-nav { padding: 0 1.2rem; }
       .nav-toggle { display: flex; }
@@ -547,24 +579,30 @@
 
 <!-- NAV -->
 <nav class="site-nav">
-  <a class="nav-brand" href="https://aj392500.github.io/lakshyas-violin-academy/">🎻 Lakshya's Violin Academy</a>
+  <a class="nav-brand" href="index.html">🎻 Lakshya's Violin Academy</a>
   <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links" id="navLinks">
-    <li><a href="https://aj392500.github.io/lakshyas-violin-academy/#about">About</a></li>
-    <li><a href="https://aj392500.github.io/lakshyas-violin-academy/#courses">Courses</a></li>
-    <li><a href="https://aj392500.github.io/lakshyas-violin-academy/#carnatic">Carnatic</a></li>
-    <li><a href="https://aj392500.github.io/lakshyas-violin-academy/#strings">Strings</a></li>
-    <li><a href="https://aj392500.github.io/lakshyas-violin-academy/#varisai">Lessons</a></li>
-    <li><a href="#" class="active">Blog</a></li>
-    <li><a href="https://aj392500.github.io/lakshyas-violin-academy/#contact">Enroll</a></li>
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#courses">Courses</a></li>
+    <li><a href="index.html#carnatic">Carnatic</a></li>
+    <li><a href="index.html#strings">Strings</a></li>
+    <li><a href="index.html#varisai">Lessons</a></li>
+    <li class="has-dropdown">
+      <a href="blog-sound-vibration-carnatic.html" class="active">Blog</a>
+      <ul class="nav-dropdown">
+        <li><a href="blog-sound-vibration-carnatic.html" class="active">🎵 &nbsp;Sound, Vibration &amp; Carnatic Music</a></li>
+        <li><a href="blog-carnatic-music-and-kids-brain.html">🧠 &nbsp;What Carnatic Music Does to Your Child's Brain</a></li>
+      </ul>
+    </li>
+    <li><a href="index.html#contact">Enroll</a></li>
   </ul>
 </nav>
 
 <!-- BLOG HEADER -->
 <header class="blog-header">
-  <p class="breadcrumb"><a href="#">Blog</a> &nbsp;/&nbsp; Beginner's Corner</p>
+  <p class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; Blog &nbsp;/&nbsp; Beginner's Corner</p>
   <h1>Sound, Vibration &amp; <em>Carnatic Music</em></h1>
   <p class="blog-tagline">What is pitch, frequency, octave and tonic level? — explained for beginners with Tamil terms and violin string examples.</p>
   <div class="blog-meta">
@@ -591,9 +629,9 @@
 <main class="page-body">
 
   <div class="back-bar">
-    <a href="#">← All posts</a>
+    <a href="index.html">← Back to academy</a>
     <span class="dot">·</span>
-    <span>Sound &amp; Theory</span>
+    <a href="blog-carnatic-music-and-kids-brain.html">Next: Music &amp; your child's brain →</a>
   </div>
 
   <!-- ── PITCH ── -->

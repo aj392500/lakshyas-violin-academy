@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The 72 Melakarta Ragas — Lakshya's Violin Academy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,500&family=Noto+Serif:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --maroon:#6a1722; --maroon-deep:#4a0d16; --maroon-soft:#8a2a37;
+    --saffron:#e08a2e; --saffron-deep:#c4701b;
+    --gold:#c69749; --gold-light:#e7c873; --gold-pale:#f0dca6;
+    --cream:#fbf4e6; --cream-2:#f5ead2; --cream-3:#efe0c2;
+    --ink:#2c1810; --ink-soft:#5c4636; --ink-faint:#8a755f;
+    --line:#e3d3b0;
+    --sa:#b3322f; --pa:#1f6f6b; --ma:#7a5cb0;
+    --shadow:0 14px 40px -18px rgba(74,13,22,.45);
+    --display:'Playfair Display', Georgia, serif;
+    --serif:'Noto Serif', Georgia, serif;
+    --sans:'DM Sans', system-ui, sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; background:var(--cream); color:var(--ink);
+    font-family:var(--sans); line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    background-image:radial-gradient(circle at 12% -5%, #fff8ec 0%, transparent 45%),
+                     radial-gradient(circle at 92% 0%, #fdf2dd 0%, transparent 40%);
+  }
+  .wrap{max-width:1080px; margin:0 auto; padding:0 20px;}
+  h1,h2,h3,h4{font-family:var(--display); font-weight:700; line-height:1.12; color:var(--maroon-deep); margin:0;}
+  .eyebrow{font-family:var(--sans); font-weight:700; letter-spacing:.22em; text-transform:uppercase;
+    font-size:.7rem; color:var(--saffron-deep);}
+  p{margin:.6em 0;}
+  .tamil{font-family:var(--serif);}
+
+  /* ---------- top bar ---------- */
+  .topbar{background:var(--maroon-deep); color:var(--cream); position:sticky; top:0; z-index:50;
+    border-bottom:2px solid var(--gold);}
+  .topbar .wrap{display:flex; align-items:center; gap:14px; height:60px;}
+  .brand{font-family:var(--display); font-weight:700; font-size:1.05rem; color:var(--gold-light);
+    display:flex; align-items:center; gap:10px; letter-spacing:.01em;}
+  .brand .dot{width:9px;height:9px;border-radius:50%;background:var(--saffron);
+    box-shadow:0 0 0 4px rgba(224,138,46,.25);}
+  .topnav{margin-left:auto; display:flex; gap:6px; flex-wrap:wrap;}
+  .topnav a{color:var(--cream); text-decoration:none; font-size:.82rem; font-weight:600;
+    padding:7px 11px; border-radius:8px; opacity:.85; transition:.2s;}
+  .topnav a:hover{background:rgba(231,200,115,.16); opacity:1;}
+  @media(max-width:680px){ .topnav{display:none;} }
+
+  /* ---------- hero ---------- */
+  .hero{position:relative; overflow:hidden; padding:64px 0 54px;
+    background:
+      radial-gradient(ellipse at 50% 120%, rgba(106,23,34,.10), transparent 60%),
+      linear-gradient(180deg, #fff9ee 0%, var(--cream) 100%);
+    border-bottom:1px solid var(--line);}
+  .hero .wrap{position:relative; z-index:2; text-align:center;}
+  .hero h1{font-size:clamp(2.5rem,7vw,4.6rem); letter-spacing:-.01em;}
+  .hero h1 .num{color:var(--saffron); font-style:italic;}
+  .hero .sub{font-family:var(--serif); font-size:clamp(1.05rem,2.4vw,1.35rem);
+    color:var(--ink-soft); max-width:640px; margin:18px auto 0; font-style:italic;}
+  .hero .lede{max-width:600px; margin:20px auto 0; color:var(--ink-soft); font-size:1rem;}
+  .hero-cta{margin-top:30px; display:flex; gap:12px; justify-content:center; flex-wrap:wrap;}
+  .btn{font-family:var(--sans); font-weight:700; font-size:.92rem; cursor:pointer;
+    border:none; border-radius:999px; padding:13px 24px; transition:.18s; text-decoration:none;
+    display:inline-flex; align-items:center; gap:9px;}
+  .btn-primary{background:var(--maroon); color:var(--cream); box-shadow:var(--shadow);}
+  .btn-primary:hover{background:var(--maroon-soft); transform:translateY(-2px);}
+  .btn-ghost{background:transparent; color:var(--maroon); border:1.5px solid var(--gold);}
+  .btn-ghost:hover{background:#fff3da;}
+  /* decorative octave arc */
+  .arc{position:absolute; left:50%; top:-40px; transform:translateX(-50%);
+    width:760px; max-width:150vw; height:380px; pointer-events:none; opacity:.5; z-index:1;}
+
+  /* ---------- generic section ---------- */
+  section.block{padding:62px 0; border-bottom:1px solid var(--line);}
+  .sec-head{max-width:680px; margin-bottom:34px;}
+  .sec-head h2{font-size:clamp(1.9rem,4.4vw,2.7rem); margin-top:10px;}
+  .sec-head p{color:var(--ink-soft); font-size:1.04rem; margin-top:12px;}
+  .step-no{font-family:var(--display); font-style:italic; color:var(--gold);
+    font-size:1.1rem; font-weight:600;}
+
+  /* ---------- sapta swara cards ---------- */
+  .swara-row{display:grid; grid-template-columns:repeat(7,1fr); gap:10px;}
+  @media(max-width:760px){ .swara-row{grid-template-columns:repeat(4,1fr);} }
+  @media(max-width:430px){ .swara-row{grid-template-columns:repeat(2,1fr);} }
+  .scard{background:#fff; border:1px solid var(--line); border-radius:14px; padding:16px 10px;
+    text-align:center; cursor:pointer; transition:.16s; position:relative; overflow:hidden;}
+  .scard:hover{transform:translateY(-3px); box-shadow:var(--shadow); border-color:var(--gold);}
+  .scard .sym{font-family:var(--display); font-weight:800; font-size:1.9rem; color:var(--maroon);}
+  .scard .full{font-family:var(--serif); font-size:.74rem; color:var(--ink-soft); margin-top:3px; line-height:1.25;}
+  .scard.playing{background:linear-gradient(180deg,#fff6e2,#fdedcf); border-color:var(--saffron);}
+  .scard.fixed::after{content:"fixed"; position:absolute; top:6px; right:7px; font-size:.52rem;
+    letter-spacing:.12em; text-transform:uppercase; color:var(--pa); font-weight:700;}
+
+  /* ---------- 12 swarasthana strip ---------- */
+  .strip-frame{background:#fff; border:1px solid var(--line); border-radius:16px; padding:18px 16px 14px;
+    box-shadow:0 8px 28px -22px rgba(74,13,22,.5);}
+  .strip{display:flex; gap:5px; overflow-x:auto; padding-bottom:6px;}
+  .pos{flex:1 0 56px; min-width:56px; border-radius:9px 9px 7px 7px; padding:9px 4px 8px;
+    text-align:center; background:#f3ead6; border:1px solid #e6d6b4; transition:.18s; cursor:pointer;
+    position:relative;}
+  .pos .pl{font-family:var(--display); font-weight:700; font-size:1.05rem; color:var(--ink-soft);}
+  .pos .sub{font-size:.56rem; color:var(--ink-faint); margin-top:2px; line-height:1.15; min-height:1.6em;}
+  .pos[data-fixed="1"]{background:#e7efe8; border-color:#bcd6cf;}
+  .pos[data-fixed="1"] .pl{color:var(--pa);}
+  .pos.on{background:linear-gradient(180deg,var(--saffron),var(--saffron-deep));
+    border-color:var(--saffron-deep); box-shadow:0 6px 16px -8px rgba(196,112,27,.8);}
+  .pos.on .pl,.pos.on .sub{color:#fff;}
+  .pos.beat{transform:translateY(-7px) scale(1.06); box-shadow:0 10px 20px -8px rgba(106,23,34,.7);
+    outline:2px solid var(--maroon);}
+  .strip-legend{display:flex; gap:16px; flex-wrap:wrap; margin-top:12px; font-size:.74rem; color:var(--ink-soft);}
+  .strip-legend span{display:inline-flex; align-items:center; gap:6px;}
+  .chip-c{width:13px;height:13px;border-radius:4px;display:inline-block;}
+
+  /* ---------- formula ---------- */
+  .formula{display:flex; align-items:center; justify-content:center; gap:14px; flex-wrap:wrap;
+    background:linear-gradient(135deg,var(--maroon),var(--maroon-deep)); color:var(--cream);
+    border-radius:18px; padding:30px 24px; box-shadow:var(--shadow);}
+  .fterm{text-align:center;}
+  .fterm .big{font-family:var(--display); font-weight:800; font-size:2.6rem; color:var(--gold-light); line-height:1;}
+  .fterm .cap{font-size:.72rem; letter-spacing:.1em; text-transform:uppercase; opacity:.85; margin-top:6px;}
+  .fop{font-family:var(--display); font-size:1.8rem; color:var(--saffron); opacity:.9;}
+  .fres .big{color:#fff; font-size:3.2rem;}
+
+  /* ---------- chakra grid ---------- */
+  .chakra-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:12px;}
+  @media(max-width:820px){ .chakra-grid{grid-template-columns:repeat(3,1fr);} }
+  @media(max-width:560px){ .chakra-grid{grid-template-columns:repeat(2,1fr);} }
+  .ck{background:#fff; border:1px solid var(--line); border-radius:13px; padding:14px 13px;
+    cursor:pointer; transition:.16s; text-align:left;}
+  .ck:hover{transform:translateY(-3px); box-shadow:var(--shadow); border-color:var(--gold);}
+  .ck .ix{font-family:var(--display); font-style:italic; font-weight:700; color:var(--saffron); font-size:1rem;}
+  .ck .nm{font-family:var(--display); font-weight:700; color:var(--maroon); font-size:1.12rem; margin-top:2px;}
+  .ck .rg{font-size:.7rem; color:var(--ink-faint); margin-top:4px;}
+  .ck .ra{font-size:.74rem; color:var(--ink-soft); margin-top:7px; line-height:1.45;}
+  .ck[data-ma="2"]{background:#fdf3ef; border-color:#ecccc2;}
+
+  /* ---------- EXPLORER ---------- */
+  .explorer{background:linear-gradient(180deg,#fff9ee,#fbf2e1); border:1px solid var(--gold);
+    border-radius:22px; box-shadow:var(--shadow); overflow:hidden;}
+  .exp-top{background:linear-gradient(135deg,var(--maroon),var(--maroon-deep)); color:var(--cream);
+    padding:22px 24px;}
+  .exp-top .lab{font-size:.7rem; letter-spacing:.2em; text-transform:uppercase; color:var(--gold-light); font-weight:700;}
+  .exp-name{display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin-top:4px;}
+  .exp-name .no{font-family:var(--display); font-style:italic; font-weight:700; color:var(--saffron); font-size:1.7rem;}
+  .exp-name h3{color:#fff; font-size:clamp(1.6rem,4.5vw,2.4rem);}
+  .exp-meta{margin-top:8px; font-size:.84rem; color:var(--gold-pale); display:flex; gap:16px; flex-wrap:wrap;}
+  .exp-body{padding:24px;}
+
+  /* selector controls */
+  .controls{display:flex; gap:14px; flex-wrap:wrap; align-items:flex-end; margin-bottom:22px;}
+  .ctrl{display:flex; flex-direction:column; gap:5px;}
+  .ctrl label{font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; font-weight:700; color:var(--ink-faint);}
+  select, .stepper{font-family:var(--sans); font-weight:600; font-size:.92rem; color:var(--ink);
+    border:1.5px solid var(--line); border-radius:10px; background:#fff; padding:9px 12px;}
+  select{min-width:180px; cursor:pointer;}
+  .stepper{display:flex; align-items:center; gap:0; padding:0; overflow:hidden;}
+  .stepper button{border:none; background:#f4ead4; color:var(--maroon); width:38px; height:40px;
+    font-size:1.3rem; cursor:pointer; font-weight:700;}
+  .stepper button:hover{background:var(--gold-pale);}
+  .stepper .val{padding:0 14px; font-family:var(--display); font-weight:700; min-width:48px; text-align:center;}
+
+  /* arohana / avarohana display */
+  .scale-block{display:grid; gap:14px; grid-template-columns:1fr 1fr;}
+  @media(max-width:680px){ .scale-block{grid-template-columns:1fr;} }
+  .scale-card{background:#fff; border:1px solid var(--line); border-radius:14px; padding:16px;}
+  .scale-card .hd{display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:12px;}
+  .scale-card .hd .t{font-family:var(--display); font-weight:700; color:var(--maroon); font-size:1.05rem;}
+  .scale-card .hd .ar{font-size:1.1rem; color:var(--saffron);}
+  .notes{display:flex; gap:6px; flex-wrap:wrap;}
+  .note{font-family:var(--display); font-weight:700; font-size:1.15rem; color:var(--maroon-deep);
+    background:#f6ecd6; border:1px solid #e8d8b6; border-radius:9px; min-width:42px; text-align:center;
+    padding:8px 6px; transition:.12s;}
+  .note small{display:block; font-family:var(--sans); font-weight:600; font-size:.54rem;
+    color:var(--ink-faint); letter-spacing:.04em; margin-top:1px;}
+  .note.lit{background:linear-gradient(180deg,var(--saffron),var(--saffron-deep)); color:#fff; border-color:var(--saffron-deep);
+    transform:translateY(-4px); box-shadow:0 8px 16px -8px rgba(196,112,27,.9);}
+  .note.lit small{color:#fff;}
+
+  .play-row{display:flex; gap:10px; flex-wrap:wrap; margin:22px 0 6px;}
+  .play-row .btn{font-size:.86rem; padding:11px 18px;}
+  .btn-play{background:var(--saffron); color:#fff; box-shadow:0 8px 20px -10px rgba(196,112,27,.9);}
+  .btn-play:hover{background:var(--saffron-deep); transform:translateY(-2px);}
+  .btn-play.busy{opacity:.6; cursor:default; transform:none;}
+  .btn-sec{background:#fff; color:var(--maroon); border:1.5px solid var(--gold);}
+  .btn-sec:hover{background:#fff3da;}
+
+  .tune-row{display:flex; gap:18px; flex-wrap:wrap; align-items:center; margin-top:18px;
+    padding-top:16px; border-top:1px dashed var(--line); font-size:.82rem; color:var(--ink-soft);}
+  .tune-row .ctrl{flex-direction:row; align-items:center; gap:8px;}
+  .tune-row label{text-transform:none; letter-spacing:0; font-size:.82rem; color:var(--ink-soft); font-weight:600;}
+  input[type=range]{accent-color:var(--maroon);}
+
+  .equiv{margin-top:18px; background:#fff7e8; border:1px solid var(--gold-pale); border-radius:12px;
+    padding:13px 16px; font-size:.86rem; color:var(--ink-soft);}
+  .equiv b{color:var(--maroon);}
+
+  /* practice fingering hint */
+  .finger{margin-top:14px; font-size:.82rem; color:var(--ink-faint);}
+
+  /* footer */
+  footer{background:var(--maroon-deep); color:var(--cream); padding:40px 0 34px; text-align:center;}
+  footer .bn{font-family:var(--display); font-size:1.3rem; color:var(--gold-light); font-weight:700;}
+  footer p{color:#e8d4b4; opacity:.85; font-size:.86rem; margin:8px 0;}
+  footer a{color:var(--gold-light);}
+  .note-tip{font-size:.8rem; color:var(--ink-faint); margin-top:10px;}
+
+  .pillrow{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;}
+  .pill{font-size:.74rem;font-weight:600;background:#fff;border:1px solid var(--line);
+    border-radius:999px;padding:5px 12px;color:var(--ink-soft);}
+
+  :focus-visible{outline:3px solid var(--saffron); outline-offset:2px; border-radius:6px;}
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none!important; transition:none!important; scroll-behavior:auto!important;}
+  }
+</style>
+</head>
+<body>
+<!-- ░░ Lakshya's Violin Academy — site ribbon (added on merge) ░░ -->
+<style>
+  .lva-ribbon{background:#7B1E1E;border-bottom:3px solid #F5A623;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:0 1.3rem;font-family:Georgia,'Times New Roman',serif;}
+  .lva-ribbon a{text-decoration:none;}
+  .lva-ribbon .lva-brand{color:#F0C040;font-weight:700;font-size:1rem;padding:0.7rem 0;white-space:nowrap;}
+  .lva-ribbon .lva-links{display:flex;flex-wrap:wrap;align-items:center;}
+  .lva-ribbon .lva-links a{color:#F5DEB3;font-size:0.72rem;letter-spacing:0.07em;text-transform:uppercase;padding:0.75rem 0.65rem;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;white-space:nowrap;}
+  .lva-ribbon .lva-links a:hover{color:#F0C040;border-bottom-color:#F0C040;}
+  .lva-ribbon .lva-links a.cur{color:#F0C040;border-bottom-color:#F0C040;}
+  @media(max-width:620px){.lva-ribbon{padding:0 0.7rem;}.lva-ribbon .lva-brand{font-size:0.82rem;}.lva-ribbon .lva-links a{padding:0.5rem 0.4rem;font-size:0.6rem;}}
+</style>
+<div class="lva-ribbon">
+  <a class="lva-brand" href="index.html">🎻 Lakshya's Violin Academy</a>
+  <div class="lva-links">
+    <a href="index.html">Home</a>
+    <a href="frequency-and-swaras.html">Frequency Lab</a>
+    <a href="thala-basics.html">Thala</a>
+    <a href="melakarta-explorer.html" class="cur">72 Melakarta</a>
+    <a href="blog-sound-vibration-carnatic.html">Blog</a>
+    <a href="index.html#contact">Enroll</a>
+  </div>
+</div>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="brand"><span class="dot"></span>Lakshya's Violin Academy</div>
+    <nav class="topnav">
+      <a href="#basics">Swaras</a>
+      <a href="#positions">12 Positions</a>
+      <a href="#what">What is a Melakarta</a>
+      <a href="#chakras">Chakras</a>
+      <a href="#explorer">Explorer</a>
+    </nav>
+  </div>
+</div>
+
+<!-- HERO -->
+<header class="hero">
+  <svg class="arc" viewBox="0 0 760 380" aria-hidden="true">
+    <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#c69749" stop-opacity="0"/>
+      <stop offset=".5" stop-color="#e08a2e"/>
+      <stop offset="1" stop-color="#c69749" stop-opacity="0"/></linearGradient></defs>
+    <path d="M40 330 Q380 -40 720 330" fill="none" stroke="url(#g1)" stroke-width="2"/>
+    <path d="M90 330 Q380 30 670 330" fill="none" stroke="url(#g1)" stroke-width="1.4" opacity=".6"/>
+    <path d="M150 330 Q380 110 610 330" fill="none" stroke="url(#g1)" stroke-width="1" opacity=".4"/>
+  </svg>
+  <div class="wrap">
+    <div class="eyebrow">Carnatic Music · Theory made playable</div>
+    <h1>The <span class="num">72</span> Melakarta Ragas</h1>
+    <p class="sub">Every parent scale of Carnatic music — built up from a single note, and played back on the violin.</p>
+    <p class="lede">Start from one swara. Learn the twelve positions a note can take. See how just two simple choices, made six ways each, give us exactly seventy-two parent ragas — then hear any of them played as <em>arohanam</em> and <em>avarohanam</em>.</p>
+    <div class="hero-cta">
+      <a href="#explorer" class="btn btn-primary">▶ Open the Raga Explorer</a>
+      <a href="#basics" class="btn btn-ghost">Start from the basics</a>
+    </div>
+  </div>
+</header>
+
+<!-- 1. SAPTA SWARA -->
+<section class="block" id="basics">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="step-no">Step 1</div>
+      <div class="eyebrow">The seven notes · Sapta Swara</div>
+      <h2>Music begins with seven swaras</h2>
+      <p>Carnatic music uses seven basic notes, called <span class="tamil">Sapta Swara</span>. We sing them in short form: <b>Sa Ri Ga Ma Pa Da Ni</b>. Two of them never change their pitch — <b>Sa</b> (the home note) and <b>Pa</b> — so we call them the <em>fixed</em> swaras. Tap any card to hear it on the violin.</p>
+    </div>
+    <div class="swara-row" id="saptaRow"></div>
+    <p class="note-tip">In Carnatic violin, the four strings are tuned <b>Sa&nbsp;–&nbsp;Pa&nbsp;–&nbsp;Sa&nbsp;–&nbsp;Pa</b>, so the home note and Pa are literally built into the instrument.</p>
+  </div>
+</section>
+
+<!-- 2. TWELVE POSITIONS -->
+<section class="block" id="positions">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="step-no">Step 2</div>
+      <div class="eyebrow">Twelve swarasthanas</div>
+      <h2>The five movable swaras can sit in different places</h2>
+      <p>Sa and Pa stay put. But <b>Ri, Ga, Ma, Da and Ni</b> can each be sung a little lower or higher — these landing spots are the <span class="tamil">swarasthanas</span> (swara positions). Across one octave there are <b>twelve</b> positions in total. Tap a position to hear its pitch.</p>
+    </div>
+    <div class="strip-frame">
+      <div class="strip" id="posStrip"></div>
+      <div class="strip-legend">
+        <span><i class="chip-c" style="background:#e7efe8;border:1px solid #bcd6cf"></i> Fixed (Sa · Pa)</span>
+        <span><i class="chip-c" style="background:#f3ead6;border:1px solid #e6d6b4"></i> Movable position</span>
+        <span><i class="chip-c" style="background:linear-gradient(180deg,#e08a2e,#c4701b)"></i> Used by the chosen raga</span>
+      </div>
+    </div>
+    <p class="note-tip">Notice that some positions share a pitch but carry two names — for example the same spot can be a higher <b>Ri</b> or a lower <b>Ga</b>. Which name we use depends on the raga, and that is exactly what builds the 72.</p>
+  </div>
+</section>
+
+<!-- 3. WHAT IS A MELAKARTA -->
+<section class="block" id="what">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="step-no">Step 3</div>
+      <div class="eyebrow">The parent scale</div>
+      <h2>What makes a raga a <em>Melakarta</em>?</h2>
+      <p>A <span class="tamil">Melakarta</span> is a complete <b>parent scale</b>. To qualify it must follow three rules — and these rules are what let us count them exactly.</p>
+    </div>
+    <div class="pillrow" style="margin-bottom:26px">
+      <span class="pill">✓ All 7 swaras present (<b>sampoorna</b>)</span>
+      <span class="pill">✓ Same notes going up &amp; down (<b>krama</b>)</span>
+      <span class="pill">✓ One position each for Ri, Ga, Ma, Da, Ni</span>
+    </div>
+    <p style="max-width:680px;color:var(--ink-soft);margin-bottom:20px">So how do we reach seventy-two? Sa and Pa are fixed, so the choices come from the rest. The <b>Ma</b> can be one of two positions. The pair <b>Ri&amp;Ga</b> can be arranged six valid ways, and the pair <b>Da&amp;Ni</b> another six ways. Multiply the choices:</p>
+    <div class="formula">
+      <div class="fterm"><div class="big">2</div><div class="cap">Madhyamam<br>(Ma)</div></div>
+      <div class="fop">×</div>
+      <div class="fterm"><div class="big">6</div><div class="cap">Ri &amp; Ga<br>pairs</div></div>
+      <div class="fop">×</div>
+      <div class="fterm"><div class="big">6</div><div class="cap">Da &amp; Ni<br>pairs</div></div>
+      <div class="fop">=</div>
+      <div class="fterm fres"><div class="big">72</div><div class="cap">Melakarta<br>ragas</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. CHAKRAS -->
+<section class="block" id="chakras">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="step-no">Step 4</div>
+      <div class="eyebrow">Twelve chakras of six</div>
+      <h2>The 72 are organised into 12 wheels</h2>
+      <p>The seventy-two are grouped into twelve <span class="tamil">chakras</span> of six ragas each. The first six chakras all use <b>Ma1</b> (Shuddha Madhyamam); the last six use <b>Ma2</b> (Prati Madhyamam). A raga's number is simply <b>(chakra − 1) × 6 + position</b>. Tap a chakra to jump straight to its first raga in the explorer.</p>
+    </div>
+    <div class="chakra-grid" id="chakraGrid"></div>
+  </div>
+</section>
+
+<!-- 5. EXPLORER -->
+<section class="block" id="explorer" style="border-bottom:none">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="step-no">Step 5</div>
+      <div class="eyebrow">Hear it on the violin</div>
+      <h2>The Raga Explorer</h2>
+      <p>Pick any of the seventy-two. You'll see its swaras light up on the position strip, read its <em>arohanam</em> (ascending) and <em>avarohanam</em> (descending), and hear them played as a bowed violin — at a learner-friendly pace you control.</p>
+    </div>
+
+    <div class="explorer">
+      <div class="exp-top">
+        <div class="lab">Now exploring</div>
+        <div class="exp-name">
+          <span class="no" id="eNo">15</span>
+          <h3 id="eName">Mayamalavagowla</h3>
+        </div>
+        <div class="exp-meta" id="eMeta"></div>
+      </div>
+
+      <div class="exp-body">
+        <div class="controls">
+          <div class="ctrl">
+            <label for="ragaSelect">Choose a raga</label>
+            <select id="ragaSelect"></select>
+          </div>
+          <div class="ctrl">
+            <label>By number</label>
+            <div class="stepper">
+              <button id="prev" aria-label="Previous raga">−</button>
+              <span class="val" id="stepVal">15</span>
+              <button id="next" aria-label="Next raga">+</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- position strip mirror -->
+        <div class="strip-frame" style="margin-bottom:22px">
+          <div class="strip" id="expStrip"></div>
+        </div>
+
+        <div class="scale-block">
+          <div class="scale-card">
+            <div class="hd"><span class="t">Arohanam</span><span class="ar">↗ ascending</span></div>
+            <div class="notes" id="aroNotes"></div>
+          </div>
+          <div class="scale-card">
+            <div class="hd"><span class="t">Avarohanam</span><span class="ar">↘ descending</span></div>
+            <div class="notes" id="avaNotes"></div>
+          </div>
+        </div>
+
+        <div class="play-row">
+          <button class="btn btn-play" id="playAro">▶ Play Arohanam</button>
+          <button class="btn btn-play" id="playAva">▶ Play Avarohanam</button>
+          <button class="btn btn-sec" id="playBoth">⟳ Play Both</button>
+          <button class="btn btn-sec" id="stopBtn">■ Stop</button>
+        </div>
+
+        <div class="equiv" id="equiv"></div>
+        <div class="finger" id="finger"></div>
+
+        <div class="tune-row">
+          <div class="ctrl">
+            <label for="sruti">Sruti (Sa pitch):</label>
+            <select id="sruti">
+              <option value="261.63">1 · C</option>
+              <option value="277.18">1½ · C♯</option>
+              <option value="293.66" selected>2 · D</option>
+              <option value="311.13">2½ · D♯</option>
+              <option value="329.63">3 · E</option>
+              <option value="349.23">4 · F</option>
+              <option value="369.99">4½ · F♯</option>
+              <option value="392.00">5 · G</option>
+            </select>
+          </div>
+          <div class="ctrl" style="flex:1; min-width:200px">
+            <label for="tempo">Pace: <span id="tempoLbl">comfortable</span></label>
+            <input type="range" id="tempo" min="0.42" max="1.0" step="0.02" value="0.62" style="width:100%">
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="note-tip" style="margin-top:16px">The violin sound here is a synthesised bowed tone for learning the scale shape — a guide for the ear, not a substitute for the real instrument under a guru's eye.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="bn">Lakshya's Violin Academy</div>
+    <p>Old Pallavaram, Chennai · Carnatic violin for young learners</p>
+    <p>Courses: Little Strings · Swara Sadhana · Raga Pravesham</p>
+    <p style="margin-top:14px">Guided by Guru Smt. Rama Gurumoorthy</p>
+  </div>
+<div style="margin-top:14px;font-size:0.82rem;opacity:0.95;">Enquiries &amp; free trial &nbsp;·&nbsp; <a href="https://wa.me/919003030454" style="color:#F0C040;text-decoration:none;">WhatsApp +91 90030 30454</a> &nbsp;·&nbsp; <a href="mailto:j.ajaychandran@gmail.com" style="color:#F0C040;text-decoration:none;">j.ajaychandran@gmail.com</a></div>
+</footer>
+
+<script>
+/* ============================================================
+   DATA: 72 Melakarta — derived from the swara-position rules
+   ============================================================ */
+const NAMES=[
+"Kanakangi","Ratnangi","Ganamurti","Vanaspati","Manavati","Tanarupi",
+"Senavati","Hanumatodi","Dhenuka","Natakapriya","Kokilapriya","Rupavati",
+"Gayakapriya","Vakulabharanam","Mayamalavagowla","Chakravakam","Suryakantam","Hatakambari",
+"Jhankaradhwani","Natabhairavi","Keeravani","Kharaharapriya","Gowrimanohari","Varunapriya",
+"Mararanjani","Charukesi","Sarasangi","Harikambhoji","Dheerasankarabharanam","Naganandini",
+"Yagapriya","Ragavardhini","Gangeyabhushani","Vagadheeswari","Shulini","Chalanata",
+"Salagam","Jalarnavam","Jhalavarali","Navaneetam","Pavani","Raghupriya",
+"Gavambhodi","Bhavapriya","Shubhapantuvarali","Shadvidhamargini","Suvarnangi","Divyamani",
+"Dhavalambari","Namanarayani","Kamavardhini","Ramapriya","Gamanashrama","Vishwambari",
+"Shamalangi","Shanmukhapriya","Simhendramadhyamam","Hemavati","Dharmavati","Neetimati",
+"Kantamani","Rishabhapriya","Latangi","Vachaspati","Mechakalyani","Chitrambari",
+"Sucharitra","Jyotiswarupini","Dhatuvardhani","Nasikabhushani","Kosalam","Rasikapriya"];
+
+const POPULAR={8:"“Todi”",15:"a common beginner raga",20:"“Natabhairavi”",22:"“Kharaharapriya”",
+28:"“Harikambhoji”",29:"“Sankarabharanam” — the Western major scale",51:"“Pantuvarali”",
+57:"“Simhendramadhyamam”",65:"“Kalyani”"};
+
+// Ri-Ga combos -> [semitone, label, fullname]
+const RG=[
+ [[1,"Ri₁","Shuddha Rishabham"],[2,"Ga₁","Shuddha Gandharam"]],
+ [[1,"Ri₁","Shuddha Rishabham"],[3,"Ga₂","Sadharana Gandharam"]],
+ [[1,"Ri₁","Shuddha Rishabham"],[4,"Ga₃","Antara Gandharam"]],
+ [[2,"Ri₂","Chatushruti Rishabham"],[3,"Ga₂","Sadharana Gandharam"]],
+ [[2,"Ri₂","Chatushruti Rishabham"],[4,"Ga₃","Antara Gandharam"]],
+ [[3,"Ri₃","Shatshruti Rishabham"],[4,"Ga₃","Antara Gandharam"]]];
+const DN=[
+ [[8,"Da₁","Shuddha Dhaivatam"],[9,"Ni₁","Shuddha Nishadam"]],
+ [[8,"Da₁","Shuddha Dhaivatam"],[10,"Ni₂","Kaishiki Nishadam"]],
+ [[8,"Da₁","Shuddha Dhaivatam"],[11,"Ni₃","Kakali Nishadam"]],
+ [[9,"Da₂","Chatushruti Dhaivatam"],[10,"Ni₂","Kaishiki Nishadam"]],
+ [[9,"Da₂","Chatushruti Dhaivatam"],[11,"Ni₃","Kakali Nishadam"]],
+ [[10,"Da₃","Shatshruti Dhaivatam"],[11,"Ni₃","Kakali Nishadam"]]];
+
+const CHAKRAS=[
+ {ix:1,nm:"Indu",ma:1},{ix:2,nm:"Netra",ma:1},{ix:3,nm:"Agni",ma:1},
+ {ix:4,nm:"Veda",ma:1},{ix:5,nm:"Bana",ma:1},{ix:6,nm:"Rutu",ma:1},
+ {ix:7,nm:"Rishi",ma:2},{ix:8,nm:"Vasu",ma:2},{ix:9,nm:"Brahma",ma:2},
+ {ix:10,nm:"Disi",ma:2},{ix:11,nm:"Rudra",ma:2},{ix:12,nm:"Aditya",ma:2}];
+
+function raga(M){
+  const half = M<=36?0:1;
+  const ma = half===0?1:2;
+  const n=((M-1)%36)+1;
+  const chakraInHalf=Math.ceil(n/6);
+  const pos=((n-1)%6)+1;
+  const rg=RG[chakraInHalf-1], dn=DN[pos-1];
+  const maSemi = ma===1?5:6;
+  const swaras=[
+    {s:0,l:"Sa",full:"Shadjam"},
+    {s:rg[0][0],l:rg[0][1],full:rg[0][2]},
+    {s:rg[1][0],l:rg[1][1],full:rg[1][2]},
+    {s:maSemi,l:ma===1?"Ma₁":"Ma₂",full:ma===1?"Shuddha Madhyamam":"Prati Madhyamam"},
+    {s:7,l:"Pa",full:"Panchamam"},
+    {s:dn[0][0],l:dn[0][1],full:dn[0][2]},
+    {s:dn[1][0],l:dn[1][1],full:dn[1][2]},
+    {s:12,l:"Ṡa",full:"Upper Shadjam"}];
+  const chakraGlobal = half===0?chakraInHalf:chakraInHalf+6;
+  return {M,name:NAMES[M-1],ma,swaras,chakra:CHAKRAS[chakraGlobal-1],pos};
+}
+
+/* ============================================================
+   AUDIO ENGINE — bowed-violin-like synthesis
+   ============================================================ */
+let AC=null, master=null, reverbIn=null, activeNodes=[], timers=[];
+function audio(){
+  if(AC) return AC;
+  AC=new (window.AudioContext||window.webkitAudioContext)();
+  master=AC.createGain(); master.gain.value=0.85; master.connect(AC.destination);
+  const conv=AC.createConvolver();
+  const len=Math.floor(AC.sampleRate*1.5), buf=AC.createBuffer(2,len,AC.sampleRate);
+  for(let ch=0;ch<2;ch++){const d=buf.getChannelData(ch);
+    for(let i=0;i<len;i++){d[i]=(Math.random()*2-1)*Math.pow(1-i/len,3.0);}}
+  conv.buffer=buf;
+  const wet=AC.createGain(); wet.gain.value=0.16; conv.connect(wet); wet.connect(master);
+  reverbIn=conv;
+  return AC;
+}
+function freqOf(semi){ return SA * Math.pow(2, semi/12); }
+let SA=293.66;
+
+function voice(freq,t0,dur){
+  const ac=AC;
+  const o1=ac.createOscillator(); o1.type='sawtooth'; o1.frequency.value=freq;
+  const o2=ac.createOscillator(); o2.type='sawtooth'; o2.frequency.value=freq; o2.detune.value=-7;
+  const o3=ac.createOscillator(); o3.type='triangle'; o3.frequency.value=freq; o3.detune.value=5;
+  // vibrato
+  const lfo=ac.createOscillator(); lfo.type='sine'; lfo.frequency.value=5.4;
+  const lg=ac.createGain(); lg.gain.setValueAtTime(0,t0);
+  lg.gain.linearRampToValueAtTime(13, t0+Math.min(0.22,dur*0.4));
+  lfo.connect(lg); lg.connect(o1.detune); lg.connect(o2.detune); lg.connect(o3.detune);
+  // filter (bow brightness)
+  const f=ac.createBiquadFilter(); f.type='lowpass'; f.Q.value=0.8;
+  f.frequency.setValueAtTime(800,t0);
+  f.frequency.linearRampToValueAtTime(Math.min(4200,freq*6.5),t0+0.09);
+  f.frequency.linearRampToValueAtTime(Math.min(3000,freq*5),t0+dur);
+  // amp env
+  const a=ac.createGain();
+  const peak=0.20, sus=0.15;
+  a.gain.setValueAtTime(0.0001,t0);
+  a.gain.linearRampToValueAtTime(peak,t0+0.055);
+  a.gain.linearRampToValueAtTime(sus,t0+0.16);
+  a.gain.setValueAtTime(sus,t0+Math.max(0.18,dur*0.82));
+  a.gain.exponentialRampToValueAtTime(0.0008,t0+dur);
+  const mix=ac.createGain(); mix.gain.value=0.6;
+  o1.connect(mix); o2.connect(mix); o3.connect(f); mix.connect(f);
+  f.connect(a); a.connect(master); a.connect(reverbIn);
+  [o1,o2,o3,lfo].forEach(o=>{o.start(t0); o.stop(t0+dur+0.06); activeNodes.push(o);});
+}
+
+function stopAll(){
+  timers.forEach(t=>clearTimeout(t)); timers=[];
+  activeNodes.forEach(n=>{try{n.stop();}catch(e){}}); activeNodes=[];
+  clearLit(); setBusy(false);
+}
+
+let busy=false;
+function setBusy(b){
+  busy=b;
+  document.querySelectorAll('.btn-play').forEach(x=>x.classList.toggle('busy',b));
+}
+
+/* play a list of swara objects in order; highlight via callbacks */
+function playSwaras(list, dir){
+  if(busy) return;
+  audio(); if(AC.state==='suspended') AC.resume();
+  setBusy(true); clearLit();
+  const noteLen = parseFloat(tempo.value);      // seconds visible per note
+  const step = noteLen*0.96;
+  const t0 = AC.currentTime + 0.06;
+  list.forEach((sw,i)=>{
+    voice(freqOf(sw.s), t0 + i*step, noteLen);
+    const tm=setTimeout(()=>highlight(dir,i,sw.s), Math.max(0,(t0+i*step-AC.currentTime)*1000));
+    timers.push(tm);
+  });
+  const end=setTimeout(()=>{ setBusy(false); clearLit(); }, (list.length*step+0.25)*1000);
+  timers.push(end);
+}
+
+/* ============================================================
+   RENDER + STATE
+   ============================================================ */
+let current=15;
+
+// sapta swara cards
+const SAPTA=[
+ {l:"Sa",full:"Shadjam",s:0,fixed:true},
+ {l:"Ri",full:"Rishabham",s:2,fixed:false},
+ {l:"Ga",full:"Gandharam",s:4,fixed:false},
+ {l:"Ma",full:"Madhyamam",s:5,fixed:false},
+ {l:"Pa",full:"Panchamam",s:7,fixed:true},
+ {l:"Da",full:"Dhaivatam",s:9,fixed:false},
+ {l:"Ni",full:"Nishadam",s:11,fixed:false}];
+function buildSapta(){
+  const row=document.getElementById('saptaRow');
+  SAPTA.forEach(sw=>{
+    const c=document.createElement('button');
+    c.className='scard'+(sw.fixed?' fixed':'');
+    c.innerHTML=`<div class="sym">${sw.l}</div><div class="full">${sw.full}</div>`;
+    c.onclick=()=>{audio(); if(AC.state==='suspended')AC.resume();
+      voice(freqOf(sw.s),AC.currentTime+0.02,0.7);
+      c.classList.add('playing'); setTimeout(()=>c.classList.remove('playing'),700);};
+    row.appendChild(c);
+  });
+}
+
+// 12 (13) position strip — generic builder
+const POSITIONS=[
+ {s:0,pl:"Sa",sub:"Shadjam",fixed:1},
+ {s:1,pl:"Ri₁",sub:"·"},
+ {s:2,pl:"Ri₂ / Ga₁",sub:"·"},
+ {s:3,pl:"Ri₃ / Ga₂",sub:"·"},
+ {s:4,pl:"Ga₃",sub:"·"},
+ {s:5,pl:"Ma₁",sub:"·"},
+ {s:6,pl:"Ma₂",sub:"·"},
+ {s:7,pl:"Pa",sub:"Panchamam",fixed:1},
+ {s:8,pl:"Da₁",sub:"·"},
+ {s:9,pl:"Da₂ / Ni₁",sub:"·"},
+ {s:10,pl:"Da₃ / Ni₂",sub:"·"},
+ {s:11,pl:"Ni₃",sub:"·"},
+ {s:12,pl:"Ṡa",sub:"upper",fixed:1}];
+function buildStrip(el,interactive){
+  el.innerHTML='';
+  POSITIONS.forEach(p=>{
+    const d=document.createElement(interactive?'button':'div');
+    d.className='pos'; d.dataset.semi=p.s; if(p.fixed) d.dataset.fixed='1';
+    d.innerHTML=`<div class="pl">${p.pl}</div><div class="sub">${p.sub}</div>`;
+    if(interactive){ d.onclick=()=>{audio(); if(AC.state==='suspended')AC.resume();
+      voice(freqOf(p.s),AC.currentTime+0.02,0.6);
+      d.classList.add('beat'); setTimeout(()=>d.classList.remove('beat'),360);};}
+    el.appendChild(d);
+  });
+}
+
+// chakra grid
+function buildChakras(){
+  const g=document.getElementById('chakraGrid');
+  CHAKRAS.forEach(ck=>{
+    const first=(ck.ix-1)*6+1;
+    const rg=RG[((ck.ix-1)%6)];
+    const card=document.createElement('button');
+    card.className='ck'; card.dataset.ma=ck.ma;
+    const members=[];
+    for(let i=0;i<6;i++) members.push(NAMES[first-1+i]);
+    card.innerHTML=`<div class="ix">Chakra ${ck.ix} · ${ck.ma===1?'Ma₁':'Ma₂'}</div>
+      <div class="nm">${ck.nm}</div>
+      <div class="rg">${rg[0][1]} ${rg[1][1]} · ragas ${first}–${first+5}</div>
+      <div class="ra">${members.join(' · ')}</div>`;
+    card.onclick=()=>{ select(first); document.getElementById('explorer').scrollIntoView({behavior:'smooth'}); };
+    g.appendChild(card);
+  });
+}
+
+// explorer note chips
+function noteChips(container, swaras){
+  container.innerHTML='';
+  swaras.forEach((sw,i)=>{
+    const n=document.createElement('div');
+    n.className='note'; n.dataset.idx=i;
+    n.innerHTML=`${sw.l}<small>${sw.full.split(' ')[0]}</small>`;
+    container.appendChild(n);
+  });
+}
+
+function clearLit(){
+  document.querySelectorAll('.note.lit').forEach(n=>n.classList.remove('lit'));
+  document.querySelectorAll('#expStrip .pos.beat').forEach(p=>p.classList.remove('beat'));
+}
+// dir: 'aro' | 'ava'  ; i = index within that sequence
+function highlight(dir,i,semi){
+  clearLit();
+  const box=dir==='aro'?document.getElementById('aroNotes'):document.getElementById('avaNotes');
+  const chip=box.querySelector(`.note[data-idx="${i}"]`);
+  if(chip) chip.classList.add('lit');
+  document.querySelectorAll('#expStrip .pos').forEach(p=>{
+    if(+p.dataset.semi===semi) p.classList.add('beat');
+  });
+}
+
+function litStrip(swaras){
+  const used=new Set(swaras.map(s=>s.s));
+  document.querySelectorAll('#expStrip .pos').forEach(p=>{
+    p.classList.toggle('on', used.has(+p.dataset.semi));
+  });
+}
+
+// build select
+function buildSelect(){
+  const sel=document.getElementById('ragaSelect');
+  for(let m=1;m<=72;m++){
+    const o=document.createElement('option');
+    o.value=m; o.textContent=`${m}. ${NAMES[m-1]}`;
+    sel.appendChild(o);
+  }
+}
+
+function select(M){
+  current=Math.max(1,Math.min(72,M));
+  const r=raga(current);
+  document.getElementById('eNo').textContent=current;
+  document.getElementById('eName').textContent=r.name;
+  document.getElementById('stepVal').textContent=current;
+  document.getElementById('ragaSelect').value=current;
+
+  const aro=r.swaras, ava=[...r.swaras].slice().reverse();
+  noteChips(document.getElementById('aroNotes'),aro);
+  noteChips(document.getElementById('avaNotes'),ava);
+  litStrip(r.swaras);
+
+  // meta line
+  document.getElementById('eMeta').innerHTML=
+    `<span>Chakra ${r.chakra.ix} · ${r.chakra.nm}</span>`+
+    `<span>${r.ma===1?'Shuddha':'Prati'} Madhyamam (Ma${r.ma})</span>`+
+    `<span>Position ${r.pos} of 6</span>`;
+
+  // equiv note
+  const eq=document.getElementById('equiv');
+  if(POPULAR[current]){
+    eq.style.display='block';
+    eq.innerHTML=`<b>Good to know:</b> Raga ${current} is ${POPULAR[current]}.`;
+  } else { eq.style.display='none'; }
+
+  // fingering hint
+  const labels=r.swaras.map(s=>s.l).join('  ');
+  document.getElementById('finger').innerHTML=
+    `<b>Arohanam:</b> ${labels} &nbsp;·&nbsp; <b>Avarohanam:</b> ${ava.map(s=>s.l).join('  ')}`;
+  clearLit();
+}
+
+/* wire up */
+let tempo;
+function init(){
+  buildSapta();
+  buildStrip(document.getElementById('posStrip'),true);
+  buildStrip(document.getElementById('expStrip'),false);
+  buildChakras();
+  buildSelect();
+  tempo=document.getElementById('tempo');
+
+  document.getElementById('ragaSelect').onchange=e=>{stopAll();select(+e.target.value);};
+  document.getElementById('prev').onclick=()=>{stopAll();select(current-1);};
+  document.getElementById('next').onclick=()=>{stopAll();select(current+1);};
+  document.getElementById('sruti').onchange=e=>{SA=parseFloat(e.target.value);};
+  SA=parseFloat(document.getElementById('sruti').value);
+
+  tempo.oninput=()=>{
+    const v=parseFloat(tempo.value);
+    document.getElementById('tempoLbl').textContent = v>0.8?'slow & clear':v>0.55?'comfortable':'flowing';
+  };
+
+  document.getElementById('playAro').onclick=()=>{stopAll(); playSwaras(raga(current).swaras,'aro');};
+  document.getElementById('playAva').onclick=()=>{stopAll(); playSwaras([...raga(current).swaras].reverse(),'ava');};
+  document.getElementById('playBoth').onclick=()=>{
+    stopAll(); audio(); if(AC.state==='suspended')AC.resume();
+    const r=raga(current), aro=r.swaras, ava=[...r.swaras].reverse();
+    setBusy(true); clearLit();
+    const len=parseFloat(tempo.value), step=len*0.96, gap=step*0.6;
+    const t0=AC.currentTime+0.06;
+    aro.forEach((sw,i)=>{ voice(freqOf(sw.s),t0+i*step,len);
+      timers.push(setTimeout(()=>highlight('aro',i,sw.s),Math.max(0,(t0+i*step-AC.currentTime)*1000)));});
+    const base=t0+aro.length*step+gap;
+    ava.forEach((sw,i)=>{ voice(freqOf(sw.s),base+i*step,len);
+      timers.push(setTimeout(()=>highlight('ava',i,sw.s),Math.max(0,(base+i*step-AC.currentTime)*1000)));});
+    timers.push(setTimeout(()=>{setBusy(false);clearLit();},((base+ava.length*step+0.25-AC.currentTime))*1000));
+  };
+  document.getElementById('stopBtn').onclick=stopAll;
+
+  select(15);
+}
+document.addEventListener('DOMContentLoaded',init);
+</script>
+</body>
+</html>

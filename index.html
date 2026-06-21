@@ -83,49 +83,6 @@
   .nav-dropdown-label { display: none; }
   .nav-dropdown a { padding: 0.6rem 0 0.6rem 1.5rem !important; color: #D4A97A !important; font-size: 0.85rem !important; border-bottom: 1px solid rgba(240,192,64,0.08) !important; }
 }
-/* ── Blog dropdown ── */
-.nav-item { position: relative; }
-.nav-item > a { display: flex; align-items: center; gap: 4px; }
-.nav-item > a::after { content: '▾'; font-size: 0.65rem; opacity: 0.7; }
-.nav-dropdown {
-  display: none;
-  position: absolute;
-  top: calc(100% + 3px);
-  left: 0;
-  min-width: 240px;
-  background: #5A1010;
-  border: 1px solid rgba(240,192,64,0.3);
-  border-top: 2px solid var(--saffron-light);
-  border-radius: 0 0 6px 6px;
-  z-index: 200;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-}
-.nav-item:hover .nav-dropdown,
-.nav-item:focus-within .nav-dropdown { display: block; }
-.nav-dropdown a {
-  display: block;
-  padding: 0.65rem 1rem !important;
-  border-bottom: 1px solid rgba(240,192,64,0.12) !important;
-  font-size: 0.85rem !important;
-  color: #F5DEB3 !important;
-  white-space: nowrap;
-}
-.nav-dropdown a:last-child { border-bottom: none !important; }
-.nav-dropdown a:hover { background: rgba(200,82,10,0.25) !important; color: var(--gold-light) !important; }
-.nav-dropdown-label {
-  display: block;
-  font-size: 0.65rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: rgba(240,192,64,0.5);
-  padding: 0.5rem 1rem 0.2rem;
-}
-@media (max-width: 768px) {
-  .nav-item > a::after { display: none; }
-  .nav-dropdown { display: block; position: static; background: transparent; border: none; box-shadow: none; min-width: unset; }
-  .nav-dropdown-label { display: none; }
-  .nav-dropdown a { padding: 0.6rem 0 0.6rem 1.2rem !important; color: #D4A97A !important; }
-}
   .hero {
     background: linear-gradient(135deg, var(--maroon) 0%, #5A1010 60%, #3A0A0A 100%);
     position: relative; overflow: hidden;
@@ -148,6 +105,35 @@
   .btn-primary:hover { background: #A84208; transform: translateY(-1px); }
   .btn-outline { background: transparent; color: var(--gold-light); padding: 0.8rem 2rem; border: 1.5px solid var(--gold-light); border-radius: 4px; font-family: 'Noto Serif', serif; font-size: 1rem; cursor: pointer; text-decoration: none; display: inline-block; transition: background 0.2s; }
   .btn-outline:hover { background: rgba(240,192,64,0.1); }
+
+  /* ===== INTERACTIVE LESSONS (featured) ===== */
+  .explore-section { background: var(--maroon); }
+  .explore-section .section-title { color: var(--gold-light); }
+  .explore-section .section-label { color: var(--saffron-light); }
+  .explore-section .border-accent { background: linear-gradient(90deg, var(--saffron-light), var(--gold-light)); }
+  .explore-intro { color: #E8D4B5; max-width: 700px; margin-bottom: 2rem; font-size: 1.02rem; line-height: 1.85; }
+  .explore-intro em { color: #F0C040; font-style: italic; }
+  .explore-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.3rem; }
+  .explore-card {
+    display: flex; flex-direction: column;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(240,192,64,0.25);
+    border-top: 4px solid var(--saffron-light);
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-decoration: none;
+    transition: transform 0.15s, box-shadow 0.2s, background 0.2s;
+  }
+  .explore-card.thala { border-top-color: var(--gold-light); }
+  .explore-card.mela { border-top-color: var(--maroon-soft); }
+  .explore-card:hover { transform: translateY(-4px); background: rgba(255,255,255,0.1); box-shadow: 0 12px 30px rgba(0,0,0,0.32); }
+  .explore-card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.8rem; }
+  .explore-icon { font-size: 2.2rem; line-height: 1; }
+  .explore-tag { font-size: 0.64rem; letter-spacing: 0.1em; text-transform: uppercase; color: #C8A040; border: 1px solid rgba(240,192,64,0.3); border-radius: 99px; padding: 3px 10px; white-space: nowrap; }
+  .explore-card h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: #FFF8E7; font-weight: 600; margin-bottom: 0.5rem; }
+  .explore-card p { font-size: 0.9rem; color: #D4A97A; line-height: 1.7; flex: 1; margin-bottom: 1rem; }
+  .explore-cta { font-size: 0.9rem; color: #F0C040; font-weight: 500; }
+  .explore-card:hover .explore-cta { text-decoration: underline; }
 
   section { padding: 4rem 2rem; }
   .section-inner { max-width: 900px; margin: 0 auto; }
@@ -199,6 +185,26 @@
   .form-group select option { background: var(--maroon); color: #FFF8E7; }
   .form-group textarea { resize: vertical; min-height: 80px; }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+
+  /* ── Enquiry cards (WhatsApp + Email) ── */
+  .enquiry-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; max-width: 720px; margin: 0.5rem 0; }
+  .enquiry-card {
+    display: flex; flex-direction: column; align-items: flex-start; gap: 0.35rem;
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(240,192,64,0.3);
+    border-left: 4px solid var(--saffron-light);
+    border-radius: 8px;
+    padding: 1.4rem 1.5rem;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.1s, border-color 0.2s;
+  }
+  .enquiry-card:hover { background: rgba(255,255,255,0.12); border-left-color: var(--gold-light); transform: translateY(-2px); }
+  .enquiry-icon { font-size: 1.8rem; line-height: 1; }
+  .enquiry-label { font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; color: var(--saffron-light); font-weight: 600; }
+  .enquiry-value { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: #FFF8E7; font-weight: 600; word-break: break-word; }
+  .enquiry-cta { font-size: 0.82rem; color: var(--gold-light); margin-top: 0.2rem; }
+  .enquiry-meta { color: #B8916A; font-size: 0.85rem; margin-top: 1.6rem; }
+  @media (max-width: 640px) { .enquiry-grid { grid-template-columns: 1fr; } }
 
   footer { background: #1A0A02; text-align: center; padding: 2rem; border-top: 2px solid var(--saffron); }
   footer p { color: #7A5A3A; font-size: 0.85rem; }
@@ -675,29 +681,35 @@
   <div class="nav-links" id="navLinks">
     <a href="#about" onclick="closeNav()">About</a>
     <a href="#courses" onclick="closeNav()">Courses</a>
-    <a href="#carnatic" onclick="closeNav()">Carnatic Music</a>
-    <a href="#strings" onclick="closeNav()">Strings</a>
-    <a href="#sapa" onclick="closeNav()">Sa–Pa</a>
-    <a href="#varisai" onclick="closeNav()">Lessons</a>
+    <div class="nav-item">
+      <a href="#explore" onclick="closeNav()">Explore</a>
+      <div class="nav-dropdown">
+        <span class="nav-dropdown-label">Interactive Lessons</span>
+        <a href="frequency-and-swaras.html">🔊 &nbsp;Frequency &amp; Swaras Lab</a>
+        <a href="thala-basics.html">🥁 &nbsp;Thala — Rhythm Player</a>
+        <a href="melakarta-explorer.html">🎼 &nbsp;72 Melakarta Explorer</a>
+      </div>
+    </div>
+    <div class="nav-item">
+      <a href="#carnatic" onclick="closeNav()">Theory</a>
+      <div class="nav-dropdown">
+        <span class="nav-dropdown-label">Carnatic Foundations</span>
+        <a href="#carnatic" onclick="closeNav()">📖 &nbsp;Introduction to Carnatic Music</a>
+        <a href="#strings" onclick="closeNav()">🎻 &nbsp;The Violin &amp; Its Strings</a>
+        <a href="#sapa" onclick="closeNav()">◆ &nbsp;Sa–Pa–Sa–Pa–Sa</a>
+        <a href="#varisai" onclick="closeNav()">🎶 &nbsp;The Five Varisais</a>
+      </div>
+    </div>
     <a href="#philosophy" onclick="closeNav()">Our Belief</a>
     <div class="nav-item">
-  <a href="blog-sound-vibration-carnatic.html">Blog</a>
-  <div class="nav-dropdown">
-    <span class="nav-dropdown-label">Beginner's Corner</span>
-    <a href="blog-sound-vibration-carnatic.html">
-      🎵 &nbsp;Sound, Vibration &amp; Carnatic Music
-    </a>
-  </div>
-      <!-- Blog dropdown -->
-<div class="nav-item">
-  <a href="blog-carnatic-music-and-kids-brain.html" onclick="closeNav()">Blog</a>
-  <div class="nav-dropdown">
-    <span class="nav-dropdown-label">Beginner's Corner</span>
-    <a href="blog-sound-vibration-carnatic.html">🎵 &nbsp;Sound, Vibration &amp; Carnatic Music</a>
-    <a href="blog-carnatic-music-and-kids-brain.html">🧠 &nbsp;What Carnatic Music Does to Your Child's Brain</a>
-  </div>
-</div>
-</div>    <a href="#contact" onclick="closeNav()">Enroll</a>
+      <a href="blog-sound-vibration-carnatic.html">Blog</a>
+      <div class="nav-dropdown">
+        <span class="nav-dropdown-label">Beginner's Corner</span>
+        <a href="blog-sound-vibration-carnatic.html">🎵 &nbsp;Sound, Vibration &amp; Carnatic Music</a>
+        <a href="blog-carnatic-music-and-kids-brain.html">🧠 &nbsp;What Carnatic Music Does to Your Child's Brain</a>
+      </div>
+    </div>
+    <a href="#contact" onclick="closeNav()">Enroll</a>
   </div>
 </nav>
 
@@ -708,8 +720,50 @@
   <span class="divider-ornament">— ♩ ♪ ♫ —</span>
   <p class="hero-tagline">Where the timeless beauty of Carnatic music meets the joy of young minds. Learn violin the traditional way — with heart, patience, and devotion.</p>
   <div class="hero-btns">
-    <a href="#contact" class="btn-primary">Enroll Now</a>
-    <a href="#courses" class="btn-outline">View Courses</a>
+    <a href="#explore" class="btn-primary">🎬 Explore Interactive Lessons</a>
+    <a href="#contact" class="btn-outline">Enroll Now</a>
+  </div>
+</section>
+
+<!-- ===== INTERACTIVE LESSONS (featured) ===== -->
+<section class="explore-section" id="explore">
+  <div class="section-inner">
+    <div class="section-label">Learn by Doing</div>
+    <h2 class="section-title">Interactive Lessons</h2>
+    <div class="border-accent"></div>
+    <p class="explore-intro">Step inside the music. These hands-on, sound-rich lessons let your child <em>hear</em> and <em>play</em> with the very ideas behind Carnatic violin — pitch, rhythm and the architecture of ragas — right in the browser. Best opened on the live site so the sound and microphone features work fully.</p>
+
+    <div class="explore-grid">
+      <a class="explore-card freq" href="frequency-and-swaras.html">
+        <div class="explore-card-top">
+          <span class="explore-icon">🔊</span>
+          <span class="explore-tag">Interactive · Audio</span>
+        </div>
+        <h3>Frequency &amp; Swaras Lab</h3>
+        <p>Hear a real bowed-violin voice, slide the Sruthi to retune every swara, climb the swara staircase, and let the microphone detect the note you play. The science of sound, made playable.</p>
+        <span class="explore-cta">Launch the lab →</span>
+      </a>
+
+      <a class="explore-card thala" href="thala-basics.html">
+        <div class="explore-card-top">
+          <span class="explore-icon">🥁</span>
+          <span class="explore-tag">Interactive · Audio</span>
+        </div>
+        <h3>Thala — The Rhythm Player</h3>
+        <p>Feel the heartbeat of Carnatic music. Play any of the seven Sapta Thalas across five jatis, set the tempo, and watch the Āvartanam cycle count along in time with you.</p>
+        <span class="explore-cta">Open the player →</span>
+      </a>
+
+      <a class="explore-card mela" href="melakarta-explorer.html">
+        <div class="explore-card-top">
+          <span class="explore-icon">🎼</span>
+          <span class="explore-tag">Interactive</span>
+        </div>
+        <h3>72 Melakarta Explorer</h3>
+        <p>See how all 72 parent ragas are built from just twelve swara positions. Explore the chakras, move through ragas one by one, and uncover the elegant logic behind the system.</p>
+        <span class="explore-cta">Start exploring →</span>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -1507,76 +1561,24 @@
     <div class="section-label">Get in Touch</div>
     <h2 class="section-title">Enroll Your Child</h2>
     <div class="border-accent"></div>
-    <div class="contact-grid">
-      <div class="contact-info">
-        <p>We'd love to welcome your child into Lakshya's Violin Academy. Fill in the form and we'll get back to you within 24 hours to schedule a free trial class.</p>
-        <br>
-        <div class="contact-detail">
-          <span class="contact-detail-icon">📍</span>
-          <div class="contact-detail-text">
-            <span class="contact-detail-label">Location</span>
-            Old Pallavaram, Chennai
-          </div>
-        </div>
-        <div class="contact-detail">
-          <span class="contact-detail-icon">📱</span>
-          <div class="contact-detail-text">
-            <span class="contact-detail-label">WhatsApp / Phone</span>
-            +91 9003030454
-          </div>
-        </div>
-        <div class="contact-detail">
-          <span class="contact-detail-icon">✉️</span>
-          <div class="contact-detail-text">
-            <span class="contact-detail-label">Email</span>
-            j.ajaychandran@gmail.com
-          </div>
-        </div>
-        <div class="contact-detail">
-          <span class="contact-detail-icon">🕐</span>
-          <div class="contact-detail-text">
-            <span class="contact-detail-label">Class Timings</span>
-            Weekdays &amp; Weekends · Flexible slots
-          </div>
-        </div>
-      </div>
-      <div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Parent's Name</label>
-            <input type="text" placeholder="Your name">
-          </div>
-          <div class="form-group">
-            <label>Child's Name</label>
-            <input type="text" placeholder="Child's name">
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Child's Age</label>
-            <input type="number" placeholder="e.g. 7">
-          </div>
-          <div class="form-group">
-            <label>Course Interest</label>
-            <select>
-              <option value="">Select a course</option>
-              <option>Little Strings (5–8 yrs)</option>
-              <option>Swara Sadhana (8–12 yrs)</option>
-              <option>Raga Pravesham (10+ yrs)</option>
-            </select>
-          </div>
-        </div>
-        <div class="form-group">
-          <label>Phone / WhatsApp</label>
-          <input type="tel" placeholder="+91 XXXXX XXXXX">
-        </div>
-        <div class="form-group">
-          <label>Message (optional)</label>
-          <textarea placeholder="Any questions or details you'd like to share..."></textarea>
-        </div>
-        <button class="btn-primary" style="width:100%; font-size:1rem; padding: 0.9rem;">Request Free Trial Class →</button>
-      </div>
+    <p style="color:#D4A97A; max-width:640px; margin-bottom:1.8rem;">We'd love to welcome your child into Lakshya's Violin Academy. For a free trial class or any enquiries, reach out on WhatsApp or email — we usually reply within 24 hours.</p>
+
+    <div class="enquiry-grid">
+      <a class="enquiry-card" href="https://wa.me/919003030454" target="_blank" rel="noopener">
+        <span class="enquiry-icon">📱</span>
+        <span class="enquiry-label">WhatsApp</span>
+        <span class="enquiry-value">+91 90030 30454</span>
+        <span class="enquiry-cta">Tap to message →</span>
+      </a>
+      <a class="enquiry-card" href="mailto:j.ajaychandran@gmail.com">
+        <span class="enquiry-icon">✉️</span>
+        <span class="enquiry-label">Email</span>
+        <span class="enquiry-value">j.ajaychandran@gmail.com</span>
+        <span class="enquiry-cta">Tap to email →</span>
+      </a>
     </div>
+
+    <p class="enquiry-meta">📍 Old Pallavaram, Chennai &nbsp;·&nbsp; 🕐 Weekdays &amp; Weekends · Flexible slots</p>
   </div>
 </section>
 
