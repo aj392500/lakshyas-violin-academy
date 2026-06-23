@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="An interactive Gamaka Explorer for young violin students — see and hear the oscillations, slides and stresses that give Carnatic music its soul: kampitam, jaaru, nokku, sphuritam and more, with a real bowed-violin voice and an animated pitch-trace for every ornament." />
+<title>Gamaka Explorer — Hear the Oscillations | Lakshya's Violin Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Noto+Serif:wght@400;600&display=swap" rel="stylesheet" />
+<style>
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --maroon:#7B1E1E; --maroon-soft:#A94040; --saffron:#C8520A; --saffron-light:#F5A623;
+    --gold:#F0C040; --gold-deep:#B8860B; --cream:#FBF6EE; --cream2:#F2E8D5;
+    --border:#D4B896; --text-dark:#2C1A0A; --text-mid:#5C3A1A; --text-soft:#7A5A3A;
+    --green:#1d8a4e; --green-bg:#e4f5ea; --teal:#1d6e5a;
+  }
+  html{scroll-behavior:smooth;}
+  body{font-family:'Noto Serif',Georgia,serif;background:var(--cream);color:var(--text-dark);line-height:1.7;}
+
+  /* ===== top ribbon (shared with other lab pages) ===== */
+  .lva-ribbon{background:#7B1E1E;border-bottom:3px solid #F5A623;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:0 1.3rem;}
+  .lva-ribbon a{text-decoration:none;}
+  .lva-ribbon .lva-brand{color:#F0C040;font-family:'Playfair Display',serif;font-weight:700;font-size:1rem;padding:0.7rem 0;white-space:nowrap;}
+  .lva-ribbon .lva-links{display:flex;flex-wrap:wrap;align-items:center;}
+  .lva-ribbon .lva-links a{color:#F5DEB3;font-size:0.72rem;letter-spacing:0.07em;text-transform:uppercase;padding:0.75rem 0.6rem;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;white-space:nowrap;}
+  .lva-ribbon .lva-links a:hover{color:#F0C040;border-bottom-color:#F0C040;}
+  .lva-ribbon .lva-links a.cur{color:#F0C040;border-bottom-color:#F0C040;}
+  @media(max-width:620px){.lva-ribbon{padding:0 0.7rem;}.lva-ribbon .lva-brand{font-size:0.82rem;}.lva-ribbon .lva-links a{padding:0.5rem 0.38rem;font-size:0.6rem;}}
+
+  /* ===== hero ===== */
+  .hero{background:linear-gradient(135deg,var(--maroon) 0%,#5A1010 60%,#3A0A0A 100%);padding:3rem 1.5rem 2.6rem;text-align:center;position:relative;overflow:hidden;}
+  .hero::before{content:'〰';position:absolute;top:6px;right:30px;font-size:6rem;color:rgba(240,192,64,0.09);}
+  .hero .eyebrow{font-size:0.74rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--saffron-light);margin-bottom:0.7rem;}
+  .hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,5vw,3rem);color:#FFF8E7;font-weight:700;line-height:1.15;}
+  .hero h1 span{color:var(--gold);}
+  .hero .tamil{font-size:1.05rem;color:#E8C49E;font-style:italic;margin:0.4rem 0 0.8rem;}
+  .hero p{color:#D4A97A;max-width:650px;margin:0 auto;font-size:0.98rem;line-height:1.8;}
+
+  .wrap{max-width:960px;margin:0 auto;padding:2rem 1.2rem 4rem;}
+
+  .panel{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.4rem 1.5rem;box-shadow:0 6px 22px rgba(74,44,10,0.07);margin-bottom:1.4rem;}
+  .panel h2{font-family:'Playfair Display',serif;color:var(--maroon);font-size:1.4rem;font-weight:700;margin-bottom:0.5rem;}
+  .panel h2 .ta{font-family:'Noto Serif',serif;font-size:0.95rem;color:var(--saffron);font-style:italic;font-weight:400;margin-left:0.4rem;}
+  .panel p{color:var(--text-mid);font-size:0.96rem;margin-bottom:0.7rem;}
+  .panel p:last-child{margin-bottom:0;}
+  .panel .lead{font-size:1.02rem;}
+
+  .note-strip{background:#FDF3E3;border:1px solid #E0C58A;border-left:4px solid var(--saffron);border-radius:9px;padding:0.85rem 1rem;font-size:0.86rem;color:var(--text-mid);}
+  .note-strip b{color:var(--maroon);}
+
+  /* ===== shared control bar ===== */
+  .ctlbar{display:grid;grid-template-columns:1.1fr 1.3fr 1fr;gap:1.2rem 1.5rem;align-items:end;}
+  @media(max-width:680px){.ctlbar{grid-template-columns:1fr;}}
+  .ctl{display:flex;flex-direction:column;gap:0.45rem;}
+  .ctl-label{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-soft);font-weight:600;display:flex;justify-content:space-between;align-items:center;}
+  .ctl-label b{color:var(--saffron);font-family:'Playfair Display',serif;font-size:0.95rem;}
+  input[type=range]{width:100%;-webkit-appearance:none;height:7px;border-radius:7px;background:linear-gradient(90deg,var(--saffron),var(--gold));outline:none;}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--maroon);border:2px solid var(--gold);cursor:pointer;}
+  input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--maroon);border:2px solid var(--gold);cursor:pointer;}
+
+  .seg{display:flex;gap:5px;flex-wrap:wrap;}
+  .seg button{flex:1;min-width:38px;font-family:'Playfair Display',serif;font-size:0.95rem;padding:0.42rem 0.3rem;border:1px solid var(--border);background:var(--cream);color:var(--text-mid);border-radius:7px;cursor:pointer;transition:all .15s;}
+  .seg button.on{background:var(--maroon);color:var(--gold);border-color:var(--maroon);}
+  .seg button:hover{border-color:var(--saffron);}
+
+  .btn{font-family:'Noto Serif',serif;font-size:0.92rem;padding:0.62rem 1rem;border:none;border-radius:8px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:7px;transition:transform .1s,background .2s;}
+  .btn:active{transform:translateY(1px);}
+  .btn-sa{background:var(--teal);color:#fff;border-bottom:3px solid #124d3f;width:100%;font-size:0.98rem;}
+  .btn-sa.on{background:#b03a2a;border-bottom-color:#7a2418;}
+
+  /* ===== gamaka cards ===== */
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem;}
+  @media(max-width:680px){.grid{grid-template-columns:1fr;}}
+  .gcard{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.1rem 1.15rem 1.2rem;box-shadow:0 5px 18px rgba(74,44,10,0.06);display:flex;flex-direction:column;}
+  .gcard.ref{border-color:#C8A040;background:#FFFDF7;}
+  .gcard .ghead{display:flex;align-items:baseline;justify-content:space-between;gap:0.5rem;flex-wrap:wrap;}
+  .gcard .gname{font-family:'Playfair Display',serif;font-size:1.18rem;font-weight:700;color:var(--maroon);}
+  .gcard .gta{font-family:'Noto Serif',serif;font-size:0.9rem;color:var(--saffron);font-style:italic;}
+  .gcard .gtag{font-size:0.6rem;letter-spacing:0.09em;text-transform:uppercase;color:var(--text-soft);background:var(--cream2);border:1px solid var(--border);border-radius:99px;padding:0.18rem 0.55rem;white-space:nowrap;}
+  .gcard .gdesc{font-size:0.85rem;color:var(--text-mid);margin:0.55rem 0 0.5rem;line-height:1.6;flex:1;}
+
+  .viz{width:100%;background:var(--cream);border:1px solid var(--border);border-radius:10px;margin:0.3rem 0 0.7rem;}
+  .viz .grid-ln{stroke:#E4D2B0;stroke-width:1;}
+  .viz .base-ln{stroke:var(--gold-deep);stroke-width:1.3;stroke-dasharray:3 3;}
+  .viz .lbl{font-family:'Playfair Display',serif;font-size:9px;fill:var(--text-soft);}
+  .viz .lbl.base{fill:var(--gold-deep);font-weight:700;}
+  .viz .trace{fill:none;stroke:var(--saffron);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;}
+  .viz .dot{fill:var(--maroon);stroke:var(--gold);stroke-width:1.6;opacity:0;}
+
+  .gbtns{display:flex;gap:0.5rem;}
+  .btn-plain{flex:0 0 auto;background:var(--cream2);color:var(--text-mid);border:1px solid var(--border);}
+  .btn-plain:hover{background:#E8D5B5;}
+  .btn-hear{flex:1;background:var(--saffron);color:#fff;border-bottom:3px solid #8A3500;font-size:0.96rem;}
+  .btn-hear:hover{background:#A84208;}
+  .btn-hear.playing{background:var(--maroon);border-bottom-color:#4A0E0E;}
+
+  /* ===== dasavidha reference ===== */
+  .dv-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:0.5rem 1.4rem;margin-top:0.5rem;}
+  @media(max-width:560px){.dv-list{grid-template-columns:1fr;}}
+  .dv-list li{font-size:0.9rem;color:var(--text-mid);padding-left:1.7rem;position:relative;line-height:1.55;}
+  .dv-list li b{color:var(--maroon);font-family:'Playfair Display',serif;}
+  .dv-list li .n{position:absolute;left:0;top:0;color:var(--gold-deep);font-weight:700;font-family:'Playfair Display',serif;}
+
+  .footer{background:var(--maroon);color:#E8C49E;text-align:center;padding:1.6rem 1.2rem;font-size:0.85rem;border-top:3px solid var(--saffron-light);}
+  .footer a{color:var(--gold);text-decoration:none;}
+  .footer .tam{font-family:'Noto Serif',serif;font-style:italic;color:#D4A97A;display:block;margin-top:0.3rem;font-size:0.82rem;}
+</style>
+</head>
+<body>
+
+<div class="lva-ribbon">
+  <a class="lva-brand" href="index.html">🎻 Lakshya's Violin Academy</a>
+  <div class="lva-links">
+    <a href="index.html">Home</a>
+    <a href="varisai-lab.html">Varisai Lab</a>
+    <a href="gamaka-explorer.html" class="cur">Gamaka</a>
+    <a href="frequency-and-swaras.html">Frequency Lab</a>
+    <a href="thala-basics.html">Thala</a>
+    <a href="melakarta-explorer.html">72 Melakarta</a>
+    <a href="shruti-box.html">Shruti Box</a>
+    <a href="swara-guessing-game.html">Swara Game</a>
+    <a href="index.html#contact">Enroll</a>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="eyebrow">Interactive Lesson</div>
+  <h1>Gamaka <span>Explorer</span></h1>
+  <div class="tamil">கமகம் — the soul of the swara</div>
+  <p>A plain note is only the beginning. In Carnatic music, swaras come alive through <b>gamakas</b> — the oscillations, slides and stresses that make the violin sing like a voice. Watch the pitch travel and hear each ornament for yourself.</p>
+</div>
+
+<div class="wrap">
+
+  <!-- intro -->
+  <div class="panel">
+    <h2>What is a gamaka?<span class="ta">கமகம்</span></h2>
+    <p class="lead">A gamaka is the graceful movement <i>into</i>, <i>around</i> or <i>out of</i> a swara. Instead of landing flatly on a note and stopping, the player bends, oscillates or slides it — and that movement is what gives a raga its colour and feeling.</p>
+    <p>On the violin this is done entirely with the left hand: the finger rocks on the string, glides up or down, or pulls the pitch slightly higher. The bow keeps a steady, singing tone while the finger paints the ornament. The very same swara can sound completely different depending on the gamaka it carries — which is why two ragas can share the same notes yet feel worlds apart.</p>
+    <p>Below, every gamaka shows a <b>pitch-trace</b> — a little picture of how the note moves up and down through time. Press <b>Plain</b> to hear the bare swara, then <b>Hear gamaka</b> to feel the difference.</p>
+  </div>
+
+  <!-- shared controls -->
+  <div class="panel">
+    <div class="ctlbar">
+      <div class="ctl">
+        <div class="ctl-label">Base swara <b id="baseLbl">G · Antara Ga</b></div>
+        <div class="seg" id="baseSeg">
+          <button data-i="1">S</button>
+          <button data-i="2">R</button>
+          <button data-i="3" class="on">G</button>
+          <button data-i="4">M</button>
+          <button data-i="5">P</button>
+          <button data-i="6">D</button>
+          <button data-i="7">N</button>
+        </div>
+      </div>
+      <div class="ctl">
+        <div class="ctl-label"><span>Speed</span><span id="spdVal">slow &amp; clear</span></div>
+        <input type="range" id="spdSlider" min="0" max="100" value="35" />
+        <div class="ctl-label" style="margin-top:0.5rem;"><span>Sruthi (Sa)</span><b id="sruthiVal">240 Hz</b></div>
+        <input type="range" id="sruthiSlider" min="170" max="320" value="240" />
+      </div>
+      <div class="ctl">
+        <div class="ctl-label">Reference drone</div>
+        <button class="btn btn-sa" id="saBtn">🎻 Hear Sa</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- gamaka cards -->
+  <div class="grid" id="grid"></div>
+
+  <!-- dasavidha reference -->
+  <div class="panel" style="margin-top:1.6rem;">
+    <h2>The ten classical gamakas<span class="ta">தச வித கமகம்</span></h2>
+    <p>Old texts describe <b>dasavidha gamakam</b> — ten kinds of gamaka. Many are specialised, and the practical ornaments above are the ones a student meets first. The classical ten are usually listed as:</p>
+    <ul class="dv-list">
+      <li><span class="n">1</span><b>Aarohanam</b> — ascending movement</li>
+      <li><span class="n">2</span><b>Avarohanam</b> — descending movement</li>
+      <li><span class="n">3</span><b>Dhaalu</b> — a leap or jump to a swara</li>
+      <li><span class="n">4</span><b>Sphuritam</b> — a quick lower grace-touch</li>
+      <li><span class="n">5</span><b>Kampitam</b> — oscillation around a swara</li>
+      <li><span class="n">6</span><b>Aahatam</b> — striking up to a swara</li>
+      <li><span class="n">7</span><b>Pratyaahatam</b> — striking down to a swara</li>
+      <li><span class="n">8</span><b>Tripuchcham</b> — a three-fold ornament</li>
+      <li><span class="n">9</span><b>Aandolam</b> — a slow, wide swing</li>
+      <li><span class="n">10</span><b>Murchana</b> — a graded run of swaras</li>
+    </ul>
+  </div>
+
+  <div class="note-strip">
+    <b>A note for the Guru:</b> gamaka names and their exact shapes vary between traditions and textbooks, and the sounds here are gentle illustrations made with a synthesised violin voice — not a substitute for listening to and imitating a teacher. Please review the names, Tamil terms and demonstrations against your own tradition before sharing this with students.
+  </div>
+
+</div>
+
+<div class="footer">
+  Lakshya's Violin Academy · Old Pallavaram, Chennai · under the guidance of Guru Smt. Rama Gurumoorthy<br>
+  <a href="https://wa.me/919003030454">WhatsApp +91 90030 30454</a> &nbsp;·&nbsp; <a href="mailto:j.ajaychandran@gmail.com">j.ajaychandran@gmail.com</a>
+  <span class="tam">கமகமே கானத்தின் உயிர் — gamaka is the very breath of music</span>
+</div>
+
+<script>
+/* =================================================================
+   Mayamalavagowla scale (just intonation) — base swara + neighbours.
+   Dot above (Ṡ Ṙ Ġ) = upper octave; N. = lower-octave Ni.
+   ================================================================= */
+const SCALE = [
+  {sym:'N.', name:'Ni (lower)',        r:15/16},
+  {sym:'S',  name:'Shadjam',           r:1},
+  {sym:'R',  name:'Shuddha Ri',        r:16/15},
+  {sym:'G',  name:'Antara Ga',         r:5/4},
+  {sym:'M',  name:'Shuddha Ma',        r:4/3},
+  {sym:'P',  name:'Panchamam',         r:3/2},
+  {sym:'D',  name:'Shuddha Da',        r:8/5},
+  {sym:'N',  name:'Kākali Ni',         r:15/8},
+  {sym:'Ṡ',  name:'Sa (tara)',         r:2},
+  {sym:'Ṙ',  name:'Ri (tara)',         r:2*16/15},
+  {sym:'Ġ',  name:'Ga (tara)',         r:2*5/4},
+];
+
+/* the nine gamakas demonstrated (plus a plain reference card) */
+const GAMAKAS = [
+  {id:'plain',     en:'Plain Swara', ta:'சுத்த ஸ்வரம்', tag:'reference',        ref:true,
+   desc:'The bare note, held steady with no ornament — the starting point everything else is measured against.'},
+  {id:'kampita',   en:'Kampita',     ta:'கம்பிதம்',      tag:'oscillation',
+   desc:'The heart of Carnatic music. The swara is gently oscillated, touching the note above and returning — the finger rocks on the string.'},
+  {id:'eetra',     en:'Eetra Jaaru', ta:'ஏற்ற சாரு',     tag:'ascending slide',
+   desc:'A smooth slide up into the swara from the note below — one unbroken bow, the finger gliding up the string.'},
+  {id:'irakka',    en:'Irakka Jaaru',ta:'இறக்க சாரு',    tag:'descending slide',
+   desc:'A smooth slide down into the swara from the note above — the finger glides down to settle on the note.'},
+  {id:'nokku',     en:'Nokku',       ta:'நொக்கு',        tag:'stress from above',
+   desc:'The swara is approached with a quick pull from the note above, giving it a gentle stress before it settles.'},
+  {id:'sphuritam', en:'Sphuritam',   ta:'ஸ்புரிதம்',     tag:'lower grace',
+   desc:'A quick flick down to the note below and back — the lively “kick” you hear on doubled (janta) swaras.'},
+  {id:'kandippu',  en:'Kandippu',    ta:'கண்டிப்பு',     tag:'sharp jerk',
+   desc:'A firm, quick jerk up into the swara from two notes below — sharper and faster than a gentle slide.'},
+  {id:'orikai',    en:'Orikai',      ta:'ஓரிக்கை',       tag:'descending tail',
+   desc:'The swara is held, then tailed off with a downward glide toward the next lower note — a graceful link to what follows.'},
+  {id:'odukkal',   en:'Odukkal',     ta:'ஒடுக்கல்',      tag:'pulled up',
+   desc:'The swara is pulled and stretched upward — bent toward the note above without quite leaving it. Heard in ragas like Sahana and Begada.'},
+  {id:'andolika',  en:'Andolika',    ta:'ஆந்தோளிகா',    tag:'slow wide swing',
+   desc:'A slow, wide sway between the notes below and above — broader and more leisurely than kampita.'},
+];
+
+/* ===== state ===== */
+let baseIdx = 3;            // index into SCALE (default G)
+let sruthiHz = 240;
+let speed = 35;             // 0..100
+const N = 400;              // samples per curve
+const cardState = {};       // id -> {ratios, rMin, rMax}
+
+/* ===== geometry for the SVG pitch-trace ===== */
+const VW=300, VH=110, PADX=26, PADY=14;
+const xOf = k => PADX + (k/(N-1))*(VW-PADX-8);
+const yOf = (r,rMin,rMax) => VH-PADY - (r-rMin)/(rMax-rMin)*(VH-2*PADY);
+const ease = x => { x=Math.max(0,Math.min(1,x)); return x*x*(3-2*x); };
+
+function durFromSpeed(){ return 3.0 - (speed/100)*1.9; } // 3.0s (slow) .. 1.1s (fast)
+
+/* ===== the gamaka shapes: phase p in [0,1] -> pitch ratio ===== */
+function gamakaRatios(id,bi){
+  const lo  = SCALE[bi-1].r, base = SCALE[bi].r, up = SCALE[bi+1].r;
+  const lo2 = (SCALE[bi-2]||SCALE[bi-1]).r;
+  const out = new Float32Array(N);
+  for(let k=0;k<N;k++){
+    const p=k/(N-1); let r=base;
+    switch(id){
+      case 'plain': r=base; break;
+      case 'kampita': {
+        const env=Math.sin(Math.PI*p);
+        const osc=0.5-0.5*Math.cos(2*Math.PI*4*p);
+        r=base+(up-base)*osc*env; break;
+      }
+      case 'eetra':  r = p<0.40 ? lo+(base-lo)*ease(p/0.40) : base; break;
+      case 'irakka': r = p<0.40 ? up+(base-up)*ease(p/0.40) : base; break;
+      case 'nokku': {
+        if(p<0.18)      r=base+(up-base)*ease(p/0.18);
+        else if(p<0.36) r=up+(base-up)*ease((p-0.18)/0.18);
+        else            r=base; break;
+      }
+      case 'sphuritam': {
+        if(p>0.40 && p<0.56){ const q=(p-0.40)/0.16; const tri=1-Math.abs(q-0.5)*2; r=base+(lo-base)*ease(tri); }
+        else r=base; break;
+      }
+      case 'kandippu': r = p<0.22 ? lo2+(base-lo2)*ease(Math.pow(p/0.22,0.7)) : base; break;
+      case 'orikai':   r = p<0.66 ? base : base+(lo-base)*ease((p-0.66)/0.34); break;
+      case 'odukkal': {
+        const tgt=base+(up-base)*0.60;
+        if(p<0.30) r=base+(tgt-base)*ease(p/0.30);
+        else       r=tgt+(tgt-base)*0.06*Math.sin(2*Math.PI*2*(p-0.30));
+        break;
+      }
+      case 'andolika': {
+        const env=Math.sin(Math.PI*p);
+        const amp=Math.min(up-base, base-lo);
+        r=base+amp*env*Math.sin(2*Math.PI*1.5*p); break;
+      }
+    }
+    out[k]=r;
+  }
+  return out;
+}
+
+/* =================================================================
+   AUDIO ENGINE — bowed violin voice (shared with the Varisai Lab)
+   ================================================================= */
+let ctx=null;
+function getCtx(){ if(!ctx){ctx=new (window.AudioContext||window.webkitAudioContext)();} if(ctx.state==='suspended'){ctx.resume();} return ctx; }
+let vWave=null;
+function violinWave(){ if(vWave) return vWave; const c=getCtx();
+  const amps=[0,1,0.86,0.66,0.55,0.46,0.38,0.31,0.26,0.21,0.17,0.14,0.11,0.09,0.07,0.055,0.04];
+  const re=new Float32Array(amps.length), im=new Float32Array(amps.length);
+  for(let i=0;i<amps.length;i++) im[i]=amps[i];
+  vWave=c.createPeriodicWave(re,im,{disableNormalization:false}); return vWave; }
+function makeBody(c){
+  const f1=c.createBiquadFilter();f1.type='peaking';f1.frequency.value=300;f1.Q.value=1.1;f1.gain.value=7;
+  const f2=c.createBiquadFilter();f2.type='peaking';f2.frequency.value=460;f2.Q.value=1.3;f2.gain.value=6;
+  const f3=c.createBiquadFilter();f3.type='peaking';f3.frequency.value=2600;f3.Q.value=0.9;f3.gain.value=6;
+  const lp=c.createBiquadFilter();lp.type='lowpass';lp.frequency.value=7000;
+  f1.connect(f2);f2.connect(f3);f3.connect(lp); return {input:f1,output:lp}; }
+function bowNoise(t,freq,amp){ const c=getCtx();const dur=0.13;
+  const src=c.createBufferSource();const buf=c.createBuffer(1,Math.floor(c.sampleRate*dur),c.sampleRate);
+  const d=buf.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=Math.random()*2-1;src.buffer=buf;
+  const bp=c.createBiquadFilter();bp.type='bandpass';bp.frequency.value=Math.min(4500,freq*4);bp.Q.value=0.8;
+  const g=c.createGain();g.gain.setValueAtTime(amp,t);g.gain.exponentialRampToValueAtTime(0.0005,t+dur);
+  src.connect(bp).connect(g).connect(c.destination);src.start(t);src.stop(t+dur); }
+
+/* play a pitch GESTURE: ratios array bent over `dur` seconds */
+function playGesture(ratios,dur){
+  const c=getCtx(); const t=c.currentTime;
+  const fcurve=new Float32Array(ratios.length);
+  for(let i=0;i<ratios.length;i++) fcurve[i]=ratios[i]*sruthiHz;
+  const osc=c.createOscillator(); osc.setPeriodicWave(violinWave());
+  osc.frequency.setValueAtTime(fcurve[0],t);
+  osc.frequency.setValueCurveAtTime(fcurve,t,dur);
+  /* a whisper of vibrato for life — small, so the gamaka shape dominates */
+  const vib=c.createOscillator(); vib.frequency.value=5.4; const vg=c.createGain();
+  vg.gain.setValueAtTime(0,t); vg.gain.linearRampToValueAtTime(fcurve[0]*0.0028,t+0.3);
+  vib.connect(vg).connect(osc.frequency);
+  const body=makeBody(c); const g=c.createGain(); const peak=0.26;
+  g.gain.setValueAtTime(0,t); g.gain.linearRampToValueAtTime(peak,t+0.06);
+  g.gain.setValueAtTime(peak,t+Math.max(0.07,dur-0.18));
+  g.gain.exponentialRampToValueAtTime(0.0008,t+dur);
+  osc.connect(body.input); body.output.connect(g); g.connect(c.destination);
+  osc.start(t); vib.start(t); osc.stop(t+dur+0.05); vib.stop(t+dur+0.05);
+  bowNoise(t,fcurve[0],peak*0.16);
+}
+
+/* reference Sa drone */
+let drone=null,droneG=null;
+const saBtn=document.getElementById('saBtn');
+function toggleSa(){ const c=getCtx();
+  if(drone){ const t=c.currentTime;droneG.gain.cancelScheduledValues(t);droneG.gain.setValueAtTime(droneG.gain.value,t);
+    droneG.gain.linearRampToValueAtTime(0,t+0.1);drone.stop(t+0.15);drone=null;saBtn.textContent='🎻 Hear Sa';saBtn.classList.remove('on');return; }
+  drone=c.createOscillator();drone.setPeriodicWave(violinWave());drone.frequency.value=sruthiHz;
+  const body=makeBody(c);droneG=c.createGain();droneG.gain.setValueAtTime(0,c.currentTime);
+  droneG.gain.linearRampToValueAtTime(0.18,c.currentTime+0.08);
+  drone.connect(body.input);body.output.connect(droneG);droneG.connect(c.destination);
+  drone.start();bowNoise(c.currentTime,sruthiHz,0.05);saBtn.textContent='⏹ Stop Sa';saBtn.classList.add('on');
+  setTimeout(()=>{ if(drone){ const t=getCtx().currentTime;droneG.gain.linearRampToValueAtTime(0,t+0.1);drone.stop(t+0.15);drone=null;saBtn.textContent='🎻 Hear Sa';saBtn.classList.remove('on'); } },5000); }
+saBtn.addEventListener('click',toggleSa);
+
+/* =================================================================
+   BUILD CARDS
+   ================================================================= */
+const grid=document.getElementById('grid');
+GAMAKAS.forEach(g=>{
+  const card=document.createElement('div');
+  card.className='gcard'+(g.ref?' ref':'');
+  card.innerHTML =
+    '<div class="ghead"><span><span class="gname">'+g.en+'</span> <span class="gta">'+g.ta+'</span></span>'+
+      '<span class="gtag">'+g.tag+'</span></div>'+
+    '<div class="gdesc">'+g.desc+'</div>'+
+    '<svg class="viz" viewBox="0 0 '+VW+' '+VH+'" data-id="'+g.id+'">'+
+      '<g class="guides"></g><path class="trace" d=""></path>'+
+      '<circle class="dot" r="4.5" cx="0" cy="0"></circle></svg>'+
+    '<div class="gbtns">'+
+      (g.ref ? '' : '<button class="btn btn-plain" data-plain="'+g.id+'">Plain</button>')+
+      '<button class="btn btn-hear" data-hear="'+g.id+'">▶ '+(g.ref?'Hear note':'Hear gamaka')+'</button>'+
+    '</div>';
+  grid.appendChild(card);
+});
+
+/* draw the trace + guide lines for one card at the current base swara */
+function renderCard(id){
+  const svg=grid.querySelector('svg[data-id="'+id+'"]');
+  const ratios=gamakaRatios(id,baseIdx);
+  let rMin=Infinity,rMax=-Infinity;
+  for(const v of ratios){ if(v<rMin)rMin=v; if(v>rMax)rMax=v; }
+  /* always frame at least the base & its neighbours so the picture reads clearly */
+  rMin=Math.min(rMin, SCALE[baseIdx-1].r); rMax=Math.max(rMax, SCALE[baseIdx+1].r);
+  const padR=(rMax-rMin)*0.12 || 0.02; rMin-=padR; rMax+=padR;
+  cardState[id]={ratios,rMin,rMax};
+
+  /* guide lines for every scale swara inside the frame */
+  let guides='';
+  SCALE.forEach((s,i)=>{
+    if(s.r<rMin||s.r>rMax) return;
+    const y=yOf(s.r,rMin,rMax); const isBase=(i===baseIdx);
+    guides+='<line class="'+(isBase?'base-ln':'grid-ln')+'" x1="'+PADX+'" y1="'+y.toFixed(1)+'" x2="'+(VW-4)+'" y2="'+y.toFixed(1)+'"></line>';
+    guides+='<text class="lbl'+(isBase?' base':'')+'" x="4" y="'+(y+3).toFixed(1)+'">'+s.sym+'</text>';
+  });
+  svg.querySelector('.guides').innerHTML=guides;
+
+  /* the pitch trace */
+  let d='M'+xOf(0).toFixed(1)+' '+yOf(ratios[0],rMin,rMax).toFixed(1);
+  for(let k=1;k<N;k++) d+=' L'+xOf(k).toFixed(1)+' '+yOf(ratios[k],rMin,rMax).toFixed(1);
+  svg.querySelector('.trace').setAttribute('d',d);
+}
+function renderAll(){ GAMAKAS.forEach(g=>renderCard(g.id)); }
+
+/* animate the travelling dot along a card while it plays */
+function animate(id,dur){
+  const svg=grid.querySelector('svg[data-id="'+id+'"]');
+  const dot=svg.querySelector('.dot');
+  const st=cardState[id]; if(!st||!(st.rMax>st.rMin)) return;
+  const t0=performance.now();
+  dot.style.opacity=1;
+  function place(k){
+    k=Math.max(0,Math.min(N-1,k|0));
+    const cx=xOf(k), cy=yOf(st.ratios[k],st.rMin,st.rMax);
+    if(isFinite(cx)&&isFinite(cy)){ dot.setAttribute('cx',cx); dot.setAttribute('cy',cy); }
+  }
+  function step(now){
+    const p=(now-t0)/(dur*1000);
+    if(!(p<1)){ place(N-1); dot.style.opacity=0; return; }
+    place(Math.round(p*(N-1)));
+    requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+/* play helpers */
+function playGamaka(id,btn){
+  const dur=durFromSpeed();
+  const ratios=cardState[id].ratios;
+  playGesture(ratios,dur); animate(id,dur);
+  if(btn){ btn.classList.add('playing'); setTimeout(()=>btn.classList.remove('playing'),dur*1000); }
+}
+function playPlain(id){
+  const dur=Math.min(1.3,durFromSpeed());
+  const flat=gamakaRatios('plain',baseIdx);
+  playGesture(flat,dur);
+}
+
+grid.addEventListener('click',e=>{
+  const h=e.target.closest('[data-hear]'); const p=e.target.closest('[data-plain]');
+  if(h) playGamaka(h.dataset.hear,h);
+  else if(p) playPlain(p.dataset.plain);
+});
+
+/* =================================================================
+   CONTROLS
+   ================================================================= */
+const baseSeg=document.getElementById('baseSeg'), baseLbl=document.getElementById('baseLbl');
+baseSeg.addEventListener('click',e=>{ const b=e.target.closest('button'); if(!b) return;
+  baseIdx=+b.dataset.i; [...baseSeg.children].forEach(x=>x.classList.toggle('on',x===b));
+  baseLbl.textContent=SCALE[baseIdx].sym+' · '+SCALE[baseIdx].name; renderAll(); });
+
+const spdSlider=document.getElementById('spdSlider'), spdVal=document.getElementById('spdVal');
+spdSlider.addEventListener('input',()=>{ speed=+spdSlider.value;
+  spdVal.textContent = speed<33?'slow & clear' : speed<70?'medium' : 'lively'; });
+
+const sruthiSlider=document.getElementById('sruthiSlider'), sruthiVal=document.getElementById('sruthiVal');
+sruthiSlider.addEventListener('input',()=>{ sruthiHz=+sruthiSlider.value; sruthiVal.textContent=sruthiHz+' Hz';
+  if(drone) drone.frequency.setValueAtTime(sruthiHz,getCtx().currentTime); });
+
+/* ===== init ===== */
+renderAll();
+</script>
+</body>
+</html>
