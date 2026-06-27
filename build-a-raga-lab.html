@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Build-a-Raga Lab — Lakshya's Violin Academy</title>
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Lakshya&#39;s Violin Academy" />
+<meta property="og:title" content="Build-a-Raga Lab — Lakshya&#x27;s Violin Academy" />
+<meta property="og:description" content="A creative Carnatic sandbox for young violin students. Pick swarasthanams on a ladder to invent your own scale, hear it played in a real violin voice, and discover which famous raga you have built. Learn how the 72 melakarta system is put together — by making it yourself." />
+<meta property="og:url" content="https://lakshyasviolinacademy.live/build-a-raga-lab.html" />
+<meta property="og:image" content="https://lakshyasviolinacademy.live/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Build-a-Raga Lab — Lakshya&#x27;s Violin Academy" />
+<meta name="twitter:description" content="A creative Carnatic sandbox for young violin students. Pick swarasthanams on a ladder to invent your own scale, hear it played in a real violin voice, and discover which famous raga you have built. Learn how the 72 melakarta system is put together — by making it yourself." />
+<meta name="twitter:image" content="https://lakshyasviolinacademy.live/og-image.png" />
+<meta name="theme-color" content="#7B1E1E" />
+
+<meta name="description" content="A creative Carnatic sandbox for young violin students. Pick swarasthanams on a ladder to invent your own scale, hear it played in a real violin voice, and discover which famous raga you have built. Learn how the 72 melakarta system is put together — by making it yourself." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Noto+Serif:wght@400;600&display=swap" rel="stylesheet" />
+<style>
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --maroon:#7B1E1E; --maroon-soft:#A94040; --saffron:#C8520A; --saffron-light:#F5A623;
+    --gold:#F0C040; --gold-deep:#B8860B; --cream:#FBF6EE; --cream2:#F2E8D5;
+    --border:#D4B896; --text-dark:#2C1A0A; --text-mid:#5C3A1A; --text-soft:#7A5A3A;
+    --green:#1d8a4e; --green-bg:#e4f5ea; --teal:#1d6e5a;
+  }
+  html{scroll-behavior:smooth;}
+  body{font-family:'Noto Serif',Georgia,serif;background:var(--cream);color:var(--text-dark);line-height:1.7;}
+
+  /* ===== shared site ribbon ===== */
+  .lva-ribbon{background:#7B1E1E;border-bottom:3px solid #F5A623;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:0 1.3rem;}
+  .lva-ribbon a{text-decoration:none;}
+  .lva-ribbon .lva-brand{color:#F0C040;font-family:'Playfair Display',serif;font-weight:700;font-size:1rem;padding:0.7rem 0;white-space:nowrap;}
+  .lva-ribbon .lva-links{display:flex;flex-wrap:wrap;align-items:center;}
+  .lva-ribbon .lva-links a{color:#F5DEB3;font-size:0.72rem;letter-spacing:0.07em;text-transform:uppercase;padding:0.75rem 0.55rem;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;white-space:nowrap;}
+  .lva-ribbon .lva-links a:hover{color:#F0C040;border-bottom-color:#F0C040;}
+  .lva-ribbon .lva-links a.cur{color:#F0C040;border-bottom-color:#F0C040;}
+  @media(max-width:620px){.lva-ribbon{padding:0 0.7rem;}.lva-ribbon .lva-brand{font-size:0.82rem;}.lva-ribbon .lva-links a{padding:0.5rem 0.34rem;font-size:0.6rem;}}
+
+  .hero{background:linear-gradient(135deg,var(--maroon) 0%,#5A1010 60%,#3A0A0A 100%);padding:3rem 1.5rem 2.6rem;text-align:center;position:relative;overflow:hidden;}
+  .hero::before{content:'🛠️';position:absolute;top:8px;right:24px;font-size:5rem;opacity:0.12;}
+  .hero .eyebrow{font-size:0.74rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--saffron-light);margin-bottom:0.7rem;}
+  .hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,5vw,3rem);color:#FFF8E7;font-weight:700;line-height:1.15;}
+  .hero h1 span{color:var(--gold);}
+  .hero .tamil{font-size:1rem;color:#E8C49E;font-style:italic;margin:0.4rem 0 0.8rem;}
+  .hero p{color:#D4A97A;max-width:660px;margin:0 auto;font-size:0.98rem;line-height:1.8;}
+
+  .wrap{max-width:860px;margin:0 auto;padding:2rem 1.2rem 4rem;}
+
+  .panel{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.3rem 1.4rem;box-shadow:0 6px 22px rgba(74,44,10,0.07);margin-bottom:1.4rem;}
+  .panel h2{font-family:'Playfair Display',serif;color:var(--maroon);font-size:1.15rem;margin-bottom:0.2rem;}
+  .panel .sub{font-size:0.82rem;color:var(--text-soft);margin-bottom:1rem;}
+
+  /* swara ladder */
+  .ladder{display:flex;flex-direction:column;gap:0.55rem;}
+  .station{display:grid;grid-template-columns:64px 1fr;gap:0.7rem;align-items:center;}
+  .station .sname{font-family:'Playfair Display',serif;font-weight:700;color:var(--maroon);font-size:1.05rem;line-height:1.1;}
+  .station .sname small{display:block;font-family:'Noto Serif',serif;font-weight:400;font-size:0.62rem;color:var(--text-soft);letter-spacing:0.04em;}
+  .opts{display:flex;gap:6px;flex-wrap:wrap;}
+  .opt{font-family:'Noto Serif',serif;min-width:52px;padding:0.45rem 0.5rem;border:1px solid var(--border);background:var(--cream);color:var(--text-mid);border-radius:9px;cursor:pointer;text-align:center;line-height:1.15;transition:all .13s;}
+  .opt .osym{font-family:'Playfair Display',serif;font-weight:700;font-size:1rem;color:var(--maroon);display:block;}
+  .opt .ocd{font-size:0.56rem;color:var(--text-soft);}
+  .opt:hover{border-color:var(--saffron);}
+  .opt.on{background:var(--maroon);border-color:var(--maroon);}
+  .opt.on .osym{color:var(--gold);}
+  .opt.on .ocd{color:#E8C49E;}
+  .opt.off{font-size:0.74rem;color:var(--text-soft);min-width:44px;}
+  .opt.off .ox{font-size:1rem;font-weight:700;display:block;}
+  .station.fixed .opt.on{background:var(--gold-deep);border-color:var(--gold-deep);}
+  .station.fixed .opt.on .osym{color:#fff;}
+  .lockchip{font-size:0.6rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-soft);align-self:center;}
+
+  /* live scale readout */
+  .scale-readout{margin-top:1.2rem;padding-top:1.1rem;border-top:1px solid var(--cream2);}
+  .scale-readout .lbl{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-soft);font-weight:600;margin-bottom:0.5rem;}
+  .track{display:flex;flex-wrap:wrap;gap:6px;}
+  .cell{position:relative;width:46px;height:54px;border-radius:8px;background:#fff;border:1px solid var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:all .12s;}
+  .cell .sym{font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:700;color:var(--maroon);line-height:1;}
+  .cell .cd{font-size:0.54rem;color:var(--text-soft);margin-top:3px;}
+  .cell .od{position:absolute;width:5px;height:5px;border-radius:50%;background:var(--maroon);left:50%;top:5px;transform:translateX(-50%);}
+  .cell.cur{background:var(--gold);border-color:var(--gold-deep);transform:translateY(-3px) scale(1.07);box-shadow:0 6px 16px rgba(184,134,11,0.35);}
+  .cell.cur .sym{color:#3A1A02;}
+
+  .action-row{display:flex;gap:0.7rem;flex-wrap:wrap;margin-top:1.3rem;align-items:center;}
+  .btn{font-family:'Noto Serif',serif;font-size:0.95rem;padding:0.7rem 1.1rem;border:none;border-radius:8px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:transform .1s,background .2s;}
+  .btn-play{background:var(--saffron);color:#fff;border-bottom:3px solid #8A3500;flex:1;min-width:160px;font-size:1.02rem;}
+  .btn-play:hover{background:#A84208;}
+  .btn-play.stop{background:var(--maroon);border-bottom-color:#4A0E0E;}
+  .btn-ghost{background:var(--cream2);color:var(--text-mid);border:1px solid var(--border);}
+  .btn-ghost:hover{background:#E8D5B5;}
+  .pace{display:flex;align-items:center;gap:0.5rem;font-size:0.74rem;color:var(--text-soft);}
+  .pace input[type=range]{-webkit-appearance:none;width:110px;height:7px;border-radius:7px;background:linear-gradient(90deg,var(--saffron),var(--gold));outline:none;}
+  .pace input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:18px;height:18px;border-radius:50%;background:var(--maroon);border:2px solid var(--gold);cursor:pointer;}
+  .pace input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--maroon);border:2px solid var(--gold);cursor:pointer;}
+  .loop-toggle{display:flex;align-items:center;gap:0.4rem;font-size:0.78rem;color:var(--text-mid);cursor:pointer;}
+
+  /* discovery result */
+  .result{margin-top:1.3rem;border-radius:12px;padding:1.1rem 1.2rem;text-align:center;display:none;}
+  .result.show{display:block;}
+  .result.found{background:var(--green-bg);border:1px solid #9AD5B2;}
+  .result.invent{background:#FDF3E3;border:1px solid #C8A040;}
+  .result .big{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:700;}
+  .result.found .big{color:var(--green);}
+  .result.invent .big{color:var(--saffron);}
+  .result .rname{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--maroon);margin:0.25rem 0;}
+  .result .rinfo{font-size:0.86rem;color:var(--text-mid);max-width:52ch;margin:0 auto;}
+  .name-row{display:none;gap:0.5rem;justify-content:center;align-items:center;margin-top:0.9rem;flex-wrap:wrap;}
+  .name-row.show{display:flex;}
+  .name-row input{font-family:'Noto Serif',serif;font-size:0.9rem;padding:0.45rem 0.7rem;border:1px solid var(--border);border-radius:7px;background:#fff;color:var(--text-dark);min-width:170px;}
+  .name-row .yourname{font-family:'Playfair Display',serif;color:var(--maroon);font-weight:600;}
+
+  /* discovery collection */
+  .collect-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:0.5rem;}
+  .collect-count{font-family:'Playfair Display',serif;color:var(--saffron);font-weight:700;}
+  .medals{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:0.55rem;margin-top:1rem;}
+  .medal{border:1px solid var(--border);border-radius:10px;padding:0.6rem 0.6rem;background:var(--cream);text-align:center;opacity:0.55;transition:all .2s;}
+  .medal .mi{font-size:1.2rem;filter:grayscale(1);}
+  .medal .mn{font-family:'Playfair Display',serif;font-size:0.82rem;color:var(--text-soft);margin-top:2px;line-height:1.15;}
+  .medal.got{opacity:1;background:#fff;border-color:var(--gold-deep);box-shadow:0 4px 12px rgba(184,134,11,0.15);}
+  .medal.got .mi{filter:none;}
+  .medal.got .mn{color:var(--maroon);}
+
+  .note{background:#FFFDF7;border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:8px;padding:0.9rem 1.1rem;font-size:0.85rem;color:var(--text-mid);margin-top:1.3rem;}
+  .note code{background:var(--cream2);padding:1px 5px;border-radius:4px;font-size:0.82em;}
+
+  .sruthi-row{display:flex;align-items:center;gap:0.5rem;font-size:0.78rem;color:var(--text-soft);margin-bottom:1.1rem;flex-wrap:wrap;}
+  .sruthi-row select{font-family:'Noto Serif',serif;font-size:0.86rem;padding:0.35rem 0.6rem;border:1px solid var(--border);border-radius:7px;background:var(--cream);color:var(--text-dark);}
+
+  footer{background:#3A0A0A;color:#E8C49E;text-align:center;padding:2rem 1.4rem;font-size:0.88rem;}
+  footer .fname{font-family:'Playfair Display',serif;color:#F0C040;font-size:1.1rem;margin-bottom:6px;}
+  footer a{color:var(--saffron-light);text-decoration:none;}
+
+  @media(max-width:520px){.station{grid-template-columns:54px 1fr;}.opt{min-width:46px;padding:0.4rem 0.35rem;}.cell{width:42px;height:50px;}}
+  @media(prefers-reduced-motion:reduce){.cell.cur{transform:none;}}
+</style>
+<style id="lva-mobnav">
+  .lva-toggle{display:none;background:transparent;border:none;cursor:pointer;padding:8px 2px;flex-direction:column;gap:5px;margin-left:auto;}
+  .lva-toggle span{display:block;width:26px;height:3px;border-radius:2px;background:#F0C040;transition:transform .25s ease,opacity .2s ease;}
+  .lva-toggle.open span:nth-child(1){transform:translateY(8px) rotate(45deg);}
+  .lva-toggle.open span:nth-child(2){opacity:0;}
+  .lva-toggle.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
+  @media(max-width:760px){
+    .lva-ribbon{flex-wrap:nowrap;align-items:center;}
+    .lva-toggle{display:flex;}
+    .lva-ribbon .lva-links{display:none !important;order:5;flex-basis:100%;width:100%;flex-direction:column;align-items:stretch;
+      max-height:min(68vh,440px);overflow-y:auto;-webkit-overflow-scrolling:touch;
+      border-top:1px solid rgba(240,192,64,0.25);margin-top:4px;padding:4px 0 8px;
+      scrollbar-width:thin;scrollbar-color:#B8860B rgba(255,255,255,0.12);}
+    .lva-ribbon.open .lva-links{display:flex !important;}
+    .lva-ribbon .lva-links::-webkit-scrollbar{width:8px;}
+    .lva-ribbon .lva-links::-webkit-scrollbar-thumb{background:#B8860B;border-radius:8px;}
+    .lva-ribbon .lva-links a{padding:0.72rem 0.7rem !important;font-size:0.94rem !important;letter-spacing:0.03em !important;
+      border-bottom:1px solid rgba(240,192,64,0.12);white-space:normal !important;}
+    .lva-ribbon .lva-links a.cur{background:rgba(240,192,64,0.12);}
+  }
+</style>
+<style id="lva-share-css">
+  .lva-share-row{text-align:center;margin:0.9rem 0 0.2rem;}
+  .lva-share-btn{display:inline-flex;align-items:center;gap:8px;font-family:'Noto Serif',Georgia,serif;font-size:0.92rem;font-weight:700;
+    padding:0.62rem 1.2rem;border:none;border-radius:10px;cursor:pointer;color:#fff;
+    background:linear-gradient(135deg,#C8520A,#F5A623);border-bottom:3px solid #8A3500;transition:filter .15s,transform .1s;}
+  .lva-share-btn:hover{filter:brightness(1.06);transform:translateY(-1px);}
+  .lva-modal{position:fixed;inset:0;background:rgba(20,6,6,0.74);display:none;align-items:center;justify-content:center;z-index:3000;padding:18px;}
+  .lva-modal.show{display:flex;}
+  .lva-modal-card{background:#FBF6EE;border-radius:16px;max-width:392px;width:100%;padding:18px 18px 16px;box-shadow:0 24px 60px rgba(0,0,0,0.45);text-align:center;max-height:92vh;overflow-y:auto;}
+  .lva-modal-card h3{font-family:'Playfair Display',Georgia,serif;color:#7B1E1E;font-size:1.15rem;margin:0 0 12px;}
+  .lva-modal-card canvas{width:100%;height:auto;border-radius:11px;border:1px solid #D4B896;display:block;}
+  .lva-share-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:14px;}
+  .lva-share-actions button{flex:1 1 30%;min-width:96px;font-family:'Noto Serif',Georgia,serif;font-size:0.84rem;font-weight:700;
+    padding:0.6rem 0.4rem;border:none;border-radius:9px;cursor:pointer;color:#fff;display:inline-flex;align-items:center;justify-content:center;gap:6px;}
+  .lva-b-share{background:#1d8a4e;} .lva-b-fb{background:#1877F2;} .lva-b-dl{background:#7B1E1E;}
+  .lva-b-close{background:#8a7a5a;flex-basis:100%;margin-top:8px;}
+  .lva-modal-hint{font-size:0.72rem;color:#7A5A3A;margin-top:11px;line-height:1.5;}
+</style>
+</head>
+<body>
+
+<div class="lva-ribbon">
+  <a class="lva-brand" href="index.html">🎻 Lakshya's Violin Academy</a>
+  <button class="lva-toggle" id="lvaToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  <div class="lva-links">
+    <a href="index.html">Home</a>
+    <a href="varisai-lab.html">Varisai Lab</a>
+    <a href="gamaka-explorer.html">Gamaka</a>
+    <a href="raga-jukebox.html">Raga Jukebox</a>
+    <a href="frequency-and-swaras.html">Frequency Lab</a>
+    <a href="thala-basics.html">Thala</a>
+    <a href="melakarta-explorer.html">72 Melakarta</a>
+    <a href="shruti-box.html">Shruti Box</a>
+    <a href="swara-guessing-game.html">Swara Game</a>
+    <a href="raga-mood-matcher.html">Raga Moods</a>
+    <a href="build-a-raga-lab.html" class="cur">Build-a-Raga</a>
+    <a href="compose-a-geetham.html">Compose Geetham</a>
+    <a href="sruthi-detective.html">Sruthi Detective</a>
+    <a href="index.html#contact">Enroll</a>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="eyebrow">Invent · Play · Discover</div>
+  <h1>Build-a-<span>Raga</span> Lab</h1>
+  <div class="tamil">உங்கள் சொந்த ராகத்தை உருவாக்குங்கள்</div>
+  <p>Pick a Rishabham, a Gandharam, a Madhyamam… build your very own scale on the ladder, hear it sing in a real violin voice, and find out which famous raga you have just discovered.</p>
+</header>
+
+<div class="wrap">
+
+  <div class="panel">
+    <h2>1 · Build your scale</h2>
+    <p class="sub">Sa and the upper Sa are always there. Tap a swarasthanam to switch it on — or choose <b>skip</b> to leave a swara out (that is how pentatonic ragas like Mohanam are made).</p>
+
+    <div class="sruthi-row">
+      <span>Sruthi (your Sa):</span>
+      <select id="sruthiSel"></select>
+      <span id="hzLabel"></span>
+    </div>
+
+    <div class="ladder" id="ladder"></div>
+
+    <div class="scale-readout">
+      <div class="lbl">Your scale · arohanam</div>
+      <div class="track" id="track"></div>
+    </div>
+
+    <div class="action-row">
+      <button class="btn btn-play" id="playBtn">🎻 &nbsp;Play my raga</button>
+      <label class="loop-toggle"><input type="checkbox" id="loopChk"> loop</label>
+      <div class="pace"><span>slow</span><input type="range" id="paceSlider" min="320" max="900" value="560" step="20"><span>fast</span></div>
+      <button class="btn btn-ghost" id="discoverBtn">🔍 What did I build?</button>
+    </div>
+
+    <div class="result" id="result">
+      <div class="big" id="resultBig"></div>
+      <div class="rname" id="resultName"></div>
+      <div class="rinfo" id="resultInfo"></div>
+      <div class="name-row" id="nameRow">
+        <span>Name your raga:</span>
+        <input type="text" id="nameInput" maxlength="24" placeholder="e.g. Ajay Ranjani">
+        <span class="yourname" id="yourName"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="collect-head">
+      <h2>2 · Ragas you have discovered</h2>
+      <span class="collect-count"><span id="gotCount">0</span> / <span id="totalCount">0</span></span>
+    </div>
+    <p class="sub">Each time you build a real raga, its medal lights up. How many can you find this session?</p>
+    <div class="medals" id="medals"></div>
+  </div>
+
+  <div class="note">
+    <strong>For the teacher:</strong> this lab builds <em>symmetric</em> scales — the same swaras going up and coming down — which is exactly how the 72 melakarta parents are formed. Real ragas can climb and descend differently (<em>vakra</em>) or borrow notes (<em>bhashanga</em>); that comes later, and the Raga Jukebox shows those. The raga dictionary used for discovery lives in one editable <code>RAGA_DICT</code> block at the top of the script — please verify each scale against <em>Ganamrutha Bodhini</em> before relying on it. Discoveries are remembered for this visit only.
+  </div>
+
+</div>
+
+<footer>
+  <div class="fname">Lakshya's Violin Academy</div>
+  <div>Old Pallavaram, Chennai · under the guidance of Guru Smt. Rama Gurumoorthy</div>
+  <div style="margin-top:14px;font-size:0.82rem;opacity:0.95;">Enquiries &amp; free trial &nbsp;·&nbsp; <a href="https://wa.me/919003030454">WhatsApp +91 90030 30454</a> &nbsp;·&nbsp; <a href="mailto:j.ajaychandran@gmail.com">j.ajaychandran@gmail.com</a></div>
+</footer>
+
+<script>
+/* ============================================================
+   RAGA_DICT — editable raga dictionary for discovery
+   Discovery matches the set of ascending swarasthanams
+   (order-independent) against each raga's arohanam.
+   ============================================================ */
+const RAGA_DICT = [
+  { name:'Mohanam',         aro:'S R2 G3 P D2 S+',           emoji:'🌅', info:'A sunny pentatonic raga (no Ma, no Ni). Often the first varnam — Ninnukori.' },
+  { name:'Hamsadhwani',     aro:'S R2 G3 P N3 S+',           emoji:'🦢', info:'Bright and festive. Vatapi Ganapatim is sung in this raga.' },
+  { name:'Suddha Saveri',   aro:'S R2 M1 P D2 S+',           emoji:'💧', info:'A clear, bright pentatonic raga (no Ga, no Ni).' },
+  { name:'Hindolam',        aro:'S G2 M1 D1 N2 S+',          emoji:'🌙', info:'Serene and meditative — no Ri and no Pa.' },
+  { name:'Suddha Dhanyasi', aro:'S G2 M1 P N2 S+',           emoji:'🍃', info:'A soft pentatonic raga much loved by beginners.' },
+  { name:'Madhyamavati',    aro:'S R2 M1 P N2 S+',           emoji:'🕊️', info:'The auspicious raga that closes a concert.' },
+  { name:'Mayamalavagowla', aro:'S R1 G3 M1 P D1 N3 S+',     emoji:'🪔', info:'Melakarta 15 — the home of your first sarali varisai and geethams.' },
+  { name:'Saveri',          aro:'S R1 M1 P D1 S+',           emoji:'🙏', info:'A devotional janya of Mayamalavagowla.' },
+  { name:'Malahari',        aro:'S R1 M1 P D1 S+',           emoji:'📿', info:'The raga of the very first geethams — Sri Gananatha.' },
+  { name:'Sankarabharanam', aro:'S R2 G3 M1 P D2 N3 S+',     emoji:'👑', info:'Melakarta 29 — the grand major scale of Carnatic music.' },
+  { name:'Arabhi',          aro:'S R2 M1 P D2 S+',           emoji:'☀️', info:'A graceful, bright janya of Sankarabharanam.' },
+  { name:'Bilahari',        aro:'S R2 G3 P D2 S+',           emoji:'🎈', info:'Cheerful and playful — a favourite swarajathi raga.' },
+  { name:'Kalyani',         aro:'S R2 G3 M2 P D2 N3 S+',     emoji:'✨', info:'Melakarta 65 — festive and grand, using the Prati Madhyamam (M2).' },
+  { name:'Harikambhoji',    aro:'S R2 G3 M1 P D2 N2 S+',     emoji:'🌿', info:'Melakarta 28 — parent of Kambhoji and Mohanam.' },
+  { name:'Kambhoji',        aro:'S R2 G3 M1 P D2 S+',        emoji:'🌺', info:'A warm, devotional janya (no Ni rising).' },
+  { name:'Kharaharapriya',  aro:'S R2 G2 M1 P D2 N2 S+',     emoji:'🌧️', info:'Melakarta 22 — parent of Sri, Abhogi and Madhyamavati.' },
+  { name:'Sriranjani',      aro:'S R2 G2 M1 D2 N2 S+',       emoji:'🌾', info:'A gentle raga that rests without Pa.' },
+  { name:'Abhogi',          aro:'S R2 G2 M1 D2 S+',          emoji:'🪷', info:'A tender pentatonic raga (no Pa, no Ni).' },
+  { name:'Natabhairavi',    aro:'S R2 G2 M1 P D1 N2 S+',     emoji:'🌑', info:'Melakarta 20 — the natural minor scale, parent of Bhairavi.' },
+  { name:'Todi',            aro:'S R1 G2 M1 P D1 N2 S+',     emoji:'🌀', info:'Melakarta 8 (Hanumatodi) — a deep, soulful scale.' },
+  { name:'Gambhiranata',    aro:'S G3 M1 P N3 S+',           emoji:'🛕', info:'A strong, majestic pentatonic raga (no Ri, no Dha).' },
+];
+
+/* swarasthanam catalogue — just intonation ratios + names */
+const SWARA = {
+  'S':{r:1,nm:'Shadjam'},
+  'R1':{r:16/15,nm:'Shuddha Ri'}, 'R2':{r:9/8,nm:'Chatushruti Ri'}, 'R3':{r:6/5,nm:'Shatshruti Ri'},
+  'G1':{r:9/8,nm:'Shuddha Ga'},   'G2':{r:6/5,nm:'Sadharana Ga'},   'G3':{r:5/4,nm:'Antara Ga'},
+  'M1':{r:4/3,nm:'Shuddha Ma'},   'M2':{r:45/32,nm:'Prati Ma'},
+  'P':{r:3/2,nm:'Panchamam'},
+  'D1':{r:8/5,nm:'Shuddha Dha'},  'D2':{r:5/3,nm:'Chatushruti Dha'},'D3':{r:9/5,nm:'Shatshruti Dha'},
+  'N1':{r:5/3,nm:'Shuddha Ni'},   'N2':{r:9/5,nm:'Kaishiki Ni'},    'N3':{r:15/8,nm:'Kakali Ni'},
+};
+
+/* the build ladder — station families and their varieties */
+const STATIONS = [
+  { fam:'S',  label:'Sa',  tam:'Shadjam',   fixed:true,  opts:['S'] },
+  { fam:'R',  label:'Ri',  tam:'Rishabham', fixed:false, opts:['R1','R2','R3'] },
+  { fam:'G',  label:'Ga',  tam:'Gandharam', fixed:false, opts:['G1','G2','G3'] },
+  { fam:'M',  label:'Ma',  tam:'Madhyamam', fixed:false, opts:['M1','M2'] },
+  { fam:'P',  label:'Pa',  tam:'Panchamam', fixed:false, opts:['P'] },
+  { fam:'D',  label:'Dha', tam:'Dhaivatam', fixed:false, opts:['D1','D2','D3'] },
+  { fam:'N',  label:'Ni',  tam:'Nishadham', fixed:false, opts:['N1','N2','N3'] },
+];
+
+/* sruthi reference table */
+const NOTES=[
+  ['G',196.00,'G'],['G#',207.65,'G♯'],['A',220.00,'A'],['A#',233.08,'A♯'],
+  ['B',246.94,'B'],['C',261.63,'C'],['C#',277.18,'C♯'],['D',293.66,'D'],
+  ['D#',311.13,'D♯'],['E',329.63,'E'],['F',349.23,'F'],['F#',369.99,'F♯']
+];
+
+/* ============ AUDIO ENGINE (violin) — shared across the labs ============ */
+let ctx=null;
+function getCtx(){ if(!ctx){ctx=new (window.AudioContext||window.webkitAudioContext)();} if(ctx.state==='suspended'){ctx.resume();} return ctx; }
+let vWave=null;
+function violinWave(){ if(vWave) return vWave; const c=getCtx();
+  const amps=[0,1,0.86,0.66,0.55,0.46,0.38,0.31,0.26,0.21,0.17,0.14,0.11,0.09,0.07,0.055,0.04];
+  const re=new Float32Array(amps.length), im=new Float32Array(amps.length);
+  for(let i=0;i<amps.length;i++) im[i]=amps[i];
+  vWave=c.createPeriodicWave(re,im,{disableNormalization:false}); return vWave; }
+function makeBody(c){
+  const f1=c.createBiquadFilter();f1.type='peaking';f1.frequency.value=300;f1.Q.value=1.1;f1.gain.value=7;
+  const f2=c.createBiquadFilter();f2.type='peaking';f2.frequency.value=460;f2.Q.value=1.3;f2.gain.value=6;
+  const f3=c.createBiquadFilter();f3.type='peaking';f3.frequency.value=2600;f3.Q.value=0.9;f3.gain.value=6;
+  const lp=c.createBiquadFilter();lp.type='lowpass';lp.frequency.value=7000;
+  f1.connect(f2);f2.connect(f3);f3.connect(lp); return {input:f1,output:lp}; }
+function bowNoise(t,freq,amp){ const c=getCtx();const dur=0.13;
+  const src=c.createBufferSource();const buf=c.createBuffer(1,Math.floor(c.sampleRate*dur),c.sampleRate);
+  const d=buf.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=Math.random()*2-1;src.buffer=buf;
+  const bp=c.createBiquadFilter();bp.type='bandpass';bp.frequency.value=Math.min(4500,freq*4);bp.Q.value=0.8;
+  const g=c.createGain();g.gain.setValueAtTime(amp,t);g.gain.exponentialRampToValueAtTime(0.0005,t+dur);
+  src.connect(bp).connect(g).connect(c.destination);src.start(t);src.stop(t+dur); }
+function playNote(freq,dur=0.8,when=null,level=1){ const c=getCtx();const t=when==null?c.currentTime:when;
+  const osc=c.createOscillator();osc.setPeriodicWave(violinWave());osc.frequency.value=freq;
+  const vib=c.createOscillator();vib.frequency.value=5.6;const vg=c.createGain();
+  vg.gain.setValueAtTime(0,t);vg.gain.linearRampToValueAtTime(freq*0.006,t+0.28);vib.connect(vg).connect(osc.frequency);
+  const body=makeBody(c);const g=c.createGain();const peak=0.26*level;
+  g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(peak,t+0.07);
+  g.gain.linearRampToValueAtTime(peak*0.82,t+Math.min(0.3,dur*0.45));
+  g.gain.setValueAtTime(peak*0.82,t+Math.max(0,dur-0.14));
+  g.gain.exponentialRampToValueAtTime(0.0008,t+dur);
+  osc.connect(body.input);body.output.connect(g);g.connect(c.destination);
+  osc.start(t);vib.start(t);osc.stop(t+dur+0.05);vib.stop(t+dur+0.05);
+  bowNoise(t,freq,peak*0.16); }
+
+let droneNodes=null;
+function stopDrone(){ if(!droneNodes) return; const c=getCtx();const t=c.currentTime;
+  droneNodes.gain.gain.cancelScheduledValues(t);droneNodes.gain.gain.setValueAtTime(droneNodes.gain.gain.value,t);
+  droneNodes.gain.gain.linearRampToValueAtTime(0,t+0.25);
+  droneNodes.oscs.forEach(o=>o.stop(t+0.3)); droneNodes=null; }
+function startDrone(){ stopDrone(); const c=getCtx();
+  const body=makeBody(c);const g=c.createGain();g.gain.setValueAtTime(0,c.currentTime);
+  g.gain.linearRampToValueAtTime(0.09,c.currentTime+0.25);
+  body.output.connect(g);g.connect(c.destination);
+  const oscs=[];
+  const sa=c.createOscillator();sa.setPeriodicWave(violinWave());sa.frequency.value=sruthiHz;sa.connect(body.input);sa.start();oscs.push(sa);
+  const saLow=c.createOscillator();saLow.setPeriodicWave(violinWave());saLow.frequency.value=sruthiHz/2;
+  const slg=c.createGain();slg.gain.value=0.6;saLow.connect(slg).connect(body.input);saLow.start();oscs.push(saLow);
+  droneNodes={oscs,gain:g}; }
+
+/* ============ STATE ============ */
+let sruthiHz=311.13;
+let pace=560, loop=false, playing=false, seqTimers=[];
+/* selection: family -> chosen code or null (off). Sa & Sa+ implicit. */
+let sel={ R:null, G:null, M:null, P:null, D:null, N:null };
+const discovered=new Set();
+
+/* ---- assemble the current ascending scale as note objects ---- */
+function currentScale(){
+  const codes=['S'];
+  ['R','G','M','P','D','N'].forEach(f=>{ if(sel[f]) codes.push(sel[f]); });
+  // build note objects, sort by pitch to guarantee a true ascent, then add upper Sa
+  const notes=codes.map(c=>({code:c, letter:c[0], ratio:SWARA[c].r}));
+  notes.sort((a,b)=>a.ratio-b.ratio);
+  notes.push({code:'S+', letter:'S', ratio:2});
+  return notes;
+}
+
+/* the order-independent base set used for discovery */
+function currentSet(){
+  const s=new Set(['S']);
+  ['R','G','M','P','D','N'].forEach(f=>{ if(sel[f]) s.add(sel[f]); });
+  return s;
+}
+function aroToSet(aro){
+  const s=new Set();
+  aro.trim().split(/\s+/).forEach(tok=>{ const base=tok.replace(/[+\-]/g,''); if(base) s.add(base); });
+  s.delete('S'); s.add('S'); // ensure single Sa, drop octave dup naturally
+  return s;
+}
+function setsEqual(a,b){ if(a.size!==b.size) return false; for(const x of a){ if(!b.has(x)) return false; } return true; }
+
+/* ============ RENDER ============ */
+function renderLadder(){
+  const wrap=document.getElementById('ladder');
+  wrap.innerHTML='';
+  STATIONS.forEach(st=>{
+    const row=document.createElement('div');
+    row.className='station'+(st.fixed?' fixed':'');
+    let opts='';
+    if(!st.fixed){
+      const off = (st.fam==='P') ? (sel.P? '' : 'on') : (sel[st.fam]? '' : 'on');
+      opts+=`<button class="opt off ${off}" data-fam="${st.fam}" data-code=""><span class="ox">∅</span>skip</button>`;
+    }
+    st.opts.forEach(code=>{
+      const isOn = st.fixed ? true : (sel[st.fam]===code);
+      opts+=`<button class="opt ${isOn?'on':''}" data-fam="${st.fam}" data-code="${code}">`+
+            `<span class="osym">${st.label[0]==='S'&&st.fixed?'S':code[0]}</span>`+
+            `<span class="ocd">${st.fixed?'Sa':code}</span></button>`;
+    });
+    row.innerHTML=`<div class="sname">${st.label}<small>${st.tam}</small></div><div class="opts">${opts}</div>`;
+    wrap.appendChild(row);
+  });
+  wrap.querySelectorAll('.opt').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const fam=btn.dataset.fam, code=btn.dataset.code;
+      if(fam==='S') { getCtx(); playNote(sruthiHz,0.6); return; }   // Sa is fixed; just sound it
+      let toSound=null;
+      if(code===''){ sel[fam]=null; }
+      else { sel[fam] = (sel[fam]===code? null : code); if(sel[fam]) toSound=sruthiHz*SWARA[code].r; }
+      renderLadder(); renderTrack(); hideResult();
+      if(toSound){ getCtx(); playNote(toSound,0.55); }
+    });
+  });
+}
+
+function renderTrack(){
+  const track=document.getElementById('track');
+  track.innerHTML='';
+  currentScale().forEach((n,i)=>{
+    const cell=document.createElement('div');
+    cell.className='cell'; cell.dataset.i=i;
+    const dot = n.code==='S+' ? '<span class="od"></span>' : '';
+    cell.innerHTML=`${dot}<span class="sym">${n.letter}</span><span class="cd">${n.code.replace('+','')}</span>`;
+    cell.addEventListener('click',()=>{ getCtx(); playNote(sruthiHz*n.ratio,0.6); flash(i); });
+    track.appendChild(cell);
+  });
+}
+function flash(i){
+  const el=document.querySelector(`.cell[data-i="${i}"]`); if(!el) return;
+  el.classList.add('cur'); setTimeout(()=>{ if(!playing) el.classList.remove('cur'); },420);
+}
+
+/* ============ PLAYBACK ============ */
+function clearSeq(){ seqTimers.forEach(t=>clearTimeout(t)); seqTimers=[]; }
+function playScale(){
+  if(playing){ stopScale(); return; }
+  playing=true;
+  document.getElementById('playBtn').classList.add('stop');
+  document.getElementById('playBtn').innerHTML='⏹ &nbsp;Stop';
+  startDrone();
+  const up=currentScale();
+  const down=up.slice(0,-1).reverse(); // descend without repeating top Sa
+  const full=up.concat(down);
+  const step=pace/1000;
+  const c=getCtx(); const t0=c.currentTime+0.3;
+  full.forEach((n,i)=>{
+    playNote(sruthiHz*n.ratio, step*0.94, t0+i*step);
+    const ms=(0.3+i*step)*1000;
+    seqTimers.push(setTimeout(()=>highlightCell(n,i,full.length),ms));
+  });
+  const totalMs=(0.3+full.length*step+0.25)*1000;
+  seqTimers.push(setTimeout(()=>{
+    clearCur();
+    if(loop && playing){ playing=false; playScale(); }
+    else stopScale();
+  },totalMs));
+}
+function highlightCell(n,i,len){
+  clearCur();
+  // map sequence index back to the ascending track cell
+  const up=currentScale();
+  let idx = i < up.length ? i : (len - i);
+  const el=document.querySelector(`.cell[data-i="${idx}"]`);
+  if(el) el.classList.add('cur');
+}
+function clearCur(){ document.querySelectorAll('.cell.cur').forEach(c=>c.classList.remove('cur')); }
+function stopScale(){
+  playing=false; clearSeq(); stopDrone(); clearCur();
+  const b=document.getElementById('playBtn');
+  b.classList.remove('stop'); b.innerHTML='🎻 &nbsp;Play my raga';
+}
+
+/* ============ DISCOVERY ============ */
+function discover(){
+  const set=currentSet();
+  const noteCount=set.size + 1; // + upper Sa
+  let match=null;
+  for(const r of RAGA_DICT){ if(setsEqual(set, aroToSet(r.aro))){ match=r; break; } }
+  const res=document.getElementById('result');
+  const nameRow=document.getElementById('nameRow');
+  if(match){
+    res.className='result found show';
+    document.getElementById('resultBig').textContent='🎉 You discovered a real raga!';
+    document.getElementById('resultName').textContent=match.name;
+    document.getElementById('resultInfo').textContent=match.info;
+    nameRow.classList.remove('show');
+    if(!discovered.has(match.name)){ discovered.add(match.name); lightMedal(match.name); }
+    updateCount();
+  } else {
+    res.className='result invent show';
+    document.getElementById('resultBig').textContent='🌟 You invented a brand-new scale!';
+    document.getElementById('resultName').textContent='Your own raga';
+    const cnt = (set.size) ; // swaras chosen incl Sa, not counting upper Sa
+    document.getElementById('resultInfo').textContent=
+      `It uses ${cnt} swaras before the upper Sa. It doesn\u2019t match a raga in our book — which makes it yours. Give it a name!`;
+    nameRow.classList.add('show');
+    document.getElementById('yourName').textContent='';
+  }
+}
+function hideResult(){ document.getElementById('result').className='result'; }
+
+/* ============ COLLECTION ============ */
+function renderMedals(){
+  const wrap=document.getElementById('medals');
+  wrap.innerHTML='';
+  RAGA_DICT.forEach(r=>{
+    const m=document.createElement('div');
+    m.className='medal'; m.dataset.name=r.name;
+    m.innerHTML=`<div class="mi">${r.emoji}</div><div class="mn">${discovered.has(r.name)?r.name:'? ? ?'}</div>`;
+    wrap.appendChild(m);
+  });
+  document.getElementById('totalCount').textContent=RAGA_DICT.length;
+  updateCount();
+}
+function lightMedal(name){
+  const m=document.querySelector(`.medal[data-name="${name}"]`);
+  if(m){ m.classList.add('got'); m.querySelector('.mn').textContent=name; }
+}
+function updateCount(){ document.getElementById('gotCount').textContent=discovered.size; }
+
+/* ============ WIRING ============ */
+function buildSruthi(){
+  const s=document.getElementById('sruthiSel');
+  NOTES.forEach(n=>{ const o=document.createElement('option'); o.value=n[1]; o.textContent=n[2];
+    if(Math.abs(n[1]-311.13)<0.1) o.selected=true; s.appendChild(o); });
+  s.onchange=()=>{ sruthiHz=parseFloat(s.value); document.getElementById('hzLabel').textContent='('+Math.round(sruthiHz)+' Hz)'; };
+  document.getElementById('hzLabel').textContent='('+Math.round(sruthiHz)+' Hz)';
+}
+document.getElementById('playBtn').addEventListener('click',()=>{ getCtx(); playScale(); });
+document.getElementById('discoverBtn').addEventListener('click',()=>{ getCtx(); discover(); });
+document.getElementById('loopChk').addEventListener('change',e=>{ loop=e.target.checked; });
+document.getElementById('paceSlider').addEventListener('input',e=>{ pace=920-(parseInt(e.target.value)-320); });
+document.getElementById('nameInput').addEventListener('input',e=>{
+  const v=e.target.value.trim();
+  document.getElementById('yourName').textContent = v ? '🎶 '+v : '';
+});
+
+/* sensible starting scale: Mohanam-ish so the page isn't empty */
+sel={ R:'R2', G:'G3', M:null, P:'P', D:'D2', N:null };
+
+buildSruthi();
+renderLadder();
+renderTrack();
+renderMedals();
+/* pace slider: 320(fast end value) maps to fast; invert so left=slow */
+pace=560;
+</script>
+<script>
+(function(){
+  var r=document.querySelector('.lva-ribbon'), t=document.getElementById('lvaToggle');
+  if(!r||!t) return;
+  t.addEventListener('click',function(){
+    var open=r.classList.toggle('open'); t.classList.toggle('open',open);
+    t.setAttribute('aria-expanded',open?'true':'false');
+  });
+  r.querySelectorAll('.lva-links a').forEach(function(a){
+    a.addEventListener('click',function(){ r.classList.remove('open'); t.classList.remove('open'); t.setAttribute('aria-expanded','false'); });
+  });
+})();
+</script>
+<script>
+function __lvt(id){var e=document.getElementById(id);return e?e.textContent.trim():"";}
+window.LVA_SHARE_CONFIG={
+  mountAfter:'#medals', page:'build-a-raga-lab.html',
+  getData:function(){ var g=__lvt('gotCount'), t=__lvt('totalCount');
+    return {lab:'Build-a-Raga Lab', headline:'I discovered real ragas!',
+      lines:[{label:'Ragas discovered',value:g+' / '+t}], badge:'\u{1F6E0}', page:'build-a-raga-lab.html',
+      shareText:'I discovered '+g+' of '+t+' ragas in the Build-a-Raga Lab at Lakshya\u2019s Violin Academy!'}; } };
+</script>
+<script>
+window.LVAShare=(function(){
+  var SITE='https://lakshyasviolinacademy.live/';
+  var modal=null, canvas=null, cur=null;
+  function build(){
+    if(modal) return;
+    modal=document.createElement('div'); modal.className='lva-modal';
+    modal.innerHTML='<div class="lva-modal-card"><h3>Share your result \u{1F389}</h3>'+
+      '<canvas id="lvaShareCanvas" width="1080" height="1080"></canvas>'+
+      '<div class="lva-share-actions">'+
+      '<button class="lva-b-share" data-a="share">\u{1F4F2} Share</button>'+
+      '<button class="lva-b-fb" data-a="fb">Facebook</button>'+
+      '<button class="lva-b-dl" data-a="dl">\u2B07 Save image</button>'+
+      '<button class="lva-b-close" data-a="close">Close</button></div>'+
+      '<div class="lva-modal-hint">On a phone, <b>Share</b> opens Instagram, Facebook, WhatsApp and more. On a computer, use <b>Save image</b> and upload it to Instagram, or <b>Facebook</b> to post the link.</div></div>';
+    document.body.appendChild(modal);
+    canvas=modal.querySelector('#lvaShareCanvas');
+    modal.addEventListener('click',function(e){ if(e.target===modal) hide(); });
+    modal.querySelectorAll('button').forEach(function(b){ b.addEventListener('click',function(){ act(b.getAttribute('data-a')); }); });
+  }
+  function sp(x,t,cx,y,ls){ var w=0,i; for(i=0;i<t.length;i++){ w+=x.measureText(t[i]).width+ls; } w-=ls;
+    var px=cx-w/2; for(i=0;i<t.length;i++){ x.fillText(t[i],px+x.measureText(t[i]).width/2,y); px+=x.measureText(t[i]).width+ls; } }
+  function wrap(x,t,cx,y,maxw,lh){ var ws=String(t).split(' '),line='',lines=[],i;
+    for(i=0;i<ws.length;i++){ var tt=line?line+' '+ws[i]:ws[i]; if(x.measureText(tt).width>maxw&&line){lines.push(line);line=ws[i];}else line=tt; }
+    if(line)lines.push(line); for(i=0;i<lines.length;i++) x.fillText(lines[i],cx,y+i*lh); return lines.length; }
+  function draw(cfg){
+    var x=canvas.getContext('2d'); if(!x) return; var W=1080,H=1080;
+    var g=x.createLinearGradient(0,0,0,H); g.addColorStop(0,'#7B1E1E'); g.addColorStop(1,'#2A0606');
+    x.fillStyle=g; x.fillRect(0,0,W,H);
+    x.strokeStyle='#F0C040'; x.lineWidth=5; x.strokeRect(34,34,W-68,H-68);
+    x.strokeStyle='#B8860B'; x.lineWidth=1.5; x.strokeRect(48,48,W-96,H-96);
+    x.textAlign='center'; x.textBaseline='alphabetic';
+    x.fillStyle='#F5A623'; x.font='700 30px Georgia,serif'; sp(x,'LAKSHYA\u2019S VIOLIN ACADEMY',W/2,138,4);
+    x.fillStyle='#FBF6EE'; x.font='italic 700 40px Georgia,serif'; x.fillText(cfg.lab||'',W/2,208);
+    x.strokeStyle='#B8860B'; x.lineWidth=2; x.beginPath(); x.moveTo(W/2-150,244); x.lineTo(W/2-20,244); x.moveTo(W/2+20,244); x.lineTo(W/2+150,244); x.stroke();
+    x.fillStyle='#F0C040'; x.beginPath(); x.moveTo(W/2,236); x.lineTo(W/2+11,244); x.lineTo(W/2,252); x.lineTo(W/2-11,244); x.closePath(); x.fill();
+    x.fillStyle='#F0C040'; x.font='700 50px Georgia,serif';
+    var n=wrap(x,cfg.headline||'My result',W/2,326,880,62);
+    var y=326+n*62+44;
+    (cfg.lines||[]).forEach(function(ln){
+      x.fillStyle='#F5DEB3'; x.font='400 36px Georgia,serif'; x.fillText(ln.label,W/2,y);
+      x.fillStyle='#FFF8E7'; x.font='700 82px Georgia,serif'; x.fillText(String(ln.value),W/2,y+84); y+=176;
+    });
+    if(cfg.badge){ x.font='110px Georgia,serif'; x.fillText(cfg.badge,W/2,Math.min(y+26,928)); }
+    x.fillStyle='#E8C49E'; x.font='400 27px Georgia,serif'; x.fillText('Carnatic Violin for Young Learners \u00B7 Old Pallavaram, Chennai',W/2,986);
+    x.fillStyle='#F0C040'; x.font='700 32px Georgia,serif'; x.fillText('lakshyasviolinacademy.live',W/2,1030);
+  }
+  function open(cfg){ build(); cur=cfg||{}; draw(cur); modal.classList.add('show'); }
+  function hide(){ if(modal) modal.classList.remove('show'); }
+  function pageURL(){ return SITE+((cur&&cur.page)||''); }
+  function caption(){ return (cur&&cur.shareText? cur.shareText:'Learning Carnatic violin at Lakshya\u2019s Violin Academy!')+' '+pageURL(); }
+  function act(a){
+    if(a==='close') return hide();
+    if(a==='dl'){ var l=document.createElement('a'); l.download='my-result-lakshyas-violin-academy.png'; l.href=canvas.toDataURL('image/png'); l.click(); return; }
+    if(a==='fb'){ window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(pageURL()),'_blank','noopener,noreferrer,width=660,height=540'); return; }
+    if(a==='share'){
+      if(!canvas.toBlob){ act('dl'); return; }
+      canvas.toBlob(function(blob){
+        var file=new File([blob],'lakshyas-violin-academy-result.png',{type:'image/png'});
+        var data={title:'Lakshya\u2019s Violin Academy',text:caption()};
+        try{ if(navigator.canShare&&navigator.canShare({files:[file]})) data.files=[file]; }catch(e){}
+        if(navigator.share){ navigator.share(data).catch(function(){}); }
+        else { var l=document.createElement('a'); l.download='lakshyas-violin-academy-result.png'; l.href=canvas.toDataURL('image/png'); l.click();
+          window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(pageURL()),'_blank','noopener,noreferrer'); }
+      },'image/png');
+    }
+  }
+  var __mounted=false;
+  function mount(cfg){ if(__mounted) return; var host=document.querySelector(cfg.mountAfter); if(!host) return; __mounted=true;
+    var row=document.createElement('div'); row.className='lva-share-row';
+    var b=document.createElement('button'); b.type='button'; b.className='lva-share-btn'; b.innerHTML='\u{1F4E3} Share my result';
+    b.addEventListener('click',function(){ open(cfg.getData()); });
+    row.appendChild(b); host.parentNode.insertBefore(row,host.nextSibling); }
+  function __lvready(fn){ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',fn); else fn(); }
+  __lvready(function(){ if(window.LVA_SHARE_CONFIG) mount(window.LVA_SHARE_CONFIG); });
+  return {open:open,hide:hide,mount:mount};
+})();
+</script>
+</body>
+</html>
