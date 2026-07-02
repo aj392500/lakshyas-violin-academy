@@ -16,25 +16,27 @@
 <meta name="twitter:title" content="Lakshya&#x27;s Violin Academy — Carnatic Violin for Young Learners" />
 <meta name="twitter:description" content="Lakshya's Violin Academy — Carnatic Violin lessons for children in Chennai. Beginner-friendly, traditional, and taught with love." />
 <meta name="twitter:image" content="https://lakshyasviolinacademy.live/og-image.png" />
-<meta name="theme-color" content="#7B1E1E" />
+<meta name="theme-color" content="#5B54C9" />
 
 <meta name="description" content="Lakshya's Violin Academy — Carnatic Violin lessons for children in Chennai. Beginner-friendly, traditional, and taught with love.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif:wght@400;600&family=Crimson+Pro:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
 <style>
   :root {
-    --saffron: #C8520A;
-    --saffron-light: #F5A623;
-    --saffron-pale: #FDF3E3;
-    --maroon: #7B1E1E;
-    --maroon-soft: #A94040;
-    --gold: #B8860B;
-    --gold-light: #F0C040;
-    --cream: #FBF6EE;
-    --cream-dark: #F2E8D5;
-    --brown: #4A2C0A;
-    --text-dark: #2C1A0A;
-    --text-mid: #5C3A1A;
-    --text-soft: #7A5A3A;
+    --saffron: #F25C54;
+    --saffron-light: #FFB84C;
+    --saffron-pale: #EEF4FF;
+    --maroon: #5B54C9;
+    --maroon-soft: #837DD9;
+    --gold: #D97706;
+    --gold-light: #FFD166;
+    --cream: #F5F8FF;
+    --cream-dark: #E7EEFC;
+    --brown: #3A4066;
+    --text-dark: #2E3350;
+    --text-mid: #4D5378;
+    --text-soft: #707795;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -49,7 +51,7 @@
   }
   .nav-brand { font-family: 'Playfair Display', serif; color: var(--gold-light); font-size: 1.2rem; font-weight: 700; padding: 1rem 0; letter-spacing: 0.5px; }
   .nav-links { display: flex; gap: 1.5rem; }
-  .nav-links a { color: #F5DEB3; text-decoration: none; font-size: 0.9rem; padding: 1.2rem 0; border-bottom: 2px solid transparent; transition: color 0.2s, border-color 0.2s; }
+  .nav-links a { color: #E3E8FF; text-decoration: none; font-size: 0.9rem; padding: 1.2rem 0; border-bottom: 2px solid transparent; transition: color 0.2s, border-color 0.2s; }
   .nav-links a:hover { color: var(--gold-light); border-bottom-color: var(--gold-light); }
   /* ── Blog dropdown ── */
 .nav-item { position: relative; }
@@ -61,8 +63,8 @@
   top: calc(100% + 3px);
   left: 0;
   min-width: 260px;
-  background: #5A1010;
-  border: 1px solid rgba(240,192,64,0.3);
+  background: #443CA8;
+  border: 1px solid rgba(255,209,102,0.3);
   border-top: 2px solid var(--saffron-light);
   border-radius: 0 0 6px 6px;
   z-index: 200;
@@ -73,52 +75,52 @@
 .nav-dropdown-label {
   display: block;
   font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase;
-  color: rgba(240,192,64,0.5);
+  color: rgba(255,209,102,0.5);
   padding: 0.5rem 1rem 0.2rem;
 }
 .nav-dropdown a {
   display: block !important;
   padding: 0.65rem 1rem !important;
-  border-bottom: 1px solid rgba(240,192,64,0.12) !important;
+  border-bottom: 1px solid rgba(255,209,102,0.12) !important;
   font-size: 0.82rem !important;
-  color: #F5DEB3 !important;
+  color: #E3E8FF !important;
   white-space: nowrap;
   border-left: none !important;
 }
 .nav-dropdown a:last-child { border-bottom: none !important; }
 .nav-dropdown a:hover {
-  background: rgba(200,82,10,0.25) !important;
+  background: rgba(242,92,84,0.25) !important;
   color: var(--gold-light) !important;
-  border-bottom-color: rgba(240,192,64,0.12) !important;
+  border-bottom-color: rgba(255,209,102,0.12) !important;
 }
 @media (max-width: 768px) {
   .nav-item > a::after { display: none; }
   .nav-dropdown { display: block; position: static; background: transparent; border: none; box-shadow: none; min-width: unset; }
   .nav-dropdown-label { display: none; }
-  .nav-dropdown a { padding: 0.6rem 0 0.6rem 1.5rem !important; color: #D4A97A !important; font-size: 0.85rem !important; border-bottom: 1px solid rgba(240,192,64,0.08) !important; }
+  .nav-dropdown a { padding: 0.6rem 0 0.6rem 1.5rem !important; color: #B4BEF5 !important; font-size: 0.85rem !important; border-bottom: 1px solid rgba(255,209,102,0.08) !important; }
 }
   .hero {
-    background: linear-gradient(135deg, var(--maroon) 0%, #5A1010 60%, #3A0A0A 100%);
+    background: linear-gradient(135deg, var(--maroon) 0%, #443CA8 60%, #2F2973 100%);
     position: relative; overflow: hidden;
     padding: 5rem 3rem 4rem; text-align: center;
   }
   .hero::before {
     content: '';
     position: absolute; inset: 0;
-    background-image: radial-gradient(circle at 20% 50%, rgba(200,82,10,0.15) 0%, transparent 50%),
-                      radial-gradient(circle at 80% 50%, rgba(184,134,11,0.12) 0%, transparent 50%);
+    background-image: radial-gradient(circle at 20% 50%, rgba(242,92,84,0.15) 0%, transparent 50%),
+                      radial-gradient(circle at 80% 50%, rgba(217,119,6,0.12) 0%, transparent 50%);
   }
   .hero-ornament { font-size: 2.5rem; color: var(--gold-light); opacity: 0.8; display: block; margin-bottom: 1rem; letter-spacing: 8px; }
-  .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 5vw, 3.5rem); color: #FFF8E7; font-weight: 700; line-height: 1.2; position: relative; margin-bottom: 0.5rem; }
+  .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 5vw, 3.5rem); color: #FDFDFF; font-weight: 700; line-height: 1.2; position: relative; margin-bottom: 0.5rem; }
   .hero-title span { color: var(--gold-light); }
   .hero-subtitle { font-family: 'Crimson Pro', serif; font-size: 1.3rem; color: #F5C8A0; font-style: italic; margin: 0.5rem 0 1.5rem; position: relative; }
-  .hero-tagline { font-size: 1rem; color: #D4A97A; max-width: 500px; margin: 0 auto 2rem; position: relative; line-height: 1.8; }
+  .hero-tagline { font-size: 1rem; color: #B4BEF5; max-width: 500px; margin: 0 auto 2rem; position: relative; line-height: 1.8; }
   .divider-ornament { color: var(--gold-light); font-size: 1.4rem; letter-spacing: 12px; opacity: 0.7; margin: 1rem 0; display: block; position: relative; }
   .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; position: relative; }
-  .btn-primary { background: var(--saffron); color: white; padding: 0.8rem 2rem; border: none; border-radius: 4px; font-family: 'Noto Serif', serif; font-size: 1rem; cursor: pointer; text-decoration: none; display: inline-block; transition: background 0.2s, transform 0.1s; border-bottom: 3px solid #8A3500; }
-  .btn-primary:hover { background: #A84208; transform: translateY(-1px); }
+  .btn-primary { background: var(--saffron); color: white; padding: 0.8rem 2rem; border: none; border-radius: 4px; font-family: 'Noto Serif', serif; font-size: 1rem; cursor: pointer; text-decoration: none; display: inline-block; transition: background 0.2s, transform 0.1s; border-bottom: 3px solid #C23A2E; }
+  .btn-primary:hover { background: #D9483B; transform: translateY(-1px); }
   .btn-outline { background: transparent; color: var(--gold-light); padding: 0.8rem 2rem; border: 1.5px solid var(--gold-light); border-radius: 4px; font-family: 'Noto Serif', serif; font-size: 1rem; cursor: pointer; text-decoration: none; display: inline-block; transition: background 0.2s; }
-  .btn-outline:hover { background: rgba(240,192,64,0.1); }
+  .btn-outline:hover { background: rgba(255,209,102,0.1); }
 
   /* ===== INTERACTIVE LESSONS (featured) ===== */
   .explore-section { background: var(--maroon); }
@@ -126,12 +128,12 @@
   .explore-section .section-label { color: var(--saffron-light); }
   .explore-section .border-accent { background: linear-gradient(90deg, var(--saffron-light), var(--gold-light)); }
   .explore-intro { color: #E8D4B5; max-width: 700px; margin-bottom: 2rem; font-size: 1.02rem; line-height: 1.85; }
-  .explore-intro em { color: #F0C040; font-style: italic; }
+  .explore-intro em { color: #FFD166; font-style: italic; }
   .explore-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.3rem; }
   .explore-card {
     display: flex; flex-direction: column;
     background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(240,192,64,0.25);
+    border: 1px solid rgba(255,209,102,0.25);
     border-top: 4px solid var(--saffron-light);
     border-radius: 10px;
     padding: 1.5rem;
@@ -143,10 +145,10 @@
   .explore-card:hover { transform: translateY(-4px); background: rgba(255,255,255,0.1); box-shadow: 0 12px 30px rgba(0,0,0,0.32); }
   .explore-card-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.8rem; }
   .explore-icon { font-size: 2.2rem; line-height: 1; }
-  .explore-tag { font-size: 0.64rem; letter-spacing: 0.1em; text-transform: uppercase; color: #C8A040; border: 1px solid rgba(240,192,64,0.3); border-radius: 99px; padding: 3px 10px; white-space: nowrap; }
-  .explore-card h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: #FFF8E7; font-weight: 600; margin-bottom: 0.5rem; }
-  .explore-card p { font-size: 0.9rem; color: #D4A97A; line-height: 1.7; flex: 1; margin-bottom: 1rem; }
-  .explore-cta { font-size: 0.9rem; color: #F0C040; font-weight: 500; }
+  .explore-tag { font-size: 0.64rem; letter-spacing: 0.1em; text-transform: uppercase; color: #F0B429; border: 1px solid rgba(255,209,102,0.3); border-radius: 99px; padding: 3px 10px; white-space: nowrap; }
+  .explore-card h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: #FDFDFF; font-weight: 600; margin-bottom: 0.5rem; }
+  .explore-card p { font-size: 0.9rem; color: #B4BEF5; line-height: 1.7; flex: 1; margin-bottom: 1rem; }
+  .explore-cta { font-size: 0.9rem; color: #FFD166; font-weight: 500; }
   .explore-card:hover .explore-cta { text-decoration: underline; }
 
   section { padding: 4rem 2rem; }
@@ -157,23 +159,23 @@
 
   .about { background: var(--cream); }
   .about-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 3rem; align-items: start; }
-  .about-visual { background: linear-gradient(145deg, var(--cream-dark), #E8D5B5); border: 2px solid var(--gold); border-radius: 6px; padding: 2.5rem 1.5rem; text-align: center; position: relative; overflow: hidden; }
+  .about-visual { background: linear-gradient(145deg, var(--cream-dark), #D9E2F8); border: 2px solid var(--gold); border-radius: 6px; padding: 2.5rem 1.5rem; text-align: center; position: relative; overflow: hidden; }
   .about-visual::before { content: '𝄞'; position: absolute; top: -10px; right: 10px; font-size: 5rem; color: var(--gold-light); opacity: 0.15; }
   .violin-icon { font-size: 4rem; display: block; margin-bottom: 1rem; }
   .about-name { font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--maroon); font-weight: 700; }
   .about-role { font-size: 0.9rem; color: var(--saffron); font-style: italic; margin-top: 0.3rem; }
   .about-badges { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; margin-top: 1rem; }
-  .badge { background: var(--maroon); color: #F5DEB3; padding: 3px 10px; border-radius: 3px; font-size: 0.75rem; letter-spacing: 0.5px; }
+  .badge { background: var(--maroon); color: #E3E8FF; padding: 3px 10px; border-radius: 3px; font-size: 0.75rem; letter-spacing: 0.5px; }
   .about-text p { color: var(--text-mid); margin-bottom: 1rem; font-size: 1rem; }
   .highlight-box { background: var(--saffron-pale); border-left: 3px solid var(--saffron); padding: 1rem 1.2rem; margin-top: 1rem; border-radius: 0 4px 4px 0; }
   .highlight-box p { color: var(--text-mid); margin: 0; font-style: italic; font-size: 0.95rem; }
 
   .courses { background: var(--cream-dark); }
   .courses-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
-  .course-card { background: var(--cream); border: 1px solid #D4B896; border-top: 4px solid var(--saffron); border-radius: 6px; padding: 1.5rem; transition: transform 0.2s, box-shadow 0.2s; }
+  .course-card { background: var(--cream); border: 1px solid #C5D3F0; border-top: 4px solid var(--saffron); border-radius: 6px; padding: 1.5rem; transition: transform 0.2s, box-shadow 0.2s; }
   .course-card:nth-child(2) { border-top-color: var(--gold); }
   .course-card:nth-child(3) { border-top-color: var(--maroon-soft); }
-  .course-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(74,44,10,0.1); }
+  .course-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(46,51,80,0.1); }
   .course-icon { font-size: 2rem; margin-bottom: 0.8rem; display: block; }
   .course-title { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: var(--maroon); margin-bottom: 0.5rem; font-weight: 600; }
   .course-age { font-size: 0.78rem; color: var(--saffron); letter-spacing: 1px; text-transform: uppercase; font-weight: 600; margin-bottom: 0.7rem; }
@@ -186,17 +188,17 @@
   .contact .section-title { color: var(--gold-light); }
   .contact .section-label { color: var(--saffron-light); }
   .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 3rem; align-items: start; margin-top: 1.5rem; }
-  .contact-info p { color: #D4A97A; margin-bottom: 0.5rem; font-size: 0.95rem; }
-  .contact-detail { display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.07); border: 1px solid rgba(240,192,64,0.25); border-radius: 4px; padding: 0.8rem 1rem; margin-bottom: 0.8rem; }
+  .contact-info p { color: #B4BEF5; margin-bottom: 0.5rem; font-size: 0.95rem; }
+  .contact-detail { display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,209,102,0.25); border-radius: 4px; padding: 0.8rem 1rem; margin-bottom: 0.8rem; }
   .contact-detail-icon { font-size: 1.2rem; }
-  .contact-detail-text { color: #F5DEB3; font-size: 0.9rem; }
-  .contact-detail-label { font-size: 0.75rem; color: #B8916A; display: block; }
+  .contact-detail-text { color: #E3E8FF; font-size: 0.9rem; }
+  .contact-detail-label { font-size: 0.75rem; color: #9AA5E0; display: block; }
   .form-group { margin-bottom: 1rem; }
-  .form-group label { display: block; color: #D4A97A; font-size: 0.85rem; margin-bottom: 0.4rem; letter-spacing: 0.5px; }
-  .form-group input, .form-group select, .form-group textarea { width: 100%; background: rgba(255,255,255,0.08); border: 1px solid rgba(240,192,64,0.3); border-radius: 4px; padding: 0.65rem 0.9rem; color: #FFF8E7; font-family: 'Noto Serif', serif; font-size: 0.9rem; outline: none; transition: border-color 0.2s; }
+  .form-group label { display: block; color: #B4BEF5; font-size: 0.85rem; margin-bottom: 0.4rem; letter-spacing: 0.5px; }
+  .form-group input, .form-group select, .form-group textarea { width: 100%; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,209,102,0.3); border-radius: 4px; padding: 0.65rem 0.9rem; color: #FDFDFF; font-family: 'Noto Serif', serif; font-size: 0.9rem; outline: none; transition: border-color 0.2s; }
   .form-group input::placeholder, .form-group textarea::placeholder { color: #8A6A4A; }
   .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold-light); }
-  .form-group select option { background: var(--maroon); color: #FFF8E7; }
+  .form-group select option { background: var(--maroon); color: #FDFDFF; }
   .form-group textarea { resize: vertical; min-height: 80px; }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
 
@@ -205,7 +207,7 @@
   .enquiry-card {
     display: flex; flex-direction: column; align-items: flex-start; gap: 0.35rem;
     background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(240,192,64,0.3);
+    border: 1px solid rgba(255,209,102,0.3);
     border-left: 4px solid var(--saffron-light);
     border-radius: 8px;
     padding: 1.4rem 1.5rem;
@@ -215,13 +217,13 @@
   .enquiry-card:hover { background: rgba(255,255,255,0.12); border-left-color: var(--gold-light); transform: translateY(-2px); }
   .enquiry-icon { font-size: 1.8rem; line-height: 1; }
   .enquiry-label { font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; color: var(--saffron-light); font-weight: 600; }
-  .enquiry-value { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: #FFF8E7; font-weight: 600; word-break: break-word; }
+  .enquiry-value { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: #FDFDFF; font-weight: 600; word-break: break-word; }
   .enquiry-cta { font-size: 0.82rem; color: var(--gold-light); margin-top: 0.2rem; }
-  .enquiry-meta { color: #B8916A; font-size: 0.85rem; margin-top: 1.6rem; }
+  .enquiry-meta { color: #9AA5E0; font-size: 0.85rem; margin-top: 1.6rem; }
   @media (max-width: 640px) { .enquiry-grid { grid-template-columns: 1fr; } }
 
-  footer { background: #1A0A02; text-align: center; padding: 2rem; border-top: 2px solid var(--saffron); }
-  footer p { color: #7A5A3A; font-size: 0.85rem; }
+  footer { background: #1E1A47; text-align: center; padding: 2rem; border-top: 2px solid var(--saffron); }
+  footer p { color: #707795; font-size: 0.85rem; }
   footer span { color: var(--gold-light); }
 
   .sapa-section { background: var(--cream-dark); }
@@ -236,7 +238,7 @@
   .sapa-visual-wrap::before {
     content: '𝄞';
     position: absolute; top: -20px; right: 20px;
-    font-size: 8rem; color: rgba(240,192,64,0.08);
+    font-size: 8rem; color: rgba(255,209,102,0.08);
     pointer-events: none;
   }
   .sapa-nodes {
@@ -252,41 +254,41 @@
     display: flex; flex-direction: column;
     align-items: center; justify-content: center;
     margin: 0 auto 6px;
-    border: 2px solid rgba(240,192,64,0.4);
+    border: 2px solid rgba(255,209,102,0.4);
     transition: transform 0.2s;
   }
-  .sapa-circle.sa { background: #7B1E1E; border-color: #F0C040; }
-  .sapa-circle.pa { background: #4A2C0A; border-color: #C8A040; }
+  .sapa-circle.sa { background: #5B54C9; border-color: #FFD166; }
+  .sapa-circle.pa { background: #3A4066; border-color: #F0B429; }
   .sapa-circle-swara {
     font-family: 'Playfair Display', serif;
     font-size: 1.5rem; font-weight: 700;
-    color: #F0C040; line-height: 1;
+    color: #FFD166; line-height: 1;
   }
   .sapa-circle-label {
-    font-size: 0.6rem; color: #D4A060;
+    font-size: 0.6rem; color: #B4BEF5;
     text-transform: uppercase; letter-spacing: 1px; margin-top: 2px;
   }
   .sapa-node-name {
-    font-size: 0.72rem; color: #D4A060;
+    font-size: 0.72rem; color: #B4BEF5;
     font-style: italic; text-align: center;
     max-width: 88px; line-height: 1.3;
   }
   .sapa-arrow {
-    color: #C8A040; font-size: 1.4rem;
+    color: #F0B429; font-size: 1.4rem;
     padding: 0 4px; margin-bottom: 28px;
     opacity: 0.6; align-self: center;
   }
   .sapa-octave-label {
     text-align: center;
     font-size: 0.72rem;
-    color: #B8916A;
+    color: #9AA5E0;
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 1rem;
   }
   .sapa-divider {
     border: none;
-    border-left: 1px dashed rgba(240,192,64,0.2);
+    border-left: 1px dashed rgba(255,209,102,0.2);
     height: 80px; margin: 0 12px; align-self: center; margin-bottom: 28px;
   }
   .sapa-significance {
@@ -296,7 +298,7 @@
   }
   .sapa-card {
     background: var(--cream);
-    border: 1px solid #D4B896;
+    border: 1px solid #C5D3F0;
     border-top: 3px solid var(--saffron);
     border-radius: 6px;
     padding: 1.2rem 1.2rem;
@@ -326,7 +328,7 @@
   .varisai-grid { display: flex; flex-direction: column; gap: 1.2rem; margin-top: 2rem; }
   .varisai-card {
     background: var(--cream);
-    border: 1px solid #D4B896;
+    border: 1px solid #C5D3F0;
     border-left: 5px solid var(--saffron);
     border-radius: 0 8px 8px 0;
     padding: 1.5rem 1.8rem;
@@ -334,7 +336,7 @@
     gap: 1.2rem; align-items: start;
     transition: box-shadow 0.2s;
   }
-  .varisai-card:hover { box-shadow: 0 4px 18px rgba(74,44,10,0.1); }
+  .varisai-card:hover { box-shadow: 0 4px 18px rgba(46,51,80,0.1); }
   .varisai-card:nth-child(2) { border-left-color: var(--gold); }
   .varisai-card:nth-child(3) { border-left-color: var(--maroon-soft); }
   .varisai-card:nth-child(4) { border-left-color: #4A8040; }
@@ -365,7 +367,7 @@
   }
   .level-pill {
     display: inline-block;
-    background: var(--maroon); color: #F5DEB3;
+    background: var(--maroon); color: #E3E8FF;
     border-radius: 20px; padding: 3px 10px;
     font-size: 0.72rem; letter-spacing: 0.5px;
     white-space: nowrap;
@@ -383,8 +385,8 @@
   }
   .science-item { text-align: center; }
   .science-icon { font-size: 1.8rem; display: block; margin-bottom: 0.5rem; }
-  .science-title { font-family: 'Playfair Display', serif; font-size: 0.95rem; color: #F0C040; font-weight: 600; margin-bottom: 0.3rem; }
-  .science-desc { font-size: 0.8rem; color: #D4A97A; line-height: 1.5; }
+  .science-title { font-family: 'Playfair Display', serif; font-size: 0.95rem; color: #FFD166; font-weight: 600; margin-bottom: 0.3rem; }
+  .science-desc { font-size: 0.8rem; color: #B4BEF5; line-height: 1.5; }
 
   /* ===== PHILOSOPHY SECTION ===== */
   .philosophy-section { background: var(--maroon); }
@@ -395,19 +397,19 @@
     text-align: center;
     padding: 2.5rem 1rem;
     margin: 1.5rem 0;
-    border: 1px solid rgba(240,192,64,0.2);
+    border: 1px solid rgba(255,209,102,0.2);
     border-radius: 12px;
     background: rgba(255,255,255,0.04);
   }
   .philosophy-hero-quote {
     font-family: 'Playfair Display', serif;
     font-size: clamp(1.3rem, 3vw, 1.8rem);
-    color: #F0C040;
+    color: #FFD166;
     line-height: 1.5;
     font-style: italic;
     max-width: 680px; margin: 0 auto 1rem;
   }
-  .philosophy-hero-sub { font-size: 0.9rem; color: #B8916A; }
+  .philosophy-hero-sub { font-size: 0.9rem; color: #9AA5E0; }
   .philosophy-values {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -415,22 +417,22 @@
   }
   .philosophy-card {
     background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(240,192,64,0.2);
+    border: 1px solid rgba(255,209,102,0.2);
     border-radius: 8px; padding: 1.4rem;
     text-align: center;
   }
   .philosophy-card-icon { font-size: 2rem; display: block; margin-bottom: 0.6rem; }
-  .philosophy-card-title { font-family: 'Playfair Display', serif; font-size: 1rem; color: #F0C040; font-weight: 600; margin-bottom: 0.5rem; }
-  .philosophy-card-body { font-size: 0.85rem; color: #D4A97A; line-height: 1.65; }
+  .philosophy-card-title { font-family: 'Playfair Display', serif; font-size: 1rem; color: #FFD166; font-weight: 600; margin-bottom: 0.5rem; }
+  .philosophy-card-body { font-size: 0.85rem; color: #B4BEF5; line-height: 1.65; }
   .philosophy-letter {
     background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(240,192,64,0.25);
+    border: 1px solid rgba(255,209,102,0.25);
     border-radius: 10px; padding: 2rem;
     margin-top: 2rem;
   }
-  .philosophy-letter-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #F0C040; margin-bottom: 1rem; }
-  .philosophy-letter p { color: #D4A97A; font-size: 0.92rem; line-height: 1.85; margin-bottom: 0.8rem; }
-  .philosophy-letter-sign { color: #C8A040; font-style: italic; font-size: 0.9rem; margin-top: 1rem; }
+  .philosophy-letter-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #FFD166; margin-bottom: 1rem; }
+  .philosophy-letter p { color: #B4BEF5; font-size: 0.92rem; line-height: 1.85; margin-bottom: 0.8rem; }
+  .philosophy-letter-sign { color: #F0B429; font-style: italic; font-size: 0.9rem; margin-top: 1rem; }
 
   @media (max-width: 640px) {
     .varisai-card { grid-template-columns: 40px 1fr; }
@@ -438,7 +440,7 @@
   }
   .strings-diagram-wrap {
     background: var(--saffron-pale);
-    border: 1.5px solid #C8A040;
+    border: 1.5px solid #F0B429;
     border-radius: 10px;
     padding: 2rem 1rem;
     max-width: 820px;
@@ -449,13 +451,13 @@
     margin-top: 2rem; font-size: 0.9rem;
   }
   .strings-table th {
-    background: var(--maroon); color: #F5DEB3;
+    background: var(--maroon); color: #E3E8FF;
     padding: 0.6rem 1rem; text-align: left;
     font-family: 'Noto Serif', serif; font-weight: 600;
     font-size: 0.85rem; letter-spacing: 0.5px;
   }
   .strings-table td {
-    padding: 0.6rem 1rem; border-bottom: 1px solid #D4B896;
+    padding: 0.6rem 1rem; border-bottom: 1px solid #C5D3F0;
     color: var(--text-mid); vertical-align: middle;
   }
   .strings-table tr:last-child td { border-bottom: none; }
@@ -466,7 +468,7 @@
   }
   .note-badge {
     display: inline-block;
-    background: var(--maroon); color: #F5DEB3;
+    background: var(--maroon); color: #E3E8FF;
     border-radius: 3px; padding: 2px 8px;
     font-size: 0.8rem; font-weight: 600; letter-spacing: 0.5px;
   }
@@ -486,17 +488,17 @@
   .carnatic-section { background: var(--cream); }
   .carnatic-intro-text { color: var(--text-mid); max-width: 760px; margin-bottom: 2rem; font-size: 1rem; line-height: 1.9; }
   .sub-heading { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--maroon); margin: 2.5rem 0 0.6rem; display: flex; align-items: center; gap: 10px; }
-  .sub-heading::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, #D4B896, transparent); }
+  .sub-heading::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, #C5D3F0, transparent); }
   .sub-body { color: var(--text-mid); font-size: 0.95rem; line-height: 1.85; margin-bottom: 1.2rem; max-width: 820px; }
   .carnatic-pillars { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; margin: 1.2rem 0 2rem; }
-  .pillar-card { background: var(--saffron-pale); border: 1px solid #D4B896; border-radius: 8px; padding: 1.2rem 1rem; text-align: center; }
+  .pillar-card { background: var(--saffron-pale); border: 1px solid #C5D3F0; border-radius: 8px; padding: 1.2rem 1rem; text-align: center; }
   .pillar-icon { font-size: 1.8rem; display: block; margin-bottom: 0.5rem; }
   .pillar-title { font-family: 'Playfair Display', serif; font-size: 0.95rem; color: var(--maroon); font-weight: 600; margin-bottom: 0.3rem; }
   .pillar-desc { font-size: 0.8rem; color: var(--text-soft); line-height: 1.5; }
   .swara-definition { background: var(--maroon); border-radius: 10px; padding: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.5rem 0; }
-  .swara-def-label { font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; color: #C8A040; margin-bottom: 0.3rem; }
-  .swara-def-value { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #FFF8E7; font-weight: 700; margin-bottom: 0.3rem; }
-  .swara-def-desc { font-size: 0.85rem; color: #D4A97A; line-height: 1.6; }
+  .swara-def-label { font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; color: #F0B429; margin-bottom: 0.3rem; }
+  .swara-def-value { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #FDFDFF; font-weight: 700; margin-bottom: 0.3rem; }
+  .swara-def-desc { font-size: 0.85rem; color: #B4BEF5; line-height: 1.6; }
   .ladder-header { display: flex; margin-bottom: 4px; font-size: 0.7rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-soft); font-weight: 600; }
   .lh-num { width: 32px; text-align: center; }
   .lh-swar { width: 80px; padding-left: 0.8rem; }
@@ -505,44 +507,44 @@
   .lh-freq { width: 120px; padding-left: 0.8rem; }
   .swara-ladder { margin: 1rem 0 2rem; }
   .ladder-row { display: flex; align-items: stretch; margin-bottom: 5px; border-radius: 6px; overflow: hidden; }
-  .ladder-num { background: var(--maroon); color: #F0C040; font-family: 'Playfair Display', serif; font-size: 0.85rem; font-weight: 700; width: 32px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-  .ladder-swara { background: var(--saffron-pale); border: 1px solid #D4B896; border-left: none; display: flex; align-items: center; width: 80px; flex-shrink: 0; padding: 0.6rem 0.8rem; gap: 4px; }
+  .ladder-num { background: var(--maroon); color: #FFD166; font-family: 'Playfair Display', serif; font-size: 0.85rem; font-weight: 700; width: 32px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .ladder-swara { background: var(--saffron-pale); border: 1px solid #C5D3F0; border-left: none; display: flex; align-items: center; width: 80px; flex-shrink: 0; padding: 0.6rem 0.8rem; gap: 4px; }
   .ladder-swara-name { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--maroon); }
   .ladder-swara-short { font-size: 0.72rem; color: var(--saffron); font-weight: 600; }
-  .ladder-full { background: var(--cream-dark); border: 1px solid #D4B896; border-left: none; padding: 0.6rem 1rem; flex: 1; }
+  .ladder-full { background: var(--cream-dark); border: 1px solid #C5D3F0; border-left: none; padding: 0.6rem 1rem; flex: 1; }
   .ladder-full-name { font-size: 0.88rem; color: var(--text-dark); font-weight: 600; }
   .ladder-full-meaning { font-size: 0.76rem; color: var(--text-soft); font-style: italic; }
-  .ladder-western { background: #FBF6EE; border: 1px solid #D4B896; border-left: none; padding: 0.6rem 0.8rem; width: 80px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+  .ladder-western { background: #F5F8FF; border: 1px solid #C5D3F0; border-left: none; padding: 0.6rem 0.8rem; width: 80px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
   .ladder-western span { font-size: 0.82rem; color: var(--text-soft); }
-  .ladder-bar-wrap { background: var(--cream-dark); border: 1px solid #D4B896; border-left: none; padding: 0.6rem 0.8rem; width: 120px; flex-shrink: 0; display: flex; align-items: center; }
+  .ladder-bar-wrap { background: var(--cream-dark); border: 1px solid #C5D3F0; border-left: none; padding: 0.6rem 0.8rem; width: 120px; flex-shrink: 0; display: flex; align-items: center; }
   .ladder-bar { height: 10px; border-radius: 3px; background: linear-gradient(90deg, var(--saffron), var(--gold-light)); }
   .sthana-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 1.2rem 0 2rem; }
-  .sthana-card { border-radius: 8px; padding: 1.2rem; text-align: center; border: 1px solid #D4B896; }
-  .sthana-card.mandra { background: #3A1A02; }
-  .sthana-card.madhya { background: #7B1E1E; border-color: #F0C040; }
-  .sthana-card.tara   { background: #C8520A; }
-  .sthana-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: #F0C040; margin-bottom: 0.2rem; }
-  .sthana-tamil { font-size: 0.8rem; color: #D4A97A; font-style: italic; margin-bottom: 0.6rem; }
-  .sthana-desc { font-size: 0.8rem; color: #D4B896; line-height: 1.5; }
+  .sthana-card { border-radius: 8px; padding: 1.2rem; text-align: center; border: 1px solid #C5D3F0; }
+  .sthana-card.mandra { background: #2E3350; }
+  .sthana-card.madhya { background: #5B54C9; border-color: #FFD166; }
+  .sthana-card.tara   { background: #F25C54; }
+  .sthana-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: #FFD166; margin-bottom: 0.2rem; }
+  .sthana-tamil { font-size: 0.8rem; color: #B4BEF5; font-style: italic; margin-bottom: 0.6rem; }
+  .sthana-desc { font-size: 0.8rem; color: #C5D3F0; line-height: 1.5; }
   .sthana-notes { margin-top: 0.6rem; display: flex; flex-wrap: wrap; gap: 4px; justify-content: center; }
-  .sthana-note-pill { background: rgba(255,255,255,0.12); color: #FFF8E7; border-radius: 20px; padding: 2px 8px; font-size: 0.72rem; }
+  .sthana-note-pill { background: rgba(255,255,255,0.12); color: #FDFDFF; border-radius: 20px; padding: 2px 8px; font-size: 0.72rem; }
   .freq-pitch-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.5rem 0; }
-  .freq-card { border-radius: 8px; padding: 1.5rem; border: 1px solid #D4B896; }
+  .freq-card { border-radius: 8px; padding: 1.5rem; border: 1px solid #C5D3F0; }
   .freq-card.freq { background: #EAF3DE; border-color: #97C459; }
-  .freq-card.pitch { background: #FDF3E3; border-color: #C8A040; }
+  .freq-card.pitch { background: #EEF4FF; border-color: #F0B429; }
   .freq-card-label { font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; margin-bottom: 0.3rem; }
   .freq-card.freq .freq-card-label { color: #3B6D11; }
-  .freq-card.pitch .freq-card-label { color: #854F0B; }
+  .freq-card.pitch .freq-card-label { color: #B45309; }
   .freq-card-title { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; margin-bottom: 0.6rem; }
   .freq-card.freq .freq-card-title { color: #27500A; }
-  .freq-card.pitch .freq-card-title { color: #633806; }
+  .freq-card.pitch .freq-card-title { color: #92400E; }
   .freq-card p { font-size: 0.88rem; line-height: 1.75; }
   .freq-card.freq p { color: #3B6D11; }
-  .freq-card.pitch p { color: #854F0B; }
+  .freq-card.pitch p { color: #B45309; }
   .freq-example { margin-top: 0.8rem; background: rgba(255,255,255,0.55); border-radius: 6px; padding: 0.6rem 0.8rem; font-size: 0.82rem; font-style: italic; }
   .freq-card.freq .freq-example { color: #3B6D11; }
-  .freq-card.pitch .freq-example { color: #633806; }
-  .wave-visual { margin: 1.5rem 0; background: var(--saffron-pale); border: 1px solid #D4B896; border-radius: 10px; padding: 1.5rem; overflow-x: auto; }
+  .freq-card.pitch .freq-example { color: #92400E; }
+  .wave-visual { margin: 1.5rem 0; background: var(--saffron-pale); border: 1px solid #C5D3F0; border-radius: 10px; padding: 1.5rem; overflow-x: auto; }
   .wave-row-label { font-size: 0.78rem; letter-spacing: 2px; text-transform: uppercase; color: var(--saffron); font-weight: 600; margin-bottom: 0.3rem; }
   .wave-row-desc { font-size: 0.8rem; color: var(--text-soft); margin-top: 0.3rem; margin-bottom: 1rem; }
 
@@ -584,14 +586,14 @@
       flex-direction: column;
       width: 100%;
       gap: 0;
-      border-top: 1px solid rgba(240,192,64,0.2);
+      border-top: 1px solid rgba(255,209,102,0.2);
       padding-bottom: 0.5rem;
     }
     .nav-links.open { display: flex; }
     .nav-links a {
       padding: 0.75rem 0;
       font-size: 0.95rem;
-      border-bottom: 1px solid rgba(240,192,64,0.1);
+      border-bottom: 1px solid rgba(255,209,102,0.1);
     }
     .nav-links a:last-child { border-bottom: none; }
 
@@ -686,63 +688,96 @@
 </style>
 <style id="lva-navfix">
   @media(max-width:768px){
-    nav .nav-links{max-height:calc(100vh - 54px);overflow-y:auto;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:#B8860B rgba(255,255,255,0.12);}
+    nav .nav-links{max-height:calc(100vh - 54px);overflow-y:auto;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:#D97706 rgba(255,255,255,0.12);}
     nav .nav-links::-webkit-scrollbar{width:8px;}
-    nav .nav-links::-webkit-scrollbar-thumb{background:#B8860B;border-radius:8px;}
+    nav .nav-links::-webkit-scrollbar-thumb{background:#D97706;border-radius:8px;}
     nav .nav-item{width:100%;}
     nav .nav-dropdown{position:static !important;display:block !important;min-width:0 !important;box-shadow:none !important;border:none !important;background:rgba(0,0,0,0.18) !important;border-radius:0 !important;}
     nav .nav-dropdown a{white-space:normal !important;}
   }
 </style>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<script src="site.js" defer></script>
+<link rel="canonical" href="https://lakshyasviolinacademy.live/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MusicSchool",
+  "name": "Lakshya's Violin Academy",
+  "description": "Carnatic violin lessons for children in Chennai — beginner-friendly, traditional, and taught with love.",
+  "url": "https://lakshyasviolinacademy.live/",
+  "email": "j.ajaychandran@gmail.com",
+  "telephone": "+91-90030-30454",
+  "image": "https://lakshyasviolinacademy.live/og-image.png",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Old Pallavaram, Chennai",
+    "addressRegion": "Tamil Nadu",
+    "addressCountry": "IN"
+  },
+  "areaServed": "Chennai",
+  "keywords": "Carnatic violin, violin classes for kids, Carnatic music school, Chennai"
+}
+</script>
 </head>
 <body>
 
-<nav>
-  <div class="nav-brand">🎻 Lakshya's Violin Academy</div>
-  <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-    <span></span><span></span><span></span>
-  </button>
-  <div class="nav-links" id="navLinks">
-    <a href="#about" onclick="closeNav()">About</a>
-    <a href="#courses" onclick="closeNav()">Courses</a>
-    <div class="nav-item">
-      <a href="#explore" onclick="closeNav()">Explore</a>
-      <div class="nav-dropdown">
-        <span class="nav-dropdown-label">Interactive Lessons</span>
-        <a href="varisai-lab.html">🎻 &nbsp;Varisai Lab — all five varisais</a>
-        <a href="frequency-and-swaras.html">🔊 &nbsp;Frequency &amp; Swaras Lab</a>
-        <a href="thala-basics.html">🥁 &nbsp;Thala — Rhythm Player</a>
-        <a href="melakarta-explorer.html">🎼 &nbsp;72 Melakarta Explorer</a>
-        <a href="shruti-box.html">🎚️ &nbsp;Shruti Box — tune &amp; drone</a>
-        <a href="swara-guessing-game.html">🎧 &nbsp;Swara Guessing Game</a>
-        <a href="raga-mood-matcher.html">🎭 &nbsp;Raga Mood Matcher</a>
-        <a href="build-a-raga-lab.html">🛠️ &nbsp;Build-a-Raga Lab</a>
-        <a href="compose-a-geetham.html">🎼 &nbsp;Compose-a-Geetham</a>
-        <a href="sruthi-detective.html">🕵️ &nbsp;Sruthi Detective</a>
+<!-- ═══ LVA uniform navigation (shared across all pages) ═══ -->
+<div class="lva-nav" id="lvaNav">
+  <div class="lva-nav-inner">
+    <a class="lva-brand" href="index.html">🎻&ensp;Lakshya's Violin Academy</a>
+    <button class="lva-burger" aria-label="Open menu" aria-expanded="false" aria-controls="lvaMenu"><span></span><span></span><span></span></button>
+    <div class="lva-menu" id="lvaMenu">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#courses">Courses</a>
+      <div class="lva-drop">
+        <button class="lva-drop-btn" aria-expanded="false">Learn</button>
+        <div class="lva-drop-panel">
+          <span class="lva-drop-label">🎼 Carnatic Foundations</span>
+          <a href="index.html#carnatic">📖&ensp;Introduction to Carnatic Music</a>
+          <a href="index.html#strings">🎻&ensp;The Violin &amp; Its Strings</a>
+          <a href="index.html#sapa">🎵&ensp;Sa–Pa–Sa–Pa–Sa</a>
+          <a href="index.html#varisai">🎶&ensp;The Five Varisais</a>
+        </div>
       </div>
-    </div>
-    <div class="nav-item">
-      <a href="#carnatic" onclick="closeNav()">Theory</a>
-      <div class="nav-dropdown">
-        <span class="nav-dropdown-label">Carnatic Foundations</span>
-        <a href="#carnatic" onclick="closeNav()">📖 &nbsp;Introduction to Carnatic Music</a>
-        <a href="#strings" onclick="closeNav()">🎻 &nbsp;The Violin &amp; Its Strings</a>
-        <a href="#sapa" onclick="closeNav()">◆ &nbsp;Sa–Pa–Sa–Pa–Sa</a>
-        <a href="#varisai" onclick="closeNav()">🎶 &nbsp;The Five Varisais</a>
+      <div class="lva-drop">
+        <button class="lva-drop-btn" aria-expanded="false">Games &amp; Labs</button>
+        <div class="lva-drop-panel">
+          <span class="lva-drop-label">🎮 Interactive Music Games</span>
+          <a href="games.html"><b>🗺️&ensp;All Games at a Glance</b></a>
+      <a href="varisai-lab.html">🎻&ensp;Varisai Lab — all five varisais</a>
+      <a href="raga-jukebox.html">📻&ensp;Raga Jukebox — hear every raga</a>
+      <a href="frequency-and-swaras.html">🔊&ensp;Frequency &amp; Swaras Lab</a>
+      <a href="thala-basics.html">🥁&ensp;Thala — Rhythm Player</a>
+      <a href="melakarta-explorer.html">🎼&ensp;72 Melakarta Explorer</a>
+      <a href="gamaka-explorer.html">🌊&ensp;Gamaka Explorer</a>
+      <a href="shruti-box.html">🎚️&ensp;Shruti Box — tune &amp; drone</a>
+      <a href="swara-guessing-game.html">🎧&ensp;Swara Guessing Game</a>
+      <a href="raga-mood-matcher.html">🎭&ensp;Raga Mood Matcher</a>
+      <a href="build-a-raga-lab.html">🛠️&ensp;Build-a-Raga Lab</a>
+      <a href="compose-a-geetham.html">✍️&ensp;Compose-a-Geetham</a>
+      <a href="sruthi-detective.html">🕵️&ensp;Sruthi Detective</a>
+        </div>
       </div>
-    </div>
-    <a href="#philosophy" onclick="closeNav()">Our Belief</a>
-    <div class="nav-item">
-      <a href="blog-sound-vibration-carnatic.html">Blog</a>
-      <div class="nav-dropdown">
-        <span class="nav-dropdown-label">Beginner's Corner</span>
-        <a href="blog-sound-vibration-carnatic.html">🎵 &nbsp;Sound, Vibration &amp; Carnatic Music</a>
-        <a href="blog-carnatic-music-and-kids-brain.html">🧠 &nbsp;What Carnatic Music Does to Your Child's Brain</a>
+      <div class="lva-drop">
+        <button class="lva-drop-btn" aria-expanded="false">Blog</button>
+        <div class="lva-drop-panel">
+          <span class="lva-drop-label">📚 Beginner's Corner</span>
+          <a href="blog-sound-vibration-carnatic.html">🎵&ensp;Sound, Vibration &amp; Carnatic Music</a>
+          <a href="blog-carnatic-music-and-kids-brain.html">🧠&ensp;Carnatic Music &amp; Your Child's Brain</a>
+        </div>
       </div>
+      <a class="lva-cta" href="index.html#contact">🎻 Enroll Now</a>
     </div>
-    <a href="#contact" onclick="closeNav()">Enroll</a>
   </div>
-</nav>
+</div>
+
+
+
 
 <section class="hero">
   <span class="hero-ornament">✦ ✦ ✦</span>
@@ -1070,7 +1105,7 @@
       </div>
       <div class="ladder-row" style="opacity:0.65;">
         <div class="ladder-num" style="background:#A04020;">8</div>
-        <div class="ladder-swara" style="background:#FFF3E0;"><span class="ladder-swara-name">Sa</span><span class="ladder-swara-short" style="color:#C8520A;">↑</span></div>
+        <div class="ladder-swara" style="background:#FFF3E0;"><span class="ladder-swara-name">Sa</span><span class="ladder-swara-short" style="color:#F25C54;">↑</span></div>
         <div class="ladder-full" style="background:#FFF3E0;"><div class="ladder-full-name">Tara Shadjam</div><div class="ladder-full-meaning">The same Sa — one octave higher, the journey complete</div></div>
         <div class="ladder-western"><span>C</span></div>
         <div class="ladder-bar-wrap"><div class="ladder-bar" style="width:100%;"></div></div>
@@ -1147,18 +1182,18 @@
     <div class="wave-visual">
       <div class="wave-row-label">Low frequency = low pitch (deep sound)</div>
       <svg width="100%" viewBox="0 0 700 60" xmlns="http://www.w3.org/2000/svg">
-        <path d="M20 30 C70 5, 120 55, 170 30 C220 5, 270 55, 320 30 C370 5, 420 55, 470 30 C520 5, 570 55, 620 30 C645 18, 658 12, 670 30" fill="none" stroke="#7B1E1E" stroke-width="2.5" stroke-linecap="round"/>
-        <text font-family="'Noto Serif', serif" font-size="11" fill="#7A5A3A" x="686" y="34" text-anchor="end">Sa (Mandra)</text>
+        <path d="M20 30 C70 5, 120 55, 170 30 C220 5, 270 55, 320 30 C370 5, 420 55, 470 30 C520 5, 570 55, 620 30 C645 18, 658 12, 670 30" fill="none" stroke="#5B54C9" stroke-width="2.5" stroke-linecap="round"/>
+        <text font-family="'Noto Serif', serif" font-size="11" fill="#707795" x="686" y="34" text-anchor="end">Sa (Mandra)</text>
       </svg>
       <div class="wave-row-label" style="margin-top:0.8rem;">Medium frequency = medium pitch (middle sound)</div>
       <svg width="100%" viewBox="0 0 700 60" xmlns="http://www.w3.org/2000/svg">
-        <path d="M20 30 C52 8, 84 52, 116 30 C148 8, 180 52, 212 30 C244 8, 276 52, 308 30 C340 8, 372 52, 404 30 C436 8, 468 52, 500 30 C532 8, 564 52, 596 30 C618 17, 632 12, 648 30" fill="none" stroke="#C8520A" stroke-width="2.5" stroke-linecap="round"/>
-        <text font-family="'Noto Serif', serif" font-size="11" fill="#7A5A3A" x="686" y="34" text-anchor="end">Sa (Madhya)</text>
+        <path d="M20 30 C52 8, 84 52, 116 30 C148 8, 180 52, 212 30 C244 8, 276 52, 308 30 C340 8, 372 52, 404 30 C436 8, 468 52, 500 30 C532 8, 564 52, 596 30 C618 17, 632 12, 648 30" fill="none" stroke="#F25C54" stroke-width="2.5" stroke-linecap="round"/>
+        <text font-family="'Noto Serif', serif" font-size="11" fill="#707795" x="686" y="34" text-anchor="end">Sa (Madhya)</text>
       </svg>
       <div class="wave-row-label" style="margin-top:0.8rem;">High frequency = high pitch (bright sound)</div>
       <svg width="100%" viewBox="0 0 700 60" xmlns="http://www.w3.org/2000/svg">
-        <path d="M20 30 C38 12, 56 48, 74 30 C92 12, 110 48, 128 30 C146 12, 164 48, 182 30 C200 12, 218 48, 236 30 C254 12, 272 48, 290 30 C308 12, 326 48, 344 30 C362 12, 380 48, 398 30 C416 12, 434 48, 452 30 C470 12, 488 48, 506 30 C524 12, 542 48, 560 30 C578 12, 596 48, 614 30 C632 20, 641 14, 652 30" fill="none" stroke="#B8860B" stroke-width="2.5" stroke-linecap="round"/>
-        <text font-family="'Noto Serif', serif" font-size="11" fill="#7A5A3A" x="686" y="34" text-anchor="end">Sa (Tara)</text>
+        <path d="M20 30 C38 12, 56 48, 74 30 C92 12, 110 48, 128 30 C146 12, 164 48, 182 30 C200 12, 218 48, 236 30 C254 12, 272 48, 290 30 C308 12, 326 48, 344 30 C362 12, 380 48, 398 30 C416 12, 434 48, 452 30 C470 12, 488 48, 506 30 C524 12, 542 48, 560 30 C578 12, 596 48, 614 30 C632 20, 641 14, 652 30" fill="none" stroke="#D97706" stroke-width="2.5" stroke-linecap="round"/>
+        <text font-family="'Noto Serif', serif" font-size="11" fill="#707795" x="686" y="34" text-anchor="end">Sa (Tara)</text>
       </svg>
       <div class="wave-row-desc">Each wave above has the same swara name (Sa) but a different frequency. The faster the vibration, the higher the pitch. On violin, pressing the string shorter makes it vibrate faster — raising the pitch.</div>
     </div>
@@ -1221,120 +1256,120 @@
           </linearGradient>
         </defs>
         <!-- Scroll -->
-        <ellipse cx="310" cy="48" rx="18" ry="16" fill="#5A2208" stroke="#3A1605" stroke-width="1"/>
-        <ellipse cx="310" cy="50" rx="11" ry="10" fill="#7A3310" stroke="#3A1605" stroke-width="0.5"/>
+        <ellipse cx="310" cy="48" rx="18" ry="16" fill="#5A2208" stroke="#2E3350" stroke-width="1"/>
+        <ellipse cx="310" cy="50" rx="11" ry="10" fill="#7A3310" stroke="#2E3350" stroke-width="0.5"/>
         <!-- Pegbox -->
-        <rect x="297" y="58" width="26" height="55" rx="3" fill="url(#scrollgrad2)" stroke="#3A1605" stroke-width="1"/>
+        <rect x="297" y="58" width="26" height="55" rx="3" fill="url(#scrollgrad2)" stroke="#2E3350" stroke-width="1"/>
         <!-- Pegs -->
-        <ellipse cx="292" cy="72" rx="5" ry="3" fill="#2A1005" stroke="#1A0803" stroke-width="0.5"/>
-        <rect x="268" y="70" width="24" height="4" rx="2" fill="#2A1005" stroke="#1A0803" stroke-width="0.5"/>
-        <ellipse cx="328" cy="80" rx="5" ry="3" fill="#2A1005" stroke="#1A0803" stroke-width="0.5"/>
-        <rect x="328" y="78" width="24" height="4" rx="2" fill="#2A1005" stroke="#1A0803" stroke-width="0.5"/>
-        <ellipse cx="292" cy="94" rx="5" ry="3" fill="#2A1005" stroke="#1A0803" stroke-width="0.5"/>
-        <rect x="268" y="92" width="24" height="4" rx="2" fill="#2A1005" stroke="#1A0803" stroke-width="0.5"/>
-        <ellipse cx="328" cy="102" rx="5" ry="3" fill="#2A1005" stroke="#1A0803" stroke-width="0.5"/>
-        <rect x="328" y="100" width="24" height="4" rx="2" fill="#2A1005" stroke="#1A0803" stroke-width="0.5"/>
+        <ellipse cx="292" cy="72" rx="5" ry="3" fill="#1E1A47" stroke="#1E1A47" stroke-width="0.5"/>
+        <rect x="268" y="70" width="24" height="4" rx="2" fill="#1E1A47" stroke="#1E1A47" stroke-width="0.5"/>
+        <ellipse cx="328" cy="80" rx="5" ry="3" fill="#1E1A47" stroke="#1E1A47" stroke-width="0.5"/>
+        <rect x="328" y="78" width="24" height="4" rx="2" fill="#1E1A47" stroke="#1E1A47" stroke-width="0.5"/>
+        <ellipse cx="292" cy="94" rx="5" ry="3" fill="#1E1A47" stroke="#1E1A47" stroke-width="0.5"/>
+        <rect x="268" y="92" width="24" height="4" rx="2" fill="#1E1A47" stroke="#1E1A47" stroke-width="0.5"/>
+        <ellipse cx="328" cy="102" rx="5" ry="3" fill="#1E1A47" stroke="#1E1A47" stroke-width="0.5"/>
+        <rect x="328" y="100" width="24" height="4" rx="2" fill="#1E1A47" stroke="#1E1A47" stroke-width="0.5"/>
         <!-- Nut -->
-        <rect x="299" y="112" width="22" height="5" rx="1" fill="#F5DEB3" stroke="#C8A060" stroke-width="0.8"/>
+        <rect x="299" y="112" width="22" height="5" rx="1" fill="#E3E8FF" stroke="#C8A060" stroke-width="0.8"/>
         <!-- Neck & fingerboard -->
-        <path d="M299 117 L301 210 L319 210 L321 117 Z" fill="#7A3008" stroke="#3A1605" stroke-width="1"/>
-        <path d="M302 114 L303 210 L317 210 L318 114 Z" fill="#1A0A02" stroke="#0A0501" stroke-width="0.5"/>
+        <path d="M299 117 L301 210 L319 210 L321 117 Z" fill="#7A3008" stroke="#2E3350" stroke-width="1"/>
+        <path d="M302 114 L303 210 L317 210 L318 114 Z" fill="#1E1A47" stroke="#0A0501" stroke-width="0.5"/>
         <!-- Body upper bout -->
-        <path d="M285 210 Q240 220 238 258 Q236 292 260 308 L260 330 L360 330 L360 308 Q384 292 382 258 Q380 220 335 210 Z" fill="url(#bodygrad2)" stroke="#3A1605" stroke-width="1.5"/>
+        <path d="M285 210 Q240 220 238 258 Q236 292 260 308 L260 330 L360 330 L360 308 Q384 292 382 258 Q380 220 335 210 Z" fill="url(#bodygrad2)" stroke="#2E3350" stroke-width="1.5"/>
         <!-- Waist -->
-        <path d="M260 308 Q248 330 252 348 Q256 362 260 370 L360 370 Q364 362 368 348 Q372 330 360 308 Z" fill="url(#bodygrad2)" stroke="#3A1605" stroke-width="1.5"/>
+        <path d="M260 308 Q248 330 252 348 Q256 362 260 370 L360 370 Q364 362 368 348 Q372 330 360 308 Z" fill="url(#bodygrad2)" stroke="#2E3350" stroke-width="1.5"/>
         <!-- Lower bout -->
-        <path d="M260 370 Q236 382 232 418 Q228 460 238 488 Q248 516 310 525 Q372 516 382 488 Q392 460 388 418 Q384 382 360 370 Z" fill="url(#bodygrad2)" stroke="#3A1605" stroke-width="1.5"/>
+        <path d="M260 370 Q236 382 232 418 Q228 460 238 488 Q248 516 310 525 Q372 516 382 488 Q392 460 388 418 Q384 382 360 370 Z" fill="url(#bodygrad2)" stroke="#2E3350" stroke-width="1.5"/>
         <!-- Wood grain -->
         <path d="M298 230 Q300 310 299 480" fill="none" stroke="#6A2808" stroke-width="0.5" opacity="0.4"/>
         <path d="M310 225 Q312 315 311 490" fill="none" stroke="#6A2808" stroke-width="0.5" opacity="0.4"/>
         <path d="M322 230 Q324 310 323 480" fill="none" stroke="#6A2808" stroke-width="0.5" opacity="0.4"/>
         <!-- F-holes -->
-        <path d="M276 350 Q272 340 274 328 Q276 318 280 315 L280 308 Q276 304 276 298 Q276 290 280 285" fill="none" stroke="#1A0A02" stroke-width="2.5" stroke-linecap="round"/>
-        <circle cx="278" cy="285" r="4" fill="#1A0A02"/>
-        <circle cx="279" cy="315" r="3.5" fill="#1A0A02"/>
-        <path d="M344 350 Q348 340 346 328 Q344 318 340 315 L340 308 Q344 304 344 298 Q344 290 340 285" fill="none" stroke="#1A0A02" stroke-width="2.5" stroke-linecap="round"/>
-        <circle cx="342" cy="285" r="4" fill="#1A0A02"/>
-        <circle cx="341" cy="315" r="3.5" fill="#1A0A02"/>
+        <path d="M276 350 Q272 340 274 328 Q276 318 280 315 L280 308 Q276 304 276 298 Q276 290 280 285" fill="none" stroke="#1E1A47" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="278" cy="285" r="4" fill="#1E1A47"/>
+        <circle cx="279" cy="315" r="3.5" fill="#1E1A47"/>
+        <path d="M344 350 Q348 340 346 328 Q344 318 340 315 L340 308 Q344 304 344 298 Q344 290 340 285" fill="none" stroke="#1E1A47" stroke-width="2.5" stroke-linecap="round"/>
+        <circle cx="342" cy="285" r="4" fill="#1E1A47"/>
+        <circle cx="341" cy="315" r="3.5" fill="#1E1A47"/>
         <!-- Bridge -->
-        <path d="M292 370 L294 385 L298 385 L298 370 Z" fill="#D4A060" stroke="#8B6020" stroke-width="0.5"/>
-        <path d="M318 370 L320 385 L324 385 L322 370 Z" fill="#D4A060" stroke="#8B6020" stroke-width="0.5"/>
-        <rect x="286" y="365" width="48" height="6" rx="2" fill="#D4A060" stroke="#8B6020" stroke-width="0.8"/>
+        <path d="M292 370 L294 385 L298 385 L298 370 Z" fill="#B4BEF5" stroke="#8B6020" stroke-width="0.5"/>
+        <path d="M318 370 L320 385 L324 385 L322 370 Z" fill="#B4BEF5" stroke="#8B6020" stroke-width="0.5"/>
+        <rect x="286" y="365" width="48" height="6" rx="2" fill="#B4BEF5" stroke="#8B6020" stroke-width="0.8"/>
         <!-- Tailpiece -->
-        <path d="M293 450 L307 465 L313 465 L327 450 Q320 440 310 438 Q300 440 293 450 Z" fill="#1A0A02" stroke="#0A0501" stroke-width="0.8"/>
+        <path d="M293 450 L307 465 L313 465 L327 450 Q320 440 310 438 Q300 440 293 450 Z" fill="#1E1A47" stroke="#0A0501" stroke-width="0.8"/>
         <rect x="302" y="440" width="16" height="12" rx="2" fill="#2A1505" stroke="#1A0502" stroke-width="0.5"/>
         <!-- Chinrest -->
-        <path d="M288 490 Q280 510 290 518 Q310 525 330 518 Q340 510 332 490 Z" fill="#1A0A02" stroke="#0A0501" stroke-width="0.8"/>
+        <path d="M288 490 Q280 510 290 518 Q310 525 330 518 Q340 510 332 490 Z" fill="#1E1A47" stroke="#0A0501" stroke-width="0.8"/>
         <!-- STRINGS -->
-        <line x1="302" y1="114" x2="296" y2="368" stroke="#B08030" stroke-width="2.5"/>
-        <line x1="296" y1="368" x2="305" y2="450" stroke="#B08030" stroke-width="2.5"/>
-        <line x1="307" y1="114" x2="303" y2="368" stroke="#C8A040" stroke-width="2"/>
-        <line x1="303" y1="368" x2="308" y2="450" stroke="#C8A040" stroke-width="2"/>
-        <line x1="312" y1="114" x2="315" y2="368" stroke="#D8BC60" stroke-width="1.5"/>
-        <line x1="315" y1="368" x2="312" y2="450" stroke="#D8BC60" stroke-width="1.5"/>
+        <line x1="302" y1="114" x2="296" y2="368" stroke="#D97706" stroke-width="2.5"/>
+        <line x1="296" y1="368" x2="305" y2="450" stroke="#D97706" stroke-width="2.5"/>
+        <line x1="307" y1="114" x2="303" y2="368" stroke="#F0B429" stroke-width="2"/>
+        <line x1="303" y1="368" x2="308" y2="450" stroke="#F0B429" stroke-width="2"/>
+        <line x1="312" y1="114" x2="315" y2="368" stroke="#F5C542" stroke-width="1.5"/>
+        <line x1="315" y1="368" x2="312" y2="450" stroke="#F5C542" stroke-width="1.5"/>
         <line x1="318" y1="114" x2="323" y2="368" stroke="#F0E8C0" stroke-width="1"/>
         <line x1="323" y1="368" x2="316" y2="450" stroke="#F0E8C0" stroke-width="1"/>
         <!-- STRING LABELS — right -->
         <line x1="296" y1="250" x2="438" y2="188" stroke="#888780" stroke-width="0.5" stroke-dasharray="4 3"/>
-        <circle cx="296" cy="250" r="2.5" fill="#7B1E1E"/>
-        <rect x="438" y="163" width="215" height="52" rx="6" fill="#FDF3E3" stroke="#B08030" stroke-width="1.2"/>
-        <text font-family="'Noto Serif', serif" font-size="13" font-weight="700" fill="#7B1E1E" x="545" y="183" text-anchor="middle">G String</text>
-        <text font-family="'Noto Serif', serif" font-size="11" fill="#C8520A" x="545" y="199" text-anchor="middle">Mandra Sthayi Sa (Shadjam)</text>
-        <text font-family="'Noto Serif', serif" font-size="10" fill="#8B4010" x="545" y="212" text-anchor="middle">Lower octave tonic</text>
+        <circle cx="296" cy="250" r="2.5" fill="#5B54C9"/>
+        <rect x="438" y="163" width="215" height="52" rx="6" fill="#EEF4FF" stroke="#D97706" stroke-width="1.2"/>
+        <text font-family="'Noto Serif', serif" font-size="13" font-weight="700" fill="#5B54C9" x="545" y="183" text-anchor="middle">G String</text>
+        <text font-family="'Noto Serif', serif" font-size="11" fill="#F25C54" x="545" y="199" text-anchor="middle">Mandra Sthayi Sa (Shadjam)</text>
+        <text font-family="'Noto Serif', serif" font-size="10" fill="#C23A2E" x="545" y="212" text-anchor="middle">Lower octave tonic</text>
 
         <line x1="304" y1="282" x2="438" y2="255" stroke="#888780" stroke-width="0.5" stroke-dasharray="4 3"/>
-        <circle cx="304" cy="282" r="2.5" fill="#7B1E1E"/>
-        <rect x="438" y="230" width="215" height="52" rx="6" fill="#FDF3E3" stroke="#C8A040" stroke-width="1.2"/>
-        <text font-family="'Noto Serif', serif" font-size="13" font-weight="700" fill="#7B1E1E" x="545" y="250" text-anchor="middle">D String</text>
-        <text font-family="'Noto Serif', serif" font-size="11" fill="#C8520A" x="545" y="266" text-anchor="middle">Mandra Sthayi Pa (Panchamam)</text>
-        <text font-family="'Noto Serif', serif" font-size="10" fill="#8B4010" x="545" y="279" text-anchor="middle">Lower octave fifth</text>
+        <circle cx="304" cy="282" r="2.5" fill="#5B54C9"/>
+        <rect x="438" y="230" width="215" height="52" rx="6" fill="#EEF4FF" stroke="#F0B429" stroke-width="1.2"/>
+        <text font-family="'Noto Serif', serif" font-size="13" font-weight="700" fill="#5B54C9" x="545" y="250" text-anchor="middle">D String</text>
+        <text font-family="'Noto Serif', serif" font-size="11" fill="#F25C54" x="545" y="266" text-anchor="middle">Mandra Sthayi Pa (Panchamam)</text>
+        <text font-family="'Noto Serif', serif" font-size="10" fill="#C23A2E" x="545" y="279" text-anchor="middle">Lower octave fifth</text>
 
         <line x1="316" y1="315" x2="438" y2="322" stroke="#888780" stroke-width="0.5" stroke-dasharray="4 3"/>
-        <circle cx="316" cy="315" r="2.5" fill="#7B1E1E"/>
-        <rect x="438" y="297" width="215" height="52" rx="6" fill="#FDF3E3" stroke="#D8BC60" stroke-width="1.2"/>
-        <text font-family="'Noto Serif', serif" font-size="13" font-weight="700" fill="#7B1E1E" x="545" y="317" text-anchor="middle">A String</text>
-        <text font-family="'Noto Serif', serif" font-size="11" fill="#C8520A" x="545" y="333" text-anchor="middle">Madhya Sthayi Sa (Shadjam)</text>
-        <text font-family="'Noto Serif', serif" font-size="10" fill="#8B4010" x="545" y="346" text-anchor="middle">Middle octave tonic</text>
+        <circle cx="316" cy="315" r="2.5" fill="#5B54C9"/>
+        <rect x="438" y="297" width="215" height="52" rx="6" fill="#EEF4FF" stroke="#F5C542" stroke-width="1.2"/>
+        <text font-family="'Noto Serif', serif" font-size="13" font-weight="700" fill="#5B54C9" x="545" y="317" text-anchor="middle">A String</text>
+        <text font-family="'Noto Serif', serif" font-size="11" fill="#F25C54" x="545" y="333" text-anchor="middle">Madhya Sthayi Sa (Shadjam)</text>
+        <text font-family="'Noto Serif', serif" font-size="10" fill="#C23A2E" x="545" y="346" text-anchor="middle">Middle octave tonic</text>
 
         <line x1="323" y1="345" x2="438" y2="389" stroke="#888780" stroke-width="0.5" stroke-dasharray="4 3"/>
-        <circle cx="323" cy="345" r="2.5" fill="#7B1E1E"/>
-        <rect x="438" y="364" width="215" height="52" rx="6" fill="#FDF3E3" stroke="#F0E8C0" stroke-width="1.2"/>
-        <text font-family="'Noto Serif', serif" font-size="13" font-weight="700" fill="#7B1E1E" x="545" y="384" text-anchor="middle">E String</text>
-        <text font-family="'Noto Serif', serif" font-size="11" fill="#C8520A" x="545" y="400" text-anchor="middle">Madhya Sthayi Pa (Panchamam)</text>
-        <text font-family="'Noto Serif', serif" font-size="10" fill="#8B4010" x="545" y="413" text-anchor="middle">Middle octave fifth</text>
+        <circle cx="323" cy="345" r="2.5" fill="#5B54C9"/>
+        <rect x="438" y="364" width="215" height="52" rx="6" fill="#EEF4FF" stroke="#F0E8C0" stroke-width="1.2"/>
+        <text font-family="'Noto Serif', serif" font-size="13" font-weight="700" fill="#5B54C9" x="545" y="384" text-anchor="middle">E String</text>
+        <text font-family="'Noto Serif', serif" font-size="11" fill="#F25C54" x="545" y="400" text-anchor="middle">Madhya Sthayi Pa (Panchamam)</text>
+        <text font-family="'Noto Serif', serif" font-size="10" fill="#C23A2E" x="545" y="413" text-anchor="middle">Middle octave fifth</text>
         <!-- PART LABELS — left -->
         <line x1="293" y1="50" x2="178" y2="62" stroke="#888780" stroke-width="0.5" stroke-dasharray="4 3"/>
-        <circle cx="293" cy="50" r="2" fill="#7B1E1E"/>
-        <text font-family="'Noto Serif', serif" font-size="12" fill="#5C3A1A" x="173" y="66" text-anchor="end">Scroll</text>
+        <circle cx="293" cy="50" r="2" fill="#5B54C9"/>
+        <text font-family="'Noto Serif', serif" font-size="12" fill="#4D5378" x="173" y="66" text-anchor="end">Scroll</text>
         <line x1="292" y1="88" x2="178" y2="100" stroke="#888780" stroke-width="0.5" stroke-dasharray="4 3"/>
-        <circle cx="292" cy="88" r="2" fill="#7B1E1E"/>
-        <text font-family="'Noto Serif', serif" font-size="12" fill="#5C3A1A" x="173" y="104" text-anchor="end">Pegs</text>
+        <circle cx="292" cy="88" r="2" fill="#5B54C9"/>
+        <text font-family="'Noto Serif', serif" font-size="12" fill="#4D5378" x="173" y="104" text-anchor="end">Pegs</text>
         <line x1="300" y1="115" x2="178" y2="128" stroke="#888780" stroke-width="0.5" stroke-dasharray="4 3"/>
-        <circle cx="300" cy="115" r="2" fill="#7B1E1E"/>
-        <text font-family="'Noto Serif', serif" font-size="12" fill="#5C3A1A" x="173" y="132" text-anchor="end">Nut</text>
+        <circle cx="300" cy="115" r="2" fill="#5B54C9"/>
+        <text font-family="'Noto Serif', serif" font-size="12" fill="#4D5378" x="173" y="132" text-anchor="end">Nut</text>
         <line x1="292" y1="162" x2="178" y2="168" stroke="#888780" stroke-width="0.5" stroke-dasharray="4 3"/>
-        <circle cx="292" cy="162" r="2" fill="#7B1E1E"/>
-        <text font-family="'Noto Serif', serif" font-size="12" fill="#5C3A1A" x="173" y="172" text-anchor="end">Neck</text>
+        <circle cx="292" cy="162" r="2" fill="#5B54C9"/>
+        <text font-family="'Noto Serif', serif" font-size="12" fill="#4D5378" x="173" y="172" text-anchor="end">Neck</text>
         <line x1="240" y1="260" x2="178" y2="260" stroke="#888780" stroke-width="0.5" stroke-dasharray="4 3"/>
-        <circle cx="240" cy="260" r="2" fill="#7B1E1E"/>
-        <text font-family="'Noto Serif', serif" font-size="12" fill="#5C3A1A" x="173" y="264" text-anchor="end">Body</text>
+        <circle cx="240" cy="260" r="2" fill="#5B54C9"/>
+        <text font-family="'Noto Serif', serif" font-size="12" fill="#4D5378" x="173" y="264" text-anchor="end">Body</text>
         <line x1="275" y1="300" x2="178" y2="320" stroke="#888780" stroke-width="0.5" stroke-dasharray="4 3"/>
-        <circle cx="275" cy="300" r="2" fill="#7B1E1E"/>
-        <text font-family="'Noto Serif', serif" font-size="12" fill="#5C3A1A" x="173" y="324" text-anchor="end">F-hole</text>
+        <circle cx="275" cy="300" r="2" fill="#5B54C9"/>
+        <text font-family="'Noto Serif', serif" font-size="12" fill="#4D5378" x="173" y="324" text-anchor="end">F-hole</text>
         <line x1="292" y1="368" x2="178" y2="390" stroke="#888780" stroke-width="0.5" stroke-dasharray="4 3"/>
-        <circle cx="292" cy="368" r="2" fill="#7B1E1E"/>
-        <text font-family="'Noto Serif', serif" font-size="12" fill="#5C3A1A" x="173" y="394" text-anchor="end">Bridge</text>
+        <circle cx="292" cy="368" r="2" fill="#5B54C9"/>
+        <text font-family="'Noto Serif', serif" font-size="12" fill="#4D5378" x="173" y="394" text-anchor="end">Bridge</text>
         <line x1="296" y1="450" x2="178" y2="458" stroke="#888780" stroke-width="0.5" stroke-dasharray="4 3"/>
-        <circle cx="296" cy="450" r="2" fill="#7B1E1E"/>
-        <text font-family="'Noto Serif', serif" font-size="12" fill="#5C3A1A" x="173" y="462" text-anchor="end">Tailpiece</text>
+        <circle cx="296" cy="450" r="2" fill="#5B54C9"/>
+        <text font-family="'Noto Serif', serif" font-size="12" fill="#4D5378" x="173" y="462" text-anchor="end">Tailpiece</text>
         <line x1="290" y1="510" x2="178" y2="520" stroke="#888780" stroke-width="0.5" stroke-dasharray="4 3"/>
-        <circle cx="290" cy="510" r="2" fill="#7B1E1E"/>
-        <text font-family="'Noto Serif', serif" font-size="12" fill="#5C3A1A" x="173" y="524" text-anchor="end">Chinrest</text>
+        <circle cx="290" cy="510" r="2" fill="#5B54C9"/>
+        <text font-family="'Noto Serif', serif" font-size="12" fill="#4D5378" x="173" y="524" text-anchor="end">Chinrest</text>
         <!-- Legend -->
-        <rect x="30" y="545" width="620" height="60" rx="8" fill="#FDF3E3" stroke="#C8A040" stroke-width="0.8"/>
-        <text font-family="'Noto Serif', serif" font-size="12" font-weight="700" fill="#7B1E1E" x="340" y="563" text-anchor="middle">Carnatic tuning: Sa — Pa — Sa — Pa</text>
-        <text font-family="'Noto Serif', serif" font-size="11" fill="#5C3A1A" x="340" y="581" text-anchor="middle">G = Mandra Sa  ·  D = Mandra Pa  ·  A = Madhya Sa  ·  E = Madhya Pa</text>
-        <text font-family="'Noto Serif', serif" font-size="10" fill="#8B4010" x="340" y="597" text-anchor="middle">G string (Mandra Sa) is closest to you when bowing · E string (Madhya Pa) is farthest</text>
+        <rect x="30" y="545" width="620" height="60" rx="8" fill="#EEF4FF" stroke="#F0B429" stroke-width="0.8"/>
+        <text font-family="'Noto Serif', serif" font-size="12" font-weight="700" fill="#5B54C9" x="340" y="563" text-anchor="middle">Carnatic tuning: Sa — Pa — Sa — Pa</text>
+        <text font-family="'Noto Serif', serif" font-size="11" fill="#4D5378" x="340" y="581" text-anchor="middle">G = Mandra Sa  ·  D = Mandra Pa  ·  A = Madhya Sa  ·  E = Madhya Pa</text>
+        <text font-family="'Noto Serif', serif" font-size="10" fill="#C23A2E" x="340" y="597" text-anchor="middle">G string (Mandra Sa) is closest to you when bowing · E string (Madhya Pa) is farthest</text>
       </svg>
     </div>
 
@@ -1350,21 +1385,21 @@
       </thead>
       <tbody>
         <tr>
-          <td><span class="string-dot" style="background:#B08030;"></span> 1st (thickest)</td>
+          <td><span class="string-dot" style="background:#D97706;"></span> 1st (thickest)</td>
           <td><span class="note-badge">G</span></td>
           <td>Mandra Sthayi Shadjam</td>
           <td>Lower (Mandra)</td>
           <td>Sa</td>
         </tr>
         <tr>
-          <td><span class="string-dot" style="background:#C8A040;"></span> 2nd</td>
+          <td><span class="string-dot" style="background:#F0B429;"></span> 2nd</td>
           <td><span class="note-badge">D</span></td>
           <td>Mandra Sthayi Panchamam</td>
           <td>Lower (Mandra)</td>
           <td>Pa</td>
         </tr>
         <tr>
-          <td><span class="string-dot" style="background:#D8BC60;"></span> 3rd</td>
+          <td><span class="string-dot" style="background:#F5C542;"></span> 3rd</td>
           <td><span class="note-badge">A</span></td>
           <td>Madhya Sthayi Shadjam</td>
           <td>Middle (Madhya)</td>
@@ -1422,11 +1457,11 @@
 
         <!-- Sa 2 — Madhya (centre, highlighted) -->
         <div class="sapa-node">
-          <div class="sapa-circle sa" style="width:92px;height:92px;border-color:#F0C040;border-width:3px;box-shadow:0 0 0 4px rgba(240,192,64,0.15);">
+          <div class="sapa-circle sa" style="width:92px;height:92px;border-color:#FFD166;border-width:3px;box-shadow:0 0 0 4px rgba(255,209,102,0.15);">
             <span class="sapa-circle-swara" style="font-size:1.7rem;">Sa</span>
             <span class="sapa-circle-label">A string</span>
           </div>
-          <div class="sapa-node-name" style="color:#F0C040;font-weight:600;">Madhya Sthayi<br>Shadjam ✦</div>
+          <div class="sapa-node-name" style="color:#FFD166;font-weight:600;">Madhya Sthayi<br>Shadjam ✦</div>
         </div>
 
         <span class="sapa-arrow">→</span>
@@ -1444,7 +1479,7 @@
 
         <!-- Sa 3 — Tara -->
         <div class="sapa-node">
-          <div class="sapa-circle sa" style="border-color:#F5A623;">
+          <div class="sapa-circle sa" style="border-color:#FFB84C;">
             <span class="sapa-circle-swara">Sa</span>
             <span class="sapa-circle-label">E string (hi)</span>
           </div>
@@ -1455,15 +1490,15 @@
 
       <!-- Octave band labels -->
       <div style="display:flex; justify-content:center; gap:0; margin-top:0.5rem; flex-wrap:wrap;">
-        <div style="text-align:center; width:170px; border-top: 1px dashed rgba(240,192,64,0.25); padding-top:6px;">
+        <div style="text-align:center; width:170px; border-top: 1px dashed rgba(255,209,102,0.25); padding-top:6px;">
           <span style="font-size:0.7rem; color:#907050; letter-spacing:1px; text-transform:uppercase;">Lower octave</span>
         </div>
         <div style="text-align:center; width:10px;"></div>
-        <div style="text-align:center; width:192px; border-top: 1px dashed rgba(240,192,64,0.4); padding-top:6px;">
-          <span style="font-size:0.7rem; color:#C8A040; letter-spacing:1px; text-transform:uppercase;">Middle octave (home)</span>
+        <div style="text-align:center; width:192px; border-top: 1px dashed rgba(255,209,102,0.4); padding-top:6px;">
+          <span style="font-size:0.7rem; color:#F0B429; letter-spacing:1px; text-transform:uppercase;">Middle octave (home)</span>
         </div>
         <div style="text-align:center; width:10px;"></div>
-        <div style="text-align:center; width:170px; border-top: 1px dashed rgba(200,130,30,0.3); padding-top:6px;">
+        <div style="text-align:center; width:170px; border-top: 1px dashed rgba(240,180,41,0.3); padding-top:6px;">
           <span style="font-size:0.7rem; color:#907050; letter-spacing:1px; text-transform:uppercase;">Upper octave</span>
         </div>
       </div>
@@ -1653,12 +1688,36 @@
   </div>
 </section>
 
+
+<!-- ═══ Testimonials — SAMPLE quotes: replace with real parent testimonials ═══ -->
+<section class="lva-testi" id="testimonials">
+  <h2>💛 What Parents Say</h2>
+  <p class="lva-testi-sub">Little musicians, proud families — a few words from our academy community.</p>
+  <div class="lva-testi-grid">
+    <div class="lva-testi-card">
+      <div class="lva-testi-stars">★★★★★</div>
+      <p class="q">My daughter looks forward to violin class all week. The games on this site keep her practising without us ever asking!</p>
+      <div class="who"><div class="ava">🎻</div><div><b>Parent of a Little Strings student</b><span>Age 6 · Chennai</span></div></div>
+    </div>
+    <div class="lva-testi-card">
+      <div class="lva-testi-stars">★★★★★</div>
+      <p class="q">Patient, traditional and joyful teaching. Within months our son could hold sruthi and play his first geetham with confidence.</p>
+      <div class="who"><div class="ava">🎶</div><div><b>Parent of a Swara Sadhana student</b><span>Age 9 · Chennai</span></div></div>
+    </div>
+    <div class="lva-testi-card">
+      <div class="lva-testi-stars">★★★★★</div>
+      <p class="q">The perfect blend of gurukul tradition and modern fun. The Thala player and Raga Jukebox made theory feel like playtime.</p>
+      <div class="who"><div class="ava">🥁</div><div><b>Parent of a Raga Pravesham student</b><span>Age 11 · Chennai</span></div></div>
+    </div>
+  </div>
+</section>
+
 <section class="contact" id="contact">
   <div class="section-inner">
     <div class="section-label">Get in Touch</div>
     <h2 class="section-title">Enroll Your Child</h2>
     <div class="border-accent"></div>
-    <p style="color:#D4A97A; max-width:640px; margin-bottom:1.8rem;">We'd love to welcome your child into Lakshya's Violin Academy. For a free trial class or any enquiries, reach out on WhatsApp or email — we usually reply within 24 hours.</p>
+    <p style="color:#B4BEF5; max-width:640px; margin-bottom:1.8rem;">We'd love to welcome your child into Lakshya's Violin Academy. For a free trial class or any enquiries, reach out on WhatsApp or email — we usually reply within 24 hours.</p>
 
     <div class="enquiry-grid">
       <a class="enquiry-card" href="https://wa.me/919003030454" target="_blank" rel="noopener">
@@ -1679,26 +1738,12 @@
   </div>
 </section>
 
-<footer>
-  <p>© 2025 <span>Lakshya's Violin Academy</span> · Old Pallavaram, Chennai · Carnatic Violin for Young Learners</p>
-  <p style="margin-top: 0.5rem; font-size: 0.78rem;">♩ Where every note finds its voice ♩</p>
-</footer>
+
 
 <script>
-  const toggle = document.getElementById('navToggle');
-  const links  = document.getElementById('navLinks');
+  
 
-  toggle.addEventListener('click', () => {
-    const open = links.classList.toggle('open');
-    toggle.classList.toggle('open', open);
-    toggle.setAttribute('aria-expanded', open);
-  });
-
-  function closeNav() {
-    links.classList.remove('open');
-    toggle.classList.remove('open');
-    toggle.setAttribute('aria-expanded', 'false');
-  }
+  function closeNav() {}
 
   // Close nav when clicking outside
   document.addEventListener('click', (e) => {
@@ -1706,5 +1751,25 @@
   });
 </script>
 
+
+<!-- ═══ LVA uniform footer (shared across all pages) ═══ -->
+<div class="lva-footer">
+  <div class="lva-footer-notes" aria-hidden="true">♪&hairsp;♫&hairsp;𝄞&hairsp;♩&hairsp;♬</div>
+  <div class="lva-footer-brand">🎻 Lakshya's Violin Academy</div>
+  <p class="lva-footer-tag">Carnatic violin for young learners — where every note finds its voice ♩</p>
+  <p class="lva-footer-loc">Old Pallavaram, Chennai</p>
+  <div class="lva-footer-links">
+    <a href="https://wa.me/919003030454">💬 WhatsApp +91 90030 30454</a>
+    <a href="mailto:j.ajaychandran@gmail.com">✉️ j.ajaychandran@gmail.com</a>
+    <a href="index.html#contact">🎟️ Book a Free Trial</a>
+  </div>
+  <div class="lva-footer-quick">
+    <a href="index.html">Home</a><a href="index.html#about">About</a><a href="index.html#courses">Courses</a><a href="games.html">Games &amp; Labs</a><a href="blog-sound-vibration-carnatic.html">Blog</a><a href="index.html#contact">Enroll</a>
+  </div>
+  <p class="lva-footer-copy">© 2026 Lakshya's Violin Academy · Made with ♥ and music 🎶</p>
+</div>
+
+<!-- Analytics: GoatCounter (privacy-friendly) -->
+<script data-goatcounter="https://lakshyasviolinacademy.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

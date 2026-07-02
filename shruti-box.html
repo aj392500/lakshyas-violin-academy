@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>The Shruti Box — Lakshya's Violin Academy</title>
+<meta name="description" content="Free online shruti box: pick your Sa, start the drone, and practise Carnatic violin in perfect sruthi anywhere.">
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Lakshya&#39;s Violin Academy" />
 <meta property="og:title" content="The Shruti Box — Lakshya&#x27;s Violin Academy" />
@@ -16,28 +17,28 @@
 <meta name="twitter:title" content="The Shruti Box — Lakshya&#x27;s Violin Academy" />
 <meta name="twitter:description" content="Interactive Carnatic violin lessons, games and labs for young learners at Lakshya&#39;s Violin Academy, Old Pallavaram, Chennai." />
 <meta name="twitter:image" content="https://lakshyasviolinacademy.live/og-image.png" />
-<meta name="theme-color" content="#7B1E1E" />
+<meta name="theme-color" content="#5B54C9" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800;900&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
   :root{
-    --maroon:#7a1f2b; --maroon-deep:#5c1620;
-    --saffron:#e8893a; --saffron-bright:#f4a340;
-    --gold:#e6b53c; --gold-soft:#f4cf6b;
-    --cream:#fdf6e9; --cream-deep:#f7ead2;
-    --ink:#3a2419; --ink-soft:#6b5443;
-    --peacock:#147c6e; --peacock-soft:#1f9d8c;
-    --shadow:rgba(92,22,32,.18);
+    --maroon:#5B54C9; --maroon-deep:#443CA8;
+    --saffron:#FF9A62; --saffron-bright:#FFB84C;
+    --gold:#FFC94D; --gold-soft:#FFE08F;
+    --cream:#F5F8FF; --cream-deep:#E7EEFC;
+    --ink:#2E3350; --ink-soft:#4D5378;
+    --peacock:#0E9488; --peacock-soft:#14B0A0;
+    --shadow:rgba(68,60,168,.18);
   }
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;}
   body{
     margin:0;font-family:'Nunito',sans-serif;color:var(--ink);
     background:
-      radial-gradient(circle at 12% 8%, #fff7e8 0%, transparent 40%),
-      radial-gradient(circle at 90% 4%, #fdeccf 0%, transparent 36%),
+      radial-gradient(circle at 12% 8%, #FBFCFF 0%, transparent 40%),
+      radial-gradient(circle at 90% 4%, #EAF1FE 0%, transparent 36%),
       var(--cream);
     line-height:1.6;overflow-x:hidden;
   }
@@ -62,7 +63,7 @@
   .hero p.sub{max-width:42ch;margin:14px auto 0;font-size:clamp(1rem,2.5vw,1.18rem);font-weight:600;color:var(--ink-soft);}
 
   section.lesson{max-width:760px;margin:0 auto;padding:14px 18px;}
-  .card{background:#fffdf8;border:2px solid var(--cream-deep);border-radius:24px;
+  .card{background:#FFFFFF;border:2px solid var(--cream-deep);border-radius:24px;
     padding:22px 20px 26px;margin:18px 0;box-shadow:0 14px 30px -18px var(--shadow);}
   .step-no{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:13px;
     background:linear-gradient(135deg,var(--saffron),var(--gold));color:#fff;font-family:'Playfair Display',serif;
@@ -81,7 +82,7 @@
   .btn.ghost{background:#fff;color:var(--maroon);border:2px solid var(--gold);box-shadow:none;}
 
   /* sruthi readout + slider */
-  .sruthi-box{background:linear-gradient(135deg,#fff,#fdf0d8);border:2px solid var(--cream-deep);border-radius:18px;padding:18px;margin:6px 0 4px;text-align:center;}
+  .sruthi-box{background:linear-gradient(135deg,#fff,#EEF4FF);border:2px solid var(--cream-deep);border-radius:18px;padding:18px;margin:6px 0 4px;text-align:center;}
   .sruthi-readout{font-family:'Playfair Display';font-weight:900;font-size:clamp(2rem,8vw,3rem);color:var(--maroon);line-height:1;}
   .sruthi-readout small{font-size:.36em;color:var(--saffron);font-family:'Nunito';font-weight:800;}
   .sruthi-sub{font-weight:700;color:var(--ink-soft);font-size:.9rem;margin-top:4px;}
@@ -109,7 +110,7 @@
 
   /* strings */
   .strings{display:grid;gap:10px;margin-top:6px;}
-  .string-btn{display:flex;align-items:center;gap:14px;background:#fffdf8;border:2px solid var(--cream-deep);
+  .string-btn{display:flex;align-items:center;gap:14px;background:#FFFFFF;border:2px solid var(--cream-deep);
     border-radius:16px;padding:13px 16px;text-align:left;transition:all .12s;}
   .string-btn:hover{border-color:var(--gold);}
   .string-btn.playing{border-color:var(--peacock);background:linear-gradient(135deg,#eafaf5,#d8f3eb);}
@@ -122,8 +123,8 @@
   .string-btn .play-ic{font-size:1.4rem;color:var(--peacock);}
 
   /* mic tuner */
-  .tuner{display:none;margin-top:16px;background:linear-gradient(180deg,#fff,#fdf3df);border:2px solid var(--cream-deep);border-radius:18px;padding:18px;text-align:center;}
-  .tuner.intune{border-color:var(--peacock);box-shadow:0 0 0 3px rgba(20,124,110,.12) inset;}
+  .tuner{display:none;margin-top:16px;background:linear-gradient(180deg,#fff,#EEF4FF);border:2px solid var(--cream-deep);border-radius:18px;padding:18px;text-align:center;}
+  .tuner.intune{border-color:var(--peacock);box-shadow:0 0 0 3px rgba(14,148,136,.12) inset;}
   .tuner .t-sym{font-family:'Playfair Display';font-weight:900;font-size:2.4rem;color:var(--maroon);line-height:1;}
   .tuner .t-name{font-weight:800;color:var(--ink-soft);margin-top:2px;}
   .tuner .t-hz{color:var(--saffron);font-weight:800;font-size:.9rem;}
@@ -132,7 +133,7 @@
   .tuner .t-needle{position:absolute;top:-4px;width:18px;height:22px;border-radius:6px;background:var(--maroon);left:50%;transform:translateX(-50%);transition:left .08s;}
   .tuner .t-status{font-weight:800;margin-top:10px;color:var(--ink-soft);}
   .tuner .t-status.good{color:var(--peacock);}
-  .micmsg{display:none;background:#fde2dc;border:2px solid var(--saffron);color:#7a2418;border-radius:12px;padding:12px 15px;font-weight:700;font-size:.9rem;margin-top:14px;text-align:left;}
+  .micmsg{display:none;background:#fde2dc;border:2px solid var(--saffron);color:#C23A2E;border-radius:12px;padding:12px 15px;font-weight:700;font-size:.9rem;margin-top:14px;text-align:left;}
 
   /* swara pad */
   .pad-toggle{display:flex;gap:8px;justify-content:center;margin-bottom:14px;flex-wrap:wrap;}
@@ -151,13 +152,13 @@
   .pad-full .swara{border-radius:13px;padding:11px 4px;}
   .pad-full .swara .sym{font-size:1.2rem;}
 
-  footer{border-top:3px solid var(--saffron);background:#1A0A02;text-align:center;padding:2rem 1.2rem;color:#7A5A3A;font-size:.82rem;line-height:1.8;margin-top:30px;}
+  footer{border-top:3px solid var(--saffron);background:#1E1A47;text-align:center;padding:2rem 1.2rem;color:#707795;font-size:.82rem;line-height:1.8;margin-top:30px;}
   footer .name{font-family:'Playfair Display',serif;color:var(--gold);font-weight:800;font-size:1rem;}
   footer a{color:var(--saffron-bright);text-decoration:none;}
 </style>
 <style id="lva-mobnav">
   .lva-toggle{display:none;background:transparent;border:none;cursor:pointer;padding:8px 2px;flex-direction:column;gap:5px;margin-left:auto;}
-  .lva-toggle span{display:block;width:26px;height:3px;border-radius:2px;background:#F0C040;transition:transform .25s ease,opacity .2s ease;}
+  .lva-toggle span{display:block;width:26px;height:3px;border-radius:2px;background:#FFD166;transition:transform .25s ease,opacity .2s ease;}
   .lva-toggle.open span:nth-child(1){transform:translateY(8px) rotate(45deg);}
   .lva-toggle.open span:nth-child(2){opacity:0;}
   .lva-toggle.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
@@ -166,36 +167,78 @@
     .lva-toggle{display:flex;}
     .lva-ribbon .lva-links{display:none !important;order:5;flex-basis:100%;width:100%;flex-direction:column;align-items:stretch;
       max-height:min(68vh,440px);overflow-y:auto;-webkit-overflow-scrolling:touch;
-      border-top:1px solid rgba(240,192,64,0.25);margin-top:4px;padding:4px 0 8px;
-      scrollbar-width:thin;scrollbar-color:#B8860B rgba(255,255,255,0.12);}
+      border-top:1px solid rgba(255,209,102,0.25);margin-top:4px;padding:4px 0 8px;
+      scrollbar-width:thin;scrollbar-color:#D97706 rgba(255,255,255,0.12);}
     .lva-ribbon.open .lva-links{display:flex !important;}
     .lva-ribbon .lva-links::-webkit-scrollbar{width:8px;}
-    .lva-ribbon .lva-links::-webkit-scrollbar-thumb{background:#B8860B;border-radius:8px;}
+    .lva-ribbon .lva-links::-webkit-scrollbar-thumb{background:#D97706;border-radius:8px;}
     .lva-ribbon .lva-links a{padding:0.72rem 0.7rem !important;font-size:0.94rem !important;letter-spacing:0.03em !important;
-      border-bottom:1px solid rgba(240,192,64,0.12);white-space:normal !important;}
-    .lva-ribbon .lva-links a.cur{background:rgba(240,192,64,0.12);}
+      border-bottom:1px solid rgba(255,209,102,0.12);white-space:normal !important;}
+    .lva-ribbon .lva-links a.cur{background:rgba(255,209,102,0.12);}
   }
 </style>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<script src="site.js" defer></script>
+<link rel="canonical" href="https://lakshyasviolinacademy.live/shruti-box.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
 <body>
 
-<div class="lva-ribbon">
-  <a class="lva-brand" href="index.html">🎻 Lakshya's Violin Academy</a>
-  <button class="lva-toggle" id="lvaToggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
-  <div class="lva-links">
-    <a href="index.html">Home</a>
-    <a href="varisai-lab.html">Varisai Lab</a>
-    <a href="frequency-and-swaras.html">Frequency Lab</a>
-    <a href="thala-basics.html">Thala</a>
-    <a href="melakarta-explorer.html">72 Melakarta</a>
-    <a href="shruti-box.html" class="cur">Shruti Box</a>
-    <a href="swara-guessing-game.html">Swara Game</a>
-    <a href="raga-mood-matcher.html">Raga Moods</a>
-    <a href="build-a-raga-lab.html">Build-a-Raga</a>
-    <a href="compose-a-geetham.html">Compose Geetham</a>
-    <a href="sruthi-detective.html">Sruthi Detective</a>
+<!-- ═══ LVA uniform navigation (shared across all pages) ═══ -->
+<div class="lva-nav" id="lvaNav">
+  <div class="lva-nav-inner">
+    <a class="lva-brand" href="index.html">🎻&ensp;Lakshya's Violin Academy</a>
+    <button class="lva-burger" aria-label="Open menu" aria-expanded="false" aria-controls="lvaMenu"><span></span><span></span><span></span></button>
+    <div class="lva-menu" id="lvaMenu">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#courses">Courses</a>
+      <div class="lva-drop">
+        <button class="lva-drop-btn" aria-expanded="false">Learn</button>
+        <div class="lva-drop-panel">
+          <span class="lva-drop-label">🎼 Carnatic Foundations</span>
+          <a href="index.html#carnatic">📖&ensp;Introduction to Carnatic Music</a>
+          <a href="index.html#strings">🎻&ensp;The Violin &amp; Its Strings</a>
+          <a href="index.html#sapa">🎵&ensp;Sa–Pa–Sa–Pa–Sa</a>
+          <a href="index.html#varisai">🎶&ensp;The Five Varisais</a>
+        </div>
+      </div>
+      <div class="lva-drop">
+        <button class="lva-drop-btn" aria-expanded="false">Games &amp; Labs</button>
+        <div class="lva-drop-panel">
+          <span class="lva-drop-label">🎮 Interactive Music Games</span>
+          <a href="games.html"><b>🗺️&ensp;All Games at a Glance</b></a>
+      <a href="varisai-lab.html">🎻&ensp;Varisai Lab — all five varisais</a>
+      <a href="raga-jukebox.html">📻&ensp;Raga Jukebox — hear every raga</a>
+      <a href="frequency-and-swaras.html">🔊&ensp;Frequency &amp; Swaras Lab</a>
+      <a href="thala-basics.html">🥁&ensp;Thala — Rhythm Player</a>
+      <a href="melakarta-explorer.html">🎼&ensp;72 Melakarta Explorer</a>
+      <a href="gamaka-explorer.html">🌊&ensp;Gamaka Explorer</a>
+      <a href="shruti-box.html">🎚️&ensp;Shruti Box — tune &amp; drone</a>
+      <a href="swara-guessing-game.html">🎧&ensp;Swara Guessing Game</a>
+      <a href="raga-mood-matcher.html">🎭&ensp;Raga Mood Matcher</a>
+      <a href="build-a-raga-lab.html">🛠️&ensp;Build-a-Raga Lab</a>
+      <a href="compose-a-geetham.html">✍️&ensp;Compose-a-Geetham</a>
+      <a href="sruthi-detective.html">🕵️&ensp;Sruthi Detective</a>
+        </div>
+      </div>
+      <div class="lva-drop">
+        <button class="lva-drop-btn" aria-expanded="false">Blog</button>
+        <div class="lva-drop-panel">
+          <span class="lva-drop-label">📚 Beginner's Corner</span>
+          <a href="blog-sound-vibration-carnatic.html">🎵&ensp;Sound, Vibration &amp; Carnatic Music</a>
+          <a href="blog-carnatic-music-and-kids-brain.html">🧠&ensp;Carnatic Music &amp; Your Child's Brain</a>
+        </div>
+      </div>
+      <a class="lva-cta" href="index.html#contact">🎻 Enroll Now</a>
+    </div>
   </div>
 </div>
+
+
+
 
 <header class="hero">
   <span class="eyebrow">Set your Sa · Tune · Play</span>
@@ -273,11 +316,7 @@
   </div>
 </section>
 
-<footer>
-  <div class="name">Lakshya's Violin Academy</div>
-  Old Pallavaram, Chennai · Carnatic Violin for Young Learners<br>
-  Guided by Guru Smt. Rama Gurumoorthy · <a href="index.html#contact">Enroll</a>
-</footer>
+
 
 <script>
 /* ============ AUDIO ENGINE (all violin) — shared with Frequency Lab ============ */
@@ -645,18 +684,26 @@ function detectLoop(){
 refreshAll();
 markPreset();
 </script>
-<script>
-(function(){
-  var r=document.querySelector('.lva-ribbon'), t=document.getElementById('lvaToggle');
-  if(!r||!t) return;
-  t.addEventListener('click',function(){
-    var open=r.classList.toggle('open'); t.classList.toggle('open',open);
-    t.setAttribute('aria-expanded',open?'true':'false');
-  });
-  r.querySelectorAll('.lva-links a').forEach(function(a){
-    a.addEventListener('click',function(){ r.classList.remove('open'); t.classList.remove('open'); t.setAttribute('aria-expanded','false'); });
-  });
-})();
-</script>
+
+
+<!-- ═══ LVA uniform footer (shared across all pages) ═══ -->
+<div class="lva-footer">
+  <div class="lva-footer-notes" aria-hidden="true">♪&hairsp;♫&hairsp;𝄞&hairsp;♩&hairsp;♬</div>
+  <div class="lva-footer-brand">🎻 Lakshya's Violin Academy</div>
+  <p class="lva-footer-tag">Carnatic violin for young learners — where every note finds its voice ♩</p>
+  <p class="lva-footer-loc">Old Pallavaram, Chennai</p>
+  <div class="lva-footer-links">
+    <a href="https://wa.me/919003030454">💬 WhatsApp +91 90030 30454</a>
+    <a href="mailto:j.ajaychandran@gmail.com">✉️ j.ajaychandran@gmail.com</a>
+    <a href="index.html#contact">🎟️ Book a Free Trial</a>
+  </div>
+  <div class="lva-footer-quick">
+    <a href="index.html">Home</a><a href="index.html#about">About</a><a href="index.html#courses">Courses</a><a href="games.html">Games &amp; Labs</a><a href="blog-sound-vibration-carnatic.html">Blog</a><a href="index.html#contact">Enroll</a>
+  </div>
+  <p class="lva-footer-copy">© 2026 Lakshya's Violin Academy · Made with ♥ and music 🎶</p>
+</div>
+
+<!-- Analytics: GoatCounter (privacy-friendly) -->
+<script data-goatcounter="https://lakshyasviolinacademy.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
