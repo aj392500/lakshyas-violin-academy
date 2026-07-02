@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="An interactive Varisai practice lab for young violin students — Swaravali, Jandai, Thattu, Mel Sthayi and Alankaram, at any sruthi and all three kaalams, with a real violin voice to follow and live microphone feedback that flags wrong swarasthanams." />
+<title>Varisai Lab — Play-Along Practice | Lakshya's Violin Academy</title>
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Lakshya&#39;s Violin Academy" />
+<meta property="og:title" content="Varisai Lab — Play-Along Practice | Lakshya&#x27;s Violin Academy" />
+<meta property="og:description" content="An interactive Varisai practice lab for young violin students — Swaravali, Jandai, Thattu, Mel Sthayi and Alankaram, at any sruthi and all three kaalams, with a real violin voice to follow and live microphone feedback that flags wrong swarasthanams." />
+<meta property="og:url" content="https://lakshyasviolinacademy.live/varisai-lab.html" />
+<meta property="og:image" content="https://lakshyasviolinacademy.live/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Varisai Lab — Play-Along Practice | Lakshya&#x27;s Violin Academy" />
+<meta name="twitter:description" content="An interactive Varisai practice lab for young violin students — Swaravali, Jandai, Thattu, Mel Sthayi and Alankaram, at any sruthi and all three kaalams, with a real violin voice to follow and live microphone feedback that flags wrong swarasthanams." />
+<meta name="twitter:image" content="https://lakshyasviolinacademy.live/og-image.png" />
+<meta name="theme-color" content="#5B54C9" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Noto+Serif:wght@400;600&display=swap" rel="stylesheet" />
+<style>
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --maroon:#5B54C9; --maroon-soft:#837DD9; --saffron:#F25C54; --saffron-light:#FFB84C;
+    --gold:#FFD166; --gold-deep:#D97706; --cream:#F5F8FF; --cream2:#E7EEFC;
+    --border:#C5D3F0; --text-dark:#2E3350; --text-mid:#4D5378; --text-soft:#707795;
+    --green:#16A34A; --green-bg:#e4f5ea; --red:#c23a2a; --red-bg:#fbe7e3; --teal:#0E9488;
+  }
+  html{scroll-behavior:smooth;}
+  body{font-family:'Noto Serif',Georgia,serif;background:var(--cream);color:var(--text-dark);line-height:1.7;}
+
+  .lva-ribbon{background:#5B54C9;border-bottom:3px solid #FFB84C;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:0 1.3rem;}
+  .lva-ribbon a{text-decoration:none;}
+  .lva-ribbon .lva-brand{color:#FFD166;font-family:'Playfair Display',serif;font-weight:700;font-size:1rem;padding:0.7rem 0;white-space:nowrap;}
+  .lva-ribbon .lva-links{display:flex;flex-wrap:wrap;align-items:center;}
+  .lva-ribbon .lva-links a{color:#E3E8FF;font-size:0.72rem;letter-spacing:0.07em;text-transform:uppercase;padding:0.75rem 0.65rem;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;white-space:nowrap;}
+  .lva-ribbon .lva-links a:hover{color:#FFD166;border-bottom-color:#FFD166;}
+  .lva-ribbon .lva-links a.cur{color:#FFD166;border-bottom-color:#FFD166;}
+  @media(max-width:620px){.lva-ribbon{padding:0 0.7rem;}.lva-ribbon .lva-brand{font-size:0.82rem;}.lva-ribbon .lva-links a{padding:0.5rem 0.4rem;font-size:0.6rem;}}
+
+  .hero{background:linear-gradient(135deg,var(--maroon) 0%,#443CA8 60%,#2F2973 100%);padding:3rem 1.5rem 2.6rem;text-align:center;position:relative;overflow:hidden;}
+  .hero::before{content:'𝄞';position:absolute;top:-14px;right:24px;font-size:7rem;color:rgba(255,209,102,0.08);}
+  .hero .eyebrow{font-size:0.74rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--saffron-light);margin-bottom:0.7rem;}
+  .hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,5vw,3rem);color:#FDFDFF;font-weight:700;line-height:1.15;}
+  .hero h1 span{color:var(--gold);}
+  .hero .tamil{font-size:1rem;color:#CDD5FF;font-style:italic;margin:0.4rem 0 0.8rem;}
+  .hero p{color:#B4BEF5;max-width:640px;margin:0 auto;font-size:0.98rem;line-height:1.8;}
+
+  .wrap{max-width:920px;margin:0 auto;padding:2rem 1.2rem 4rem;}
+
+  /* category tabs */
+  .cat-tabs{display:flex;gap:7px;flex-wrap:wrap;justify-content:center;margin-bottom:1.3rem;}
+  .cat-tabs button{font-family:'Playfair Display',serif;font-size:0.9rem;padding:0.55rem 1.05rem;border:1px solid var(--border);background:#fff;color:var(--text-mid);border-radius:99px;cursor:pointer;transition:all .15s;}
+  .cat-tabs button .tam{font-family:'Noto Serif',serif;font-size:0.66rem;color:var(--text-soft);display:block;margin-top:1px;}
+  .cat-tabs button.on{background:var(--maroon);color:var(--gold);border-color:var(--maroon);}
+  .cat-tabs button.on .tam{color:#CDD5FF;}
+  .cat-tabs button:hover{border-color:var(--saffron);}
+
+  .panel{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.3rem 1.4rem;box-shadow:0 6px 22px rgba(46,51,80,0.07);margin-bottom:1.4rem;}
+  .ctl-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem 1.4rem;}
+  .ctl{display:flex;flex-direction:column;gap:0.4rem;}
+  .ctl-label{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-soft);font-weight:600;display:flex;justify-content:space-between;align-items:center;}
+  .ctl-label b{color:var(--saffron);font-family:'Playfair Display',serif;font-size:0.95rem;}
+  select,input[type=range]{width:100%;}
+  select{font-family:'Noto Serif',serif;font-size:0.92rem;padding:0.5rem 0.6rem;border:1px solid var(--border);border-radius:7px;background:var(--cream);color:var(--text-dark);}
+  input[type=range]{-webkit-appearance:none;height:7px;border-radius:7px;background:linear-gradient(90deg,var(--saffron),var(--gold));outline:none;}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--maroon);border:2px solid var(--gold);cursor:pointer;}
+  input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--maroon);border:2px solid var(--gold);cursor:pointer;}
+
+  .seg{display:flex;gap:6px;flex-wrap:wrap;}
+  .seg button{flex:1;min-width:64px;font-family:'Noto Serif',serif;font-size:0.82rem;padding:0.5rem 0.4rem;border:1px solid var(--border);background:var(--cream);color:var(--text-mid);border-radius:7px;cursor:pointer;transition:all .15s;line-height:1.2;}
+  .seg button small{display:block;font-size:0.66rem;color:var(--text-soft);}
+  .seg button.on{background:var(--maroon);color:#FDFDFF;border-color:var(--maroon);}
+  .seg button.on small{color:var(--gold);}
+
+  .btn{font-family:'Noto Serif',serif;font-size:0.95rem;padding:0.7rem 1.1rem;border:none;border-radius:8px;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:transform .1s,background .2s;}
+  .btn-play{background:var(--saffron);color:#fff;border-bottom:3px solid #C23A2E;flex:1;justify-content:center;font-size:1.05rem;}
+  .btn-play:hover{background:#D9483B;}
+  .btn-play.stop{background:var(--maroon);border-bottom-color:#3A338F;}
+  .btn-ghost{background:var(--cream2);color:var(--text-mid);border:1px solid var(--border);}
+  .btn-ghost:hover{background:#D9E2F8;}
+  .btn-mic{background:var(--teal);color:#fff;border-bottom:3px solid #0B7266;}
+  .btn-mic.on{background:#b03a2a;border-bottom-color:#C23A2E;}
+  .action-row{display:flex;gap:0.7rem;flex-wrap:wrap;margin-top:1.1rem;align-items:stretch;}
+
+  .tala{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin:0.4rem 0 0.2rem;}
+  .beat{width:38px;text-align:center;}
+  .beat .dot{width:30px;height:30px;border-radius:50%;margin:0 auto 3px;border:2px solid var(--border);background:var(--cream);display:flex;align-items:center;justify-content:center;font-size:0.8rem;color:var(--text-soft);font-weight:700;transition:all .12s;}
+  .beat.cur .dot{background:var(--gold);border-color:var(--gold-deep);color:var(--maroon);transform:scale(1.18);box-shadow:0 0 0 4px rgba(255,209,102,0.2);}
+  .beat.clap .dot{border-color:var(--saffron);}
+  .beat .g{font-size:0.55rem;color:var(--text-soft);letter-spacing:0.04em;text-transform:uppercase;}
+
+  .track-label{font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-soft);font-weight:600;margin:1.2rem 0 0.6rem;text-align:center;}
+  .track{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;}
+  .grp{display:flex;flex-wrap:wrap;gap:5px;padding:5px;border-radius:10px;background:var(--cream2);border:1px solid var(--border);}
+  .cell{width:50px;height:58px;border-radius:8px;background:#fff;border:1px solid var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:all .12s;}
+  .cell .sym{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--maroon);line-height:1;}
+  .cell .nm{font-size:0.56rem;color:var(--text-soft);margin-top:2px;}
+  .cell.cur{background:var(--gold);border-color:var(--gold-deep);transform:translateY(-3px) scale(1.06);box-shadow:0 6px 16px rgba(217,119,6,0.35);}
+  .cell.cur .sym{color:#2E3350;}
+  .cell.hit{background:var(--green-bg);border-color:var(--green);}
+  .cell.hit .sym{color:var(--green);}
+  .cell.miss{background:var(--red-bg);border-color:var(--red);}
+  .cell.miss .sym{color:var(--red);}
+  .cell.target{outline:3px dashed var(--saffron);outline-offset:2px;}
+  .cell.hold{background:#efe7d8;border-style:dashed;}
+  .cell.hold .sym{color:var(--text-soft);}
+
+  .live{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.3rem;}
+  @media(max-width:560px){.live{grid-template-columns:1fr;}.ctl-grid{grid-template-columns:1fr;}}
+  .live-card{border-radius:12px;padding:1.1rem;border:1px solid var(--border);text-align:center;}
+  .live-card.target-card{background:#EEF4FF;border-color:#F0B429;}
+  .live-card.you-card{background:var(--cream2);}
+  .live-card .lc-label{font-size:0.66rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-soft);font-weight:600;margin-bottom:0.4rem;}
+  .live-card .lc-sym{font-family:'Playfair Display',serif;font-size:2.6rem;font-weight:700;line-height:1;color:var(--maroon);}
+  .live-card .lc-name{font-size:0.82rem;color:var(--text-mid);margin-top:0.3rem;min-height:1em;}
+  .live-card .lc-hz{font-size:0.74rem;color:var(--text-soft);margin-top:0.2rem;min-height:1em;}
+  .verdict{margin-top:1rem;border-radius:10px;padding:0.85rem 1rem;font-size:1rem;text-align:center;background:var(--cream2);color:var(--text-mid);transition:all .15s;font-weight:600;}
+  .verdict.good{background:var(--green-bg);color:var(--green);}
+  .verdict.bad{background:var(--red-bg);color:var(--red);}
+  .verdict.idle{background:var(--cream2);color:var(--text-soft);font-weight:400;}
+
+  .tuner{margin-top:0.9rem;height:30px;border-radius:7px;background:linear-gradient(90deg,#f3d9c0,#fff 50%,#f3d9c0);border:1px solid var(--border);position:relative;}
+  .tuner .mid{position:absolute;left:50%;top:0;bottom:0;width:2px;background:var(--green);opacity:0.5;transform:translateX(-1px);}
+  .tuner .needle{position:absolute;top:-4px;bottom:-4px;width:4px;border-radius:3px;background:var(--maroon);left:50%;transition:left .08s;}
+  .tuner .tk{position:absolute;top:2px;font-size:0.55rem;color:var(--text-soft);}
+
+  .score{display:flex;gap:1.4rem;justify-content:center;margin-top:1.1rem;flex-wrap:wrap;}
+  .score .s{text-align:center;}
+  .score .s b{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--maroon);display:block;}
+  .score .s span{font-size:0.66rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--text-soft);}
+
+  .count-in{text-align:center;font-family:'Playfair Display',serif;font-size:3rem;color:var(--saffron);font-weight:700;min-height:0;margin:0.4rem 0;}
+
+  .note{background:#EEF4FF;border-left:3px solid var(--saffron);border-radius:0 8px 8px 0;padding:0.85rem 1.1rem;font-size:0.86rem;color:var(--text-mid);margin-top:1.2rem;}
+  .note strong{color:var(--maroon);}
+  .note code{background:#fff;border:1px solid var(--border);border-radius:4px;padding:0 4px;font-size:0.82rem;}
+  .desc{font-size:0.9rem;color:var(--text-mid);text-align:center;margin-bottom:0.4rem;min-height:1.2em;}
+  .desc b{color:var(--saffron);}
+
+  .how{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:0.9rem;margin-top:1.2rem;}
+  .how .step{background:var(--cream2);border:1px solid var(--border);border-radius:10px;padding:0.9rem;}
+  .how .step b{font-family:'Playfair Display',serif;color:var(--maroon);font-size:0.92rem;display:block;margin-bottom:0.25rem;}
+  .how .step span{font-size:0.8rem;color:var(--text-soft);}
+
+  .micmsg{display:none;background:var(--red-bg);border:1px solid var(--red);color:#C23A2E;border-radius:8px;padding:0.8rem 1rem;font-size:0.85rem;margin-top:1rem;}
+
+  footer{border-top:2px solid var(--saffron);background:#1E1A47;text-align:center;padding:2rem 1.2rem;color:#707795;font-size:0.82rem;line-height:1.8;}
+  footer .name{font-family:'Playfair Display',serif;color:var(--gold);font-weight:700;font-size:1rem;}
+  footer a{color:var(--saffron-light);text-decoration:none;}
+</style>
+<style id="lva-mobnav">
+  .lva-toggle{display:none;background:transparent;border:none;cursor:pointer;padding:8px 2px;flex-direction:column;gap:5px;margin-left:auto;}
+  .lva-toggle span{display:block;width:26px;height:3px;border-radius:2px;background:#FFD166;transition:transform .25s ease,opacity .2s ease;}
+  .lva-toggle.open span:nth-child(1){transform:translateY(8px) rotate(45deg);}
+  .lva-toggle.open span:nth-child(2){opacity:0;}
+  .lva-toggle.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
+  @media(max-width:760px){
+    .lva-ribbon{flex-wrap:nowrap;align-items:center;}
+    .lva-toggle{display:flex;}
+    .lva-ribbon .lva-links{display:none !important;order:5;flex-basis:100%;width:100%;flex-direction:column;align-items:stretch;
+      max-height:min(68vh,440px);overflow-y:auto;-webkit-overflow-scrolling:touch;
+      border-top:1px solid rgba(255,209,102,0.25);margin-top:4px;padding:4px 0 8px;
+      scrollbar-width:thin;scrollbar-color:#D97706 rgba(255,255,255,0.12);}
+    .lva-ribbon.open .lva-links{display:flex !important;}
+    .lva-ribbon .lva-links::-webkit-scrollbar{width:8px;}
+    .lva-ribbon .lva-links::-webkit-scrollbar-thumb{background:#D97706;border-radius:8px;}
+    .lva-ribbon .lva-links a{padding:0.72rem 0.7rem !important;font-size:0.94rem !important;letter-spacing:0.03em !important;
+      border-bottom:1px solid rgba(255,209,102,0.12);white-space:normal !important;}
+    .lva-ribbon .lva-links a.cur{background:rgba(255,209,102,0.12);}
+  }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<script src="site.js" defer></script>
+<link rel="canonical" href="https://lakshyasviolinacademy.live/varisai-lab.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+<body>
+
+<!-- ═══ LVA uniform navigation (shared across all pages) ═══ -->
+<div class="lva-nav" id="lvaNav">
+  <div class="lva-nav-inner">
+    <a class="lva-brand" href="index.html">🎻&ensp;Lakshya's Violin Academy</a>
+    <button class="lva-burger" aria-label="Open menu" aria-expanded="false" aria-controls="lvaMenu"><span></span><span></span><span></span></button>
+    <div class="lva-menu" id="lvaMenu">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#courses">Courses</a>
+      <div class="lva-drop">
+        <button class="lva-drop-btn" aria-expanded="false">Learn</button>
+        <div class="lva-drop-panel">
+          <span class="lva-drop-label">🎼 Carnatic Foundations</span>
+          <a href="index.html#carnatic">📖&ensp;Introduction to Carnatic Music</a>
+          <a href="index.html#strings">🎻&ensp;The Violin &amp; Its Strings</a>
+          <a href="index.html#sapa">🎵&ensp;Sa–Pa–Sa–Pa–Sa</a>
+          <a href="index.html#varisai">🎶&ensp;The Five Varisais</a>
+        </div>
+      </div>
+      <div class="lva-drop">
+        <button class="lva-drop-btn" aria-expanded="false">Games &amp; Labs</button>
+        <div class="lva-drop-panel">
+          <span class="lva-drop-label">🎮 Interactive Music Games</span>
+          <a href="games.html"><b>🗺️&ensp;All Games at a Glance</b></a>
+      <a href="varisai-lab.html">🎻&ensp;Varisai Lab — all five varisais</a>
+      <a href="raga-jukebox.html">📻&ensp;Raga Jukebox — hear every raga</a>
+      <a href="frequency-and-swaras.html">🔊&ensp;Frequency &amp; Swaras Lab</a>
+      <a href="thala-basics.html">🥁&ensp;Thala — Rhythm Player</a>
+      <a href="melakarta-explorer.html">🎼&ensp;72 Melakarta Explorer</a>
+      <a href="gamaka-explorer.html">🌊&ensp;Gamaka Explorer</a>
+      <a href="shruti-box.html">🎚️&ensp;Shruti Box — tune &amp; drone</a>
+      <a href="swara-guessing-game.html">🎧&ensp;Swara Guessing Game</a>
+      <a href="raga-mood-matcher.html">🎭&ensp;Raga Mood Matcher</a>
+      <a href="build-a-raga-lab.html">🛠️&ensp;Build-a-Raga Lab</a>
+      <a href="compose-a-geetham.html">✍️&ensp;Compose-a-Geetham</a>
+      <a href="sruthi-detective.html">🕵️&ensp;Sruthi Detective</a>
+        </div>
+      </div>
+      <div class="lva-drop">
+        <button class="lva-drop-btn" aria-expanded="false">Blog</button>
+        <div class="lva-drop-panel">
+          <span class="lva-drop-label">📚 Beginner's Corner</span>
+          <a href="blog-sound-vibration-carnatic.html">🎵&ensp;Sound, Vibration &amp; Carnatic Music</a>
+          <a href="blog-carnatic-music-and-kids-brain.html">🧠&ensp;Carnatic Music &amp; Your Child's Brain</a>
+        </div>
+      </div>
+      <a class="lva-cta" href="index.html#contact">🎻 Enroll Now</a>
+    </div>
+  </div>
+</div>
+
+
+
+<header class="hero">
+  <div class="eyebrow">Abhyāsa Gānam · Mayamalavagowla</div>
+  <h1>The <span>Varisai Lab</span></h1>
+  <div class="tamil">வரிசை பயிற்சி — உங்கள் வயலினுடன் சேர்ந்து வாசியுங்கள்</div>
+  <p>Every foundational exercise in one place — Swaravali, Jandai, Thattu, Mel Sthayi and Alankaram. Pick a sruthi and kaalam, play along with a real violin voice, and let the microphone listen and gently flag any swara that lands on the wrong swarasthanam.</p>
+</header>
+
+<div class="wrap">
+
+  <!-- CATEGORY TABS -->
+  <div class="cat-tabs" id="catTabs"></div>
+
+  <!-- CONTROLS -->
+  <div class="panel">
+    <div class="ctl-grid">
+      <div class="ctl">
+        <span class="ctl-label">Exercise</span>
+        <select id="varisaiSel"></select>
+      </div>
+      <div class="ctl">
+        <span class="ctl-label">Sruthi (your Sa) <b id="sruthiVal">240 Hz</b></span>
+        <input type="range" id="sruthiSlider" min="170" max="320" step="2" value="240" />
+      </div>
+      <div class="ctl">
+        <span class="ctl-label">Kaalam (speed)</span>
+        <div class="seg" id="kaalamSeg">
+          <button data-k="1" class="on">1st<small>Prathama · 1/beat</small></button>
+          <button data-k="2">2nd<small>Dwitiya · 2/beat</small></button>
+          <button data-k="4">3rd<small>Tritiya · 4/beat</small></button>
+        </div>
+      </div>
+      <div class="ctl">
+        <span class="ctl-label">Tempo <b id="bpmVal">60 BPM</b></span>
+        <input type="range" id="bpmSlider" min="36" max="100" step="2" value="60" />
+      </div>
+      <div class="ctl">
+        <span class="ctl-label">Mode</span>
+        <div class="seg" id="modeSeg">
+          <button data-m="along" class="on">Play-along<small>follow the violin</small></button>
+          <button data-m="guided">Step-by-step<small>wait for each swara</small></button>
+        </div>
+      </div>
+      <div class="ctl">
+        <span class="ctl-label">Reference violin</span>
+        <div class="seg" id="refSeg">
+          <button data-r="on" class="on">Play sound<small>hear each swara</small></button>
+          <button data-r="off">Silent<small>you play alone</small></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="action-row">
+      <button class="btn btn-play" id="playBtn">▶ Start</button>
+      <button class="btn btn-ghost" id="saBtn">🎻 Hear Sa</button>
+      <button class="btn btn-mic" id="micBtn">🎤 Turn on listening</button>
+    </div>
+    <div class="micmsg" id="micMsg"></div>
+  </div>
+
+  <!-- PRACTICE AREA -->
+  <div class="panel">
+    <div class="desc" id="varisaiDesc"></div>
+    <div class="count-in" id="countIn"></div>
+
+    <div class="track-label">Adi Tala — 8 beats</div>
+    <div class="tala" id="talaRow"></div>
+
+    <div class="track-label">This Exercise</div>
+    <div class="track" id="track"></div>
+
+    <div class="live">
+      <div class="live-card target-card">
+        <div class="lc-label">Target swara</div>
+        <div class="lc-sym" id="tgtSym">–</div>
+        <div class="lc-name" id="tgtName">press Start</div>
+        <div class="lc-hz" id="tgtHz"></div>
+      </div>
+      <div class="live-card you-card">
+        <div class="lc-label">You are playing</div>
+        <div class="lc-sym" id="youSym">–</div>
+        <div class="lc-name" id="youName">mic is off</div>
+        <div class="lc-hz" id="youHz"></div>
+      </div>
+    </div>
+    <div class="tuner" id="tuner" style="display:none;">
+      <div class="tk" style="left:6px;">low</div><div class="mid"></div>
+      <div class="tk" style="right:6px;">high</div>
+      <div class="needle" id="needle"></div>
+    </div>
+    <div class="verdict idle" id="verdict">Turn on listening, then play along — I'll tell you if a swara lands wrong.</div>
+
+    <div class="score">
+      <div class="s"><b id="scHit">0</b><span>Correct</span></div>
+      <div class="s"><b id="scMiss">0</b><span>To fix</span></div>
+      <div class="s"><b id="scPct">–</b><span>Score</span></div>
+    </div>
+  </div>
+
+  <div class="note" id="modeNote"><strong>Step-by-step mode:</strong> the lab highlights one swara and waits — your child plays it, and it only moves on once that swarasthanam is correct. Perfect for the very first lessons, with no tempo pressure.</div>
+
+  <div class="how">
+    <div class="step"><b>1 · Tune</b><span>Set the Sruthi slider to your child's Sa, or tap “Hear Sa” and tune the violin to it.</span></div>
+    <div class="step"><b>2 · Choose</b><span>Pick a category, an exercise, a kaalam, and a comfortable tempo.</span></div>
+    <div class="step"><b>3 · Listen</b><span>Turn on the microphone so the lab can hear the violin and check each swara.</span></div>
+    <div class="step"><b>4 · Play</b><span>Press Start and play along. Green = right, red = the swarasthanam needs fixing.</span></div>
+  </div>
+
+  <div class="note"><strong>For the teacher:</strong> all five categories follow the standard Mayamalavagowla graded set, but schools differ in the exact sequences. Every exercise lives in one editable <code>VARISAI_DATA</code> block at the top of the script — adjust or add patterns anytime. Because the microphone flags the child, please confirm each set matches the way you teach before relying on it. The mic checks the <em>swarasthanam</em> (pitch class), not the octave, and needs the live website (https) to work.</div>
+</div>
+
+
+
+<script>
+/* ============================================================
+   EDITABLE VARISAI DATA — Mayamalavagowla (S R1 G3 M1 P D1 N3)
+   Lower octave swaras: S R G M P D N        (madhya sthayi)
+   Upper octave (tara): Ṡ Ṙ Ġ Ṁ Ṗ           (dot above)
+   Each exercise: { name, desc, sw, g }
+     sw = swaras separated by spaces (extra spaces are ignored)
+     g  = how many cells to group visually (default 4)
+   Edit / add freely — the lab adapts automatically.
+   ============================================================ */
+const VARISAI_DATA = {
+  'Swaravali': [
+    { name:'1 · Sarali Varisai', desc:'Ganamrutha Bodhini · Mayamalavagowla · Adi Talam.',
+      sw:'S R G M P D N Ṡ   Ṡ N D P M G R S', g:4 },
+    { name:'2 · Sarali Varisai', desc:'Ganamrutha Bodhini · Mayamalavagowla · Adi Talam.',
+      sw:'S R S R S R G M   S R G M P D N Ṡ   Ṡ N Ṡ N Ṡ N D P   Ṡ N D P M G R S', g:4 },
+    { name:'3 · Sarali Varisai', desc:'Ganamrutha Bodhini · Mayamalavagowla · Adi Talam.',
+      sw:'S R G S R G S R   S R G M P D N Ṡ   Ṡ N D Ṡ N D Ṡ N   Ṡ N D P M G R S', g:4 },
+    { name:'4 · Sarali Varisai', desc:'Ganamrutha Bodhini · Mayamalavagowla · Adi Talam.',
+      sw:'S R G M S R G M   S R G M P D N Ṡ   Ṡ N D P Ṡ N D P   Ṡ N D P M G R S', g:4 },
+    { name:'5 · Sarali Varisai', desc:'Ganamrutha Bodhini · Adi Talam · with kaarvai (holds).',
+      sw:'S R G M P – S R   S R G M P D N Ṡ   Ṡ N D P M – Ṡ N   Ṡ N D P M G R S', g:4 },
+    { name:'6 · Sarali Varisai', desc:'Ganamrutha Bodhini · Mayamalavagowla · Adi Talam.',
+      sw:'S R G M P D S R   S R G M P D N Ṡ   Ṡ N D P M G Ṡ N   Ṡ N D P M G R S', g:4 },
+    { name:'7 · Sarali Varisai', desc:'Ganamrutha Bodhini · Adi Talam · with kaarvai (holds).',
+      sw:'S R G M P D N –   S R G M P D N Ṡ   Ṡ N D P M G R –   Ṡ N D P M G R S', g:4 },
+    { name:'8 · Sarali Varisai', desc:'Ganamrutha Bodhini · Mayamalavagowla · Adi Talam.',
+      sw:'S R G M P M G R   S R G M P D N Ṡ   Ṡ N D P M P D N   Ṡ N D P M G R S', g:4 },
+    { name:'9 · Sarali Varisai', desc:'Ganamrutha Bodhini · Mayamalavagowla · Adi Talam.',
+      sw:'S R G M P M D P   S R G M P D N Ṡ   Ṡ N D P M P G M   Ṡ N D P M G R S', g:4 },
+    { name:'10 · Sarali Varisai', desc:'Ganamrutha Bodhini · Adi Talam · with kaarvai (holds).',
+      sw:'S R G M P – G M   P – – – P – – –   G M P D N D P M   G M P G M G R S', g:4 },
+    { name:'11 · Sarali Varisai', desc:'Ganamrutha Bodhini · Adi Talam · with kaarvai (holds).',
+      sw:'Ṡ – N D N – D P   D – P M P – P –   G M P D N D P M   G M P G M G R S', g:4 },
+    { name:'12 · Sarali Varisai', desc:'Ganamrutha Bodhini · Mayamalavagowla · Adi Talam · with kaarvai (holds).',
+      sw:'Ṡ Ṡ N D N N D P   D D P M P – P –   G M P D N D P M   G M P G M G R S', g:4 },
+    { name:'13 · Sarali Varisai', desc:'Ganamrutha Bodhini · Mayamalavagowla · Adi Talam · with kaarvai (holds).',
+      sw:'S R G R G – G M   P M P – D P D –   M P D P D N D P   M P D P M G R S', g:4 },
+    { name:'14 · Sarali Varisai', desc:'Ganamrutha Bodhini · Mayamalavagowla · Adi Talam · with kaarvai (holds).',
+      sw:'S R G M P – P –   D D P – M M P –   D N Ṡ – Ṡ N D P   Ṡ N D P M G R S', g:4 },
+  ],
+  'Jandai': [
+    { name:'1 · Plain Pairs', desc:'Each swara played twice — builds an even, steady bow.',
+      sw:'S S R R G G M M P P D D N N Ṡ Ṡ   Ṡ Ṡ N N D D P P M M G G R R S S', g:2 },
+    { name:'2 · Neighbour Pairs', desc:'A lower neighbour leading into each doubled swara.',
+      sw:'S R R  R G G  G M M  M P P  P D D  D N N  N Ṡ Ṡ   Ṡ N N  N D D  D P P  P M M  M G G  G R R  R S S', g:3 },
+    { name:'3 · Double Start', desc:'The doubled swara opens each group, then steps up.',
+      sw:'S S R  R R G  G G M  M M P  P P D  D D N  N N Ṡ   Ṡ Ṡ N  N N D  D D P  P P M  M M G  G G R  R R S', g:3 },
+  ],
+  'Thattu': [
+    { name:'1 · Thattu Varisai',  desc:'Ganamrutha Bodhini · Mayamalavagowla · Adi Talam.', sw:'S R S G R G R M', g:2 },
+    { name:'2 · Thattu Varisai',  desc:'Ganamrutha Bodhini · Mayamalavagowla · Adi Talam.', sw:'S M G R S R G M', g:2 },
+    { name:'3 · Thattu Varisai',  desc:'Ganamrutha Bodhini · Mayamalavagowla · Adi Talam.', sw:'R G R M G M G P', g:2 },
+    { name:'4 · Thattu Varisai',  desc:'Ganamrutha Bodhini · Mayamalavagowla · Adi Talam.', sw:'R P M G R G M P', g:2 },
+    { name:'5 · Thattu Varisai',  desc:'Ganamrutha Bodhini · Mayamalavagowla · Adi Talam.', sw:'G M G P M P M D', g:2 },
+    { name:'6 · Thattu Varisai',  desc:'Ganamrutha Bodhini · Mayamalavagowla · Adi Talam.', sw:'G D P M G M P D', g:2 },
+    { name:'7 · Thattu Varisai',  desc:'Ganamrutha Bodhini · Mayamalavagowla · Adi Talam.', sw:'M P M D P D P N', g:2 },
+    { name:'8 · Thattu Varisai',  desc:'Ganamrutha Bodhini · Mayamalavagowla · Adi Talam.', sw:'M N D P M P D N', g:2 },
+    { name:'9 · Thattu Varisai',  desc:'Ganamrutha Bodhini · Mayamalavagowla · Adi Talam.', sw:'P D P N D N D Ṡ', g:2 },
+    { name:'10 · Thattu Varisai', desc:'Ganamrutha Bodhini · Mayamalavagowla · Adi Talam.', sw:'P Ṡ N D P D N Ṡ', g:2 },
+    { name:'11 · Thattu Varisai', desc:'Ganamrutha Bodhini · Mayamalavagowla · Adi Talam.', sw:'Ṡ N Ṡ D N D N P', g:2 },
+    { name:'12 · Thattu Varisai', desc:'Ganamrutha Bodhini · Mayamalavagowla · Adi Talam.', sw:'Ṡ P D N Ṡ N D P', g:2 },
+    { name:'13 · Thattu Varisai', desc:'Ganamrutha Bodhini · Mayamalavagowla · Adi Talam.', sw:'N D N P D P D M', g:2 },
+    /* continues on book pp.16–17 — pending verification */
+  ],
+  'Mel Sthayi': [
+    { name:'1 · Reaching the Tara', desc:'Climbing from Pa up into the upper octave (tara sthayi) and back.',
+      sw:'P D N Ṡ Ṙ Ġ Ṁ Ṗ   Ṗ Ṁ Ġ Ṙ Ṡ N D P', g:4 },
+    { name:'2 · Two-Octave Scale', desc:'The full scale across two octaves — madhya into tara and home again.',
+      sw:'S R G M P D N Ṡ Ṙ Ġ Ṁ Ṗ   Ṗ Ṁ Ġ Ṙ Ṡ N D P M G R S', g:99 },
+    { name:'3 · Tara Pairs', desc:'Paired swaras in the upper octave — for a light, ringing tone on the E string.',
+      sw:'Ṡ Ṡ Ṙ Ṙ Ġ Ġ Ṁ Ṁ Ṗ Ṗ   Ṗ Ṗ Ṁ Ṁ Ġ Ġ Ṙ Ṙ Ṡ Ṡ', g:2 },
+  ],
+  'Alankaram': [
+    { name:'1 · Three-Swara Alankaram', desc:'Grouped three-swara ornament rising and falling through the scale.',
+      sw:'S R G  R G M  G M P  M P D  P D N  D N Ṡ   Ṡ N D  N D P  D P M  P M G  M G R  G R S', g:3 },
+    { name:'2 · Five-Swara Alankaram', desc:'Longer five-swara phrases — the standard next step in ornament practice.',
+      sw:'S R G M P  R G M P D  G M P D N  M P D N Ṡ   Ṡ N D P M  N D P M G  D P M G R  P M G R S', g:5 },
+  ],
+};
+const CATS = ['Swaravali','Jandai','Thattu','Mel Sthayi','Alankaram'];
+const CAT_TAMIL = {'Swaravali':'ஸ்வராவலி','Jandai':'ஜண்டை','Thattu':'தட்டு','Mel Sthayi':'மேல் ஸ்தாயி','Alankaram':'அலங்காரம்'};
+
+/* swara ratios — Mayamalavagowla (just intonation); dot = upper octave */
+const RATIO = { 'S':1,'R':16/15,'G':5/4,'M':4/3,'P':3/2,'D':8/5,'N':15/8,
+                'Ṡ':2,'Ṙ':2*16/15,'Ġ':2*5/4,'Ṁ':2*4/3,'Ṗ':2*3/2 };
+const FULLNAME = { 'S':'Shadjam','R':'Shuddha Ri','G':'Antara Ga','M':'Shuddha Ma','P':'Panchamam','D':'Shuddha Da','N':'Kākali Ni',
+                   'Ṡ':'Sa (tara)','Ṙ':'Ri (tara)','Ġ':'Ga (tara)','Ṁ':'Ma (tara)','Ṗ':'Pa (tara)' };
+
+/* 12 chromatic seats — for the mic to name any played note */
+const SEATS = [
+  {r:1,code:'S',name:'Sa'},{r:16/15,code:'R1',name:'Shuddha Ri'},{r:9/8,code:'R2',name:'Chatushruti Ri'},
+  {r:6/5,code:'R3',name:'Sādhāraṇa Ga'},{r:5/4,code:'G3',name:'Antara Ga'},{r:4/3,code:'M1',name:'Shuddha Ma'},
+  {r:45/32,code:'M2',name:'Prati Ma'},{r:3/2,code:'P',name:'Pa'},{r:8/5,code:'D1',name:'Shuddha Da'},
+  {r:5/3,code:'D2',name:'Chatushruti Da'},{r:9/5,code:'N2',name:'Kaishiki Ni'},{r:15/8,code:'N3',name:'Kākali Ni'},
+];
+/* swara symbol -> seat index (octave folds, so tara maps to the same seat) */
+const SYMSEAT = { 'S':0,'R':1,'G':4,'M':5,'P':7,'D':8,'N':11,'Ṡ':0,'Ṙ':1,'Ġ':4,'Ṁ':5,'Ṗ':7 };
+
+/* ============ AUDIO ENGINE (violin) ============ */
+let ctx=null;
+function getCtx(){ if(!ctx){ctx=new (window.AudioContext||window.webkitAudioContext)();} if(ctx.state==='suspended'){ctx.resume();} return ctx; }
+let vWave=null;
+function violinWave(){ if(vWave) return vWave; const c=getCtx();
+  const amps=[0,1,0.86,0.66,0.55,0.46,0.38,0.31,0.26,0.21,0.17,0.14,0.11,0.09,0.07,0.055,0.04];
+  const re=new Float32Array(amps.length), im=new Float32Array(amps.length);
+  for(let i=0;i<amps.length;i++) im[i]=amps[i];
+  vWave=c.createPeriodicWave(re,im,{disableNormalization:false}); return vWave; }
+function makeBody(c){
+  const f1=c.createBiquadFilter();f1.type='peaking';f1.frequency.value=300;f1.Q.value=1.1;f1.gain.value=7;
+  const f2=c.createBiquadFilter();f2.type='peaking';f2.frequency.value=460;f2.Q.value=1.3;f2.gain.value=6;
+  const f3=c.createBiquadFilter();f3.type='peaking';f3.frequency.value=2600;f3.Q.value=0.9;f3.gain.value=6;
+  const lp=c.createBiquadFilter();lp.type='lowpass';lp.frequency.value=7000;
+  f1.connect(f2);f2.connect(f3);f3.connect(lp); return {input:f1,output:lp}; }
+function bowNoise(t,freq,amp){ const c=getCtx();const dur=0.13;
+  const src=c.createBufferSource();const buf=c.createBuffer(1,Math.floor(c.sampleRate*dur),c.sampleRate);
+  const d=buf.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=Math.random()*2-1;src.buffer=buf;
+  const bp=c.createBiquadFilter();bp.type='bandpass';bp.frequency.value=Math.min(4500,freq*4);bp.Q.value=0.8;
+  const g=c.createGain();g.gain.setValueAtTime(amp,t);g.gain.exponentialRampToValueAtTime(0.0005,t+dur);
+  src.connect(bp).connect(g).connect(c.destination);src.start(t);src.stop(t+dur); }
+function playNote(freq,dur=0.8,when=null,level=1){ const c=getCtx();const t=when==null?c.currentTime:when;
+  const osc=c.createOscillator();osc.setPeriodicWave(violinWave());osc.frequency.value=freq;
+  const vib=c.createOscillator();vib.frequency.value=5.6;const vg=c.createGain();
+  vg.gain.setValueAtTime(0,t);vg.gain.linearRampToValueAtTime(freq*0.006,t+0.28);vib.connect(vg).connect(osc.frequency);
+  const body=makeBody(c);const g=c.createGain();const peak=0.26*level;
+  g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(peak,t+0.07);
+  g.gain.linearRampToValueAtTime(peak*0.82,t+Math.min(0.3,dur*0.45));
+  g.gain.setValueAtTime(peak*0.82,t+Math.max(0,dur-0.14));
+  g.gain.exponentialRampToValueAtTime(0.0008,t+dur);
+  osc.connect(body.input);body.output.connect(g);g.connect(c.destination);
+  osc.start(t);vib.start(t);osc.stop(t+dur+0.05);vib.stop(t+dur+0.05);
+  bowNoise(t,freq,peak*0.16); }
+function tick(t,accent){ const c=getCtx();const o=c.createOscillator();o.type='triangle';
+  o.frequency.value=accent?880:560;const g=c.createGain();const pk=accent?0.18:0.1;
+  g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(pk,t+0.005);g.gain.exponentialRampToValueAtTime(0.0006,t+0.09);
+  o.connect(g).connect(c.destination);o.start(t);o.stop(t+0.1); }
+let drone=null,droneG=null;
+function toggleSa(){ const c=getCtx();
+  if(drone){ const t=c.currentTime;droneG.gain.cancelScheduledValues(t);droneG.gain.setValueAtTime(droneG.gain.value,t);
+    droneG.gain.linearRampToValueAtTime(0,t+0.1);drone.stop(t+0.15);drone=null;saBtn.textContent='🎻 Hear Sa';return; }
+  drone=c.createOscillator();drone.setPeriodicWave(violinWave());drone.frequency.value=sruthiHz;
+  const body=makeBody(c);droneG=c.createGain();droneG.gain.setValueAtTime(0,c.currentTime);
+  droneG.gain.linearRampToValueAtTime(0.18,c.currentTime+0.08);
+  drone.connect(body.input);body.output.connect(droneG);droneG.connect(c.destination);
+  drone.start();bowNoise(c.currentTime,sruthiHz,0.05);saBtn.textContent='⏹ Stop Sa';
+  setTimeout(()=>{ if(drone){ const t=getCtx().currentTime;droneG.gain.linearRampToValueAtTime(0,t+0.1);drone.stop(t+0.15);drone=null;saBtn.textContent='🎻 Hear Sa'; } },4000); }
+
+/* ============ STATE ============ */
+let sruthiHz=240, kaalam=1, bpm=60, mode='along', refSound=true;
+let cat='Swaravali', list=VARISAI_DATA[cat], cv=0, swaras=[];
+let playing=false, listening=false;
+let liveSeat=-1, liveCents=0, liveFreq=0;
+const round=x=>Math.round(x);
+
+/* ============ DOM ============ */
+const $=id=>document.getElementById(id);
+const catTabs=$('catTabs'), varisaiSel=$('varisaiSel'), sruthiSlider=$('sruthiSlider'), sruthiVal=$('sruthiVal');
+const bpmSlider=$('bpmSlider'), bpmVal=$('bpmVal'), playBtn=$('playBtn'), saBtn=$('saBtn'), micBtn=$('micBtn');
+const trackEl=$('track'), talaRow=$('talaRow'), varisaiDesc=$('varisaiDesc'), countInEl=$('countIn');
+const tgtSym=$('tgtSym'), tgtName=$('tgtName'), tgtHz=$('tgtHz');
+const youSym=$('youSym'), youName=$('youName'), youHz=$('youHz');
+const verdict=$('verdict'), tuner=$('tuner'), needle=$('needle');
+const scHit=$('scHit'), scMiss=$('scMiss'), scPct=$('scPct'), micMsg=$('micMsg'), modeNote=$('modeNote');
+
+/* ============ SETUP UI ============ */
+CATS.forEach(c=>{ const b=document.createElement('button'); b.dataset.cat=c; b.classList.toggle('on',c===cat);
+  const lbl = c + (c==='Alankaram' ? '' : ' Varisai');
+  b.innerHTML=lbl+'<span class="tam">'+CAT_TAMIL[c]+'</span>';
+  catTabs.appendChild(b); });
+catTabs.addEventListener('click',e=>{ const b=e.target.closest('button'); if(!b) return; if(playing) stop();
+  cat=b.dataset.cat; [...catTabs.children].forEach(x=>x.classList.toggle('on',x===b));
+  list=VARISAI_DATA[cat]; populateExercises(); });
+
+function populateExercises(){ varisaiSel.innerHTML=''; list.forEach((v,i)=>{ const o=document.createElement('option');o.value=i;o.textContent=v.name;varisaiSel.appendChild(o); }); cv=0; varisaiSel.value=0; loadVarisai(); }
+function parseSwaras(str){ return str.trim().split(/\s+/); }
+const HOLD = new Set(['-','–','—',';',',']);
+function isHold(s){ return HOLD.has(s); }
+function freqOf(sym){ return sruthiHz*RATIO[sym]; }
+function shortName(s){ return isHold(s) ? 'hold' : FULLNAME[s].split(' ')[0]; }
+
+function loadVarisai(){ cv=+varisaiSel.value; const v=list[cv]; swaras=parseSwaras(v.sw);
+  varisaiDesc.innerHTML='<b>'+cat+(cat==='Alankaram'?'':' Varisai')+'</b> — '+v.desc; buildTrack(); buildTala(); resetScore(); setTarget(-1); }
+function buildTrack(){ trackEl.innerHTML=''; const g=list[cv].g||4; let grp=null;
+  swaras.forEach((s,i)=>{ if(i%g===0){ grp=document.createElement('div');grp.className='grp';trackEl.appendChild(grp); }
+    const cell=document.createElement('div');cell.className='cell'+(isHold(s)?' hold':'');cell.dataset.i=i;
+    cell.innerHTML='<span class="sym">'+(isHold(s)?'–':s)+'</span><span class="nm">'+shortName(s)+'</span>';
+    grp.appendChild(cell); }); }
+const TALA_G=['CLAP','2','3','4','WAVE','6','7','8'];
+function buildTala(){ talaRow.innerHTML=''; for(let b=0;b<8;b++){ const d=document.createElement('div');
+    d.className='beat'+(b===0||b===4?' clap':'');d.dataset.b=b;
+    d.innerHTML='<div class="dot">'+(b+1)+'</div><div class="g">'+TALA_G[b]+'</div>';talaRow.appendChild(d); } }
+function highlightCell(i){ document.querySelectorAll('.cell').forEach(c=>c.classList.remove('cur','target'));
+  const el=trackEl.querySelector('.cell[data-i="'+i+'"]'); if(el){ el.classList.add(mode==='guided'?'target':'cur'); el.scrollIntoView({block:'nearest',inline:'center',behavior:'smooth'}); } }
+function markCell(i,ok){ const el=trackEl.querySelector('.cell[data-i="'+i+'"]'); if(el){ el.classList.remove('cur','target'); el.classList.add(ok?'hit':'miss'); } }
+function updateTala(i){ const beat=Math.floor(i/kaalam)%8;
+  document.querySelectorAll('.beat').forEach(b=>b.classList.toggle('cur',+b.dataset.b===beat)); }
+function setTarget(i){ if(i<0||i>=swaras.length){ tgtSym.textContent='–';tgtName.textContent=playing?'':'press Start';tgtHz.textContent=''; return; }
+  const s=swaras[i]; if(isHold(s)){ tgtSym.textContent='–'; tgtName.textContent='hold / sustain'; tgtHz.textContent=''; return; }
+  tgtSym.textContent=s; tgtName.textContent=FULLNAME[s]; tgtHz.textContent=round(freqOf(s))+' Hz'; }
+
+let hits=0,miss=0;
+function resetScore(){ hits=0;miss=0;scHit.textContent='0';scMiss.textContent='0';scPct.textContent='–';
+  document.querySelectorAll('.cell').forEach(c=>c.classList.remove('hit','miss','cur','target')); }
+function tallyScore(){ const tot=hits+miss; scHit.textContent=hits;scMiss.textContent=miss;
+  scPct.textContent=tot?Math.round(hits/tot*100)+'%':'–'; }
+
+/* ============ MODE A: PLAY-ALONG ============ */
+let rafId=0, seqStartAudio=0, curIdx=-1, cellMatched=[];
+function intervalSec(){ return 60/(bpm*kaalam); }
+function startAlong(){ const c=getCtx(); const dt=intervalSec(); const beatSec=60/bpm;
+  cellMatched=new Array(swaras.length).fill(false); resetScore();
+  const t0=c.currentTime+0.15; for(let b=0;b<4;b++){ tick(t0+b*beatSec,b===0); }
+  seqStartAudio=t0+4*beatSec;
+  if(refSound){ let i=0; while(i<swaras.length){ if(isHold(swaras[i])){ i++; continue; }
+      let span=1; while(i+span<swaras.length && isHold(swaras[i+span])) span++;
+      playNote(freqOf(swaras[i]), Math.max(0.2, dt*span*0.94), seqStartAudio+i*dt, 0.9); i+=span; } }
+  playing=true; curIdx=-1; setPlayBtn(true); rafAlong(); }
+function rafAlong(){ if(!playing) return; rafId=requestAnimationFrame(rafAlong);
+  const c=getCtx(); const now=c.currentTime; const beatSec=60/bpm;
+  if(now<seqStartAudio){ const ci=Math.floor((now-(seqStartAudio-4*beatSec))/beatSec); countInEl.textContent=String(Math.max(1,4-Math.max(0,Math.min(3,ci)))); return; }
+  countInEl.textContent='';
+  const dt=intervalSec(); let idx=Math.floor((now-seqStartAudio)/dt);
+  if(idx>=swaras.length){ if(curIdx>=0&&listening) judgeAlong(curIdx); finishAlong(); return; }
+  if(idx!==curIdx){ if(curIdx>=0&&listening) judgeAlong(curIdx); curIdx=idx; highlightCell(idx); updateTala(idx); setTarget(idx); } }
+function judgeAlong(i){ if(isHold(swaras[i])) return; if(cellMatched[i]){ markCell(i,true); hits++; } else { markCell(i,false); miss++; } tallyScore(); }
+function finishAlong(){ playing=false; cancelAnimationFrame(rafId); setPlayBtn(false); countInEl.textContent='';
+  document.querySelectorAll('.beat').forEach(b=>b.classList.remove('cur')); curIdx=-1; setTarget(-1);
+  if(listening){ const tot=hits+miss; const p=tot?Math.round(hits/tot*100):0;
+    verdict.className='verdict '+(p>=80?'good':p>=50?'':'bad');
+    verdict.textContent = p>=80?('🌟 Wonderful — '+p+'% of the swaras landed right!') : p>=50?('Good effort — '+p+'% right. Try the red ones again.') : ('Keep going — '+p+'% right. Slow the tempo down and try once more.'); }
+  else { verdict.className='verdict idle'; verdict.textContent='Done! Turn on listening to get feedback on each swara.'; } }
+
+/* ============ MODE B: GUIDED ============ */
+let gIdx=0, goodMs=0, lastTs=0;
+function startGuided(){ resetScore(); gIdx=0; goodMs=0; playing=true; setPlayBtn(true); presentGuided(); }
+function presentGuided(){ if(gIdx>=swaras.length){ finishGuided(); return; }
+  if(isHold(swaras[gIdx])){ highlightCell(gIdx); updateTala(gIdx); setTarget(gIdx); markCell(gIdx,true); gIdx++; setTimeout(presentGuided,220); return; }
+  highlightCell(gIdx); updateTala(gIdx); setTarget(gIdx); goodMs=0; lastTs=performance.now();
+  if(refSound) playNote(freqOf(swaras[gIdx]),0.8,null,0.85);
+  verdict.className='verdict idle';
+  verdict.textContent = listening ? ('Play '+swaras[gIdx]+' ('+FULLNAME[swaras[gIdx]]+')…') : 'Turn on listening so I can check this swara.'; }
+function finishGuided(){ playing=false; setPlayBtn(false); setTarget(-1);
+  document.querySelectorAll('.beat').forEach(b=>b.classList.remove('cur'));
+  verdict.className='verdict good'; verdict.textContent='🎉 Whole exercise complete — every swarasthanam correct!'; }
+function guidedCheck(){ if(!playing||mode!=='guided'||gIdx>=swaras.length) return;
+  if(isHold(swaras[gIdx])) return;
+  const now=performance.now(); const elapsed=now-lastTs; lastTs=now;
+  const target=SYMSEAT[swaras[gIdx]];
+  if(liveSeat===-1){ goodMs=0; return; }
+  if(liveSeat===target && Math.abs(liveCents)<32){ goodMs+=elapsed;
+    verdict.className='verdict good'; verdict.textContent='✓ '+swaras[gIdx]+' — hold it…';
+    if(goodMs>380){ markCell(gIdx,true); hits++; tallyScore(); gIdx++; setTimeout(presentGuided,260); goodMs=0; } }
+  else { goodMs=0; const sname=SEATS[liveSeat]?SEATS[liveSeat].name:'?';
+    verdict.className='verdict bad';
+    verdict.textContent='✗ that is '+sname+' — the target is '+swaras[gIdx]+' ('+FULLNAME[swaras[gIdx]]+')'; } }
+
+/* ============ start/stop ============ */
+function setPlayBtn(on){ playBtn.textContent=on?'■ Stop':'▶ Start'; playBtn.classList.toggle('stop',on); }
+function start(){ if(playing) return; getCtx(); if(mode==='along') startAlong(); else startGuided(); }
+function stop(){ playing=false; cancelAnimationFrame(rafId); setPlayBtn(false); countInEl.textContent='';
+  document.querySelectorAll('.beat').forEach(b=>b.classList.remove('cur'));
+  document.querySelectorAll('.cell').forEach(c=>c.classList.remove('cur','target')); setTarget(-1);
+  verdict.className='verdict idle'; verdict.textContent='Stopped. Press Start when ready.'; }
+playBtn.addEventListener('click',()=> playing?stop():start());
+saBtn.addEventListener('click',toggleSa);
+
+/* ============ controls ============ */
+varisaiSel.addEventListener('change',()=>{ if(playing) stop(); loadVarisai(); });
+sruthiSlider.addEventListener('input',()=>{ sruthiHz=+sruthiSlider.value; sruthiVal.textContent=sruthiHz+' Hz'; if(drone) drone.frequency.setValueAtTime(sruthiHz,getCtx().currentTime); setTarget(curIdx>=0?curIdx:(mode==='guided'&&playing?gIdx:-1)); });
+bpmSlider.addEventListener('input',()=>{ bpm=+bpmSlider.value; bpmVal.textContent=bpm+' BPM'; });
+$('kaalamSeg').addEventListener('click',e=>{ const b=e.target.closest('button'); if(!b) return; if(playing) stop();
+  kaalam=+b.dataset.k; [...e.currentTarget.children].forEach(x=>x.classList.toggle('on',x===b)); });
+$('modeSeg').addEventListener('click',e=>{ const b=e.target.closest('button'); if(!b) return; if(playing) stop();
+  mode=b.dataset.m; [...e.currentTarget.children].forEach(x=>x.classList.toggle('on',x===b));
+  modeNote.style.display = mode==='guided' ? 'block':'none'; });
+$('refSeg').addEventListener('click',e=>{ const b=e.target.closest('button'); if(!b) return;
+  refSound=b.dataset.r==='on'; [...e.currentTarget.children].forEach(x=>x.classList.toggle('on',x===b)); });
+
+/* ============ MICROPHONE + PITCH DETECTION ============ */
+let micStream=null, analyser=null, micData=null, micRAF=0, lastDetect=0, freqHist=[];
+async function startMic(){ micMsg.style.display='none';
+  try{ micStream=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:false,noiseSuppression:false,autoGainControl:false}}); }
+  catch(err){ let m='The microphone could not start. ';
+    if(!window.isSecureContext) m+='This page must be online (https) for the mic — it will work on your academy website, but not when opened straight from a file.';
+    else if(err&&err.name==='NotAllowedError') m+='Please allow microphone access and tap again.';
+    else m+='Please check a microphone is connected and allowed.';
+    micMsg.textContent=m; micMsg.style.display='block'; return; }
+  const c=getCtx(); const src=c.createMediaStreamSource(micStream);
+  analyser=c.createAnalyser(); analyser.fftSize=2048; micData=new Float32Array(analyser.fftSize); src.connect(analyser);
+  listening=true; tuner.style.display='block'; micBtn.textContent='⏹ Stop listening'; micBtn.classList.add('on');
+  youName.textContent='play a steady note…';
+  if(!playing){ verdict.className='verdict idle'; verdict.textContent='Listening. Press Start to begin.'; }
+  detectLoop(); }
+function stopMic(){ listening=false; if(micRAF) cancelAnimationFrame(micRAF);
+  if(micStream){ micStream.getTracks().forEach(t=>t.stop()); micStream=null; }
+  micBtn.textContent='🎤 Turn on listening'; micBtn.classList.remove('on'); tuner.style.display='none';
+  youSym.textContent='–'; youName.textContent='mic is off'; youHz.textContent=''; liveSeat=-1; }
+micBtn.addEventListener('click',()=> listening?stopMic():startMic());
+
+function detectPitch(buf,sr){ let size=buf.length,rms=0;
+  for(let i=0;i<size;i++) rms+=buf[i]*buf[i]; rms=Math.sqrt(rms/size);
+  if(rms<0.012) return -1;
+  let r1=0,r2=size-1,th=0.2;
+  for(let i=0;i<size/2;i++){ if(Math.abs(buf[i])<th){ r1=i;break; } }
+  for(let i=1;i<size/2;i++){ if(Math.abs(buf[size-i])<th){ r2=size-i;break; } }
+  const b=buf.slice(r1,r2); size=b.length; const corr=new Float32Array(size);
+  for(let i=0;i<size;i++){ let s=0;for(let j=0;j<size-i;j++) s+=b[j]*b[j+i]; corr[i]=s; }
+  let d=0; while(d<size-1&&corr[d]>corr[d+1]) d++;
+  let mx=-1,pos=-1; for(let i=d;i<size;i++){ if(corr[i]>mx){ mx=corr[i];pos=i; } }
+  if(pos<=0) return -1;
+  let T=pos; const x1=corr[T-1]||0,x2=corr[T],x3=corr[T+1]||0;
+  const a=(x1+x3-2*x2)/2,bb=(x3-x1)/2; if(a) T=T-bb/(2*a);
+  const f=sr/T; return (f>70&&f<1600)?f:-1; }
+function median(arr){ const s=[...arr].sort((a,b)=>a-b); return s[Math.floor(s.length/2)]; }
+function freqToSeat(f){ let rel=f/sruthiHz; while(rel<1) rel*=2; while(rel>=2) rel/=2;
+  let best=0,bc=1e9; SEATS.forEach((s,i)=>{ let ref=s.r; if(ref===2) ref=1;
+    let cents=Math.abs(1200*Math.log2(rel/ref)); if(cents<bc){ bc=cents;best=i; } });
+  let ref=SEATS[best].r; if(ref===2) ref=1; return {idx:best,cents:1200*Math.log2(rel/ref)}; }
+function detectLoop(){ if(!listening) return; micRAF=requestAnimationFrame(detectLoop);
+  const now=performance.now(); if(now-lastDetect<70) return; lastDetect=now;
+  analyser.getFloatTimeDomainData(micData);
+  const f=detectPitch(micData,getCtx().sampleRate);
+  if(f<0){ freqHist=[]; liveSeat=-1; youSym.textContent='–'; youName.textContent='play a steady note…'; youHz.textContent=''; needle.style.left='50%';
+    if(mode==='guided') guidedCheck(); return; }
+  freqHist.push(f); if(freqHist.length>5) freqHist.shift();
+  const mf=median(freqHist); liveFreq=mf;
+  const {idx,cents}=freqToSeat(mf); liveSeat=idx; liveCents=cents;
+  youSym.textContent=SEATS[idx].code; youName.textContent=SEATS[idx].name; youHz.textContent=round(mf)+' Hz';
+  needle.style.left=(50+Math.max(-50,Math.min(50,cents)))+'%';
+  if(mode==='along' && playing && curIdx>=0 && !isHold(swaras[curIdx])){
+    const tgt=SYMSEAT[swaras[curIdx]];
+    if(idx===tgt && Math.abs(cents)<35){ cellMatched[curIdx]=true;
+      verdict.className='verdict good'; verdict.textContent='✓ '+swaras[curIdx]+' — nicely in tune'; }
+    else if(idx!==tgt){ verdict.className='verdict bad';
+      verdict.textContent='✗ playing '+SEATS[idx].name+' — this swara should be '+swaras[curIdx]; } }
+  if(mode==='guided') guidedCheck();
+}
+
+/* ============ INIT ============ */
+populateExercises();
+modeNote.style.display='none';
+</script>
+
+
+<!-- ═══ LVA uniform footer (shared across all pages) ═══ -->
+<div class="lva-footer">
+  <div class="lva-footer-notes" aria-hidden="true">♪&hairsp;♫&hairsp;𝄞&hairsp;♩&hairsp;♬</div>
+  <div class="lva-footer-brand">🎻 Lakshya's Violin Academy</div>
+  <p class="lva-footer-tag">Carnatic violin for young learners — where every note finds its voice ♩</p>
+  <p class="lva-footer-loc">Old Pallavaram, Chennai</p>
+  <div class="lva-footer-links">
+    <a href="https://wa.me/919003030454">💬 WhatsApp +91 90030 30454</a>
+    <a href="mailto:j.ajaychandran@gmail.com">✉️ j.ajaychandran@gmail.com</a>
+    <a href="index.html#contact">🎟️ Book a Free Trial</a>
+  </div>
+  <div class="lva-footer-quick">
+    <a href="index.html">Home</a><a href="index.html#about">About</a><a href="index.html#courses">Courses</a><a href="games.html">Games &amp; Labs</a><a href="blog-sound-vibration-carnatic.html">Blog</a><a href="index.html#contact">Enroll</a>
+  </div>
+  <p class="lva-footer-copy">© 2026 Lakshya's Violin Academy · Made with ♥ and music 🎶</p>
+</div>
+
+<!-- Analytics: GoatCounter (privacy-friendly) -->
+<script data-goatcounter="https://lakshyasviolinacademy.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

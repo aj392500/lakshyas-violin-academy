@@ -1,0 +1,1653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Thala — The Heartbeat of Carnatic Music | Lakshya's Violin Academy</title>
+<meta name="description" content="Learn Carnatic thala the fun way: choose a thala and jati, set the tempo, and count along with a glowing rhythm player.">
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Lakshya&#39;s Violin Academy" />
+<meta property="og:title" content="Thala — The Heartbeat of Carnatic Music | Lakshya&#x27;s Violin Academy" />
+<meta property="og:description" content="Interactive Carnatic violin lessons, games and labs for young learners at Lakshya&#39;s Violin Academy, Old Pallavaram, Chennai." />
+<meta property="og:url" content="https://lakshyasviolinacademy.live/thala-basics.html" />
+<meta property="og:image" content="https://lakshyasviolinacademy.live/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Thala — The Heartbeat of Carnatic Music | Lakshya&#x27;s Violin Academy" />
+<meta name="twitter:description" content="Interactive Carnatic violin lessons, games and labs for young learners at Lakshya&#39;s Violin Academy, Old Pallavaram, Chennai." />
+<meta name="twitter:image" content="https://lakshyasviolinacademy.live/og-image.png" />
+<meta name="theme-color" content="#5B54C9" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@400;500;600&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet"/>
+<style>
+  :root {
+    --maroon: #5B54C9;
+    --saffron: #FF9A62;
+    --gold: #F0B429;
+    --cream: #FDF6E3;
+    --cream2: #F5EDD0;
+    --text: #2E3350;
+    --light: #FFF9F0;
+    --beat-clap: #E64545;
+    --beat-wave: #2980B9;
+    --beat-rest: #7F8C8D;
+    --beat-finger: #8E44AD;
+    --accent-green: #27AE60;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    background: var(--maroon);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.85rem 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+  }
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: 0.03em;
+  }
+  .nav-logo span { color: #fff; font-weight: 400; font-size: 0.85rem; display: block; letter-spacing: 0.05em; }
+
+  .chapter-nav {
+    display: flex;
+    gap: 0.3rem;
+    flex-wrap: wrap;
+  }
+  .chapter-nav a {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-size: 0.8rem;
+    padding: 0.35rem 0.7rem;
+    border-radius: 20px;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .chapter-nav a:hover { background: rgba(255,255,255,0.15); color: var(--gold); }
+
+  /* ── HERO ── */
+  .hero {
+    background: linear-gradient(135deg, var(--maroon) 0%, #3D0A12 60%, #1A0508 100%);
+    padding: 4rem 1.5rem 3rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-pulse {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+    opacity: 0.07;
+  }
+  .pulse-ring {
+    position: absolute;
+    border: 2px solid var(--gold);
+    border-radius: 50%;
+    animation: pulse-out 3s ease-out infinite;
+  }
+  .pulse-ring:nth-child(2) { animation-delay: 1s; }
+  .pulse-ring:nth-child(3) { animation-delay: 2s; }
+  @keyframes pulse-out {
+    0% { width: 50px; height: 50px; opacity: 1; }
+    100% { width: 600px; height: 600px; opacity: 0; }
+  }
+
+  .hero-eyebrow {
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.8rem, 8vw, 5rem);
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.05;
+    margin-bottom: 0.4rem;
+  }
+  .hero h1 em {
+    font-style: normal;
+    color: var(--gold);
+  }
+  .hero-tamil {
+    font-family: 'Noto Serif', serif;
+    color: var(--saffron);
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+    opacity: 0.9;
+  }
+  .hero-sub {
+    color: rgba(255,255,255,0.7);
+    font-size: 1.05rem;
+    max-width: 540px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.65;
+  }
+
+  /* ── LIVE HEARTBEAT ── */
+  .hero-beat {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(240,180,41,0.3);
+    border-radius: 50px;
+    padding: 0.6rem 1.2rem;
+    cursor: pointer;
+    color: var(--gold);
+    font-size: 0.95rem;
+    transition: all 0.2s;
+    user-select: none;
+  }
+  .hero-beat:hover { background: rgba(255,255,255,0.12); }
+  .beat-dot {
+    width: 10px; height: 10px;
+    background: var(--saffron);
+    border-radius: 50%;
+    animation: blink-beat 1s ease-in-out infinite;
+  }
+  @keyframes blink-beat {
+    0%,100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.6); opacity: 0.5; }
+  }
+
+  /* ── SECTION WRAPPER ── */
+  .section {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 3.5rem 1.5rem;
+  }
+  .section-divider {
+    border: none;
+    border-top: 1px solid rgba(91,84,201,0.15);
+    margin: 0;
+  }
+
+  .section-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--saffron);
+    margin-bottom: 0.6rem;
+  }
+  .section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    font-weight: 700;
+    color: var(--maroon);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  .section p { line-height: 1.75; color: #3D1C10; margin-bottom: 1rem; font-size: 1rem; }
+  .section p:last-child { margin-bottom: 0; }
+
+  .highlight-box {
+    background: linear-gradient(135deg, rgba(91,84,201,0.06), rgba(240,180,41,0.08));
+    border-left: 3px solid var(--gold);
+    border-radius: 0 12px 12px 0;
+    padding: 1rem 1.2rem;
+    margin: 1.2rem 0;
+    font-size: 0.95rem;
+  }
+  .highlight-box strong { color: var(--maroon); }
+
+  /* ── STEP 1: WHAT IS THALA ── */
+  .heartbeat-demo {
+    background: var(--maroon);
+    border-radius: 16px;
+    padding: 2rem;
+    text-align: center;
+    color: #fff;
+    margin: 1.5rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .heartbeat-demo h3 { font-family: 'Playfair Display', serif; color: var(--gold); margin-bottom: 0.5rem; }
+  .heartbeat-demo p { color: rgba(255,255,255,0.75); font-size: 0.9rem; margin-bottom: 1.2rem; }
+
+  #heart-svg-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.2rem;
+  }
+  .hb-label {
+    color: rgba(255,255,255,0.5);
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+  }
+
+  /* ── STEP 2: AKSHARAS ── */
+  .akshara-row {
+    display: flex;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    margin: 1.2rem 0;
+    align-items: center;
+  }
+  .ak-cell {
+    width: 52px; height: 52px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: transform 0.15s, box-shadow 0.15s;
+    cursor: default;
+    position: relative;
+  }
+  .ak-cell span.num { font-size: 0.65rem; font-weight: 400; opacity: 0.7; margin-top: 2px; }
+  .ak-clap  { background: var(--beat-clap); color: #fff; }
+  .ak-wave  { background: var(--beat-wave); color: #fff; }
+  .ak-rest  { background: var(--beat-rest); color: #fff; }
+  .ak-finger { background: var(--beat-finger); color: #fff; }
+  .ak-cell.active-beat {
+    transform: scale(1.25);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+  }
+  .ak-legend {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+  .ak-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.82rem;
+  }
+  .ak-legend-dot {
+    width: 14px; height: 14px;
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+
+  /* ── STEP 3: ANGA TYPES ── */
+  .anga-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+    margin: 1.2rem 0;
+  }
+  .anga-card {
+    border-radius: 14px;
+    padding: 1.1rem;
+    border: 1px solid rgba(91,84,201,0.12);
+    background: var(--light);
+    transition: box-shadow 0.2s;
+  }
+  .anga-card:hover { box-shadow: 0 6px 20px rgba(91,84,201,0.1); }
+  .anga-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--maroon);
+    margin-bottom: 0.2rem;
+  }
+  .anga-tamil {
+    font-family: 'Noto Serif', serif;
+    font-size: 0.85rem;
+    color: var(--saffron);
+    margin-bottom: 0.5rem;
+  }
+  .anga-beats-row {
+    display: flex;
+    gap: 4px;
+    margin: 0.5rem 0;
+    flex-wrap: wrap;
+  }
+  .anga-b {
+    width: 28px; height: 28px;
+    border-radius: 6px;
+    font-size: 0.7rem;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-weight: 600;
+  }
+  .anga-card p { font-size: 0.83rem; color: #3A4066; line-height: 1.5; margin: 0; }
+
+  /* ── STEP 4: SAPTA THALA TABLE ── */
+  .thala-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.2rem 0;
+    font-size: 0.9rem;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 2px 16px rgba(91,84,201,0.08);
+  }
+  .thala-table thead tr {
+    background: var(--maroon);
+    color: #fff;
+  }
+  .thala-table th {
+    padding: 0.75rem 0.8rem;
+    text-align: left;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    font-size: 0.82rem;
+  }
+  .thala-table td {
+    padding: 0.65rem 0.8rem;
+    border-bottom: 1px solid rgba(91,84,201,0.08);
+    vertical-align: middle;
+  }
+  .thala-table tbody tr:nth-child(even) { background: rgba(240,180,41,0.05); }
+  .thala-table tbody tr:hover { background: rgba(91,84,201,0.06); }
+  .tname { font-family: 'Playfair Display', serif; font-weight: 700; color: var(--maroon); }
+  .ttamil { font-family: 'Noto Serif', serif; color: var(--saffron); font-size: 0.82rem; }
+
+  .mini-beats {
+    display: flex;
+    gap: 3px;
+    flex-wrap: wrap;
+  }
+  .mb { width: 22px; height: 22px; border-radius: 5px; color: #fff; display: flex; align-items: center; justify-content: center; font-size: 0.65rem; font-weight: 700; }
+
+  /* ── STEP 5: INTERACTIVE PLAYER ── */
+  .player-card {
+    background: var(--maroon);
+    border-radius: 20px;
+    padding: 2rem;
+    color: #fff;
+    margin: 1.5rem 0;
+  }
+  .player-card h3 { font-family: 'Playfair Display', serif; color: var(--gold); margin-bottom: 0.3rem; font-size: 1.3rem; }
+  .player-card .sub { color: rgba(255,255,255,0.6); font-size: 0.85rem; margin-bottom: 1.2rem; }
+
+  .thala-selector {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.2rem;
+  }
+  .ts-btn {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+    border-radius: 8px;
+    padding: 0.4rem 0.9rem;
+    cursor: pointer;
+    font-size: 0.82rem;
+    transition: all 0.2s;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .ts-btn:hover { background: rgba(255,255,255,0.2); }
+  .ts-btn.active { background: var(--gold); color: var(--maroon); border-color: var(--gold); font-weight: 700; }
+
+  .jati-selector {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    align-items: center;
+  }
+  .jati-selector label { font-size: 0.82rem; color: rgba(255,255,255,0.7); margin-right: 0.2rem; }
+  .js-btn {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.8);
+    border-radius: 6px;
+    padding: 0.3rem 0.7rem;
+    cursor: pointer;
+    font-size: 0.82rem;
+    transition: all 0.2s;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .js-btn:hover { background: rgba(255,255,255,0.15); }
+  .js-btn.active { background: var(--saffron); color: #fff; border-color: var(--saffron); font-weight: 700; }
+
+  #beat-display {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    min-height: 70px;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .beat-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+  .beat-pip {
+    width: 48px; height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    transition: transform 0.1s, box-shadow 0.1s;
+    position: relative;
+  }
+  .beat-pip.on-beat {
+    transform: scale(1.35);
+    box-shadow: 0 0 20px rgba(255,255,255,0.5);
+    z-index: 2;
+  }
+  .beat-label {
+    font-size: 0.6rem;
+    color: rgba(255,255,255,0.55);
+    text-align: center;
+    max-width: 50px;
+    line-height: 1.2;
+  }
+  /* anga group divider */
+  .anga-gap { width: 8px; }
+
+  .controls-row {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .ctrl-btn {
+    padding: 0.6rem 1.4rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.2s;
+  }
+  .play-btn { background: var(--gold); color: var(--maroon); }
+  .play-btn:hover { background: var(--saffron); color: #fff; }
+  .stop-btn { background: rgba(255,255,255,0.12); color: #fff; }
+  .stop-btn:hover { background: rgba(255,255,255,0.2); }
+
+  .tempo-row {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.7);
+  }
+  .tempo-row input[type=range] {
+    width: 110px;
+    accent-color: var(--gold);
+  }
+  #tempo-val { color: var(--gold); font-weight: 600; min-width: 40px; }
+
+  .cycle-counter {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.5);
+    margin-top: 0.8rem;
+  }
+  #avarta-num { color: var(--gold); font-weight: 700; font-size: 1.1rem; }
+
+  /* ── STEP 6: KALA CHART ── */
+  .kala-row {
+    display: flex;
+    gap: 0.8rem;
+    margin: 1.2rem 0;
+    flex-wrap: wrap;
+  }
+  .kala-card {
+    flex: 1 1 160px;
+    background: var(--light);
+    border: 1px solid rgba(91,84,201,0.12);
+    border-radius: 14px;
+    padding: 1.1rem;
+    text-align: center;
+  }
+  .kala-icon { font-size: 2rem; margin-bottom: 0.4rem; }
+  .kala-name { font-family: 'Playfair Display', serif; font-weight: 700; color: var(--maroon); font-size: 1rem; margin-bottom: 0.2rem; }
+  .kala-tamil { font-family: 'Noto Serif', serif; color: var(--saffron); font-size: 0.82rem; margin-bottom: 0.5rem; }
+  .kala-card p { font-size: 0.82rem; color: #3A4066; margin: 0; line-height: 1.5; }
+  .kala-bpm { font-size: 0.75rem; color: var(--gold); font-weight: 600; margin-top: 0.3rem; }
+
+  /* ── STEP 7: MATHS ── */
+  .math-box {
+    background: linear-gradient(135deg, #1A0508, #3D0A12);
+    color: #fff;
+    border-radius: 16px;
+    padding: 1.8rem;
+    margin: 1.2rem 0;
+  }
+  .math-box h3 { font-family: 'Playfair Display', serif; color: var(--gold); margin-bottom: 1rem; }
+  .math-formula {
+    font-size: 1.3rem;
+    text-align: center;
+    margin: 1rem 0;
+    color: var(--gold);
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+  }
+  .math-row { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem; }
+  .math-card {
+    flex: 1 1 180px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(240,180,41,0.2);
+    border-radius: 10px;
+    padding: 0.9rem;
+  }
+  .math-card h4 { color: var(--saffron); font-size: 0.88rem; margin-bottom: 0.4rem; }
+  .math-card p { font-size: 0.82rem; color: rgba(255,255,255,0.75); margin: 0; line-height: 1.6; }
+
+  /* ── STEP 8: QUIZ ── */
+  .quiz-box {
+    background: var(--light);
+    border: 2px solid rgba(240,180,41,0.3);
+    border-radius: 20px;
+    padding: 2rem;
+    margin: 1.5rem 0;
+  }
+  .quiz-box h3 { font-family: 'Playfair Display', serif; color: var(--maroon); margin-bottom: 1.5rem; font-size: 1.3rem; }
+
+  .q-item { margin-bottom: 1.5rem; }
+  .q-text { font-weight: 600; color: var(--maroon); margin-bottom: 0.7rem; font-size: 0.95rem; }
+  .q-opts { display: flex; flex-direction: column; gap: 0.4rem; }
+  .q-opt {
+    background: #fff;
+    border: 1.5px solid rgba(91,84,201,0.15);
+    border-radius: 8px;
+    padding: 0.55rem 0.9rem;
+    cursor: pointer;
+    font-size: 0.88rem;
+    transition: all 0.2s;
+    text-align: left;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .q-opt:hover { border-color: var(--saffron); background: rgba(255,154,98,0.05); }
+  .q-opt.correct { background: #d5f5e3; border-color: var(--accent-green); color: #1a5c38; }
+  .q-opt.wrong   { background: #fdecea; border-color: #E64545; color: #7b2b2b; }
+  .q-feedback { font-size: 0.82rem; margin-top: 0.4rem; font-style: italic; color: #3A4066; display: none; }
+
+  .quiz-score {
+    text-align: center;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(91,84,201,0.1);
+    display: none;
+  }
+  .quiz-score .score-num { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 900; color: var(--maroon); }
+  .quiz-score p { color: #3A4066; font-size: 0.9rem; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--maroon);
+    color: rgba(255,255,255,0.6);
+    text-align: center;
+    padding: 2rem 1.5rem;
+    font-size: 0.85rem;
+  }
+  footer strong { color: var(--gold); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .chapter-nav { display: none; }
+    .ak-cell { width: 42px; height: 42px; font-size: 0.9rem; }
+    .beat-pip { width: 38px; height: 38px; font-size: 1rem; }
+    .thala-table { font-size: 0.78rem; }
+    .thala-table .ttamil { display: none; }
+  }
+</style>
+<style id="lva-mobnav">
+  .lva-toggle{display:none;background:transparent;border:none;cursor:pointer;padding:8px 2px;flex-direction:column;gap:5px;margin-left:auto;}
+  .lva-toggle span{display:block;width:26px;height:3px;border-radius:2px;background:#FFD166;transition:transform .25s ease,opacity .2s ease;}
+  .lva-toggle.open span:nth-child(1){transform:translateY(8px) rotate(45deg);}
+  .lva-toggle.open span:nth-child(2){opacity:0;}
+  .lva-toggle.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
+  @media(max-width:760px){
+    .lva-ribbon{flex-wrap:nowrap;align-items:center;}
+    .lva-toggle{display:flex;}
+    .lva-ribbon .lva-links{display:none !important;order:5;flex-basis:100%;width:100%;flex-direction:column;align-items:stretch;
+      max-height:min(68vh,440px);overflow-y:auto;-webkit-overflow-scrolling:touch;
+      border-top:1px solid rgba(255,209,102,0.25);margin-top:4px;padding:4px 0 8px;
+      scrollbar-width:thin;scrollbar-color:#D97706 rgba(255,255,255,0.12);}
+    .lva-ribbon.open .lva-links{display:flex !important;}
+    .lva-ribbon .lva-links::-webkit-scrollbar{width:8px;}
+    .lva-ribbon .lva-links::-webkit-scrollbar-thumb{background:#D97706;border-radius:8px;}
+    .lva-ribbon .lva-links a{padding:0.72rem 0.7rem !important;font-size:0.94rem !important;letter-spacing:0.03em !important;
+      border-bottom:1px solid rgba(255,209,102,0.12);white-space:normal !important;}
+    .lva-ribbon .lva-links a.cur{background:rgba(255,209,102,0.12);}
+  }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<script src="site.js" defer></script>
+<link rel="canonical" href="https://lakshyasviolinacademy.live/thala-basics.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+<body>
+
+<!-- ═══ LVA uniform navigation (shared across all pages) ═══ -->
+<div class="lva-nav" id="lvaNav">
+  <div class="lva-nav-inner">
+    <a class="lva-brand" href="index.html">🎻&ensp;Lakshya's Violin Academy</a>
+    <button class="lva-burger" aria-label="Open menu" aria-expanded="false" aria-controls="lvaMenu"><span></span><span></span><span></span></button>
+    <div class="lva-menu" id="lvaMenu">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#courses">Courses</a>
+      <div class="lva-drop">
+        <button class="lva-drop-btn" aria-expanded="false">Learn</button>
+        <div class="lva-drop-panel">
+          <span class="lva-drop-label">🎼 Carnatic Foundations</span>
+          <a href="index.html#carnatic">📖&ensp;Introduction to Carnatic Music</a>
+          <a href="index.html#strings">🎻&ensp;The Violin &amp; Its Strings</a>
+          <a href="index.html#sapa">🎵&ensp;Sa–Pa–Sa–Pa–Sa</a>
+          <a href="index.html#varisai">🎶&ensp;The Five Varisais</a>
+        </div>
+      </div>
+      <div class="lva-drop">
+        <button class="lva-drop-btn" aria-expanded="false">Games &amp; Labs</button>
+        <div class="lva-drop-panel">
+          <span class="lva-drop-label">🎮 Interactive Music Games</span>
+          <a href="games.html"><b>🗺️&ensp;All Games at a Glance</b></a>
+      <a href="varisai-lab.html">🎻&ensp;Varisai Lab — all five varisais</a>
+      <a href="raga-jukebox.html">📻&ensp;Raga Jukebox — hear every raga</a>
+      <a href="frequency-and-swaras.html">🔊&ensp;Frequency &amp; Swaras Lab</a>
+      <a href="thala-basics.html">🥁&ensp;Thala — Rhythm Player</a>
+      <a href="melakarta-explorer.html">🎼&ensp;72 Melakarta Explorer</a>
+      <a href="gamaka-explorer.html">🌊&ensp;Gamaka Explorer</a>
+      <a href="shruti-box.html">🎚️&ensp;Shruti Box — tune &amp; drone</a>
+      <a href="swara-guessing-game.html">🎧&ensp;Swara Guessing Game</a>
+      <a href="raga-mood-matcher.html">🎭&ensp;Raga Mood Matcher</a>
+      <a href="build-a-raga-lab.html">🛠️&ensp;Build-a-Raga Lab</a>
+      <a href="compose-a-geetham.html">✍️&ensp;Compose-a-Geetham</a>
+      <a href="sruthi-detective.html">🕵️&ensp;Sruthi Detective</a>
+        </div>
+      </div>
+      <div class="lva-drop">
+        <button class="lva-drop-btn" aria-expanded="false">Blog</button>
+        <div class="lva-drop-panel">
+          <span class="lva-drop-label">📚 Beginner's Corner</span>
+          <a href="blog-sound-vibration-carnatic.html">🎵&ensp;Sound, Vibration &amp; Carnatic Music</a>
+          <a href="blog-carnatic-music-and-kids-brain.html">🧠&ensp;Carnatic Music &amp; Your Child's Brain</a>
+        </div>
+      </div>
+      <a class="lva-cta" href="index.html#contact">🎻 Enroll Now</a>
+    </div>
+  </div>
+</div>
+
+
+<style>
+  .lva-ribbon{background:#5B54C9;border-bottom:3px solid #FF9A62;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:0 1.3rem;}
+  .lva-ribbon a{text-decoration:none;}
+  .lva-ribbon .lva-brand{color:#FFD166;font-family:'Playfair Display','Noto Serif',serif;font-weight:800;font-size:1rem;padding:0.7rem 0;white-space:nowrap;}
+  .lva-ribbon .lva-links{display:flex;flex-wrap:wrap;align-items:center;}
+  .lva-ribbon .lva-links a{color:#F5EDD0;font-size:0.72rem;letter-spacing:0.07em;text-transform:uppercase;font-weight:700;padding:0.75rem 0.6rem;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;white-space:nowrap;}
+  .lva-ribbon .lva-links a:hover{color:#FFD166;border-bottom-color:#FFD166;}
+  .lva-ribbon .lva-links a.cur{color:#FFD166;border-bottom-color:#FFD166;}
+  @media(max-width:620px){.lva-ribbon{padding:0 0.7rem;}.lva-ribbon .lva-brand{font-size:0.82rem;}.lva-ribbon .lva-links a{padding:0.5rem 0.38rem;font-size:0.6rem;}}
+</style>
+
+
+
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-pulse">
+    <div class="pulse-ring" style="width:100px;height:100px;"></div>
+    <div class="pulse-ring" style="width:100px;height:100px;"></div>
+    <div class="pulse-ring" style="width:100px;height:100px;"></div>
+  </div>
+  <div class="hero-eyebrow">Lakshya's Violin Academy · Rhythm Series</div>
+  <h1><em>Thala</em></h1>
+  <div class="hero-tamil">தாளம் — The Heartbeat of Carnatic Music</div>
+  <p class="hero-sub">Every piece of Carnatic music lives inside a cycle. The cycle never stops, never skips — it breathes like a heartbeat. That cycle is <strong style="color:var(--gold)">Thala</strong>.</p>
+  <div class="hero-beat" id="hero-beat-btn" onclick="playHeroHeartbeat()">
+    <div class="beat-dot"></div>
+    Feel the pulse — tap here
+  </div>
+</section>
+
+<!-- ── STEP 1: WHAT IS THALA ── -->
+<section class="section" id="what-is-thala">
+  <div class="section-eyebrow">Step 1 · The Big Idea</div>
+  <h2>What exactly is a Thala?</h2>
+  <p>Think of your heartbeat. It goes <em>lub-dub, lub-dub, lub-dub</em> — perfectly, endlessly, without stopping. A Thala in Carnatic music does the same thing for a song. It is a <strong>time cycle</strong> — a fixed pattern of beats that repeats from the very first note to the very last.</p>
+  <p>The word <strong>Thala (தாளம்)</strong> comes from the Sanskrit word meaning "palm of the hand" — because you keep the beat with your hands!</p>
+
+  <div class="highlight-box">
+    <strong>Simple definition:</strong> Thala = a set number of beats arranged in a pattern that loops forever during a song. Just like a clock ticks, Thala ticks — and every musician counts it together.
+  </div>
+
+  <div class="heartbeat-demo">
+    <h3>Three Heartbeats, Three Thalas</h3>
+    <p>See how different time cycles feel completely different, even though they are all just repeating beats.</p>
+    <div id="heart-svg-row">
+      <div>
+        <canvas id="wave4" width="160" height="60"></canvas>
+        <div class="hb-label" style="text-align:center;margin-top:4px">4-beat</div>
+      </div>
+      <div>
+        <canvas id="wave6" width="160" height="60"></canvas>
+        <div class="hb-label" style="text-align:center;margin-top:4px">6-beat</div>
+      </div>
+      <div>
+        <canvas id="wave8" width="160" height="60"></canvas>
+        <div class="hb-label" style="text-align:center;margin-top:4px">8-beat</div>
+      </div>
+    </div>
+    <div id="wave-animate-btn" onclick="startWaveAnimation()" style="cursor:pointer;color:var(--gold);font-size:0.9rem;margin-top:0.5rem">▶ Watch them pulse</div>
+  </div>
+</section>
+
+<hr class="section-divider"/>
+
+<!-- ── STEP 2: AKSHARAS ── -->
+<section class="section" id="aksharas">
+  <div class="section-eyebrow">Step 2 · The Smallest Unit</div>
+  <h2>Akshara — one single beat</h2>
+  <p>An <strong>Akshara (அக்ஷரம்)</strong> is the smallest, indivisible unit of time in Carnatic rhythm. Think of it as a single tick of the clock. Every Thala is made up of Aksharas counted out in a specific pattern.</p>
+  <p>When you keep Thala with your hands, each position of your hand corresponds to one Akshara.</p>
+
+  <div class="ak-legend">
+    <div class="ak-legend-item"><div class="ak-legend-dot" style="background:var(--beat-clap)"></div> Clap (Kriya)</div>
+    <div class="ak-legend-item"><div class="ak-legend-dot" style="background:var(--beat-wave)"></div> Wave / Turn</div>
+    <div class="ak-legend-item"><div class="ak-legend-dot" style="background:var(--beat-finger)"></div> Finger count</div>
+    <div class="ak-legend-item"><div class="ak-legend-dot" style="background:var(--beat-rest)"></div> Inner beat</div>
+  </div>
+
+  <div class="highlight-box">
+    <strong>Try it:</strong> Click the aksharas below — they light up! An 8-beat Thala has 8 aksharas. An Adi Thala, the most common one you will play, has exactly <strong>8 aksharas</strong>.
+  </div>
+
+  <div class="akshara-row" id="akshara-demo-row">
+    <!-- filled by JS -->
+  </div>
+  <p style="font-size:0.85rem; color:#7A5040; margin-top:0.5rem">← Click any akshara above</p>
+</section>
+
+<hr class="section-divider"/>
+
+<!-- ── STEP 3: ANGAS ── -->
+<section class="section" id="angas">
+  <div class="section-eyebrow">Step 3 · Groups within a Thala</div>
+  <h2>Anga — groups of aksharas</h2>
+  <p>Aksharas are grouped into small chunks called <strong>Angas (அங்கம்)</strong>. The word means "limb" — just like your arm has segments (upper arm, forearm, fingers), a Thala has segments called Angas.</p>
+  <p>There are <strong>six types of Anga</strong> in Carnatic music. Each has a fixed number of beats and a specific hand gesture:</p>
+
+  <div class="anga-cards">
+
+    <div class="anga-card">
+      <div class="anga-name">Anudhrutam</div>
+      <div class="anga-tamil">அனுத்ருதம் · U</div>
+      <div class="anga-beats-row">
+        <div class="anga-b" style="background:var(--beat-clap)">👏</div>
+      </div>
+      <p>1 beat. Just one clap. The shortest anga possible.</p>
+    </div>
+
+    <div class="anga-card">
+      <div class="anga-name">Dhrutam</div>
+      <div class="anga-tamil">த்ருதம் · O</div>
+      <div class="anga-beats-row">
+        <div class="anga-b" style="background:var(--beat-clap)">👏</div>
+        <div class="anga-b" style="background:var(--beat-wave)">🤚</div>
+      </div>
+      <p>2 beats. Clap, then wave/turn of the hand.</p>
+    </div>
+
+    <div class="anga-card">
+      <div class="anga-name">Laghu</div>
+      <div class="anga-tamil">லகு · |</div>
+      <div class="anga-beats-row">
+        <div class="anga-b" style="background:var(--beat-clap)">👏</div>
+        <div class="anga-b" style="background:var(--beat-finger)">☝️</div>
+        <div class="anga-b" style="background:var(--beat-finger)">✌️</div>
+        <div class="anga-b" style="background:var(--beat-finger)">🤟</div>
+      </div>
+      <p>3, 4, 5, 7 or 9 beats depending on <strong>Jati</strong>. Always clap + finger counts.</p>
+    </div>
+
+    <div class="anga-card">
+      <div class="anga-name">Guru</div>
+      <div class="anga-tamil">குரு · 8</div>
+      <div class="anga-beats-row">
+        <div class="anga-b" style="background:var(--beat-clap)">👏</div>
+        <div class="anga-b" style="background:var(--beat-finger)">☝️</div>
+        <div class="anga-b" style="background:var(--beat-finger)">✌️</div>
+        <div class="anga-b" style="background:var(--beat-finger)">🤟</div>
+        <div class="anga-b" style="background:var(--beat-finger)">🖐</div>
+        <div class="anga-b" style="background:var(--beat-rest)">·</div>
+        <div class="anga-b" style="background:var(--beat-rest)">·</div>
+        <div class="anga-b" style="background:var(--beat-rest)">·</div>
+      </div>
+      <p>Always 8 beats. Fixed — no Jati variation.</p>
+    </div>
+
+    <div class="anga-card">
+      <div class="anga-name">Plutam</div>
+      <div class="anga-tamil">புளுதம் · ∞</div>
+      <div class="anga-beats-row">
+        <div class="anga-b" style="background:var(--beat-clap)">👏</div>
+        <div class="anga-b" style="background:var(--beat-finger)">☝️</div>
+        <div class="anga-b" style="background:var(--beat-finger)">✌️</div>
+        <div class="anga-b" style="background:var(--beat-rest)">·</div>
+        <div class="anga-b" style="background:var(--beat-rest)">·</div>
+        <div class="anga-b" style="background:var(--beat-rest)">·</div>
+        <div class="anga-b" style="background:var(--beat-rest)">·</div>
+        <div class="anga-b" style="background:var(--beat-rest)">·</div>
+        <div class="anga-b" style="background:var(--beat-rest)">·</div>
+        <div class="anga-b" style="background:var(--beat-rest)">·</div>
+        <div class="anga-b" style="background:var(--beat-rest)">·</div>
+        <div class="anga-b" style="background:var(--beat-rest)">·</div>
+      </div>
+      <p>12 beats. Very rarely used, mainly in classical theory.</p>
+    </div>
+
+    <div class="anga-card">
+      <div class="anga-name">Kakapadam</div>
+      <div class="anga-tamil">காகபாதம் · +</div>
+      <div class="anga-beats-row">
+        <div class="anga-b" style="background:var(--beat-clap)">👏</div>
+        <div class="anga-b" style="background:var(--beat-finger)">☝️</div>
+        <div class="anga-b" style="background:var(--beat-rest)">·</div>
+        <div class="anga-b" style="background:var(--beat-rest)">·</div>
+        <div class="anga-b" style="background:var(--beat-rest)">·</div>
+        <div class="anga-b" style="background:var(--beat-rest)">·</div>
+        <div class="anga-b" style="background:var(--beat-rest)">·</div>
+        <div class="anga-b" style="background:var(--beat-rest)">·</div>
+        <div class="anga-b" style="background:var(--beat-rest)">·</div>
+        <div class="anga-b" style="background:var(--beat-rest)">·</div>
+        <div class="anga-b" style="background:var(--beat-rest)">·</div>
+        <div class="anga-b" style="background:var(--beat-rest)">·</div>
+        <div class="anga-b" style="background:var(--beat-rest)">·</div>
+        <div class="anga-b" style="background:var(--beat-rest)">·</div>
+        <div class="anga-b" style="background:var(--beat-rest)">·</div>
+        <div class="anga-b" style="background:var(--beat-rest)">·</div>
+      </div>
+      <p>16 beats. Also mainly theoretical. Very grand!</p>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider"/>
+
+<!-- ── STEP 4: JATI ── -->
+<section class="section" id="jati">
+  <div class="section-eyebrow">Step 4 · The Multiplier</div>
+  <h2>Jati — the flavour of the Laghu</h2>
+  <p>You saw that Laghu can have 3, 4, 5, 7 or 9 beats. What decides this? The <strong>Jati (ஜாதி)</strong>! Jati is a number assigned to the Laghu in each Thala, telling you how many counts to finger after the clap.</p>
+
+  <div class="anga-cards" style="grid-template-columns: repeat(auto-fill, minmax(150px, 1fr))">
+    <div class="anga-card" style="text-align:center">
+      <div class="anga-name" style="font-size:2rem">3</div>
+      <div class="anga-tamil">திஸ்ர Tisra</div>
+      <p>3 counts<br/>1 clap + 2 fingers</p>
+    </div>
+    <div class="anga-card" style="text-align:center">
+      <div class="anga-name" style="font-size:2rem">4</div>
+      <div class="anga-tamil">சதுஸ்ர Chaturasra</div>
+      <p>4 counts<br/>1 clap + 3 fingers</p>
+    </div>
+    <div class="anga-card" style="text-align:center">
+      <div class="anga-name" style="font-size:2rem">5</div>
+      <div class="anga-tamil">கண்ட Khanda</div>
+      <p>5 counts<br/>1 clap + 4 fingers</p>
+    </div>
+    <div class="anga-card" style="text-align:center">
+      <div class="anga-name" style="font-size:2rem">7</div>
+      <div class="anga-tamil">மிஸ்ர Misra</div>
+      <p>7 counts<br/>1 clap + 6 fingers</p>
+    </div>
+    <div class="anga-card" style="text-align:center">
+      <div class="anga-name" style="font-size:2rem">9</div>
+      <div class="anga-tamil">சங்கீர்ண Sankirna</div>
+      <p>9 counts<br/>1 clap + 8 fingers</p>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <strong>The most common Jati is Chaturasra (4)</strong> — that gives you Adi Thala with 4+2+2 = 8 aksharas. This is the Thala you will keep most often as a beginner!
+  </div>
+</section>
+
+<hr class="section-divider"/>
+
+<!-- ── STEP 5: SAPTA THALA ── -->
+<section class="section" id="sapta">
+  <div class="section-eyebrow">Step 5 · The Seven</div>
+  <h2>Sapta Thala — the 7 parent thalas</h2>
+  <p>Just like Carnatic music has 7 swaras (Sa Ri Ga Ma Pa Dha Ni), it has <strong>7 parent Thalas</strong> called <strong>Sapta Thala (சப்த தாளம்)</strong>. Each has a fixed combination of Angas. Add the 5 Jatis to each, and you get 35 thalas!</p>
+
+  <table class="thala-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Thala Name</th>
+        <th>Tamil</th>
+        <th>Anga Formula</th>
+        <th>Default beats</th>
+        <th>Beat pattern</th>
+      </tr>
+    </thead>
+    <tbody id="sapta-tbody">
+    </tbody>
+  </table>
+
+  <div class="highlight-box">
+    <strong>Adi Thala = Dhruva? No!</strong> Adi Thala (8 beats) is actually a form of <em>Chaturasra Jati Triputa Thala</em>. It is so common in concerts and teaching that it got its own popular name — "Adi."
+  </div>
+</section>
+
+<hr class="section-divider"/>
+
+<!-- ── STEP 6: PLAYER ── -->
+<section class="section" id="player">
+  <div class="section-eyebrow">Step 6 · Feel It Live</div>
+  <h2>Interactive Thala Player</h2>
+  <p>Choose a Thala and a Jati, set the tempo, and tap Play. Watch each akshara light up in sequence. Try counting along — this is exactly how your Guru keeps Thala during a lesson!</p>
+
+  <div class="player-card">
+    <h3>Thala Player</h3>
+    <div class="sub">Choose your Thala — the pattern will appear below</div>
+
+    <div class="thala-selector" id="thala-selector">
+      <!-- filled by JS -->
+    </div>
+
+    <div class="jati-selector">
+      <label>Jati:</label>
+      <button class="js-btn" onclick="setJati(3)">Tisra (3)</button>
+      <button class="js-btn active" onclick="setJati(4)">Chaturasra (4)</button>
+      <button class="js-btn" onclick="setJati(5)">Khanda (5)</button>
+      <button class="js-btn" onclick="setJati(7)">Misra (7)</button>
+      <button class="js-btn" onclick="setJati(9)">Sankirna (9)</button>
+    </div>
+
+    <div id="beat-display"></div>
+
+    <div class="controls-row">
+      <button class="ctrl-btn play-btn" id="play-btn" onclick="togglePlay()">▶ Play</button>
+      <div class="tempo-row">
+        <span>Tempo:</span>
+        <input type="range" id="tempo-slider" min="40" max="160" value="72" oninput="updateTempo()"/>
+        <span id="tempo-val">72 BPM</span>
+      </div>
+    </div>
+
+    <div class="cycle-counter">Āvartanam (cycle): <span id="avarta-num">0</span></div>
+  </div>
+</section>
+
+<hr class="section-divider"/>
+
+<!-- ── STEP 7: KALA ── -->
+<section class="section" id="kala">
+  <div class="section-eyebrow">Step 7 · Speed Layers</div>
+  <h2>Kala — three speeds of the same Thala</h2>
+  <p>One Thala can be played at three different speeds, each called a <strong>Kala (காலம்)</strong>. The Thala cycle does not change — only how fast you count through it changes. This is fundamental to Carnatic music performance!</p>
+
+  <div class="kala-row">
+    <div class="kala-card">
+      <div class="kala-icon">🐢</div>
+      <div class="kala-name">Prathama Kala</div>
+      <div class="kala-tamil">1st Speed · முதல் காலம்</div>
+      <p>Slow speed. One note per akshara. Beginners start here.</p>
+      <div class="kala-bpm">~40–60 BPM</div>
+    </div>
+    <div class="kala-card">
+      <div class="kala-icon">🚶</div>
+      <div class="kala-name">Dvitiya Kala</div>
+      <div class="kala-tamil">2nd Speed · இரண்டாம் காலம்</div>
+      <p>Double speed. Two notes per akshara. Most concert pieces live here.</p>
+      <div class="kala-bpm">~80–120 BPM</div>
+    </div>
+    <div class="kala-card">
+      <div class="kala-icon">🐆</div>
+      <div class="kala-name">Tritiya Kala</div>
+      <div class="kala-tamil">3rd Speed · மூன்றாம் காலம்</div>
+      <p>Four notes per akshara. Advanced, virtuosic — very exciting to hear!</p>
+      <div class="kala-bpm">~160–240 BPM</div>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <strong>Real world example:</strong> In a violin lesson, your teacher might ask you to play a Varnam first in Prathama Kala (slow), then Dvitiya Kala (double), and finally Tritiya Kala (four times). The Thala stays the same — your bow arm just moves faster!
+  </div>
+</section>
+
+<hr class="section-divider"/>
+
+<!-- ── STEP 8: MATHS ── -->
+<section class="section" id="maths">
+  <div class="section-eyebrow">Step 8 · The Numbers Game</div>
+  <h2>The mathematics of Thala</h2>
+  <p>Carnatic Thala is a deeply mathematical system. Let us look at the numbers hiding behind the music!</p>
+
+  <div class="math-box">
+    <h3>How many Thalas exist?</h3>
+    <div class="math-formula">7 Thalas × 5 Jatis = 35 Thalas</div>
+    <p style="color:rgba(255,255,255,0.7); font-size:0.9rem; text-align:center">Seven parent forms × five flavours of Laghu = 35 unique time cycles</p>
+    <div class="math-row">
+      <div class="math-card">
+        <h4>Sapta Thala (7)</h4>
+        <p>Dhruva, Matya, Rupaka, Jhampa, Triputa, Ata, Eka — the 7 parent forms</p>
+      </div>
+      <div class="math-card">
+        <h4>Pancha Jati (5)</h4>
+        <p>Tisra (3), Chaturasra (4), Khanda (5), Misra (7), Sankirna (9) — the 5 Laghu flavours</p>
+      </div>
+      <div class="math-card">
+        <h4>Total = 35</h4>
+        <p>Every possible combination gives a distinct rhythmic cycle with its own akshara count</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="math-box" style="margin-top:1rem">
+    <h3>Akshara counts across the 35 thalas</h3>
+    <p style="color:rgba(255,255,255,0.7); font-size:0.88rem; margin-bottom:1rem">Each row = one Thala across the 5 Jatis. The Laghu count changes; Dhrutam=2, Anudhrutam=1 stay fixed.</p>
+    <div style="overflow-x:auto">
+      <table style="width:100%; border-collapse:collapse; font-size:0.82rem; color:rgba(255,255,255,0.85)">
+        <thead>
+          <tr style="border-bottom:1px solid rgba(240,180,41,0.3)">
+            <th style="text-align:left;padding:0.4rem 0.6rem;color:var(--gold)">Thala</th>
+            <th style="padding:0.4rem 0.6rem;color:var(--gold)">Tisra (3)</th>
+            <th style="padding:0.4rem 0.6rem;color:var(--gold)">Chaturasra (4)</th>
+            <th style="padding:0.4rem 0.6rem;color:var(--gold)">Khanda (5)</th>
+            <th style="padding:0.4rem 0.6rem;color:var(--gold)">Misra (7)</th>
+            <th style="padding:0.4rem 0.6rem;color:var(--gold)">Sankirna (9)</th>
+          </tr>
+        </thead>
+        <tbody id="maths-tbody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="math-box" style="margin-top:1rem">
+    <h3>Subdivisions &amp; ratios</h3>
+    <div class="math-row">
+      <div class="math-card">
+        <h4>Kala doubling</h4>
+        <p>2nd Kala = 2× notes per akshara<br/>3rd Kala = 4× notes per akshara<br/>Pattern: 1 → 2 → 4 (powers of 2)</p>
+      </div>
+      <div class="math-card">
+        <h4>Yati patterns</h4>
+        <p>Rhythmic phrases can be shaped: Srotovaha (↑), Gopuccha (↓), Mridanga (↑↓), or Sama (equal). Pure mathematical sequences!</p>
+      </div>
+      <div class="math-card">
+        <h4>Korvai maths</h4>
+        <p>A Korvai is 3 identical rhythmic phrases that land exactly on beat 1. Musicians calculate: <em>phrase × 3 = remaining beats</em> to compose them.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider"/>
+
+<!-- ── QUIZ ── -->
+<section class="section" id="quiz">
+  <div class="section-eyebrow">Step 9 · Test Yourself</div>
+  <h2>Thala Quiz</h2>
+  <p>See how much you have learned! Answer all questions and check your score.</p>
+
+  <div class="quiz-box">
+    <h3>🎵 Thala Challenge</h3>
+    <div id="quiz-questions"></div>
+    <div class="quiz-score" id="quiz-score">
+      <div class="score-num" id="score-display">0 / 8</div>
+      <p id="score-msg"></p>
+    </div>
+    <button class="ctrl-btn play-btn" id="quiz-submit-btn" onclick="submitQuiz()" style="margin-top:1.2rem; display:none">Check My Score</button>
+  </div>
+</section>
+
+
+
+<script>
+// ────────────────────────────────────────────────
+// DATA
+// ────────────────────────────────────────────────
+const SAPTA = [
+  { name:"Dhruva",  tamil:"த்ருவ",  angas:["L","D","L","L"], base:14 },
+  { name:"Matya",   tamil:"மத்ய",   angas:["L","D","L"],     base:10 },
+  { name:"Rupaka",  tamil:"ரூபக",   angas:["D","L"],         base:6  },
+  { name:"Jhampa",  tamil:"ஜம்ப",   angas:["L","U","D"],     base:10 },
+  { name:"Triputa", tamil:"த்ரிபுட", angas:["L","D","D"],    base:7  },
+  { name:"Ata",     tamil:"அட",     angas:["L","L","D","D"], base:14 },
+  { name:"Eka",     tamil:"ஏக",     angas:["L"],             base:4  },
+];
+
+const JATIS = [3,4,5,7,9];
+const JATI_NAMES = {3:"Tisra",4:"Chaturasra",5:"Khanda",7:"Misra",9:"Sankirna"};
+const ANGA_FIXED = {D:2, U:1};
+
+function angaBeats(anga, jati) {
+  if (anga==="L") return jati;
+  return ANGA_FIXED[anga];
+}
+
+function totalBeats(angas, jati) {
+  return angas.reduce((s,a) => s + angaBeats(a,jati), 0);
+}
+
+// ────────────────────────────────────────────────
+// WAVE CANVAS
+// ────────────────────────────────────────────────
+function drawWave(canvasId, beats, color) {
+  const c = document.getElementById(canvasId);
+  if (!c) return;
+  const ctx = c.getContext("2d");
+  ctx.clearRect(0,0,c.width,c.height);
+  ctx.strokeStyle = color;
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  for (let x=0; x<c.width; x++) {
+    const t = x / c.width * Math.PI * 2 * beats / 2;
+    const y = c.height/2 - Math.sin(t) * (c.height*0.38);
+    x===0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
+  }
+  ctx.stroke();
+  // accent beats
+  ctx.fillStyle = color;
+  for (let b=0; b<beats; b++) {
+    const x = (b / beats + 0.5/beats) * c.width;
+    const t2 = (b/beats + 0.5/beats) * Math.PI * 2 * beats / 2;
+    const y = c.height/2 - Math.sin(t2) * (c.height*0.38);
+    ctx.beginPath();
+    ctx.arc(x, y, 3.5, 0, Math.PI*2);
+    ctx.fill();
+  }
+}
+
+let waveAnimFrame = null;
+let wavePhase = 0;
+function startWaveAnimation() {
+  document.getElementById("wave-animate-btn").textContent = "⏸ Pulsing…";
+  function frame() {
+    const colors = ["#E64545","#2980B9","#8E44AD"];
+    const beats = [4,6,8];
+    const ids = ["wave4","wave6","wave8"];
+    ids.forEach((id,i) => {
+      const c = document.getElementById(id);
+      if (!c) return;
+      const ctx = c.getContext("2d");
+      ctx.clearRect(0,0,c.width,c.height);
+      const col = colors[i];
+      const n = beats[i];
+      ctx.strokeStyle = col;
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      for (let x=0; x<c.width; x++) {
+        const t = (x/c.width * Math.PI * 2 * n/2) + wavePhase * 0.04 * (i+1);
+        const y = c.height/2 - Math.sin(t) * (c.height*0.38);
+        x===0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
+      }
+      ctx.stroke();
+      ctx.fillStyle = col;
+      for (let b=0; b<n; b++) {
+        const bx = (b/n + 0.5/n)*c.width;
+        const t2 = (bx/c.width * Math.PI * 2 * n/2) + wavePhase*0.04*(i+1);
+        const by = c.height/2 - Math.sin(t2)*(c.height*0.38);
+        ctx.beginPath(); ctx.arc(bx,by,3.5,0,Math.PI*2); ctx.fill();
+      }
+    });
+    wavePhase++;
+    waveAnimFrame = requestAnimationFrame(frame);
+  }
+  if (waveAnimFrame) cancelAnimationFrame(waveAnimFrame);
+  frame();
+}
+
+// ────────────────────────────────────────────────
+// AKSHARA DEMO (Adi Thala = L(4) D D)
+// ────────────────────────────────────────────────
+const ADI_BEATS = [
+  {t:"clap",  l:"1",     cls:"ak-clap"},
+  {t:"f1",    l:"2",     cls:"ak-finger"},
+  {t:"f2",    l:"3",     cls:"ak-finger"},
+  {t:"f3",    l:"4",     cls:"ak-finger"},
+  {t:"clap",  l:"5",     cls:"ak-clap"},
+  {t:"wave",  l:"6",     cls:"ak-wave"},
+  {t:"clap",  l:"7",     cls:"ak-clap"},
+  {t:"wave",  l:"8",     cls:"ak-wave"},
+];
+const BEAT_LABELS = {clap:"Clap",f1:"Finger 1",f2:"Finger 2",f3:"Finger 3",wave:"Wave"};
+const BEAT_ICONS  = {clap:"👏",f1:"☝️",f2:"✌️",f3:"🤟",wave:"🤚"};
+
+function buildAksharaDemoRow() {
+  const row = document.getElementById("akshara-demo-row");
+  if (!row) return;
+  ADI_BEATS.forEach((b,i) => {
+    const div = document.createElement("div");
+    div.className = `ak-cell ${b.cls}`;
+    div.id = `ak-${i}`;
+    div.innerHTML = `${BEAT_ICONS[b.t]||"·"}<span class="num">${b.l}</span>`;
+    div.onclick = () => {
+      document.querySelectorAll(".ak-cell").forEach(c => c.classList.remove("active-beat"));
+      div.classList.add("active-beat");
+    };
+    row.appendChild(div);
+  });
+}
+
+// ────────────────────────────────────────────────
+// SAPTA THALA TABLE
+// ────────────────────────────────────────────────
+const ANGA_COLORS = {L:"var(--beat-finger)",D:"var(--beat-wave)",U:"var(--beat-clap)"};
+const ANGA_SYMBOLS = {L:"|",D:"O",U:"U"};
+
+function buildSapthaTbody() {
+  const tbody = document.getElementById("sapta-tbody");
+  if (!tbody) return;
+  SAPTA.forEach((t,i) => {
+    const jati4beats = totalBeats(t.angas, 4);
+    const pips = buildMiniBeats(t.angas, 4);
+    const angaStr = t.angas.map(a => `${ANGA_SYMBOLS[a]}`).join(" + ");
+    tbody.innerHTML += `<tr>
+      <td>${i+1}</td>
+      <td><span class="tname">${t.name}</span></td>
+      <td><span class="ttamil">${t.tamil}</span></td>
+      <td style="font-size:0.82rem">${angaStr}</td>
+      <td style="text-align:center;font-weight:700;color:var(--maroon)">${jati4beats}</td>
+      <td>${pips}</td>
+    </tr>`;
+  });
+}
+
+function buildMiniBeats(angas, jati) {
+  let html = '<div class="mini-beats">';
+  angas.forEach(a => {
+    const n = angaBeats(a, jati);
+    for (let i=0;i<n;i++) {
+      const col = i===0 ? (a==="D"?"var(--beat-wave)":"var(--beat-clap)") :
+                  (a==="L"?"var(--beat-finger)":"var(--beat-rest)");
+      const icon = i===0 ? (a==="D"?"·":"·") : "·";
+      html += `<div class="mb" style="background:${col}">${icon}</div>`;
+    }
+    html += `<div style="width:5px"></div>`;
+  });
+  html += '</div>';
+  return html;
+}
+
+// ────────────────────────────────────────────────
+// MATHS TABLE
+// ────────────────────────────────────────────────
+function buildMathsTable() {
+  const tbody = document.getElementById("maths-tbody");
+  if (!tbody) return;
+  SAPTA.forEach(t => {
+    const cells = JATIS.map(j => `<td style="text-align:center;padding:0.4rem 0.6rem">${totalBeats(t.angas,j)}</td>`).join("");
+    tbody.innerHTML += `<tr style="border-bottom:1px solid rgba(255,255,255,0.08)">
+      <td style="padding:0.4rem 0.6rem;font-weight:600">${t.name}</td>
+      ${cells}
+    </tr>`;
+  });
+}
+
+// ────────────────────────────────────────────────
+// PLAYER
+// ────────────────────────────────────────────────
+let currentThala = 4; // index into SAPTA (Triputa = Adi)
+let currentJati  = 4;
+let currentBeat  = -1;
+let avartaCount  = 0;
+let isPlaying    = false;
+let playerInterval = null;
+let audioCtx = null;
+
+function getAudioCtx() {
+  if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  return audioCtx;
+}
+
+function playTickSound(isClap) {
+  const ctx = getAudioCtx();
+  const osc = ctx.createOscillator();
+  const gain = ctx.createGain();
+  osc.connect(gain);
+  gain.connect(ctx.destination);
+  osc.type = isClap ? "triangle" : "sine";
+  osc.frequency.value = isClap ? 800 : 500;
+  gain.gain.setValueAtTime(isClap ? 0.35 : 0.18, ctx.currentTime);
+  gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.12);
+  osc.start(ctx.currentTime);
+  osc.stop(ctx.currentTime + 0.12);
+}
+
+function buildBeatDisplay() {
+  const container = document.getElementById("beat-display");
+  if (!container) return;
+  container.innerHTML = "";
+  const thala = SAPTA[currentThala];
+  let beatIdx = 0;
+  thala.angas.forEach((a, ai) => {
+    const n = angaBeats(a, currentJati);
+    for (let i=0; i<n; i++) {
+      const isFirst = i===0;
+      const isClap = isFirst && (a==="L" || a==="U");
+      const isWave = isFirst && a==="D";
+      const isFinger = !isFirst && a==="L";
+
+      const cell = document.createElement("div");
+      cell.className = "beat-cell";
+      cell.dataset.beatidx = beatIdx;
+
+      const bg = isClap  ? "var(--beat-clap)" :
+                 isWave  ? "var(--beat-wave)"  :
+                 isFinger? "var(--beat-finger)" : "#444";
+
+      const icon = isClap ? "👏" : isWave ? "🤚" : isFinger ? ["☝️","✌️","🤟","🖐","🖐","🖐","🖐","🖐"][i-1]||"·" : "·";
+
+      const lbl = isClap ? "Clap" : isWave ? "Wave" : isFinger ? `Finger ${i}` : "·";
+
+      cell.innerHTML = `<div class="beat-pip" id="pip-${beatIdx}" style="background:${bg}">${icon}</div><div class="beat-label">${lbl}</div>`;
+      container.appendChild(cell);
+      beatIdx++;
+    }
+    // anga gap
+    if (ai < thala.angas.length-1) {
+      const gap = document.createElement("div");
+      gap.className = "anga-gap";
+      container.appendChild(gap);
+    }
+  });
+}
+
+function getAngaBeatTypes(thala, jati) {
+  // returns array of {isClap} for each global beat idx
+  const types = [];
+  thala.angas.forEach(a => {
+    const n = angaBeats(a, jati);
+    for (let i=0;i<n;i++) {
+      const isFirst = i===0;
+      types.push({ isClap: isFirst && (a==="L"||a==="U") });
+    }
+  });
+  return types;
+}
+
+function buildThalaSelector() {
+  const sel = document.getElementById("thala-selector");
+  if (!sel) return;
+  sel.innerHTML = "";
+  SAPTA.forEach((t,i) => {
+    const b = document.createElement("button");
+    b.className = `ts-btn${i===currentThala?" active":""}`;
+    b.textContent = `${t.name} (${totalBeats(t.angas,currentJati)})`;
+    b.onclick = () => selectThala(i);
+    sel.appendChild(b);
+  });
+}
+
+function selectThala(idx) {
+  currentThala = idx;
+  stopPlayer();
+  buildThalaSelector();
+  buildBeatDisplay();
+}
+
+function setJati(j) {
+  currentJati = j;
+  document.querySelectorAll(".js-btn").forEach(b => {
+    b.classList.toggle("active", b.textContent.startsWith(JATI_NAMES[j]));
+  });
+  stopPlayer();
+  buildThalaSelector();
+  buildBeatDisplay();
+}
+
+function togglePlay() {
+  if (isPlaying) {
+    stopPlayer();
+  } else {
+    startPlayer();
+  }
+}
+
+function startPlayer() {
+  if (isPlaying) return;
+  isPlaying = true;
+  currentBeat = -1;
+  document.getElementById("play-btn").textContent = "⏹ Stop";
+  const bpm = parseInt(document.getElementById("tempo-slider").value);
+  const ms = 60000 / bpm;
+  const thala = SAPTA[currentThala];
+  const total = totalBeats(thala.angas, currentJati);
+  const beatTypes = getAngaBeatTypes(thala, currentJati);
+
+  playerInterval = setInterval(() => {
+    // clear previous
+    if (currentBeat >= 0) {
+      document.getElementById(`pip-${currentBeat}`)?.classList.remove("on-beat");
+    }
+    currentBeat = (currentBeat + 1) % total;
+    if (currentBeat === 0) {
+      avartaCount++;
+      document.getElementById("avarta-num").textContent = avartaCount;
+    }
+    document.getElementById(`pip-${currentBeat}`)?.classList.add("on-beat");
+    playTickSound(beatTypes[currentBeat]?.isClap);
+  }, ms);
+}
+
+function stopPlayer() {
+  isPlaying = false;
+  clearInterval(playerInterval);
+  document.getElementById("play-btn").textContent = "▶ Play";
+  if (currentBeat >= 0) {
+    document.getElementById(`pip-${currentBeat}`)?.classList.remove("on-beat");
+  }
+  currentBeat = -1;
+}
+
+function updateTempo() {
+  const v = document.getElementById("tempo-slider").value;
+  document.getElementById("tempo-val").textContent = v + " BPM";
+  if (isPlaying) {
+    stopPlayer();
+    startPlayer();
+  }
+}
+
+// ────────────────────────────────────────────────
+// HERO HEARTBEAT
+// ────────────────────────────────────────────────
+let heroBeating = false;
+let heroBeats = [];
+function playHeroHeartbeat() {
+  const ctx = getAudioCtx();
+  const btn = document.getElementById("hero-beat-btn");
+  if (heroBeating) {
+    heroBeats.forEach(clearInterval);
+    heroBeats = [];
+    heroBeating = false;
+    btn.querySelector(".beat-dot").style.animationPlayState = "running";
+    return;
+  }
+  heroBeating = true;
+  const pattern = [0, 300, 800, 1100]; // lub-dub pause lub-dub
+  function strike(t) {
+    const osc = ctx.createOscillator();
+    const g = ctx.createGain();
+    osc.connect(g); g.connect(ctx.destination);
+    osc.type = "sine"; osc.frequency.value = 60;
+    g.gain.setValueAtTime(0.5, ctx.currentTime+t);
+    g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime+t+0.25);
+    osc.start(ctx.currentTime+t); osc.stop(ctx.currentTime+t+0.25);
+  }
+  function doBeat() { pattern.forEach(t => strike(t/1000)); }
+  doBeat();
+  heroBeats.push(setInterval(doBeat, 1500));
+}
+
+// ────────────────────────────────────────────────
+// QUIZ
+// ────────────────────────────────────────────────
+const QUIZ_DATA = [
+  {
+    q: "What does the word 'Thala' (தாளம்) mean?",
+    opts: ["Melody line","A time cycle of beats","Speed of the music","Type of raga"],
+    ans: 1,
+    explain: "Thala is the rhythmic time cycle — a fixed pattern of beats that repeats throughout a piece of music."
+  },
+  {
+    q: "How many beats does Adi Thala (Chaturasra Jati Triputa) have?",
+    opts: ["6","7","8","10"],
+    ans: 2,
+    explain: "Adi Thala = Laghu(4) + Dhrutam(2) + Dhrutam(2) = 8 aksharas."
+  },
+  {
+    q: "What is the smallest unit of time in Carnatic rhythm?",
+    opts: ["Anga","Thala","Akshara","Jati"],
+    ans: 2,
+    explain: "An Akshara (அக்ஷரம்) is the smallest, indivisible beat unit — the single tick of the rhythmic clock."
+  },
+  {
+    q: "An Anga with just 2 beats (clap + wave) is called?",
+    opts: ["Laghu","Anudhrutam","Dhrutam","Guru"],
+    ans: 2,
+    explain: "Dhrutam (த்ருதம்) always has exactly 2 beats: one clap followed by one wave/turn."
+  },
+  {
+    q: "How many parent Thalas (Sapta Thala) are there?",
+    opts: ["5","7","9","12"],
+    ans: 1,
+    explain: "Sapta = 7 in Sanskrit. There are 7 parent Thalas: Dhruva, Matya, Rupaka, Jhampa, Triputa, Ata, Eka."
+  },
+  {
+    q: "How many total thalas are formed by combining Sapta Thala with Pancha Jati?",
+    opts: ["12","35","72","108"],
+    ans: 1,
+    explain: "7 Thalas × 5 Jatis = 35 Thalas. This is similar to how 72 Melakartas come from swara combinations!"
+  },
+  {
+    q: "Playing at 'Dvitiya Kala' (2nd speed) means you play:",
+    opts: ["Half as many notes","The same number of notes","Twice as many notes per akshara","Four times as many notes"],
+    ans: 2,
+    explain: "In Dvitiya Kala, you fit 2 notes into each akshara — double the density of the first speed."
+  },
+  {
+    q: "Which Jati gives a Laghu of 4 beats? (The most common one)",
+    opts: ["Tisra (3)","Chaturasra (4)","Khanda (5)","Misra (7)"],
+    ans: 1,
+    explain: "Chaturasra Jati (4) is the most common — it gives Adi Thala its 4-beat Laghu, plus two Dhrutams = 8 beats total."
+  }
+];
+
+let quizAnswers = {};
+let quizBuilt = false;
+
+function buildQuiz() {
+  if (quizBuilt) return;
+  quizBuilt = true;
+  const container = document.getElementById("quiz-questions");
+  QUIZ_DATA.forEach((q,qi) => {
+    const div = document.createElement("div");
+    div.className = "q-item";
+    div.innerHTML = `<div class="q-text">${qi+1}. ${q.q}</div>
+      <div class="q-opts" id="opts-${qi}">
+        ${q.opts.map((o,oi) => `<button class="q-opt" onclick="selectOpt(${qi},${oi})">${o}</button>`).join("")}
+      </div>
+      <div class="q-feedback" id="fb-${qi}"></div>`;
+    container.appendChild(div);
+  });
+  document.getElementById("quiz-submit-btn").style.display = "inline-block";
+}
+
+function selectOpt(qi, oi) {
+  if (quizAnswers[qi] !== undefined) return;
+  quizAnswers[qi] = oi;
+  const opts = document.querySelectorAll(`#opts-${qi} .q-opt`);
+  opts.forEach((o,i) => {
+    o.disabled = true;
+    if (i === QUIZ_DATA[qi].ans) o.classList.add("correct");
+    else if (i === oi) o.classList.add("wrong");
+  });
+  const fb = document.getElementById(`fb-${qi}`);
+  fb.textContent = QUIZ_DATA[qi].explain;
+  fb.style.display = "block";
+  // auto show score when all answered
+  if (Object.keys(quizAnswers).length === QUIZ_DATA.length) {
+    submitQuiz();
+  }
+}
+
+function submitQuiz() {
+  let correct = 0;
+  QUIZ_DATA.forEach((q,qi) => {
+    if (quizAnswers[qi] === q.ans) correct++;
+  });
+  const scoreEl = document.getElementById("quiz-score");
+  document.getElementById("score-display").textContent = `${correct} / ${QUIZ_DATA.length}`;
+  const msgs = [
+    "Keep practising — every master was once a beginner! 🌱",
+    "Good start! Review the sections above and try again. 🎵",
+    "Well done! You are getting the hang of Thala! 👏",
+    "Excellent! Your rhythm knowledge is strong! 🌟",
+    "Outstanding! You have mastered the basics of Thala! 🎻✨"
+  ];
+  const band = Math.min(4, Math.floor(correct / QUIZ_DATA.length * 5));
+  document.getElementById("score-msg").textContent = msgs[band];
+  scoreEl.style.display = "block";
+  document.getElementById("quiz-submit-btn").style.display = "none";
+}
+
+// ────────────────────────────────────────────────
+// INIT
+// ────────────────────────────────────────────────
+document.addEventListener("DOMContentLoaded", () => {
+  drawWave("wave4", 4, "#E64545");
+  drawWave("wave6", 6, "#2980B9");
+  drawWave("wave8", 8, "#8E44AD");
+  buildAksharaDemoRow();
+  buildSapthaTbody();
+  buildMathsTable();
+  buildThalaSelector();
+  buildBeatDisplay();
+  buildQuiz();
+});
+</script>
+
+
+<!-- ═══ LVA uniform footer (shared across all pages) ═══ -->
+<div class="lva-footer">
+  <div class="lva-footer-notes" aria-hidden="true">♪&hairsp;♫&hairsp;𝄞&hairsp;♩&hairsp;♬</div>
+  <div class="lva-footer-brand">🎻 Lakshya's Violin Academy</div>
+  <p class="lva-footer-tag">Carnatic violin for young learners — where every note finds its voice ♩</p>
+  <p class="lva-footer-loc">Old Pallavaram, Chennai</p>
+  <div class="lva-footer-links">
+    <a href="https://wa.me/919003030454">💬 WhatsApp +91 90030 30454</a>
+    <a href="mailto:j.ajaychandran@gmail.com">✉️ j.ajaychandran@gmail.com</a>
+    <a href="index.html#contact">🎟️ Book a Free Trial</a>
+  </div>
+  <div class="lva-footer-quick">
+    <a href="index.html">Home</a><a href="index.html#about">About</a><a href="index.html#courses">Courses</a><a href="games.html">Games &amp; Labs</a><a href="blog-sound-vibration-carnatic.html">Blog</a><a href="index.html#contact">Enroll</a>
+  </div>
+  <p class="lva-footer-copy">© 2026 Lakshya's Violin Academy · Made with ♥ and music 🎶</p>
+</div>
+
+<!-- Analytics: GoatCounter (privacy-friendly) -->
+<script data-goatcounter="https://lakshyasviolinacademy.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

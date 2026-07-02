@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="A Raga Jukebox for young violin students — hear the arohanam and avarohanam of common ragas from the geetham, swarajathi and varnam repertoire at any sruthi, with a real violin voice and a play-along Sa drone, so children can listen and learn the exact swarasthanams." />
+<title>Raga Jukebox — Arohanam &amp; Avarohanam | Lakshya's Violin Academy</title>
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Lakshya&#39;s Violin Academy" />
+<meta property="og:title" content="Raga Jukebox — Arohanam &amp;amp; Avarohanam | Lakshya&#x27;s Violin Academy" />
+<meta property="og:description" content="A Raga Jukebox for young violin students — hear the arohanam and avarohanam of common ragas from the geetham, swarajathi and varnam repertoire at any sruthi, with a real violin voice and a play-along Sa drone, so children can listen and learn the exact swarasthanams." />
+<meta property="og:url" content="https://lakshyasviolinacademy.live/raga-jukebox.html" />
+<meta property="og:image" content="https://lakshyasviolinacademy.live/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Raga Jukebox — Arohanam &amp;amp; Avarohanam | Lakshya&#x27;s Violin Academy" />
+<meta name="twitter:description" content="A Raga Jukebox for young violin students — hear the arohanam and avarohanam of common ragas from the geetham, swarajathi and varnam repertoire at any sruthi, with a real violin voice and a play-along Sa drone, so children can listen and learn the exact swarasthanams." />
+<meta name="twitter:image" content="https://lakshyasviolinacademy.live/og-image.png" />
+<meta name="theme-color" content="#5B54C9" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Noto+Serif:wght@400;600&display=swap" rel="stylesheet" />
+<style>
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --maroon:#5B54C9; --maroon-soft:#837DD9; --saffron:#F25C54; --saffron-light:#FFB84C;
+    --gold:#FFD166; --gold-deep:#D97706; --cream:#F5F8FF; --cream2:#E7EEFC;
+    --border:#C5D3F0; --text-dark:#2E3350; --text-mid:#4D5378; --text-soft:#707795;
+    --green:#16A34A; --green-bg:#e4f5ea; --teal:#0E9488;
+  }
+  html{scroll-behavior:smooth;}
+  body{font-family:'Noto Serif',Georgia,serif;background:var(--cream);color:var(--text-dark);line-height:1.7;}
+
+  .lva-ribbon{background:#5B54C9;border-bottom:3px solid #FFB84C;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:0 1.3rem;}
+  .lva-ribbon a{text-decoration:none;}
+  .lva-ribbon .lva-brand{color:#FFD166;font-family:'Playfair Display',serif;font-weight:700;font-size:1rem;padding:0.7rem 0;white-space:nowrap;}
+  .lva-ribbon .lva-links{display:flex;flex-wrap:wrap;align-items:center;}
+  .lva-ribbon .lva-links a{color:#E3E8FF;font-size:0.72rem;letter-spacing:0.07em;text-transform:uppercase;padding:0.75rem 0.65rem;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;white-space:nowrap;}
+  .lva-ribbon .lva-links a:hover{color:#FFD166;border-bottom-color:#FFD166;}
+  .lva-ribbon .lva-links a.cur{color:#FFD166;border-bottom-color:#FFD166;}
+  @media(max-width:620px){.lva-ribbon{padding:0 0.7rem;}.lva-ribbon .lva-brand{font-size:0.82rem;}.lva-ribbon .lva-links a{padding:0.5rem 0.4rem;font-size:0.6rem;}}
+
+  .hero{background:linear-gradient(135deg,var(--maroon) 0%,#443CA8 60%,#2F2973 100%);padding:3rem 1.5rem 2.6rem;text-align:center;position:relative;overflow:hidden;}
+  .hero::before{content:'𝄢';position:absolute;top:-10px;right:24px;font-size:7rem;color:rgba(255,209,102,0.08);}
+  .hero .eyebrow{font-size:0.74rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--saffron-light);margin-bottom:0.7rem;}
+  .hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,5vw,3rem);color:#FDFDFF;font-weight:700;line-height:1.15;}
+  .hero h1 span{color:var(--gold);}
+  .hero .tamil{font-size:1rem;color:#CDD5FF;font-style:italic;margin:0.4rem 0 0.8rem;}
+  .hero p{color:#B4BEF5;max-width:660px;margin:0 auto;font-size:0.98rem;line-height:1.8;}
+
+  .wrap{max-width:940px;margin:0 auto;padding:2rem 1.2rem 4rem;}
+
+  .panel{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.3rem 1.4rem;box-shadow:0 6px 22px rgba(46,51,80,0.07);margin-bottom:1.4rem;}
+  .panel h2{font-family:'Playfair Display',serif;color:var(--maroon);font-size:1.15rem;margin-bottom:0.2rem;}
+  .panel .sub{font-size:0.82rem;color:var(--text-soft);margin-bottom:1rem;}
+
+  .ctl-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem 1.4rem;}
+  .ctl{display:flex;flex-direction:column;gap:0.4rem;}
+  .ctl-label{font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-soft);font-weight:600;display:flex;justify-content:space-between;align-items:center;}
+  .ctl-label b{color:var(--saffron);font-family:'Playfair Display',serif;font-size:0.95rem;}
+  select,input[type=range],input[type=text]{width:100%;}
+  select,input[type=text]{font-family:'Noto Serif',serif;font-size:0.92rem;padding:0.5rem 0.6rem;border:1px solid var(--border);border-radius:7px;background:var(--cream);color:var(--text-dark);}
+  input[type=range]{-webkit-appearance:none;height:7px;border-radius:7px;background:linear-gradient(90deg,var(--saffron),var(--gold));outline:none;}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--maroon);border:2px solid var(--gold);cursor:pointer;}
+  input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:var(--maroon);border:2px solid var(--gold);cursor:pointer;}
+
+  .seg{display:flex;gap:6px;flex-wrap:wrap;}
+  .seg button{flex:1;min-width:62px;font-family:'Noto Serif',serif;font-size:0.82rem;padding:0.5rem 0.4rem;border:1px solid var(--border);background:var(--cream);color:var(--text-mid);border-radius:7px;cursor:pointer;transition:all .15s;line-height:1.2;}
+  .seg button small{display:block;font-size:0.64rem;color:var(--text-soft);}
+  .seg button.on{background:var(--maroon);color:#FDFDFF;border-color:var(--maroon);}
+  .seg button.on small{color:var(--gold);}
+
+  /* filter tabs */
+  .cat-tabs{display:flex;gap:7px;flex-wrap:wrap;justify-content:center;margin-bottom:1rem;}
+  .cat-tabs button{font-family:'Playfair Display',serif;font-size:0.9rem;padding:0.5rem 1rem;border:1px solid var(--border);background:#fff;color:var(--text-mid);border-radius:99px;cursor:pointer;transition:all .15s;}
+  .cat-tabs button .tam{font-family:'Noto Serif',serif;font-size:0.62rem;color:var(--text-soft);display:block;margin-top:1px;}
+  .cat-tabs button.on{background:var(--maroon);color:var(--gold);border-color:var(--maroon);}
+  .cat-tabs button.on .tam{color:#CDD5FF;}
+  .cat-tabs button:hover{border-color:var(--saffron);}
+
+  .searchbar{max-width:340px;margin:0 auto 1.2rem;}
+
+  /* raga grid */
+  .raga-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:0.7rem;}
+  .raga-card{background:#fff;border:1px solid var(--border);border-radius:11px;padding:0.8rem 0.85rem;cursor:pointer;transition:all .14s;text-align:left;}
+  .raga-card:hover{border-color:var(--saffron);transform:translateY(-2px);box-shadow:0 6px 16px rgba(46,51,80,0.1);}
+  .raga-card.on{background:var(--maroon);border-color:var(--maroon);}
+  .raga-card .rn{font-family:'Playfair Display',serif;font-weight:600;font-size:0.98rem;color:var(--maroon);line-height:1.2;}
+  .raga-card.on .rn{color:var(--gold);}
+  .raga-card .rm{font-size:0.68rem;color:var(--text-soft);margin-top:3px;}
+  .raga-card.on .rm{color:#CDD5FF;}
+  .raga-card .rtags{display:flex;gap:4px;margin-top:6px;flex-wrap:wrap;}
+  .pill{font-size:0.56rem;letter-spacing:0.04em;text-transform:uppercase;padding:2px 6px;border-radius:99px;background:var(--cream2);color:var(--text-mid);border:1px solid var(--border);}
+  .raga-card.on .pill{background:rgba(255,248,231,0.15);color:#F5F8FF;border-color:rgba(255,209,102,0.4);}
+
+  /* player */
+  #player{display:none;}
+  .player-head{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:0.6rem;border-bottom:1px solid var(--cream2);padding-bottom:0.9rem;margin-bottom:1rem;}
+  .player-head h2{font-family:'Playfair Display',serif;color:var(--maroon);font-size:1.5rem;line-height:1.1;}
+  .player-head .meta{font-size:0.78rem;color:var(--text-soft);margin-top:3px;}
+  .player-head .eg{font-size:0.8rem;color:var(--text-mid);font-style:italic;margin-top:5px;}
+  .flagnote{display:inline-block;font-size:0.66rem;letter-spacing:0.04em;text-transform:uppercase;color:#C23A2E;background:#FBE9D3;border:1px solid #E0B080;border-radius:99px;padding:2px 9px;margin-top:6px;}
+
+  .scale-block{margin:1.1rem 0;}
+  .scale-label{font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-soft);font-weight:600;display:flex;align-items:center;gap:8px;margin-bottom:0.5rem;}
+  .scale-label .tam{font-family:'Noto Serif',serif;text-transform:none;letter-spacing:0;color:var(--saffron);font-size:0.82rem;}
+  .scale-label button{margin-left:auto;font-family:'Noto Serif',serif;font-size:0.78rem;padding:0.35rem 0.85rem;border:1px solid var(--border);background:var(--cream);color:var(--maroon);border-radius:99px;cursor:pointer;}
+  .scale-label button:hover{border-color:var(--saffron);background:var(--cream2);}
+  .track{display:flex;flex-wrap:wrap;gap:6px;}
+  .cell{position:relative;width:48px;height:56px;border-radius:8px;background:#fff;border:1px solid var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;transition:all .12s;}
+  .cell .sym{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--maroon);line-height:1;}
+  .cell .cd{font-size:0.56rem;color:var(--text-soft);margin-top:3px;letter-spacing:0.02em;}
+  .cell .od{position:absolute;width:5px;height:5px;border-radius:50%;background:var(--maroon);left:50%;transform:translateX(-50%);}
+  .cell .od.up{top:6px;}
+  .cell .od.dn{bottom:18px;}
+  .cell:hover{border-color:var(--saffron);}
+  .cell.cur{background:var(--gold);border-color:var(--gold-deep);transform:translateY(-3px) scale(1.07);box-shadow:0 6px 16px rgba(217,119,6,0.35);}
+  .cell.cur .sym{color:#2E3350;}
+  .cell.cur .od{background:#2E3350;}
+  .cell.cur .cd{color:#6A3A12;}
+
+  /* now playing */
+  .now{display:grid;grid-template-columns:auto 1fr;gap:1rem;align-items:center;background:#EEF4FF;border:1px solid #F0B429;border-radius:12px;padding:1rem 1.2rem;margin-top:1.2rem;}
+  .now .np-sym{position:relative;font-family:'Playfair Display',serif;font-size:3.2rem;font-weight:700;color:var(--maroon);line-height:1;min-width:54px;text-align:center;}
+  .now .np-sym .od{position:absolute;width:8px;height:8px;border-radius:50%;background:var(--maroon);left:50%;transform:translateX(-50%);}
+  .now .np-sym .od.up{top:2px;}
+  .now .np-sym .od.dn{bottom:2px;}
+  .now .np-name{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--text-dark);line-height:1.2;}
+  .now .np-code{font-size:0.78rem;color:var(--saffron);font-weight:600;letter-spacing:0.05em;margin-top:2px;}
+  .now .np-hz{font-size:0.78rem;color:var(--text-soft);margin-top:2px;}
+  .now.idle{background:var(--cream2);border-color:var(--border);}
+  .now.idle .np-sym,.now.idle .np-name{color:var(--text-soft);}
+
+  .btn{font-family:'Noto Serif',serif;font-size:0.95rem;padding:0.7rem 1.1rem;border:none;border-radius:8px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:transform .1s,background .2s;}
+  .btn-play{background:var(--saffron);color:#fff;border-bottom:3px solid #C23A2E;flex:1;font-size:1.02rem;}
+  .btn-play:hover{background:#D9483B;}
+  .btn-play.stop{background:var(--maroon);border-bottom-color:#3A338F;}
+  .btn-ghost{background:var(--cream2);color:var(--text-mid);border:1px solid var(--border);}
+  .btn-ghost:hover{background:#D9E2F8;}
+  .action-row{display:flex;gap:0.7rem;flex-wrap:wrap;margin-top:1.2rem;align-items:stretch;}
+
+  .empty{text-align:center;color:var(--text-soft);padding:2rem 1rem;font-style:italic;}
+
+  .note{background:#FFFFFF;border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:8px;padding:0.9rem 1.1rem;font-size:0.85rem;color:var(--text-mid);margin-top:1.3rem;}
+  .note code{background:var(--cream2);padding:1px 5px;border-radius:4px;font-size:0.82em;}
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:0.7rem;margin-top:1rem;}
+  .step{background:var(--cream);border:1px solid var(--border);border-radius:9px;padding:0.8rem 0.9rem;}
+  .step b{display:block;font-family:'Playfair Display',serif;color:var(--maroon);font-size:0.92rem;margin-bottom:2px;}
+  .step span{font-size:0.8rem;color:var(--text-mid);}
+
+  footer{background:#2F2973;color:#CDD5FF;text-align:center;padding:2rem 1.4rem;font-size:0.88rem;}
+  footer a{color:var(--saffron-light);text-decoration:none;}
+  @media(max-width:560px){.ctl-grid{grid-template-columns:1fr;}.cell{width:44px;height:52px;}}
+</style>
+<style id="lva-mobnav">
+  .lva-toggle{display:none;background:transparent;border:none;cursor:pointer;padding:8px 2px;flex-direction:column;gap:5px;margin-left:auto;}
+  .lva-toggle span{display:block;width:26px;height:3px;border-radius:2px;background:#FFD166;transition:transform .25s ease,opacity .2s ease;}
+  .lva-toggle.open span:nth-child(1){transform:translateY(8px) rotate(45deg);}
+  .lva-toggle.open span:nth-child(2){opacity:0;}
+  .lva-toggle.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
+  @media(max-width:760px){
+    .lva-ribbon{flex-wrap:nowrap;align-items:center;}
+    .lva-toggle{display:flex;}
+    .lva-ribbon .lva-links{display:none !important;order:5;flex-basis:100%;width:100%;flex-direction:column;align-items:stretch;
+      max-height:min(68vh,440px);overflow-y:auto;-webkit-overflow-scrolling:touch;
+      border-top:1px solid rgba(255,209,102,0.25);margin-top:4px;padding:4px 0 8px;
+      scrollbar-width:thin;scrollbar-color:#D97706 rgba(255,255,255,0.12);}
+    .lva-ribbon.open .lva-links{display:flex !important;}
+    .lva-ribbon .lva-links::-webkit-scrollbar{width:8px;}
+    .lva-ribbon .lva-links::-webkit-scrollbar-thumb{background:#D97706;border-radius:8px;}
+    .lva-ribbon .lva-links a{padding:0.72rem 0.7rem !important;font-size:0.94rem !important;letter-spacing:0.03em !important;
+      border-bottom:1px solid rgba(255,209,102,0.12);white-space:normal !important;}
+    .lva-ribbon .lva-links a.cur{background:rgba(255,209,102,0.12);}
+  }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<script src="site.js" defer></script>
+<link rel="canonical" href="https://lakshyasviolinacademy.live/raga-jukebox.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+<body>
+
+<!-- ═══ LVA uniform navigation (shared across all pages) ═══ -->
+<div class="lva-nav" id="lvaNav">
+  <div class="lva-nav-inner">
+    <a class="lva-brand" href="index.html">🎻&ensp;Lakshya's Violin Academy</a>
+    <button class="lva-burger" aria-label="Open menu" aria-expanded="false" aria-controls="lvaMenu"><span></span><span></span><span></span></button>
+    <div class="lva-menu" id="lvaMenu">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#courses">Courses</a>
+      <div class="lva-drop">
+        <button class="lva-drop-btn" aria-expanded="false">Learn</button>
+        <div class="lva-drop-panel">
+          <span class="lva-drop-label">🎼 Carnatic Foundations</span>
+          <a href="index.html#carnatic">📖&ensp;Introduction to Carnatic Music</a>
+          <a href="index.html#strings">🎻&ensp;The Violin &amp; Its Strings</a>
+          <a href="index.html#sapa">🎵&ensp;Sa–Pa–Sa–Pa–Sa</a>
+          <a href="index.html#varisai">🎶&ensp;The Five Varisais</a>
+        </div>
+      </div>
+      <div class="lva-drop">
+        <button class="lva-drop-btn" aria-expanded="false">Games &amp; Labs</button>
+        <div class="lva-drop-panel">
+          <span class="lva-drop-label">🎮 Interactive Music Games</span>
+          <a href="games.html"><b>🗺️&ensp;All Games at a Glance</b></a>
+      <a href="varisai-lab.html">🎻&ensp;Varisai Lab — all five varisais</a>
+      <a href="raga-jukebox.html">📻&ensp;Raga Jukebox — hear every raga</a>
+      <a href="frequency-and-swaras.html">🔊&ensp;Frequency &amp; Swaras Lab</a>
+      <a href="thala-basics.html">🥁&ensp;Thala — Rhythm Player</a>
+      <a href="melakarta-explorer.html">🎼&ensp;72 Melakarta Explorer</a>
+      <a href="gamaka-explorer.html">🌊&ensp;Gamaka Explorer</a>
+      <a href="shruti-box.html">🎚️&ensp;Shruti Box — tune &amp; drone</a>
+      <a href="swara-guessing-game.html">🎧&ensp;Swara Guessing Game</a>
+      <a href="raga-mood-matcher.html">🎭&ensp;Raga Mood Matcher</a>
+      <a href="build-a-raga-lab.html">🛠️&ensp;Build-a-Raga Lab</a>
+      <a href="compose-a-geetham.html">✍️&ensp;Compose-a-Geetham</a>
+      <a href="sruthi-detective.html">🕵️&ensp;Sruthi Detective</a>
+        </div>
+      </div>
+      <div class="lva-drop">
+        <button class="lva-drop-btn" aria-expanded="false">Blog</button>
+        <div class="lva-drop-panel">
+          <span class="lva-drop-label">📚 Beginner's Corner</span>
+          <a href="blog-sound-vibration-carnatic.html">🎵&ensp;Sound, Vibration &amp; Carnatic Music</a>
+          <a href="blog-carnatic-music-and-kids-brain.html">🧠&ensp;Carnatic Music &amp; Your Child's Brain</a>
+        </div>
+      </div>
+      <a class="lva-cta" href="index.html#contact">🎻 Enroll Now</a>
+    </div>
+  </div>
+</div>
+
+
+
+<header class="hero">
+  <div class="eyebrow">Ārohaṇam &amp; Avarohaṇam · Listening Library</div>
+  <h1>The <span>Raga Jukebox</span></h1>
+  <div class="tamil">ராக ஜூக்பாக்ஸ் — ஒவ்வொரு ராகத்தின் ஆரோகண அவரோகணம், உங்கள் சுருதியில்</div>
+  <p>Choose a sruthi — say D♯ — pick a raga, and hear its arohanam and avarohanam in a real violin voice. Turn on the play-along Sa drone and bow along, listening for the exact swarasthanam of every note. Covers the ragas children meet across geetham, swarajathi and varnam.</p>
+</header>
+
+<div class="wrap">
+
+  <!-- ░░ Controls ░░ -->
+  <div class="panel">
+    <h2>Set your sruthi &amp; sound</h2>
+    <div class="sub">Pick the Sa your child tunes to, then choose how the jukebox plays.</div>
+    <div class="ctl-grid">
+      <div class="ctl">
+        <span class="ctl-label">Sruthi — your Sa <b id="sruthiVal">D♯ · 311 Hz</b></span>
+        <select id="sruthiSel"></select>
+      </div>
+      <div class="ctl">
+        <span class="ctl-label">Pace <b id="paceVal">Slow</b></span>
+        <input type="range" id="paceSlider" min="350" max="1400" step="50" value="900" />
+      </div>
+      <div class="ctl">
+        <span class="ctl-label">What to play</span>
+        <div class="seg" id="dirSeg">
+          <button data-d="both" class="on">Both<small>āro + avaro</small></button>
+          <button data-d="aro">Arohanam<small>ascending</small></button>
+          <button data-d="avr">Avarohanam<small>descending</small></button>
+        </div>
+      </div>
+      <div class="ctl">
+        <span class="ctl-label">Play-along drone</span>
+        <div class="seg" id="droneSeg">
+          <button data-dr="off" class="on">Off<small>silent</small></button>
+          <button data-dr="sa">Sa<small>tonic</small></button>
+          <button data-dr="sapa">Sa + Pa<small>shruti box</small></button>
+        </div>
+      </div>
+      <div class="ctl">
+        <span class="ctl-label">Mode</span>
+        <div class="seg" id="modeSeg">
+          <button data-m="flow" class="on">Play through<small>follow along</small></button>
+          <button data-m="step">Step-by-step<small>tap for next</small></button>
+        </div>
+      </div>
+      <div class="ctl">
+        <span class="ctl-label">Loop</span>
+        <div class="seg" id="loopSeg">
+          <button data-l="off" class="on">Once<small>play one time</small></button>
+          <button data-l="on">Repeat<small>keep looping</small></button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ░░ Raga browser ░░ -->
+  <div class="panel">
+    <h2>Choose a raga</h2>
+    <div class="sub">Filter by where your child first meets the raga, or search by name.</div>
+    <div class="cat-tabs" id="catTabs">
+      <button data-f="All" class="on">All<span class="tam">அனைத்தும்</span></button>
+      <button data-f="Geetham">Geetham<span class="tam">கீதம்</span></button>
+      <button data-f="Swarajathi">Swarajathi<span class="tam">ஸ்வரஜதி</span></button>
+      <button data-f="Varnam">Varnam<span class="tam">வர்ணம்</span></button>
+      <button data-f="Melakarta">Melakarta<span class="tam">மேளகர்த்தா</span></button>
+    </div>
+    <div class="searchbar"><input type="text" id="search" placeholder="Search raga… e.g. Kalyani" /></div>
+    <div class="raga-grid" id="ragaGrid"></div>
+    <div class="empty" id="noResults" style="display:none;">No ragas match that search.</div>
+  </div>
+
+  <!-- ░░ Player ░░ -->
+  <div class="panel" id="player">
+    <div class="player-head">
+      <div>
+        <h2 id="pName">—</h2>
+        <div class="meta" id="pMeta"></div>
+        <div class="eg" id="pEg"></div>
+        <div id="pFlagWrap"></div>
+      </div>
+    </div>
+
+    <div class="scale-block">
+      <div class="scale-label">Arohanam <span class="tam">ஆரோகணம்</span>
+        <button data-play="aro">▶ Hear ascending</button>
+      </div>
+      <div class="track" id="aroTrack"></div>
+    </div>
+
+    <div class="scale-block">
+      <div class="scale-label">Avarohanam <span class="tam">அவரோகணம்</span>
+        <button data-play="avr">▶ Hear descending</button>
+      </div>
+      <div class="track" id="avrTrack"></div>
+    </div>
+
+    <div class="now idle" id="now">
+      <div class="np-sym" id="npSym">–</div>
+      <div>
+        <div class="np-name" id="npName">Tap any swara to hear it</div>
+        <div class="np-code" id="npCode"></div>
+        <div class="np-hz" id="npHz"></div>
+      </div>
+    </div>
+
+    <div class="action-row">
+      <button class="btn btn-play" id="playBtn">▶ Play</button>
+      <button class="btn btn-ghost" id="saBtn">🎻 Hear Sa</button>
+    </div>
+  </div>
+
+  <!-- ░░ Guidance ░░ -->
+  <div class="panel">
+    <h2>How to use it in practice</h2>
+    <div class="steps">
+      <div class="step"><b>1 · Sruthi</b><span>Set the Sa your child is tuned to — the example here is D♯, but any sruthi works.</span></div>
+      <div class="step"><b>2 · Drone on</b><span>Turn on the Sa (or Sa + Pa) drone so the violin has a steady reference to play against.</span></div>
+      <div class="step"><b>3 · Slow pace</b><span>Keep the pace slow at first. Watch the highlighted swara and read its swarasthanam name.</span></div>
+      <div class="step"><b>4 · Bow along</b><span>Press Play (or use Step-by-step) and let your child match each swara on the violin.</span></div>
+    </div>
+    <div class="note"><strong>For the teacher:</strong> every raga lives in one editable <code>RAGA_DATA</code> block at the top of the script — the arohanam and avarohanam are written with exact swarasthanam codes (R2, G3, M2, N3…). A few ragas are <em>vakra</em> (zig-zag) or <em>bhashanga</em> (borrowed notes); these show a simplified textbook scale and are flagged. Please confirm each scale against <em>Ganamrutha Bodhini</em> before relying on it, and edit freely.</div>
+  </div>
+
+</div>
+
+
+
+<script>
+/* ============================================================
+   EDITABLE RAGA DATA
+   Each raga: { name, mela, tags[], flag, eg, aro, avr }
+     tags  : any of 'Geetham','Swarajathi','Varnam','Melakarta'
+     flag  : '' or a short note ('vakra', 'bhashanga …')
+     eg    : a composition the raga appears in (editable; verify)
+     aro   : ascending swaras, space separated
+     avr   : descending swaras, space separated
+   SWARASTHANAM CODES (write these in aro / avr):
+     S                                  Shadjam
+     R1 R2 R3                           Rishabham (3 seats)
+     G1 G2 G3                           Gandharam (3 seats)
+     M1 M2                              Madhyamam (2 seats)
+     P                                  Panchamam
+     D1 D2 D3                           Dhaivatam (3 seats)
+     N1 N2 N3                           Nishadham (3 seats)
+   OCTAVE: add '+' for tara (upper, e.g. S+), '-' for mandra (lower).
+   ============================================================ */
+const RAGA_DATA = [
+  { name:'Mayamalavagowla', mela:'Melakarta 15 · Māyāmāḷavagauḷa', tags:['Geetham','Melakarta'], flag:'',
+    eg:'The home of the first geethams and sarali varisai',
+    aro:'S R1 G3 M1 P D1 N3 S+', avr:'S+ N3 D1 P M1 G3 R1 S' },
+  { name:'Malahari', mela:'Janya of 15', tags:['Geetham'], flag:'',
+    eg:'Sri Gananatha · Kundagaura — the very first geethams',
+    aro:'S R1 M1 P D1 S+', avr:'S+ D1 P M1 G3 R1 S' },
+  { name:'Saveri', mela:'Janya of 15', tags:['Geetham','Varnam'], flag:'',
+    eg:'Sarasija nabha (varnam)',
+    aro:'S R1 M1 P D1 S+', avr:'S+ N3 D1 P M1 G3 R1 S' },
+  { name:'Suddha Saveri', mela:'Janya of 29', tags:['Geetham'], flag:'',
+    eg:'A bright pentatonic geetham raga',
+    aro:'S R2 M1 P D2 S+', avr:'S+ D2 P M1 R2 S' },
+  { name:'Arabhi', mela:'Janya of 29', tags:['Geetham','Varnam'], flag:'',
+    eg:'Sa Ri Sa — a graceful audava–sampurna raga',
+    aro:'S R2 M1 P D2 S+', avr:'S+ N3 D2 P M1 G3 R2 S' },
+  { name:'Bilahari', mela:'Janya of 29', tags:['Geetham','Swarajathi','Varnam'], flag:'',
+    eg:'A favourite swarajathi and varnam raga',
+    aro:'S R2 G3 P D2 S+', avr:'S+ N3 D2 P M1 G3 R2 S' },
+  { name:'Sankarabharanam', mela:'Melakarta 29 · Dhīraśankarābharaṇam', tags:['Geetham','Swarajathi','Varnam','Melakarta'], flag:'',
+    eg:'Sami ninne (varnam) — the major scale of Carnatic music',
+    aro:'S R2 G3 M1 P D2 N3 S+', avr:'S+ N3 D2 P M1 G3 R2 S' },
+  { name:'Kalyani', mela:'Melakarta 65 · Mēchakalyāṇi', tags:['Geetham','Swarajathi','Varnam','Melakarta'], flag:'',
+    eg:'Vanajakshi (varnam)',
+    aro:'S R2 G3 M2 P D2 N3 S+', avr:'S+ N3 D2 P M2 G3 R2 S' },
+  { name:'Mohanam', mela:'Janya of 28', tags:['Geetham','Varnam'], flag:'',
+    eg:'Ninnukori (varnam) — often the first varnam learnt',
+    aro:'S R2 G3 P D2 S+', avr:'S+ D2 P G3 R2 S' },
+  { name:'Hamsadhwani', mela:'Janya of 29', tags:['Geetham','Varnam'], flag:'',
+    eg:'Vatapi Ganapatim (kriti)',
+    aro:'S R2 G3 P N3 S+', avr:'S+ N3 P G3 R2 S' },
+  { name:'Madhyamavati', mela:'Janya of 22', tags:['Geetham'], flag:'',
+    eg:'The auspicious closing raga of a concert',
+    aro:'S R2 M1 P N2 S+', avr:'S+ N2 P M1 R2 S' },
+  { name:'Hindolam', mela:'Janya of 20', tags:['Geetham','Varnam'], flag:'',
+    eg:'A serene pentatonic raga (no Ri, no Pa)',
+    aro:'S G2 M1 D1 N2 S+', avr:'S+ N2 D1 M1 G2 S' },
+  { name:'Suddha Dhanyasi', mela:'Janya of 22', tags:['Geetham'], flag:'',
+    eg:'A pentatonic raga much loved by beginners',
+    aro:'S G2 M1 P N2 S+', avr:'S+ N2 P M1 G2 S' },
+  { name:'Abhogi', mela:'Janya of 22', tags:['Varnam'], flag:'',
+    eg:'Evvari bodhana (varnam)',
+    aro:'S R2 G2 M1 D2 S+', avr:'S+ D2 M1 G2 R2 S' },
+  { name:'Sriranjani', mela:'Janya of 22', tags:['Varnam'], flag:'',
+    eg:'A gentle raga without Pa',
+    aro:'S R2 G2 M1 D2 N2 S+', avr:'S+ N2 D2 M1 G2 R2 S' },
+  { name:'Kambhoji', mela:'Janya of 28', tags:['Varnam'], flag:'',
+    eg:'Sarasijanabha (varnam)',
+    aro:'S R2 G3 M1 P D2 S+', avr:'S+ N2 D2 P M1 G3 R2 S' },
+  { name:'Yadukula Kambhoji', mela:'Janya of 28', tags:['Geetham','Varnam'], flag:'',
+    eg:'A warm, devotional raga',
+    aro:'S R2 M1 P D2 S+', avr:'S+ N2 D2 P M1 G3 R2 S' },
+  { name:'Kedaragowla', mela:'Janya of 28', tags:['Varnam'], flag:'',
+    eg:'Saami ninne (varnam)',
+    aro:'S R2 M1 P N2 S+', avr:'S+ N2 D2 P M1 G3 R2 S' },
+  { name:'Begada', mela:'Janya of 29', tags:['Varnam'], flag:'vakra · bhashanga (uses N2 and N3)',
+    eg:'Intha chalamu (varnam)',
+    aro:'S G3 R2 G3 M1 P D2 P S+', avr:'S+ N2 D2 P M1 G3 R2 S' },
+  { name:'Sri', mela:'Janya of 22', tags:['Geetham','Varnam'], flag:'vakra (zig-zag avarohanam)',
+    eg:'An auspicious raga, often sung first',
+    aro:'S R2 M1 P N2 S+', avr:'S+ N2 P M1 R2 G2 R2 S' },
+  { name:'Anandabhairavi', mela:'Janya of 22', tags:['Geetham'], flag:'bhashanga · simplified scale shown',
+    eg:'A tender, emotive raga',
+    aro:'S G2 R2 G2 M1 P D2 P N2 S+', avr:'S+ N2 D2 P M1 G2 R2 S' },
+  { name:'Bhairavi', mela:'Janya of 20', tags:['Swarajathi','Varnam'], flag:'bhashanga (D2 rising, D1 falling)',
+    eg:'Viriboni (Ata tala varnam)',
+    aro:'S R2 G2 M1 P D2 N2 S+', avr:'S+ N2 D1 P M1 G2 R2 S' },
+  { name:'Todi', mela:'Melakarta 8 · Hanumatōḍi', tags:['Swarajathi','Varnam','Melakarta'], flag:'',
+    eg:'Era napai (varnam)',
+    aro:'S R1 G2 M1 P D1 N2 S+', avr:'S+ N2 D1 P M1 G2 R1 S' },
+  { name:'Khamas', mela:'Janya of 28', tags:['Swarajathi','Varnam'], flag:'vakra (skips Ri rising)',
+    eg:'A graceful, romantic raga',
+    aro:'S M1 G3 M1 P D2 N2 S+', avr:'S+ N2 D2 P M1 G3 R2 S' },
+  { name:'Gambhiranata', mela:'Janya of 36', tags:['Geetham','Varnam'], flag:'',
+    eg:'A strong, majestic pentatonic raga',
+    aro:'S G3 M1 P N3 S+', avr:'S+ N3 P M1 G3 S' },
+  { name:'Harikambhoji', mela:'Melakarta 28 · Harikāmbhōji', tags:['Melakarta'], flag:'',
+    eg:'Parent scale of Kambhoji, Mohanam and more',
+    aro:'S R2 G3 M1 P D2 N2 S+', avr:'S+ N2 D2 P M1 G3 R2 S' },
+  { name:'Kharaharapriya', mela:'Melakarta 22 · Kharaharapriyā', tags:['Melakarta'], flag:'',
+    eg:'Parent scale of Sri, Abhogi, Madhyamavati and more',
+    aro:'S R2 G2 M1 P D2 N2 S+', avr:'S+ N2 D2 P M1 G2 R2 S' },
+  { name:'Natabhairavi', mela:'Melakarta 20 · Naṭabhairavi', tags:['Melakarta'], flag:'',
+    eg:'Parent scale of Bhairavi and Hindolam',
+    aro:'S R2 G2 M1 P D1 N2 S+', avr:'S+ N2 D1 P M1 G2 R2 S' },
+];
+
+/* swarasthanam catalogue — just intonation ratios + names */
+const SWARA = {
+  'S' :{r:1,     nm:'Shadjam'},
+  'R1':{r:16/15, nm:'Shuddha Rishabham'},
+  'R2':{r:9/8,   nm:'Chatushruti Rishabham'},
+  'R3':{r:6/5,   nm:'Shatshruti Rishabham'},
+  'G1':{r:9/8,   nm:'Shuddha Gandharam'},
+  'G2':{r:6/5,   nm:'Sadharana Gandharam'},
+  'G3':{r:5/4,   nm:'Antara Gandharam'},
+  'M1':{r:4/3,   nm:'Shuddha Madhyamam'},
+  'M2':{r:45/32, nm:'Prati Madhyamam'},
+  'P' :{r:3/2,   nm:'Panchamam'},
+  'D1':{r:8/5,   nm:'Shuddha Dhaivatam'},
+  'D2':{r:5/3,   nm:'Chatushruti Dhaivatam'},
+  'D3':{r:9/5,   nm:'Shatshruti Dhaivatam'},
+  'N1':{r:5/3,   nm:'Shuddha Nishadham'},
+  'N2':{r:9/5,   nm:'Kaishiki Nishadham'},
+  'N3':{r:15/8,  nm:'Kakali Nishadham'},
+};
+
+/* parse a swara string into note objects */
+function parseScale(str){
+  return str.trim().split(/\s+/).filter(Boolean).map(tok=>{
+    let oct=0, base=tok;
+    if(base.endsWith('+')){oct=1;base=base.slice(0,-1);}
+    else if(base.endsWith('-')){oct=-1;base=base.slice(0,-1);}
+    const sw=SWARA[base];
+    if(!sw){console.warn('Unknown swara code:',tok);return null;}
+    return {tok,base,oct,letter:base[0],ratio:sw.r*Math.pow(2,oct),name:sw.nm};
+  }).filter(Boolean);
+}
+
+/* sruthi note table (equal-temperament reference pitch for Sa) */
+const NOTES=[
+  ['G3',196.00,'G'],['G#3',207.65,'G♯'],['A3',220.00,'A'],['A#3',233.08,'A♯'],
+  ['B3',246.94,'B'],['C4',261.63,'C'],['C#4',277.18,'C♯'],['D4',293.66,'D'],
+  ['D#4',311.13,'D♯'],['E4',329.63,'E'],['F4',349.23,'F'],['F#4',369.99,'F♯'],['G4',392.00,'G']
+];
+
+/* ============ AUDIO ENGINE (violin) — shared with the Varisai Lab ============ */
+let ctx=null;
+function getCtx(){ if(!ctx){ctx=new (window.AudioContext||window.webkitAudioContext)();} if(ctx.state==='suspended'){ctx.resume();} return ctx; }
+let vWave=null;
+function violinWave(){ if(vWave) return vWave; const c=getCtx();
+  const amps=[0,1,0.86,0.66,0.55,0.46,0.38,0.31,0.26,0.21,0.17,0.14,0.11,0.09,0.07,0.055,0.04];
+  const re=new Float32Array(amps.length), im=new Float32Array(amps.length);
+  for(let i=0;i<amps.length;i++) im[i]=amps[i];
+  vWave=c.createPeriodicWave(re,im,{disableNormalization:false}); return vWave; }
+function makeBody(c){
+  const f1=c.createBiquadFilter();f1.type='peaking';f1.frequency.value=300;f1.Q.value=1.1;f1.gain.value=7;
+  const f2=c.createBiquadFilter();f2.type='peaking';f2.frequency.value=460;f2.Q.value=1.3;f2.gain.value=6;
+  const f3=c.createBiquadFilter();f3.type='peaking';f3.frequency.value=2600;f3.Q.value=0.9;f3.gain.value=6;
+  const lp=c.createBiquadFilter();lp.type='lowpass';lp.frequency.value=7000;
+  f1.connect(f2);f2.connect(f3);f3.connect(lp); return {input:f1,output:lp}; }
+function bowNoise(t,freq,amp){ const c=getCtx();const dur=0.13;
+  const src=c.createBufferSource();const buf=c.createBuffer(1,Math.floor(c.sampleRate*dur),c.sampleRate);
+  const d=buf.getChannelData(0);for(let i=0;i<d.length;i++)d[i]=Math.random()*2-1;src.buffer=buf;
+  const bp=c.createBiquadFilter();bp.type='bandpass';bp.frequency.value=Math.min(4500,freq*4);bp.Q.value=0.8;
+  const g=c.createGain();g.gain.setValueAtTime(amp,t);g.gain.exponentialRampToValueAtTime(0.0005,t+dur);
+  src.connect(bp).connect(g).connect(c.destination);src.start(t);src.stop(t+dur); }
+function playNote(freq,dur=0.8,when=null,level=1){ const c=getCtx();const t=when==null?c.currentTime:when;
+  const osc=c.createOscillator();osc.setPeriodicWave(violinWave());osc.frequency.value=freq;
+  const vib=c.createOscillator();vib.frequency.value=5.6;const vg=c.createGain();
+  vg.gain.setValueAtTime(0,t);vg.gain.linearRampToValueAtTime(freq*0.006,t+0.28);vib.connect(vg).connect(osc.frequency);
+  const body=makeBody(c);const g=c.createGain();const peak=0.26*level;
+  g.gain.setValueAtTime(0,t);g.gain.linearRampToValueAtTime(peak,t+0.07);
+  g.gain.linearRampToValueAtTime(peak*0.82,t+Math.min(0.3,dur*0.45));
+  g.gain.setValueAtTime(peak*0.82,t+Math.max(0,dur-0.14));
+  g.gain.exponentialRampToValueAtTime(0.0008,t+dur);
+  osc.connect(body.input);body.output.connect(g);g.connect(c.destination);
+  osc.start(t);vib.start(t);osc.stop(t+dur+0.05);vib.stop(t+dur+0.05);
+  bowNoise(t,freq,peak*0.16); }
+
+/* ---- sustained play-along drone (Sa / Sa+Pa) ---- */
+let droneNodes=null;
+function stopDrone(){ if(!droneNodes) return; const c=getCtx();const t=c.currentTime;
+  droneNodes.gain.gain.cancelScheduledValues(t);droneNodes.gain.gain.setValueAtTime(droneNodes.gain.gain.value,t);
+  droneNodes.gain.gain.linearRampToValueAtTime(0,t+0.18);
+  droneNodes.oscs.forEach(o=>o.stop(t+0.25)); droneNodes=null; }
+function startDrone(kind){ stopDrone(); if(kind==='off') return; const c=getCtx();
+  const body=makeBody(c);const g=c.createGain();g.gain.setValueAtTime(0,c.currentTime);
+  g.gain.linearRampToValueAtTime(0.14,c.currentTime+0.2);
+  body.output.connect(g);g.connect(c.destination);
+  const oscs=[];
+  const sa=c.createOscillator();sa.setPeriodicWave(violinWave());sa.frequency.value=sruthiHz;sa.connect(body.input);sa.start();oscs.push(sa);
+  const saLow=c.createOscillator();saLow.setPeriodicWave(violinWave());saLow.frequency.value=sruthiHz/2;
+  const slg=c.createGain();slg.gain.value=0.6;saLow.connect(slg).connect(body.input);saLow.start();oscs.push(saLow);
+  if(kind==='sapa'){ const pa=c.createOscillator();pa.setPeriodicWave(violinWave());pa.frequency.value=sruthiHz*3/2;
+    const pg=c.createGain();pg.gain.value=0.5;pa.connect(pg).connect(body.input);pa.start();oscs.push(pa); }
+  droneNodes={oscs,gain:g}; }
+
+/* short 4-second "Hear Sa" preview (separate from the play-along drone) */
+let saPrev=null;
+function previewSa(){ const c=getCtx();
+  if(saPrev){ const t=c.currentTime;saPrev.g.gain.linearRampToValueAtTime(0,t+0.1);saPrev.o.stop(t+0.15);saPrev=null;saBtn.textContent='🎻 Hear Sa';return; }
+  const o=c.createOscillator();o.setPeriodicWave(violinWave());o.frequency.value=sruthiHz;
+  const body=makeBody(c);const g=c.createGain();g.gain.setValueAtTime(0,c.currentTime);g.gain.linearRampToValueAtTime(0.2,c.currentTime+0.08);
+  o.connect(body.input);body.output.connect(g);g.connect(c.destination);o.start();bowNoise(c.currentTime,sruthiHz,0.05);
+  saPrev={o,g};saBtn.textContent='⏹ Stop Sa';
+  setTimeout(()=>{ if(saPrev){const t=getCtx().currentTime;saPrev.g.gain.linearRampToValueAtTime(0,t+0.1);saPrev.o.stop(t+0.15);saPrev=null;saBtn.textContent='🎻 Hear Sa';} },4000); }
+
+/* ============ STATE ============ */
+let sruthiHz=311.13, pace=900, dir='both', droneKind='off', mode='flow', loop=false;
+let curRaga=null, filter='All', searchTxt='';
+let playing=false, timers=[], stepSeq=[], stepIdx=0;
+
+/* ============ DOM ============ */
+const sruthiSel=document.getElementById('sruthiSel'), sruthiVal=document.getElementById('sruthiVal');
+const paceSlider=document.getElementById('paceSlider'), paceVal=document.getElementById('paceVal');
+const ragaGrid=document.getElementById('ragaGrid'), noResults=document.getElementById('noResults');
+const search=document.getElementById('search');
+const player=document.getElementById('player');
+const pName=document.getElementById('pName'), pMeta=document.getElementById('pMeta'), pEg=document.getElementById('pEg'), pFlagWrap=document.getElementById('pFlagWrap');
+const aroTrack=document.getElementById('aroTrack'), avrTrack=document.getElementById('avrTrack');
+const nowEl=document.getElementById('now'), npSym=document.getElementById('npSym'), npName=document.getElementById('npName'), npCode=document.getElementById('npCode'), npHz=document.getElementById('npHz');
+const playBtn=document.getElementById('playBtn'), saBtn=document.getElementById('saBtn');
+
+/* ---- sruthi dropdown ---- */
+NOTES.forEach((n,i)=>{ const o=document.createElement('option');o.value=i;o.textContent=n[2]+'  ·  '+Math.round(n[1])+' Hz';sruthiSel.appendChild(o); });
+sruthiSel.value=8; /* D#4 */
+sruthiSel.addEventListener('change',()=>{ const n=NOTES[+sruthiSel.value];sruthiHz=n[1];
+  sruthiVal.textContent=n[2]+' · '+Math.round(n[1])+' Hz';
+  if(droneKind!=='off') startDrone(droneKind); });
+
+paceSlider.addEventListener('input',()=>{ pace=+paceSlider.value;
+  paceVal.textContent= pace>=1100?'Very slow': pace>=800?'Slow': pace>=600?'Medium':'Brisk'; });
+
+/* ---- segmented controls ---- */
+function seg(id,attr,cb){ const box=document.getElementById(id);
+  box.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{
+    box.querySelectorAll('button').forEach(x=>x.classList.remove('on'));b.classList.add('on');cb(b.getAttribute(attr)); })); }
+seg('dirSeg','data-d',v=>dir=v);
+seg('droneSeg','data-dr',v=>{ droneKind=v; startDrone(v); });
+seg('modeSeg','data-m',v=>{ mode=v; stop(); });
+seg('loopSeg','data-l',v=>loop=(v==='on'));
+
+/* ---- filter tabs + search ---- */
+document.querySelectorAll('#catTabs button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('#catTabs button').forEach(x=>x.classList.remove('on'));b.classList.add('on');
+  filter=b.getAttribute('data-f');renderGrid(); }));
+search.addEventListener('input',()=>{ searchTxt=search.value.trim().toLowerCase();renderGrid(); });
+
+/* ---- render raga grid ---- */
+function renderGrid(){
+  ragaGrid.innerHTML='';
+  const list=RAGA_DATA.filter(r=>{
+    const okF = filter==='All' || r.tags.includes(filter);
+    const okS = !searchTxt || r.name.toLowerCase().includes(searchTxt);
+    return okF && okS;
+  });
+  noResults.style.display = list.length?'none':'block';
+  list.forEach(r=>{
+    const card=document.createElement('div');card.className='raga-card'+(curRaga&&curRaga.name===r.name?' on':'');
+    const tagPills=r.tags.filter(t=>t!=='Melakarta'||r.tags.length===1).map(t=>'<span class="pill">'+t+'</span>').join('');
+    card.innerHTML='<div class="rn">'+r.name+'</div><div class="rm">'+r.mela+'</div><div class="rtags">'+tagPills+'</div>';
+    card.addEventListener('click',()=>selectRaga(r));
+    ragaGrid.appendChild(card);
+  });
+}
+
+/* ---- octave dot helper ---- */
+function dotsFor(oct){ if(oct>0) return '<i class="od up"></i>'; if(oct<0) return '<i class="od dn"></i>'; return ''; }
+
+/* ---- select + render a raga ---- */
+let aroNotes=[], avrNotes=[];
+function selectRaga(r){
+  stop(); curRaga=r; aroNotes=parseScale(r.aro); avrNotes=parseScale(r.avr);
+  player.style.display='block';
+  pName.textContent=r.name;
+  pMeta.textContent=r.mela+'  ·  '+r.tags.filter(t=>t!=='Melakarta').join(' · ');
+  pEg.textContent=r.eg?('♪  '+r.eg):'';
+  pFlagWrap.innerHTML=r.flag?('<span class="flagnote">'+r.flag+'</span>'):'';
+  renderTrack(aroTrack,aroNotes,'aro');
+  renderTrack(avrTrack,avrNotes,'avr');
+  setNowIdle();
+  renderGrid();
+  player.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function renderTrack(el,notes,which){
+  el.innerHTML='';
+  notes.forEach((n,i)=>{
+    const c=document.createElement('div');c.className='cell';c.dataset.which=which;c.dataset.i=i;
+    c.innerHTML=dotsFor(n.oct)+'<span class="sym">'+n.letter+'</span><span class="cd">'+n.base+'</span>';
+    c.addEventListener('click',()=>{ if(playing) return; flashCell(which,i); soundNote(n); showNow(n); });
+    el.appendChild(c);
+  });
+}
+
+/* ---- now-playing readout ---- */
+function showNow(n){ nowEl.classList.remove('idle');
+  npSym.innerHTML=dotsFor(n.oct)+n.letter;
+  npName.textContent=n.name; npCode.textContent='Swarasthanam: '+n.base;
+  npHz.textContent=Math.round(sruthiHz*n.ratio)+' Hz'+(n.oct>0?'  (tara sthayi)':n.oct<0?'  (mandra sthayi)':''); }
+function setNowIdle(){ nowEl.classList.add('idle');npSym.innerHTML='–';npName.textContent='Tap any swara to hear it';npCode.textContent='';npHz.textContent=''; }
+
+/* ---- highlight helpers ---- */
+function clearCells(){ document.querySelectorAll('.cell.cur').forEach(c=>c.classList.remove('cur')); }
+function highlight(which,i){ clearCells(); const el=document.querySelector('.cell[data-which="'+which+'"][data-i="'+i+'"]'); if(el) el.classList.add('cur'); }
+function flashCell(which,i){ highlight(which,i); setTimeout(()=>{ const el=document.querySelector('.cell[data-which="'+which+'"][data-i="'+i+'"]'); if(el&&!playing) el.classList.remove('cur'); }, pace*0.9); }
+function soundNote(n){ playNote(sruthiHz*n.ratio, Math.max(0.45,pace/1000*0.92)); }
+
+/* ---- build the sequence to play ---- */
+function buildSeq(){
+  const seq=[];
+  if(dir==='aro'||dir==='both') aroNotes.forEach((n,i)=>seq.push({n,which:'aro',i}));
+  if(dir==='both') seq.push(null); /* small pause between aro and avr */
+  if(dir==='avr'||dir==='both') avrNotes.forEach((n,i)=>seq.push({n,which:'avr',i}));
+  return seq;
+}
+
+/* ---- play through ---- */
+function playFlow(){
+  const seq=buildSeq(); let k=0;
+  const stepOne=()=>{
+    if(!playing) return;
+    if(k>=seq.length){ if(loop){ k=0; } else { stop(); return; } }
+    const item=seq[k++];
+    if(item===null){ clearCells(); timers.push(setTimeout(stepOne,pace*0.6)); return; }
+    highlight(item.which,item.i); soundNote(item.n); showNow(item.n);
+    timers.push(setTimeout(stepOne,pace));
+  };
+  stepOne();
+}
+
+/* ---- step-by-step ---- */
+function buildStepSeq(){ stepSeq=buildSeq().filter(x=>x!==null); stepIdx=0; }
+function stepNext(){
+  if(stepIdx>=stepSeq.length){ if(loop){stepIdx=0;} else { stop(); return; } }
+  const item=stepSeq[stepIdx++];
+  highlight(item.which,item.i); soundNote(item.n); showNow(item.n);
+}
+
+/* ---- start / stop ---- */
+function start(){
+  if(!curRaga) return; getCtx(); playing=true;
+  playBtn.classList.add('stop');
+  if(mode==='step'){ buildStepSeq(); playBtn.textContent='▶ Next swara'; stepNext(); }
+  else { playBtn.textContent='⏹ Stop'; playFlow(); }
+}
+function stop(){
+  playing=false; timers.forEach(t=>clearTimeout(t)); timers=[];
+  clearCells(); playBtn.classList.remove('stop');
+  playBtn.textContent = mode==='step' ? '▶ Play step-by-step' : '▶ Play';
+}
+playBtn.addEventListener('click',()=>{
+  if(mode==='step'){
+    if(!playing){ start(); }
+    else { stepNext(); }
+  } else {
+    if(playing) stop(); else start();
+  }
+});
+saBtn.addEventListener('click',previewSa);
+
+/* sync play button label when switching mode while idle */
+const modeBox=document.getElementById('modeSeg');
+modeBox.addEventListener('click',()=>{ if(!playing){ playBtn.textContent = mode==='step'?'▶ Play step-by-step':'▶ Play'; } });
+
+/* ============ INIT ============ */
+sruthiVal.textContent='D♯ · 311 Hz';
+renderGrid();
+</script>
+
+
+<!-- ═══ LVA uniform footer (shared across all pages) ═══ -->
+<div class="lva-footer">
+  <div class="lva-footer-notes" aria-hidden="true">♪&hairsp;♫&hairsp;𝄞&hairsp;♩&hairsp;♬</div>
+  <div class="lva-footer-brand">🎻 Lakshya's Violin Academy</div>
+  <p class="lva-footer-tag">Carnatic violin for young learners — where every note finds its voice ♩</p>
+  <p class="lva-footer-loc">Old Pallavaram, Chennai</p>
+  <div class="lva-footer-links">
+    <a href="https://wa.me/919003030454">💬 WhatsApp +91 90030 30454</a>
+    <a href="mailto:j.ajaychandran@gmail.com">✉️ j.ajaychandran@gmail.com</a>
+    <a href="index.html#contact">🎟️ Book a Free Trial</a>
+  </div>
+  <div class="lva-footer-quick">
+    <a href="index.html">Home</a><a href="index.html#about">About</a><a href="index.html#courses">Courses</a><a href="games.html">Games &amp; Labs</a><a href="blog-sound-vibration-carnatic.html">Blog</a><a href="index.html#contact">Enroll</a>
+  </div>
+  <p class="lva-footer-copy">© 2026 Lakshya's Violin Academy · Made with ♥ and music 🎶</p>
+</div>
+
+<!-- Analytics: GoatCounter (privacy-friendly) -->
+<script data-goatcounter="https://lakshyasviolinacademy.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

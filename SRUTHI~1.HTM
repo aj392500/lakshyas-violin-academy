@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sruthi Detective — Lakshya's Violin Academy</title>
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Lakshya&#39;s Violin Academy" />
+<meta property="og:title" content="Sruthi Detective — Lakshya&#x27;s Violin Academy" />
+<meta property="og:description" content="An ear-tuning game for young Carnatic violin students. A string has slipped out of tune — listen to the wobble between it and the true Sa, slide it back until the two sound as one, and lock it in. Trains the unison-tuning ear that all violin playing rests on." />
+<meta property="og:url" content="https://lakshyasviolinacademy.live/sruthi-detective.html" />
+<meta property="og:image" content="https://lakshyasviolinacademy.live/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Sruthi Detective — Lakshya&#x27;s Violin Academy" />
+<meta name="twitter:description" content="An ear-tuning game for young Carnatic violin students. A string has slipped out of tune — listen to the wobble between it and the true Sa, slide it back until the two sound as one, and lock it in. Trains the unison-tuning ear that all violin playing rests on." />
+<meta name="twitter:image" content="https://lakshyasviolinacademy.live/og-image.png" />
+<meta name="theme-color" content="#5B54C9" />
+
+<meta name="description" content="An ear-tuning game for young Carnatic violin students. A string has slipped out of tune — listen to the wobble between it and the true Sa, slide it back until the two sound as one, and lock it in. Trains the unison-tuning ear that all violin playing rests on." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Noto+Serif:wght@400;600&display=swap" rel="stylesheet" />
+<style>
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+  :root{
+    --maroon:#5B54C9; --maroon-soft:#837DD9; --saffron:#F25C54; --saffron-light:#FFB84C;
+    --gold:#FFD166; --gold-deep:#D97706; --cream:#F5F8FF; --cream2:#E7EEFC;
+    --border:#C5D3F0; --text-dark:#2E3350; --text-mid:#4D5378; --text-soft:#707795;
+    --green:#16A34A; --green-bg:#e4f5ea; --teal:#0E9488;
+  }
+  html{scroll-behavior:smooth;}
+  body{font-family:'Noto Serif',Georgia,serif;background:var(--cream);color:var(--text-dark);line-height:1.7;}
+
+  .lva-ribbon{background:#5B54C9;border-bottom:3px solid #FFB84C;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;padding:0 1.3rem;}
+  .lva-ribbon a{text-decoration:none;}
+  .lva-ribbon .lva-brand{color:#FFD166;font-family:'Playfair Display',serif;font-weight:700;font-size:1rem;padding:0.7rem 0;white-space:nowrap;}
+  .lva-ribbon .lva-links{display:flex;flex-wrap:wrap;align-items:center;}
+  .lva-ribbon .lva-links a{color:#E3E8FF;font-size:0.72rem;letter-spacing:0.07em;text-transform:uppercase;padding:0.75rem 0.5rem;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;white-space:nowrap;}
+  .lva-ribbon .lva-links a:hover{color:#FFD166;border-bottom-color:#FFD166;}
+  .lva-ribbon .lva-links a.cur{color:#FFD166;border-bottom-color:#FFD166;}
+  @media(max-width:620px){.lva-ribbon{padding:0 0.7rem;}.lva-ribbon .lva-brand{font-size:0.82rem;}.lva-ribbon .lva-links a{padding:0.5rem 0.32rem;font-size:0.58rem;}}
+
+  .hero{background:linear-gradient(135deg,var(--maroon) 0%,#443CA8 60%,#2F2973 100%);padding:3rem 1.5rem 2.6rem;text-align:center;position:relative;overflow:hidden;}
+  .hero::before{content:'🕵️';position:absolute;top:10px;right:26px;font-size:5rem;opacity:0.12;}
+  .hero .eyebrow{font-size:0.74rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--saffron-light);margin-bottom:0.7rem;}
+  .hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,5vw,3rem);color:#FDFDFF;font-weight:700;line-height:1.15;}
+  .hero h1 span{color:var(--gold);}
+  .hero .tamil{font-size:1rem;color:#CDD5FF;font-style:italic;margin:0.4rem 0 0.8rem;}
+  .hero p{color:#B4BEF5;max-width:660px;margin:0 auto;font-size:0.98rem;line-height:1.8;}
+
+  .wrap{max-width:720px;margin:0 auto;padding:2rem 1.2rem 4rem;}
+
+  .panel{background:#fff;border:1px solid var(--border);border-radius:14px;padding:1.4rem 1.4rem;box-shadow:0 6px 22px rgba(46,51,80,0.07);margin-bottom:1.4rem;}
+  .panel h2{font-family:'Playfair Display',serif;color:var(--maroon);font-size:1.15rem;margin-bottom:0.2rem;}
+  .panel .sub{font-size:0.82rem;color:var(--text-soft);margin-bottom:1rem;}
+
+  .scoreboard{display:flex;gap:0.7rem;flex-wrap:wrap;justify-content:center;margin-bottom:1.4rem;}
+  .score-chip{flex:1;min-width:90px;background:#fff;border:1px solid var(--border);border-radius:12px;padding:0.7rem 0.5rem;text-align:center;}
+  .score-chip .v{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;color:var(--maroon);line-height:1;}
+  .score-chip .l{font-size:0.62rem;letter-spacing:0.09em;text-transform:uppercase;color:var(--text-soft);margin-top:4px;}
+  .score-chip.streak .v{color:var(--saffron);}
+
+  .setup-row{display:flex;gap:0.8rem;flex-wrap:wrap;align-items:flex-end;justify-content:center;margin-bottom:1.2rem;}
+  .field{display:flex;flex-direction:column;gap:0.35rem;}
+  .field .flabel{font-size:0.66rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-soft);font-weight:600;text-align:center;}
+  select{font-family:'Noto Serif',serif;font-size:0.9rem;padding:0.45rem 0.7rem;border:1px solid var(--border);border-radius:7px;background:var(--cream);color:var(--text-dark);}
+  .diff-seg{display:flex;gap:5px;}
+  .diff-seg button{font-family:'Noto Serif',serif;font-size:0.84rem;padding:0.45rem 0.9rem;border:1px solid var(--border);background:var(--cream);color:var(--text-mid);border-radius:8px;cursor:pointer;}
+  .diff-seg button.on{background:var(--maroon);color:var(--gold);border-color:var(--maroon);}
+
+  /* tuning stage */
+  .stage{text-align:center;}
+  .wobble{margin:0.6rem auto 1.2rem;max-width:420px;}
+  .wobble .ring{width:120px;height:120px;border-radius:50%;margin:0 auto;
+    background:radial-gradient(circle at 50% 45%, var(--gold) 0%, var(--saffron) 70%, #C23A2E 100%);
+    box-shadow:0 0 0 0 rgba(255,209,102,0.5);transition:none;}
+  .wobble .wlabel{font-size:0.8rem;color:var(--text-soft);margin-top:0.7rem;}
+  .wobble .wlabel b{color:var(--saffron);}
+  .stage.tuned .ring{background:radial-gradient(circle at 50% 45%, #bdf0d2 0%, var(--green) 70%, #0B7266 100%);}
+
+  .play-row{display:flex;gap:0.6rem;flex-wrap:wrap;justify-content:center;margin-bottom:1.4rem;}
+  .btn{font-family:'Noto Serif',serif;font-size:0.95rem;padding:0.7rem 1.1rem;border:none;border-radius:8px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:transform .1s,background .2s;}
+  .btn-play{background:var(--saffron);color:#fff;border-bottom:3px solid #C23A2E;font-size:1.02rem;}
+  .btn-play:hover{background:#D9483B;}
+  .btn-play.on{background:var(--maroon);border-bottom-color:#3A338F;}
+  .btn-ghost{background:var(--cream2);color:var(--text-mid);border:1px solid var(--border);}
+  .btn-ghost:hover{background:#D9E2F8;}
+
+  /* tuning control */
+  .tune-box{background:linear-gradient(180deg,#fff,#EEF4FF);border:1px solid var(--border);border-radius:14px;padding:1.3rem 1.2rem;margin-bottom:1.2rem;}
+  .tune-box .tlabel{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-soft);font-weight:600;margin-bottom:0.8rem;}
+  .nudge-row{display:flex;gap:0.5rem;justify-content:center;align-items:center;margin-bottom:0.9rem;flex-wrap:wrap;}
+  .nudge{font-family:'Playfair Display',serif;font-weight:700;font-size:0.95rem;padding:0.55rem 0.9rem;border:1px solid var(--border);background:#fff;color:var(--maroon);border-radius:9px;cursor:pointer;min-width:64px;}
+  .nudge:hover{border-color:var(--saffron);background:var(--cream);}
+  .nudge.down{color:var(--teal);}
+  .tune-slider{-webkit-appearance:none;appearance:none;width:100%;height:12px;border-radius:10px;
+    background:linear-gradient(90deg,var(--teal),var(--cream2),var(--saffron));outline:none;margin-top:0.3rem;}
+  .tune-slider::-webkit-slider-thumb{-webkit-appearance:none;width:30px;height:30px;border-radius:50%;background:#fff;border:4px solid var(--maroon);cursor:pointer;box-shadow:0 3px 8px rgba(0,0,0,.2);}
+  .tune-slider::-moz-range-thumb{width:26px;height:26px;border-radius:50%;background:#fff;border:4px solid var(--maroon);cursor:pointer;}
+  .slider-ends{display:flex;justify-content:space-between;font-size:0.68rem;color:var(--text-soft);margin-top:4px;}
+
+  .lock-row{display:flex;gap:0.7rem;justify-content:center;flex-wrap:wrap;}
+  .btn-lock{background:var(--teal);color:#fff;border-bottom:3px solid #0B7266;font-size:1.02rem;padding:0.75rem 1.5rem;}
+  .btn-lock:hover{background:#185c4c;}
+
+  /* reveal */
+  .reveal{display:none;text-align:center;margin-top:1.4rem;padding-top:1.2rem;border-top:1px solid var(--cream2);}
+  .reveal.show{display:block;}
+  .reveal .stars{font-size:1.8rem;letter-spacing:3px;}
+  .reveal .verdict{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;margin-top:0.3rem;}
+  .reveal .verdict.good{color:var(--green);}
+  .reveal .verdict.ok{color:var(--saffron);}
+  .reveal .verdict.miss{color:#E64545;}
+  .reveal .detail{font-size:0.9rem;color:var(--text-mid);margin-top:0.4rem;}
+  .reveal .detail b{color:var(--maroon);}
+  .next-btn{margin-top:1.1rem;font-family:'Playfair Display',serif;font-size:1.02rem;font-weight:600;color:#fff;background:var(--maroon);border:none;border-bottom:3px solid #3A338F;border-radius:10px;padding:0.7rem 1.5rem;cursor:pointer;}
+  .next-btn:hover{background:#8f2626;}
+
+  .note{background:#FFFFFF;border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:8px;padding:0.9rem 1.1rem;font-size:0.85rem;color:var(--text-mid);margin-top:1.3rem;}
+  .note code{background:var(--cream2);padding:1px 5px;border-radius:4px;font-size:0.82em;}
+
+  footer{background:#2F2973;color:#CDD5FF;text-align:center;padding:2rem 1.4rem;font-size:0.88rem;}
+  footer .fname{font-family:'Playfair Display',serif;color:#FFD166;font-size:1.1rem;margin-bottom:6px;}
+  footer a{color:var(--saffron-light);text-decoration:none;}
+  @media(prefers-reduced-motion:reduce){.wobble .ring{box-shadow:none !important;}}
+</style>
+<style id="lva-mobnav">
+  .lva-toggle{display:none;background:transparent;border:none;cursor:pointer;padding:8px 2px;flex-direction:column;gap:5px;margin-left:auto;}
+  .lva-toggle span{display:block;width:26px;height:3px;border-radius:2px;background:#FFD166;transition:transform .25s ease,opacity .2s ease;}
+  .lva-toggle.open span:nth-child(1){transform:translateY(8px) rotate(45deg);}
+  .lva-toggle.open span:nth-child(2){opacity:0;}
+  .lva-toggle.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
+  @media(max-width:760px){
+    .lva-ribbon{flex-wrap:nowrap;align-items:center;}
+    .lva-toggle{display:flex;}
+    .lva-ribbon .lva-links{display:none !important;order:5;flex-basis:100%;width:100%;flex-direction:column;align-items:stretch;
+      max-height:min(68vh,440px);overflow-y:auto;-webkit-overflow-scrolling:touch;
+      border-top:1px solid rgba(255,209,102,0.25);margin-top:4px;padding:4px 0 8px;
+      scrollbar-width:thin;scrollbar-color:#D97706 rgba(255,255,255,0.12);}
+    .lva-ribbon.open .lva-links{display:flex !important;}
+    .lva-ribbon .lva-links::-webkit-scrollbar{width:8px;}
+    .lva-ribbon .lva-links::-webkit-scrollbar-thumb{background:#D97706;border-radius:8px;}
+    .lva-ribbon .lva-links a{padding:0.72rem 0.7rem !important;font-size:0.94rem !important;letter-spacing:0.03em !important;
+      border-bottom:1px solid rgba(255,209,102,0.12);white-space:normal !important;}
+    .lva-ribbon .lva-links a.cur{background:rgba(255,209,102,0.12);}
+  }
+</style>
+<style id="lva-share-css">
+  .lva-share-row{text-align:center;margin:0.9rem 0 0.2rem;}
+  .lva-share-btn{display:inline-flex;align-items:center;gap:8px;font-family:'Noto Serif',Georgia,serif;font-size:0.92rem;font-weight:700;
+    padding:0.62rem 1.2rem;border:none;border-radius:10px;cursor:pointer;color:#fff;
+    background:linear-gradient(135deg,#F25C54,#FFB84C);border-bottom:3px solid #C23A2E;transition:filter .15s,transform .1s;}
+  .lva-share-btn:hover{filter:brightness(1.06);transform:translateY(-1px);}
+  .lva-modal{position:fixed;inset:0;background:rgba(30,26,71,0.74);display:none;align-items:center;justify-content:center;z-index:3000;padding:18px;}
+  .lva-modal.show{display:flex;}
+  .lva-modal-card{background:#F5F8FF;border-radius:16px;max-width:392px;width:100%;padding:18px 18px 16px;box-shadow:0 24px 60px rgba(0,0,0,0.45);text-align:center;max-height:92vh;overflow-y:auto;}
+  .lva-modal-card h3{font-family:'Playfair Display',Georgia,serif;color:#5B54C9;font-size:1.15rem;margin:0 0 12px;}
+  .lva-modal-card canvas{width:100%;height:auto;border-radius:11px;border:1px solid #C5D3F0;display:block;}
+  .lva-share-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:14px;}
+  .lva-share-actions button{flex:1 1 30%;min-width:96px;font-family:'Noto Serif',Georgia,serif;font-size:0.84rem;font-weight:700;
+    padding:0.6rem 0.4rem;border:none;border-radius:9px;cursor:pointer;color:#fff;display:inline-flex;align-items:center;justify-content:center;gap:6px;}
+  .lva-b-share{background:#16A34A;} .lva-b-fb{background:#1877F2;} .lva-b-dl{background:#5B54C9;}
+  .lva-b-close{background:#7C84A8;flex-basis:100%;margin-top:8px;}
+  .lva-modal-hint{font-size:0.72rem;color:#707795;margin-top:11px;line-height:1.5;}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<script src="site.js" defer></script>
+<link rel="canonical" href="https://lakshyasviolinacademy.live/sruthi-detective.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+<body>
+
+<!-- ═══ LVA uniform navigation (shared across all pages) ═══ -->
+<div class="lva-nav" id="lvaNav">
+  <div class="lva-nav-inner">
+    <a class="lva-brand" href="index.html">🎻&ensp;Lakshya's Violin Academy</a>
+    <button class="lva-burger" aria-label="Open menu" aria-expanded="false" aria-controls="lvaMenu"><span></span><span></span><span></span></button>
+    <div class="lva-menu" id="lvaMenu">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#courses">Courses</a>
+      <div class="lva-drop">
+        <button class="lva-drop-btn" aria-expanded="false">Learn</button>
+        <div class="lva-drop-panel">
+          <span class="lva-drop-label">🎼 Carnatic Foundations</span>
+          <a href="index.html#carnatic">📖&ensp;Introduction to Carnatic Music</a>
+          <a href="index.html#strings">🎻&ensp;The Violin &amp; Its Strings</a>
+          <a href="index.html#sapa">🎵&ensp;Sa–Pa–Sa–Pa–Sa</a>
+          <a href="index.html#varisai">🎶&ensp;The Five Varisais</a>
+        </div>
+      </div>
+      <div class="lva-drop">
+        <button class="lva-drop-btn" aria-expanded="false">Games &amp; Labs</button>
+        <div class="lva-drop-panel">
+          <span class="lva-drop-label">🎮 Interactive Music Games</span>
+          <a href="games.html"><b>🗺️&ensp;All Games at a Glance</b></a>
+      <a href="varisai-lab.html">🎻&ensp;Varisai Lab — all five varisais</a>
+      <a href="raga-jukebox.html">📻&ensp;Raga Jukebox — hear every raga</a>
+      <a href="frequency-and-swaras.html">🔊&ensp;Frequency &amp; Swaras Lab</a>
+      <a href="thala-basics.html">🥁&ensp;Thala — Rhythm Player</a>
+      <a href="melakarta-explorer.html">🎼&ensp;72 Melakarta Explorer</a>
+      <a href="gamaka-explorer.html">🌊&ensp;Gamaka Explorer</a>
+      <a href="shruti-box.html">🎚️&ensp;Shruti Box — tune &amp; drone</a>
+      <a href="swara-guessing-game.html">🎧&ensp;Swara Guessing Game</a>
+      <a href="raga-mood-matcher.html">🎭&ensp;Raga Mood Matcher</a>
+      <a href="build-a-raga-lab.html">🛠️&ensp;Build-a-Raga Lab</a>
+      <a href="compose-a-geetham.html">✍️&ensp;Compose-a-Geetham</a>
+      <a href="sruthi-detective.html">🕵️&ensp;Sruthi Detective</a>
+        </div>
+      </div>
+      <div class="lva-drop">
+        <button class="lva-drop-btn" aria-expanded="false">Blog</button>
+        <div class="lva-drop-panel">
+          <span class="lva-drop-label">📚 Beginner's Corner</span>
+          <a href="blog-sound-vibration-carnatic.html">🎵&ensp;Sound, Vibration &amp; Carnatic Music</a>
+          <a href="blog-carnatic-music-and-kids-brain.html">🧠&ensp;Carnatic Music &amp; Your Child's Brain</a>
+        </div>
+      </div>
+      <a class="lva-cta" href="index.html#contact">🎻 Enroll Now</a>
+    </div>
+  </div>
+</div>
+
+
+
+
+<header class="hero">
+  <div class="eyebrow">Listen · Slide · Lock it in</div>
+  <h1>Sruthi <span>Detective</span></h1>
+  <div class="tamil">சுருதி சேர்த்தல் — காதால் சுருதி கூட்டுங்கள்</div>
+  <p>A string has slipped out of tune. Listen to the wobble against the true Sa, slide it back until the two notes melt into one steady sound — then lock it in. This is the tuning ear every violinist builds first.</p>
+</header>
+
+<div class="wrap">
+
+  <div class="scoreboard">
+    <div class="score-chip"><div class="v" id="scoreV">0</div><div class="l">Score</div></div>
+    <div class="score-chip streak"><div class="v" id="streakV">0</div><div class="l">Streak 🔥</div></div>
+    <div class="score-chip"><div class="v" id="bestV">0</div><div class="l">Best streak</div></div>
+    <div class="score-chip"><div class="v" id="lastV">—</div><div class="l">Last (cents)</div></div>
+  </div>
+
+  <div class="panel stage" id="stage">
+    <div class="setup-row">
+      <div class="field">
+        <span class="flabel">True Sa</span>
+        <select id="sruthiSel"></select>
+      </div>
+      <div class="field">
+        <span class="flabel">Difficulty</span>
+        <div class="diff-seg" id="diffSeg">
+          <button data-d="easy" class="on">Easy</button>
+          <button data-d="med">Medium</button>
+          <button data-d="hard">Hard</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="wobble">
+      <div class="ring" id="ring"></div>
+      <div class="wlabel" id="wlabel">Press play and listen for the <b>wobble</b></div>
+    </div>
+
+    <div class="play-row">
+      <button class="btn btn-play" id="playBtn">▶ Play both strings</button>
+      <button class="btn btn-ghost" id="refBtn">🔔 Hear true Sa</button>
+    </div>
+
+    <div class="tune-box">
+      <div class="tlabel">Tune the slipped string</div>
+      <div class="nudge-row">
+        <button class="nudge down" data-n="-5">▼ ▼</button>
+        <button class="nudge down" data-n="-1">▼</button>
+        <button class="nudge" data-n="1">▲</button>
+        <button class="nudge" data-n="5">▲ ▲</button>
+      </div>
+      <input type="range" class="tune-slider" id="tuneSlider" min="-70" max="70" value="0" step="1">
+      <div class="slider-ends"><span>lower ▼</span><span>higher ▲</span></div>
+    </div>
+
+    <div class="lock-row">
+      <button class="btn btn-lock" id="lockBtn">🔒 Lock it in</button>
+    </div>
+
+    <div class="reveal" id="reveal">
+      <div class="stars" id="stars"></div>
+      <div class="verdict" id="verdict"></div>
+      <div class="detail" id="detail"></div>
+      <button class="next-btn" id="nextBtn">Next string →</button>
+    </div>
+  </div>
+
+  <div class="note">
+    <strong>For the teacher:</strong> the two strings are tuned in unison (both at Sa), so the child hears <em>beats</em> — the slow wobble that appears when two pitches are slightly apart. As the pitch closes in, the wobble slows and stops; that "zero-beat" moment is exactly how a tambura or a violin string is tuned by ear. The slider hides its numbers on purpose, so it is the ear that decides. Difficulty sets how far out the string starts and how tight the in-tune window is — all editable in the <code>LEVELS</code> block at the top of the script.
+  </div>
+
+</div>
+
+
+
+<script>
+/* ============================================================
+   LEVELS — editable difficulty block
+   biasMin/biasMax : how far out of tune (cents) the string can start
+   tol3/tol2/tol1  : cents windows for 3, 2, 1 stars
+   ============================================================ */
+const LEVELS = {
+  easy:{ biasMin:25, biasMax:58, tol3:8,  tol2:16, tol1:28, pts:[6,4,2] },
+  med :{ biasMin:16, biasMax:46, tol3:5,  tol2:11, tol1:20, pts:[10,6,3] },
+  hard:{ biasMin:9,  biasMax:34, tol3:3,  tol2:7,  tol1:14, pts:[16,10,5] },
+};
+
+const NOTES=[
+  ['G',196.00,'G'],['G#',207.65,'G♯'],['A',220.00,'A'],['A#',233.08,'A♯'],
+  ['B',246.94,'B'],['C',261.63,'C'],['C#',277.18,'C♯'],['D',293.66,'D'],
+  ['D#',311.13,'D♯'],['E',329.63,'E'],['F',349.23,'F'],['F#',369.99,'F♯']
+];
+
+/* ============ AUDIO ENGINE (violin) — shared across the labs ============ */
+let ctx=null;
+function getCtx(){ if(!ctx){ctx=new (window.AudioContext||window.webkitAudioContext)();} if(ctx.state==='suspended'){ctx.resume();} return ctx; }
+let vWave=null;
+function violinWave(){ if(vWave) return vWave; const c=getCtx();
+  const amps=[0,1,0.86,0.66,0.55,0.46,0.38,0.31,0.26,0.21,0.17,0.14,0.11,0.09,0.07,0.055,0.04];
+  const re=new Float32Array(amps.length), im=new Float32Array(amps.length);
+  for(let i=0;i<amps.length;i++) im[i]=amps[i];
+  vWave=c.createPeriodicWave(re,im,{disableNormalization:false}); return vWave; }
+function makeBody(c){
+  const f1=c.createBiquadFilter();f1.type='peaking';f1.frequency.value=300;f1.Q.value=1.1;f1.gain.value=7;
+  const f2=c.createBiquadFilter();f2.type='peaking';f2.frequency.value=460;f2.Q.value=1.3;f2.gain.value=6;
+  const f3=c.createBiquadFilter();f3.type='peaking';f3.frequency.value=2600;f3.Q.value=0.9;f3.gain.value=6;
+  const lp=c.createBiquadFilter();lp.type='lowpass';lp.frequency.value=7000;
+  f1.connect(f2);f2.connect(f3);f3.connect(lp); return {input:f1,output:lp}; }
+
+/* ============ sustained, live-tunable two-string voices ============ */
+let voices=null;  // {ref:{osc,sub,g}, usr:{osc,sub,g}, master}
+function startVoices(){
+  stopVoices(); const c=getCtx();
+  function string(freq){
+    const body=makeBody(c); const g=c.createGain();
+    g.gain.setValueAtTime(0,c.currentTime); g.gain.linearRampToValueAtTime(0.13,c.currentTime+0.15);
+    body.output.connect(g); g.connect(c.destination);
+    const osc=c.createOscillator(); osc.setPeriodicWave(violinWave()); osc.frequency.value=freq; osc.connect(body.input); osc.start();
+    const sub=c.createOscillator(); sub.setPeriodicWave(violinWave()); sub.frequency.value=freq/2;
+    const sg=c.createGain(); sg.gain.value=0.5; sub.connect(sg).connect(body.input); sub.start();
+    return {osc,sub,g};
+  }
+  const ref=string(sruthiHz);
+  const usr=string(curUserFreq());
+  voices={ref,usr};
+  applyMode();
+}
+function stopVoices(){ if(!voices) return; const c=getCtx(); const t=c.currentTime;
+  [voices.ref,voices.usr].forEach(v=>{ v.g.gain.cancelScheduledValues(t); v.g.gain.setValueAtTime(v.g.gain.value,t); v.g.gain.linearRampToValueAtTime(0,t+0.12);
+    v.osc.stop(t+0.18); v.sub.stop(t+0.18); });
+  voices=null;
+}
+function curError(){ return sliderVal + hiddenBias; }          // cents away from true Sa
+function curUserFreq(){ return sruthiHz*Math.pow(2,curError()/1200); }
+function updateUser(){ if(voices){ const c=getCtx(); const f=curUserFreq();
+  voices.usr.osc.frequency.setTargetAtTime(f,c.currentTime,0.02);
+  voices.usr.sub.frequency.setTargetAtTime(f/2,c.currentTime,0.02); } }
+function applyMode(){ if(!voices) return;
+  const refOn = (mode==='both'||mode==='ref');
+  const usrOn = (mode==='both');
+  const c=getCtx(); const t=c.currentTime;
+  voices.ref.g.gain.setTargetAtTime(refOn?0.13:0.0001,t,0.03);
+  voices.usr.g.gain.setTargetAtTime(usrOn?0.13:0.0001,t,0.03);
+}
+
+/* ============ STATE ============ */
+let sruthiHz=311.13;
+let level='easy';
+let hiddenBias=0, sliderVal=0, locked=false, mode='off';
+let score=0, streak=0, best=0;
+
+/* ============ wobble visual ============ */
+let rafId=null;
+function startWobble(){ const ring=document.getElementById('ring'); cancelAnimationFrame(rafId);
+  const t0=performance.now();
+  function frame(now){
+    const e=Math.abs(curError());
+    const beatHz=sruthiHz*Math.abs(Math.pow(2,curError()/1200)-1); // |f1-f2|
+    const playingBoth=(mode==='both' && voices);
+    const phase=(now-t0)/1000;
+    let amp = playingBoth ? Math.min(1,beatHz/9) : 0;       // how strong the throb is
+    const pulse = playingBoth ? (0.5+0.5*Math.sin(2*Math.PI*beatHz*phase)) : 0.5;
+    const glow = playingBoth ? (amp*pulse*26) : 0;
+    ring.style.boxShadow=`0 0 ${8+glow}px ${glow*0.5}px rgba(255,209,102,${0.25+amp*pulse*0.5})`;
+    const sc = playingBoth ? (1+amp*pulse*0.06) : 1;
+    ring.style.transform=`scale(${sc.toFixed(3)})`;
+    // tuned styling when very close
+    document.getElementById('stage').classList.toggle('tuned', e<4 && playingBoth);
+    if(playingBoth){
+      const w=document.getElementById('wlabel');
+      if(e<4) w.innerHTML='Almost <b>one sound</b> — lock it in!';
+      else if(beatHz<2.2) w.innerHTML='Very close — the wobble is slow…';
+      else w.innerHTML='Listen for the <b>wobble</b> — slide to slow it down';
+    }
+    rafId=requestAnimationFrame(frame);
+  }
+  rafId=requestAnimationFrame(frame);
+}
+
+/* ============ ROUNDS ============ */
+function newRound(){
+  locked=false;
+  const L=LEVELS[level];
+  const sign=Math.random()<0.5?-1:1;
+  hiddenBias=sign*(L.biasMin+Math.random()*(L.biasMax-L.biasMin));
+  sliderVal=0;
+  document.getElementById('tuneSlider').value=0;
+  document.getElementById('reveal').classList.remove('show');
+  document.getElementById('lockBtn').disabled=false;
+  document.getElementById('tuneSlider').disabled=false;
+  document.querySelectorAll('.nudge').forEach(b=>b.disabled=false);
+  document.getElementById('stage').classList.remove('tuned');
+  document.getElementById('wlabel').innerHTML='Press play and listen for the <b>wobble</b>';
+  // auto-start the sound for the new round
+  mode='both';
+  startVoices(); updateUser(); applyMode();
+  setPlayBtn(true);
+  startWobble();
+}
+
+function lockIn(){
+  if(locked) return; locked=true;
+  const err=Math.abs(curError());
+  const L=LEVELS[level];
+  let stars=0, cls='miss', pts=0;
+  if(err<=L.tol3){ stars=3; cls='good'; pts=L.pts[0]; }
+  else if(err<=L.tol2){ stars=2; cls='good'; pts=L.pts[1]; }
+  else if(err<=L.tol1){ stars=1; cls='ok'; pts=L.pts[2]; }
+  if(stars>0){ score+=pts; streak+=1; if(streak>best)best=streak; }
+  else { streak=0; }
+  // reveal
+  document.getElementById('stars').textContent = stars>0 ? '⭐'.repeat(stars)+'☆'.repeat(3-stars) : '☆☆☆';
+  const v=document.getElementById('verdict'); v.className='verdict '+cls;
+  v.textContent = stars===3?'Perfectly in tune! 🎯' : stars===2?'In tune! Lovely ears 👂' : stars===1?'Close enough — nicely done' : 'Out of tune — listen again 🎧';
+  const dirWord = curError()>0 ? 'a touch high' : (curError()<0 ? 'a touch low' : 'spot on');
+  document.getElementById('detail').innerHTML = `You were <b>${err.toFixed(1)} cents</b> ${err<1?'off':'('+dirWord+')'} from the true Sa.`;
+  document.getElementById('lastV').textContent=err.toFixed(0);
+  document.getElementById('reveal').classList.add('show');
+  document.getElementById('scoreV').textContent=score;
+  document.getElementById('streakV').textContent=streak;
+  document.getElementById('bestV').textContent=best;
+  document.getElementById('lockBtn').disabled=true;
+  document.getElementById('tuneSlider').disabled=true;
+  document.querySelectorAll('.nudge').forEach(b=>b.disabled=true);
+  // snap the string to perfect so they hear "one sound" as a reward
+  sliderVal=-hiddenBias; updateUser();
+  document.getElementById('stage').classList.add('tuned');
+}
+
+/* ============ PLAY CONTROLS ============ */
+function setPlayBtn(on){ const b=document.getElementById('playBtn');
+  b.classList.toggle('on',on); b.textContent= on? '⏸ Stop' : '▶ Play both strings'; }
+function togglePlay(){
+  if(mode==='both' && voices){ mode='off'; stopVoices(); setPlayBtn(false); document.getElementById('stage').classList.remove('tuned'); return; }
+  mode='both'; getCtx(); startVoices(); updateUser(); applyMode(); setPlayBtn(true); startWobble();
+}
+function hearRef(){
+  getCtx();
+  if(!voices){ startVoices(); }
+  mode='ref'; applyMode(); setPlayBtn(false);
+  // briefly play just the true Sa, then leave it sounding
+  document.getElementById('wlabel').innerHTML='This is the <b>true Sa</b> — match the other string to it';
+}
+
+/* ============ WIRING ============ */
+function buildSruthi(){
+  const s=document.getElementById('sruthiSel');
+  NOTES.forEach(n=>{ const o=document.createElement('option'); o.value=n[1]; o.textContent=n[2];
+    if(Math.abs(n[1]-311.13)<0.1) o.selected=true; s.appendChild(o); });
+  s.onchange=()=>{ sruthiHz=parseFloat(s.value); if(voices){ const c=getCtx();
+    voices.ref.osc.frequency.setTargetAtTime(sruthiHz,c.currentTime,0.02);
+    voices.ref.sub.frequency.setTargetAtTime(sruthiHz/2,c.currentTime,0.02); updateUser(); } };
+}
+document.getElementById('tuneSlider').addEventListener('input',e=>{ sliderVal=parseInt(e.target.value); updateUser(); });
+document.querySelectorAll('.nudge').forEach(b=>{
+  b.addEventListener('click',()=>{ if(locked) return; sliderVal=Math.max(-70,Math.min(70,sliderVal+parseInt(b.dataset.n)));
+    document.getElementById('tuneSlider').value=sliderVal; updateUser(); });
+});
+document.getElementById('playBtn').addEventListener('click',togglePlay);
+document.getElementById('refBtn').addEventListener('click',()=>{ if(mode==='both'){ /* keep both */ } hearRef(); });
+document.getElementById('lockBtn').addEventListener('click',lockIn);
+document.getElementById('nextBtn').addEventListener('click',newRound);
+document.querySelectorAll('#diffSeg button').forEach(b=>{
+  b.addEventListener('click',()=>{ level=b.dataset.d; document.querySelectorAll('#diffSeg button').forEach(x=>x.classList.toggle('on',x===b)); newRound(); });
+});
+
+buildSruthi();
+/* set up the first round but don't auto-play until the child presses play */
+(function initFirst(){
+  const L=LEVELS[level]; const sign=Math.random()<0.5?-1:1;
+  hiddenBias=sign*(L.biasMin+Math.random()*(L.biasMax-L.biasMin)); sliderVal=0;
+  startWobble();
+})();
+</script>
+
+<script>
+function __lvt(id){var e=document.getElementById(id);return e?e.textContent.trim():"";}
+window.LVA_SHARE_CONFIG={
+  mountAfter:'.scoreboard', page:'sruthi-detective.html',
+  getData:function(){ var s=__lvt('scoreV'), b=__lvt('bestV');
+    return {lab:'Sruthi Detective', headline:'I tuned the sruthi by ear!',
+      lines:[{label:'Score',value:s},{label:'Best streak',value:b}], badge:'\u{1F3AF}', page:'sruthi-detective.html',
+      shareText:'I scored '+s+' tuning by ear on Sruthi Detective (best streak '+b+') at Lakshya\u2019s Violin Academy!'}; } };
+</script>
+<script>
+window.LVAShare=(function(){
+  var SITE='https://lakshyasviolinacademy.live/';
+  var modal=null, canvas=null, cur=null;
+  function build(){
+    if(modal) return;
+    modal=document.createElement('div'); modal.className='lva-modal';
+    modal.innerHTML='<div class="lva-modal-card"><h3>Share your result \u{1F389}</h3>'+
+      '<canvas id="lvaShareCanvas" width="1080" height="1080"></canvas>'+
+      '<div class="lva-share-actions">'+
+      '<button class="lva-b-share" data-a="share">\u{1F4F2} Share</button>'+
+      '<button class="lva-b-fb" data-a="fb">Facebook</button>'+
+      '<button class="lva-b-dl" data-a="dl">\u2B07 Save image</button>'+
+      '<button class="lva-b-close" data-a="close">Close</button></div>'+
+      '<div class="lva-modal-hint">On a phone, <b>Share</b> opens Instagram, Facebook, WhatsApp and more. On a computer, use <b>Save image</b> and upload it to Instagram, or <b>Facebook</b> to post the link.</div></div>';
+    document.body.appendChild(modal);
+    canvas=modal.querySelector('#lvaShareCanvas');
+    modal.addEventListener('click',function(e){ if(e.target===modal) hide(); });
+    modal.querySelectorAll('button').forEach(function(b){ b.addEventListener('click',function(){ act(b.getAttribute('data-a')); }); });
+  }
+  function sp(x,t,cx,y,ls){ var w=0,i; for(i=0;i<t.length;i++){ w+=x.measureText(t[i]).width+ls; } w-=ls;
+    var px=cx-w/2; for(i=0;i<t.length;i++){ x.fillText(t[i],px+x.measureText(t[i]).width/2,y); px+=x.measureText(t[i]).width+ls; } }
+  function wrap(x,t,cx,y,maxw,lh){ var ws=String(t).split(' '),line='',lines=[],i;
+    for(i=0;i<ws.length;i++){ var tt=line?line+' '+ws[i]:ws[i]; if(x.measureText(tt).width>maxw&&line){lines.push(line);line=ws[i];}else line=tt; }
+    if(line)lines.push(line); for(i=0;i<lines.length;i++) x.fillText(lines[i],cx,y+i*lh); return lines.length; }
+  function draw(cfg){
+    var x=canvas.getContext('2d'); if(!x) return; var W=1080,H=1080;
+    var g=x.createLinearGradient(0,0,0,H); g.addColorStop(0,'#5B54C9'); g.addColorStop(1,'#262059');
+    x.fillStyle=g; x.fillRect(0,0,W,H);
+    x.strokeStyle='#FFD166'; x.lineWidth=5; x.strokeRect(34,34,W-68,H-68);
+    x.strokeStyle='#D97706'; x.lineWidth=1.5; x.strokeRect(48,48,W-96,H-96);
+    x.textAlign='center'; x.textBaseline='alphabetic';
+    x.fillStyle='#FFB84C'; x.font='700 30px Georgia,serif'; sp(x,'LAKSHYA\u2019S VIOLIN ACADEMY',W/2,138,4);
+    x.fillStyle='#F5F8FF'; x.font='italic 700 40px Georgia,serif'; x.fillText(cfg.lab||'',W/2,208);
+    x.strokeStyle='#D97706'; x.lineWidth=2; x.beginPath(); x.moveTo(W/2-150,244); x.lineTo(W/2-20,244); x.moveTo(W/2+20,244); x.lineTo(W/2+150,244); x.stroke();
+    x.fillStyle='#FFD166'; x.beginPath(); x.moveTo(W/2,236); x.lineTo(W/2+11,244); x.lineTo(W/2,252); x.lineTo(W/2-11,244); x.closePath(); x.fill();
+    x.fillStyle='#FFD166'; x.font='700 50px Georgia,serif';
+    var n=wrap(x,cfg.headline||'My result',W/2,326,880,62);
+    var y=326+n*62+44;
+    (cfg.lines||[]).forEach(function(ln){
+      x.fillStyle='#E3E8FF'; x.font='400 36px Georgia,serif'; x.fillText(ln.label,W/2,y);
+      x.fillStyle='#FDFDFF'; x.font='700 82px Georgia,serif'; x.fillText(String(ln.value),W/2,y+84); y+=176;
+    });
+    if(cfg.badge){ x.font='110px Georgia,serif'; x.fillText(cfg.badge,W/2,Math.min(y+26,928)); }
+    x.fillStyle='#CDD5FF'; x.font='400 27px Georgia,serif'; x.fillText('Carnatic Violin for Young Learners \u00B7 Old Pallavaram, Chennai',W/2,986);
+    x.fillStyle='#FFD166'; x.font='700 32px Georgia,serif'; x.fillText('lakshyasviolinacademy.live',W/2,1030);
+  }
+  function open(cfg){ build(); cur=cfg||{}; draw(cur); modal.classList.add('show'); }
+  function hide(){ if(modal) modal.classList.remove('show'); }
+  function pageURL(){ return SITE+((cur&&cur.page)||''); }
+  function caption(){ return (cur&&cur.shareText? cur.shareText:'Learning Carnatic violin at Lakshya\u2019s Violin Academy!')+' '+pageURL(); }
+  function act(a){
+    if(a==='close') return hide();
+    if(a==='dl'){ var l=document.createElement('a'); l.download='my-result-lakshyas-violin-academy.png'; l.href=canvas.toDataURL('image/png'); l.click(); return; }
+    if(a==='fb'){ window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(pageURL()),'_blank','noopener,noreferrer,width=660,height=540'); return; }
+    if(a==='share'){
+      if(!canvas.toBlob){ act('dl'); return; }
+      canvas.toBlob(function(blob){
+        var file=new File([blob],'lakshyas-violin-academy-result.png',{type:'image/png'});
+        var data={title:'Lakshya\u2019s Violin Academy',text:caption()};
+        try{ if(navigator.canShare&&navigator.canShare({files:[file]})) data.files=[file]; }catch(e){}
+        if(navigator.share){ navigator.share(data).catch(function(){}); }
+        else { var l=document.createElement('a'); l.download='lakshyas-violin-academy-result.png'; l.href=canvas.toDataURL('image/png'); l.click();
+          window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(pageURL()),'_blank','noopener,noreferrer'); }
+      },'image/png');
+    }
+  }
+  var __mounted=false;
+  function mount(cfg){ if(__mounted) return; var host=document.querySelector(cfg.mountAfter); if(!host) return; __mounted=true;
+    var row=document.createElement('div'); row.className='lva-share-row';
+    var b=document.createElement('button'); b.type='button'; b.className='lva-share-btn'; b.innerHTML='\u{1F4E3} Share my result';
+    b.addEventListener('click',function(){ open(cfg.getData()); });
+    row.appendChild(b); host.parentNode.insertBefore(row,host.nextSibling); }
+  function __lvready(fn){ if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',fn); else fn(); }
+  __lvready(function(){ if(window.LVA_SHARE_CONFIG) mount(window.LVA_SHARE_CONFIG); });
+  return {open:open,hide:hide,mount:mount};
+})();
+</script>
+
+<!-- ═══ LVA uniform footer (shared across all pages) ═══ -->
+<div class="lva-footer">
+  <div class="lva-footer-notes" aria-hidden="true">♪&hairsp;♫&hairsp;𝄞&hairsp;♩&hairsp;♬</div>
+  <div class="lva-footer-brand">🎻 Lakshya's Violin Academy</div>
+  <p class="lva-footer-tag">Carnatic violin for young learners — where every note finds its voice ♩</p>
+  <p class="lva-footer-loc">Old Pallavaram, Chennai</p>
+  <div class="lva-footer-links">
+    <a href="https://wa.me/919003030454">💬 WhatsApp +91 90030 30454</a>
+    <a href="mailto:j.ajaychandran@gmail.com">✉️ j.ajaychandran@gmail.com</a>
+    <a href="index.html#contact">🎟️ Book a Free Trial</a>
+  </div>
+  <div class="lva-footer-quick">
+    <a href="index.html">Home</a><a href="index.html#about">About</a><a href="index.html#courses">Courses</a><a href="games.html">Games &amp; Labs</a><a href="blog-sound-vibration-carnatic.html">Blog</a><a href="index.html#contact">Enroll</a>
+  </div>
+  <p class="lva-footer-copy">© 2026 Lakshya's Violin Academy · Made with ♥ and music 🎶</p>
+</div>
+
+<!-- Analytics: GoatCounter (privacy-friendly) -->
+<script data-goatcounter="https://lakshyasviolinacademy.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

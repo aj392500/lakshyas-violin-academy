@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Shruti Box — Lakshya's Violin Academy</title>
+<meta name="description" content="Free online shruti box: pick your Sa, start the drone, and practise Carnatic violin in perfect sruthi anywhere.">
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Lakshya&#39;s Violin Academy" />
+<meta property="og:title" content="The Shruti Box — Lakshya&#x27;s Violin Academy" />
+<meta property="og:description" content="Interactive Carnatic violin lessons, games and labs for young learners at Lakshya&#39;s Violin Academy, Old Pallavaram, Chennai." />
+<meta property="og:url" content="https://lakshyasviolinacademy.live/shruti-box.html" />
+<meta property="og:image" content="https://lakshyasviolinacademy.live/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="The Shruti Box — Lakshya&#x27;s Violin Academy" />
+<meta name="twitter:description" content="Interactive Carnatic violin lessons, games and labs for young learners at Lakshya&#39;s Violin Academy, Old Pallavaram, Chennai." />
+<meta name="twitter:image" content="https://lakshyasviolinacademy.live/og-image.png" />
+<meta name="theme-color" content="#5B54C9" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800;900&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --maroon:#5B54C9; --maroon-deep:#443CA8;
+    --saffron:#FF9A62; --saffron-bright:#FFB84C;
+    --gold:#FFC94D; --gold-soft:#FFE08F;
+    --cream:#F5F8FF; --cream-deep:#E7EEFC;
+    --ink:#2E3350; --ink-soft:#4D5378;
+    --peacock:#0E9488; --peacock-soft:#14B0A0;
+    --shadow:rgba(68,60,168,.18);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;font-family:'Nunito',sans-serif;color:var(--ink);
+    background:
+      radial-gradient(circle at 12% 8%, #FBFCFF 0%, transparent 40%),
+      radial-gradient(circle at 90% 4%, #EAF1FE 0%, transparent 36%),
+      var(--cream);
+    line-height:1.6;overflow-x:hidden;
+  }
+  h1,h2,h3{font-family:'Playfair Display',serif;line-height:1.1;margin:0;}
+
+  /* ===== site ribbon ===== */
+  .lva-ribbon{background:linear-gradient(120deg,var(--maroon-deep),var(--maroon));color:var(--cream);
+    padding:9px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;}
+  .lva-brand{font-family:'Playfair Display',serif;font-weight:800;color:var(--gold-soft);text-decoration:none;font-size:.96rem;}
+  .lva-links{display:flex;gap:4px;flex-wrap:wrap;}
+  .lva-links a{color:#f3dcc0;text-decoration:none;font-weight:700;font-size:.78rem;padding:4px 9px;border-radius:20px;transition:background .15s;}
+  .lva-links a:hover{background:rgba(255,255,255,.14);}
+  .lva-links a.cur{background:var(--gold);color:var(--maroon-deep);}
+
+  .hero{position:relative;padding:46px 22px 30px;text-align:center;overflow:hidden;}
+  .hero .eyebrow{display:inline-block;background:var(--cream-deep);color:var(--maroon);
+    border:2px solid var(--gold);padding:5px 16px;border-radius:30px;font-weight:800;
+    font-size:.76rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;}
+  .hero h1{font-size:clamp(2rem,7vw,3.7rem);font-weight:900;color:var(--maroon);margin:0 auto;max-width:16ch;}
+  .hero h1 .glow{color:var(--saffron);}
+  .hero .tamil{font-family:'Noto Serif',serif;font-size:1.05rem;color:var(--peacock);font-weight:700;margin:8px 0 0;}
+  .hero p.sub{max-width:42ch;margin:14px auto 0;font-size:clamp(1rem,2.5vw,1.18rem);font-weight:600;color:var(--ink-soft);}
+
+  section.lesson{max-width:760px;margin:0 auto;padding:14px 18px;}
+  .card{background:#FFFFFF;border:2px solid var(--cream-deep);border-radius:24px;
+    padding:22px 20px 26px;margin:18px 0;box-shadow:0 14px 30px -18px var(--shadow);}
+  .step-no{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:13px;
+    background:linear-gradient(135deg,var(--saffron),var(--gold));color:#fff;font-family:'Playfair Display',serif;
+    font-weight:800;font-size:1.2rem;box-shadow:0 6px 14px -6px var(--saffron);margin-bottom:12px;}
+  .card h2{font-size:clamp(1.4rem,4.4vw,2rem);color:var(--maroon);margin-bottom:6px;}
+  .card p{font-size:1.02rem;color:var(--ink);}
+  .lead{font-weight:700;}
+
+  button{font-family:'Nunito',sans-serif;cursor:pointer;border:none;}
+  .btn{background:linear-gradient(135deg,var(--saffron),var(--saffron-bright));color:#fff;font-weight:800;font-size:1rem;
+    padding:12px 22px;border-radius:30px;box-shadow:0 8px 18px -8px var(--saffron);
+    transition:transform .12s ease;display:inline-flex;align-items:center;gap:9px;}
+  .btn:hover{transform:translateY(-2px);}
+  .btn:active{transform:translateY(1px) scale(.98);}
+  .btn.green{background:linear-gradient(135deg,var(--peacock),var(--peacock-soft));box-shadow:0 8px 18px -8px var(--peacock);}
+  .btn.ghost{background:#fff;color:var(--maroon);border:2px solid var(--gold);box-shadow:none;}
+
+  /* sruthi readout + slider */
+  .sruthi-box{background:linear-gradient(135deg,#fff,#EEF4FF);border:2px solid var(--cream-deep);border-radius:18px;padding:18px;margin:6px 0 4px;text-align:center;}
+  .sruthi-readout{font-family:'Playfair Display';font-weight:900;font-size:clamp(2rem,8vw,3rem);color:var(--maroon);line-height:1;}
+  .sruthi-readout small{font-size:.36em;color:var(--saffron);font-family:'Nunito';font-weight:800;}
+  .sruthi-sub{font-weight:700;color:var(--ink-soft);font-size:.9rem;margin-top:4px;}
+  .slider-wrap{display:flex;align-items:center;gap:12px;margin:18px 4px 4px;flex-wrap:wrap;}
+  .slider-wrap span{font-weight:800;color:var(--ink-soft);font-size:.86rem;white-space:nowrap;}
+  input[type=range]{-webkit-appearance:none;appearance:none;flex:1;min-width:160px;height:12px;border-radius:10px;
+    background:linear-gradient(90deg,var(--peacock),var(--gold),var(--saffron));outline:none;}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:30px;height:30px;border-radius:50%;
+    background:#fff;border:4px solid var(--maroon);cursor:pointer;box-shadow:0 3px 8px rgba(0,0,0,.2);}
+  input[type=range]::-moz-range-thumb{width:26px;height:26px;border-radius:50%;background:#fff;border:4px solid var(--maroon);cursor:pointer;}
+
+  .presets{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:16px;}
+  .preset{background:#fff;border:2px solid var(--gold);color:var(--maroon);font-weight:800;padding:7px 13px;border-radius:18px;font-size:.86rem;line-height:1.15;text-align:center;}
+  .preset b{display:block;font-size:.72rem;color:var(--ink-soft);font-weight:700;}
+  .preset.lit{background:var(--maroon);color:#fff;border-color:var(--maroon);}
+  .preset.lit b{color:var(--gold-soft);}
+
+  .drone-btn{margin:18px auto 0;font-size:1.1rem;padding:14px 26px;}
+  .drone-btn.on{background:linear-gradient(135deg,var(--peacock),var(--peacock-soft));box-shadow:0 8px 18px -8px var(--peacock);animation:pulse 1.8s infinite;}
+  @keyframes pulse{0%,100%{box-shadow:0 8px 18px -8px var(--peacock);}50%{box-shadow:0 8px 30px -4px var(--peacock-soft);}}
+
+  .note-tip{background:var(--cream-deep);border-radius:14px;padding:12px 15px;margin-top:16px;
+    font-weight:700;color:var(--ink-soft);font-size:.93rem;display:flex;gap:10px;align-items:flex-start;text-align:left;}
+  .note-tip .ic{font-size:1.25rem;flex-shrink:0;}
+
+  /* strings */
+  .strings{display:grid;gap:10px;margin-top:6px;}
+  .string-btn{display:flex;align-items:center;gap:14px;background:#FFFFFF;border:2px solid var(--cream-deep);
+    border-radius:16px;padding:13px 16px;text-align:left;transition:all .12s;}
+  .string-btn:hover{border-color:var(--gold);}
+  .string-btn.playing{border-color:var(--peacock);background:linear-gradient(135deg,#eafaf5,#d8f3eb);}
+  .string-btn .sno{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--maroon),var(--maroon-deep));
+    color:var(--gold-soft);font-family:'Playfair Display';font-weight:800;display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
+  .string-btn .smeta{flex:1;}
+  .string-btn .stitle{font-weight:800;color:var(--maroon);font-size:1rem;}
+  .string-btn .ssub{font-weight:700;color:var(--ink-soft);font-size:.82rem;}
+  .string-btn .shz{font-weight:800;color:var(--saffron);font-size:1.05rem;font-family:'Playfair Display';white-space:nowrap;}
+  .string-btn .play-ic{font-size:1.4rem;color:var(--peacock);}
+
+  /* mic tuner */
+  .tuner{display:none;margin-top:16px;background:linear-gradient(180deg,#fff,#EEF4FF);border:2px solid var(--cream-deep);border-radius:18px;padding:18px;text-align:center;}
+  .tuner.intune{border-color:var(--peacock);box-shadow:0 0 0 3px rgba(14,148,136,.12) inset;}
+  .tuner .t-sym{font-family:'Playfair Display';font-weight:900;font-size:2.4rem;color:var(--maroon);line-height:1;}
+  .tuner .t-name{font-weight:800;color:var(--ink-soft);margin-top:2px;}
+  .tuner .t-hz{color:var(--saffron);font-weight:800;font-size:.9rem;}
+  .tuner .t-bar{position:relative;height:14px;background:var(--cream-deep);border-radius:10px;margin:14px 6px 6px;}
+  .tuner .t-mid{position:absolute;left:50%;top:-5px;bottom:-5px;width:3px;background:var(--peacock);transform:translateX(-50%);border-radius:2px;}
+  .tuner .t-needle{position:absolute;top:-4px;width:18px;height:22px;border-radius:6px;background:var(--maroon);left:50%;transform:translateX(-50%);transition:left .08s;}
+  .tuner .t-status{font-weight:800;margin-top:10px;color:var(--ink-soft);}
+  .tuner .t-status.good{color:var(--peacock);}
+  .micmsg{display:none;background:#fde2dc;border:2px solid var(--saffron);color:#C23A2E;border-radius:12px;padding:12px 15px;font-weight:700;font-size:.9rem;margin-top:14px;text-align:left;}
+
+  /* swara pad */
+  .pad-toggle{display:flex;gap:8px;justify-content:center;margin-bottom:14px;flex-wrap:wrap;}
+  .pad-toggle button{background:#fff;border:2px solid var(--gold);color:var(--maroon);font-weight:800;padding:7px 15px;border-radius:20px;font-size:.86rem;}
+  .pad-toggle button.on{background:var(--maroon);color:#fff;border-color:var(--maroon);}
+  .pad{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;}
+  @media(max-width:430px){.pad{grid-template-columns:repeat(3,1fr);}}
+  .swara{border:none;border-radius:16px;background:linear-gradient(180deg,var(--gold-soft),var(--gold));color:var(--maroon-deep);
+    padding:14px 6px;display:flex;flex-direction:column;align-items:center;gap:2px;transition:transform .1s,filter .1s;box-shadow:0 6px 12px -8px var(--shadow);}
+  .swara:hover{filter:brightness(1.06);transform:translateY(-2px);}
+  .swara:active,.swara.lit{transform:translateY(1px);background:linear-gradient(180deg,var(--saffron-bright),var(--saffron));color:#fff;}
+  .swara.fixed{background:linear-gradient(180deg,#7fd8c8,var(--peacock-soft));color:#fff;}
+  .swara .sym{font-family:'Playfair Display';font-weight:900;font-size:1.45rem;line-height:1;}
+  .swara .nm{font-weight:800;font-size:.74rem;}
+  .swara .shz{font-weight:700;font-size:.64rem;opacity:.85;}
+  .pad-full .swara{border-radius:13px;padding:11px 4px;}
+  .pad-full .swara .sym{font-size:1.2rem;}
+
+  footer{border-top:3px solid var(--saffron);background:#1E1A47;text-align:center;padding:2rem 1.2rem;color:#707795;font-size:.82rem;line-height:1.8;margin-top:30px;}
+  footer .name{font-family:'Playfair Display',serif;color:var(--gold);font-weight:800;font-size:1rem;}
+  footer a{color:var(--saffron-bright);text-decoration:none;}
+</style>
+<style id="lva-mobnav">
+  .lva-toggle{display:none;background:transparent;border:none;cursor:pointer;padding:8px 2px;flex-direction:column;gap:5px;margin-left:auto;}
+  .lva-toggle span{display:block;width:26px;height:3px;border-radius:2px;background:#FFD166;transition:transform .25s ease,opacity .2s ease;}
+  .lva-toggle.open span:nth-child(1){transform:translateY(8px) rotate(45deg);}
+  .lva-toggle.open span:nth-child(2){opacity:0;}
+  .lva-toggle.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
+  @media(max-width:760px){
+    .lva-ribbon{flex-wrap:nowrap;align-items:center;}
+    .lva-toggle{display:flex;}
+    .lva-ribbon .lva-links{display:none !important;order:5;flex-basis:100%;width:100%;flex-direction:column;align-items:stretch;
+      max-height:min(68vh,440px);overflow-y:auto;-webkit-overflow-scrolling:touch;
+      border-top:1px solid rgba(255,209,102,0.25);margin-top:4px;padding:4px 0 8px;
+      scrollbar-width:thin;scrollbar-color:#D97706 rgba(255,255,255,0.12);}
+    .lva-ribbon.open .lva-links{display:flex !important;}
+    .lva-ribbon .lva-links::-webkit-scrollbar{width:8px;}
+    .lva-ribbon .lva-links::-webkit-scrollbar-thumb{background:#D97706;border-radius:8px;}
+    .lva-ribbon .lva-links a{padding:0.72rem 0.7rem !important;font-size:0.94rem !important;letter-spacing:0.03em !important;
+      border-bottom:1px solid rgba(255,209,102,0.12);white-space:normal !important;}
+    .lva-ribbon .lva-links a.cur{background:rgba(255,209,102,0.12);}
+  }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="site.css">
+<script src="site.js" defer></script>
+<link rel="canonical" href="https://lakshyasviolinacademy.live/shruti-box.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+</head>
+<body>
+
+<!-- ═══ LVA uniform navigation (shared across all pages) ═══ -->
+<div class="lva-nav" id="lvaNav">
+  <div class="lva-nav-inner">
+    <a class="lva-brand" href="index.html">🎻&ensp;Lakshya's Violin Academy</a>
+    <button class="lva-burger" aria-label="Open menu" aria-expanded="false" aria-controls="lvaMenu"><span></span><span></span><span></span></button>
+    <div class="lva-menu" id="lvaMenu">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#courses">Courses</a>
+      <div class="lva-drop">
+        <button class="lva-drop-btn" aria-expanded="false">Learn</button>
+        <div class="lva-drop-panel">
+          <span class="lva-drop-label">🎼 Carnatic Foundations</span>
+          <a href="index.html#carnatic">📖&ensp;Introduction to Carnatic Music</a>
+          <a href="index.html#strings">🎻&ensp;The Violin &amp; Its Strings</a>
+          <a href="index.html#sapa">🎵&ensp;Sa–Pa–Sa–Pa–Sa</a>
+          <a href="index.html#varisai">🎶&ensp;The Five Varisais</a>
+        </div>
+      </div>
+      <div class="lva-drop">
+        <button class="lva-drop-btn" aria-expanded="false">Games &amp; Labs</button>
+        <div class="lva-drop-panel">
+          <span class="lva-drop-label">🎮 Interactive Music Games</span>
+          <a href="games.html"><b>🗺️&ensp;All Games at a Glance</b></a>
+      <a href="varisai-lab.html">🎻&ensp;Varisai Lab — all five varisais</a>
+      <a href="raga-jukebox.html">📻&ensp;Raga Jukebox — hear every raga</a>
+      <a href="frequency-and-swaras.html">🔊&ensp;Frequency &amp; Swaras Lab</a>
+      <a href="thala-basics.html">🥁&ensp;Thala — Rhythm Player</a>
+      <a href="melakarta-explorer.html">🎼&ensp;72 Melakarta Explorer</a>
+      <a href="gamaka-explorer.html">🌊&ensp;Gamaka Explorer</a>
+      <a href="shruti-box.html">🎚️&ensp;Shruti Box — tune &amp; drone</a>
+      <a href="swara-guessing-game.html">🎧&ensp;Swara Guessing Game</a>
+      <a href="raga-mood-matcher.html">🎭&ensp;Raga Mood Matcher</a>
+      <a href="build-a-raga-lab.html">🛠️&ensp;Build-a-Raga Lab</a>
+      <a href="compose-a-geetham.html">✍️&ensp;Compose-a-Geetham</a>
+      <a href="sruthi-detective.html">🕵️&ensp;Sruthi Detective</a>
+        </div>
+      </div>
+      <div class="lva-drop">
+        <button class="lva-drop-btn" aria-expanded="false">Blog</button>
+        <div class="lva-drop-panel">
+          <span class="lva-drop-label">📚 Beginner's Corner</span>
+          <a href="blog-sound-vibration-carnatic.html">🎵&ensp;Sound, Vibration &amp; Carnatic Music</a>
+          <a href="blog-carnatic-music-and-kids-brain.html">🧠&ensp;Carnatic Music &amp; Your Child's Brain</a>
+        </div>
+      </div>
+      <a class="lva-cta" href="index.html#contact">🎻 Enroll Now</a>
+    </div>
+  </div>
+</div>
+
+
+
+
+<header class="hero">
+  <span class="eyebrow">Set your Sa · Tune · Play</span>
+  <h1>The <span class="glow">Shruti Box</span></h1>
+  <div class="tamil">ஶ்ருதி பெட்டி — உங்கள் வயலினை சுருதி சேருங்கள்</div>
+  <p class="sub">Turn on the tambura drone, tune your violin to it, and play every swara — all from one quiet, steady home note.</p>
+</header>
+
+<!-- 1. SET SA -->
+<section class="lesson">
+  <div class="card">
+    <span class="step-no">1</span>
+    <h2>Choose your Sa (shruti)</h2>
+    <p class="lead">First, pick the pitch your <b>Sa</b> will sit at. Slide it, or tap a common shruti. This is the home note everything else is tuned to.</p>
+
+    <div class="sruthi-box">
+      <div class="sruthi-readout" id="sruthiReadout">240<small> Hz</small></div>
+      <div class="sruthi-sub" id="sruthiNote">around B below middle C</div>
+      <div class="slider-wrap">
+        <span>lower</span>
+        <input type="range" id="sruthiSlider" min="170" max="320" step="1" value="240" />
+        <span>higher</span>
+      </div>
+      <div class="presets" id="presets"></div>
+      <button class="btn drone-btn" id="droneBtn">🎻 Turn on the tambura drone</button>
+    </div>
+
+    <div class="note-tip">
+      <span class="ic">💡</span>
+      <span>The drone holds <b>Sa – Pa – Sa</b> together, just like a real tambura. Leave it playing softly in the background for your whole practice — your ear slowly learns to rest on Sa.</span>
+    </div>
+  </div>
+
+  <!-- 2. TUNE STRINGS -->
+  <div class="card">
+    <span class="step-no">2</span>
+    <h2>Tune your violin strings</h2>
+    <p class="lead">A Carnatic violin is tuned <b>Sa&nbsp;–&nbsp;Pa&nbsp;–&nbsp;Sa&nbsp;–&nbsp;Pa</b> from the thickest string to the thinnest. Tap a string to hear its reference tone, then turn the peg until your string matches.</p>
+
+    <div class="strings" id="strings"></div>
+
+    <button class="btn green" id="micBtn" style="margin-top:16px;">🎤 Check a string with the mic</button>
+    <div class="micmsg" id="micMsg"></div>
+
+    <div class="tuner" id="tuner">
+      <div class="t-sym" id="tSym">–</div>
+      <div class="t-name" id="tName">Bow one long, steady note…</div>
+      <div class="t-hz" id="tHz"></div>
+      <div class="t-bar"><div class="t-mid"></div><div class="t-needle" id="tNeedle"></div></div>
+      <div class="t-status" id="tStatus"></div>
+    </div>
+
+    <div class="note-tip">
+      <span class="ic">🎯</span>
+      <span>The mic check works best on the live academy website (it needs a secure https page). Bow <b>one</b> string slowly and steadily — the needle shows whether you are a little low (↓) or high (↑).</span>
+    </div>
+  </div>
+
+  <!-- 3. PLAY SWARAS -->
+  <div class="card">
+    <span class="step-no">3</span>
+    <h2>Play the swaras</h2>
+    <p class="lead">With your Sa set, tap any swara to hear it on the violin voice — a perfect pitch to copy on your own instrument.</p>
+
+    <div class="pad-toggle">
+      <button id="padBasic" class="on">The 7 swaras</button>
+      <button id="padFull">All 16 swarasthanams</button>
+    </div>
+    <div class="pad" id="pad"></div>
+
+    <div class="note-tip">
+      <span class="ic">🎶</span>
+      <span>Try it with the drone on: play <b>Sa</b>, then <b>Pa</b>, then <b>Sa</b> again, and hear how each swara settles against the home note.</span>
+    </div>
+  </div>
+</section>
+
+
+
+<script>
+/* ============ AUDIO ENGINE (all violin) — shared with Frequency Lab ============ */
+let ctx = null;
+function getCtx(){
+  if(!ctx){ ctx = new (window.AudioContext || window.webkitAudioContext)(); }
+  if(ctx.state === 'suspended'){ ctx.resume(); }
+  return ctx;
+}
+let violinWave = null;
+function getViolinWave(){
+  if(violinWave) return violinWave;
+  const c = getCtx();
+  const amps = [0, 1, 0.86, 0.66, 0.55, 0.46, 0.38, 0.31, 0.26, 0.21, 0.17, 0.14, 0.11, 0.09, 0.07, 0.055, 0.04];
+  const real = new Float32Array(amps.length);
+  const imag = new Float32Array(amps.length);
+  for(let i=0;i<amps.length;i++){ imag[i] = amps[i]; }
+  violinWave = c.createPeriodicWave(real, imag, {disableNormalization:false});
+  return violinWave;
+}
+function bowNoise(t, freq, amp){
+  const c = getCtx();
+  const dur = 0.14;
+  const src = c.createBufferSource();
+  const buf = c.createBuffer(1, Math.floor(c.sampleRate*dur), c.sampleRate);
+  const d = buf.getChannelData(0);
+  for(let i=0;i<d.length;i++) d[i] = Math.random()*2-1;
+  src.buffer = buf;
+  const bp = c.createBiquadFilter(); bp.type='bandpass';
+  bp.frequency.value = Math.min(4500, freq*4); bp.Q.value = 0.8;
+  const g = c.createGain();
+  g.gain.setValueAtTime(amp, t);
+  g.gain.exponentialRampToValueAtTime(0.0005, t+dur);
+  src.connect(bp).connect(g).connect(c.destination);
+  src.start(t); src.stop(t+dur);
+}
+function makeBody(c){
+  const f1=c.createBiquadFilter(); f1.type='peaking'; f1.frequency.value=300;  f1.Q.value=1.1; f1.gain.value=7;
+  const f2=c.createBiquadFilter(); f2.type='peaking'; f2.frequency.value=460;  f2.Q.value=1.3; f2.gain.value=6;
+  const f3=c.createBiquadFilter(); f3.type='peaking'; f3.frequency.value=2600; f3.Q.value=0.9; f3.gain.value=6;
+  const lp=c.createBiquadFilter(); lp.type='lowpass'; lp.frequency.value=7000;
+  f1.connect(f2); f2.connect(f3); f3.connect(lp);
+  return {input:f1, output:lp};
+}
+function playNote(freq, dur=1.0, when=null, level=1){
+  const c = getCtx();
+  const t = when==null ? c.currentTime : when;
+  const osc = c.createOscillator();
+  osc.setPeriodicWave(getViolinWave());
+  osc.frequency.value = freq;
+  const vib = c.createOscillator(); vib.frequency.value = 5.6;
+  const vibGain = c.createGain();
+  vibGain.gain.setValueAtTime(0, t);
+  vibGain.gain.linearRampToValueAtTime(freq*0.006, t+0.28);
+  vib.connect(vibGain).connect(osc.frequency);
+  const body = makeBody(c);
+  const g = c.createGain();
+  const peak = 0.26*level;
+  g.gain.setValueAtTime(0, t);
+  g.gain.linearRampToValueAtTime(peak, t+0.09);
+  g.gain.linearRampToValueAtTime(peak*0.82, t+Math.min(0.32,dur*0.45));
+  g.gain.setValueAtTime(peak*0.82, t+Math.max(0.0,dur-0.16));
+  g.gain.exponentialRampToValueAtTime(0.0008, t+dur);
+  osc.connect(body.input); body.output.connect(g); g.connect(c.destination);
+  osc.start(t); vib.start(t);
+  osc.stop(t+dur+0.05); vib.stop(t+dur+0.05);
+  bowNoise(t, freq, peak*0.18);
+}
+
+/* ============ SUSTAINED REFERENCE TONE (for string tuning) ============ */
+let holdTone=null;
+function startHold(freq){
+  stopHold();
+  const c=getCtx();
+  const osc=c.createOscillator(); osc.setPeriodicWave(getViolinWave()); osc.frequency.value=freq;
+  const vib=c.createOscillator(); vib.frequency.value=5.2;
+  const vg=c.createGain(); vg.gain.setValueAtTime(0,c.currentTime); vg.gain.linearRampToValueAtTime(freq*0.005,c.currentTime+0.3);
+  vib.connect(vg).connect(osc.frequency);
+  const body=makeBody(c);
+  const g=c.createGain(); g.gain.setValueAtTime(0,c.currentTime); g.gain.linearRampToValueAtTime(0.2,c.currentTime+0.07);
+  osc.connect(body.input); body.output.connect(g); g.connect(c.destination);
+  osc.start(); vib.start();
+  bowNoise(c.currentTime, freq, 0.05);
+  holdTone={osc,vib,g};
+}
+function stopHold(){
+  if(!holdTone) return;
+  const c=getCtx(); const t=c.currentTime; const h=holdTone; holdTone=null;
+  h.g.gain.cancelScheduledValues(t); h.g.gain.setValueAtTime(h.g.gain.value,t);
+  h.g.gain.linearRampToValueAtTime(0,t+0.1);
+  try{h.osc.stop(t+0.14); h.vib.stop(t+0.14);}catch(e){}
+}
+
+/* ============ DATA ============ */
+let sruthiHz = 240;
+const round = x => Math.round(x);
+
+/* common shruti presets (Carnatic "kattai" labels + western note) */
+const PRESETS = [
+  {hz:190, k:'1 kattai',  n:'G'},
+  {hz:200, k:'1½ kattai', n:'G♯'},
+  {hz:213, k:'2 kattai',  n:'A'},
+  {hz:226, k:'2½ kattai', n:'A♯'},
+  {hz:240, k:'3 kattai',  n:'B'},
+  {hz:254, k:'3½ kattai', n:'C'},
+  {hz:269, k:'4 kattai',  n:'C♯'},
+  {hz:285, k:'4½ kattai', n:'D'},
+  {hz:302, k:'5 kattai',  n:'D♯'},
+];
+/* nearest note name for the readout */
+const NOTE_NAMES=['C','C♯','D','D♯','E','F','F♯','G','G♯','A','A♯','B'];
+function noteFor(f){
+  const n=Math.round(12*Math.log2(f/261.63)); // semitones from middle C
+  const name=NOTE_NAMES[((n%12)+12)%12];
+  const where = n<0 ? 'below middle C' : (n<12 ? 'near middle C' : 'above middle C');
+  return 'around '+name+' '+where;
+}
+
+/* the four violin strings, lowest (thickest) to highest, tuned Sa–Pa–Sa–Pa */
+const STRINGS = [
+  {no:'IV', name:'4th string — lowest Sa', sub:'thickest string · Mandara Sa', r:0.5},
+  {no:'III',name:'3rd string — lowest Pa', sub:'Mandara Pa',                    r:0.75},
+  {no:'II', name:'2nd string — middle Sa', sub:'Madhya Sa · your home note',    r:1},
+  {no:'I',  name:'1st string — middle Pa', sub:'thinnest string · Madhya Pa',   r:1.5},
+];
+
+/* the 7 swaras (Shankarabharanam, just intonation) */
+const SWARAS = [
+  {sym:'S', name:'Sa', r:1,    fixed:true},
+  {sym:'R', name:'Ri', r:9/8},
+  {sym:'G', name:'Ga', r:5/4},
+  {sym:'M', name:'Ma', r:4/3},
+  {sym:'P', name:'Pa', r:3/2,  fixed:true},
+  {sym:'D', name:'Da', r:5/3},
+  {sym:'N', name:'Ni', r:15/8},
+  {sym:'Ṡ', name:'Sa', r:2,    fixed:true},
+];
+/* all 16 swarasthanams */
+const FULL = [
+  {sym:'S',  name:'Shadjam',            r:1,     fixed:true},
+  {sym:'R1', name:'Shuddha Ri',         r:16/15},
+  {sym:'R2', name:'Chatushruti Ri',     r:9/8},
+  {sym:'R3', name:'Shatshruti Ri',      r:6/5},
+  {sym:'G1', name:'Shuddha Ga',         r:9/8},
+  {sym:'G2', name:'Sādhāraṇa Ga',       r:6/5},
+  {sym:'G3', name:'Antara Ga',          r:5/4},
+  {sym:'M1', name:'Shuddha Ma',         r:4/3},
+  {sym:'M2', name:'Prati Ma',           r:45/32},
+  {sym:'P',  name:'Panchamam',          r:3/2,   fixed:true},
+  {sym:'D1', name:'Shuddha Da',         r:8/5},
+  {sym:'D2', name:'Chatushruti Da',     r:5/3},
+  {sym:'D3', name:'Shatshruti Da',      r:9/5},
+  {sym:'N1', name:'Shuddha Ni',         r:5/3},
+  {sym:'N2', name:'Kaishiki Ni',        r:9/5},
+  {sym:'N3', name:'Kākali Ni',          r:15/8},
+  {sym:'Ṡ',  name:'Shadjam (high)',     r:2,     fixed:true},
+];
+
+/* seats for the mic tuner */
+const SEATS = [
+  {r:1,name:'Sa'},{r:16/15,name:'Ri₁'},{r:9/8,name:'Ri₂ / Ga₁'},{r:6/5,name:'Ri₃ / Ga₂'},
+  {r:5/4,name:'Ga₃'},{r:4/3,name:'Ma₁'},{r:45/32,name:'Ma₂'},{r:3/2,name:'Pa'},
+  {r:8/5,name:'Da₁'},{r:5/3,name:'Da₂ / Ni₁'},{r:9/5,name:'Da₃ / Ni₂'},{r:15/8,name:'Ni₃'},{r:2,name:'Sa'},
+];
+
+/* ============ SRUTHI CONTROL ============ */
+const sruthiSlider=document.getElementById('sruthiSlider');
+const sruthiReadout=document.getElementById('sruthiReadout');
+const sruthiNote=document.getElementById('sruthiNote');
+const presetsEl=document.getElementById('presets');
+
+PRESETS.forEach(p=>{
+  const b=document.createElement('button');
+  b.className='preset'; b.dataset.hz=p.hz;
+  b.innerHTML=`${p.hz} Hz<b>${p.k} · ${p.n}</b>`;
+  b.addEventListener('click',()=>{ sruthiHz=p.hz; sruthiSlider.value=p.hz; refreshAll(); updateDrone(); markPreset(); playNote(sruthiHz,1.0); });
+  presetsEl.appendChild(b);
+});
+function markPreset(){
+  presetsEl.querySelectorAll('.preset').forEach(b=>b.classList.toggle('lit', +b.dataset.hz===sruthiHz));
+}
+sruthiSlider.addEventListener('input',()=>{ sruthiHz=+sruthiSlider.value; refreshAll(); updateDrone(); markPreset(); });
+
+function refreshAll(){
+  sruthiReadout.innerHTML=sruthiHz+'<small> Hz</small>';
+  sruthiNote.textContent=noteFor(sruthiHz);
+  buildStrings();
+  buildPad();
+}
+
+/* ============ TAMBURA DRONE ============ */
+let drone=null;
+function startDrone(){
+  if(drone) return;
+  const c=getCtx();
+  const out=c.createGain(); out.gain.value=0;
+  const body=makeBody(c); body.output.connect(out); out.connect(c.destination);
+  const freqs=[sruthiHz, sruthiHz*1.5, sruthiHz*2];
+  const oscs=freqs.map((f,k)=>{
+    const o=c.createOscillator(); o.setPeriodicWave(getViolinWave()); o.frequency.value=f;
+    const g=c.createGain(); g.gain.value=k===0?0.09:0.05;
+    o.connect(g).connect(body.input); o.start(); return o;
+  });
+  out.gain.linearRampToValueAtTime(0.5, c.currentTime+0.6);
+  drone={out,oscs};
+}
+function stopDrone(){
+  if(!drone) return;
+  const c=getCtx(); const d=drone; drone=null;
+  d.out.gain.linearRampToValueAtTime(0, c.currentTime+0.3);
+  setTimeout(()=>d.oscs.forEach(o=>{try{o.stop()}catch(e){}}), 400);
+}
+function updateDrone(){
+  if(!drone) return;
+  const c=getCtx(); const fs=[sruthiHz, sruthiHz*1.5, sruthiHz*2];
+  drone.oscs.forEach((o,k)=>o.frequency.setValueAtTime(fs[k], c.currentTime));
+}
+const droneBtn=document.getElementById('droneBtn');
+droneBtn.addEventListener('click',()=>{
+  if(drone){ stopDrone(); droneBtn.classList.remove('on'); droneBtn.textContent='🎻 Turn on the tambura drone'; }
+  else { startDrone(); droneBtn.classList.add('on'); droneBtn.textContent='🔇 Turn off the tambura drone'; }
+});
+
+/* ============ STRINGS ============ */
+const stringsEl=document.getElementById('strings');
+let playingString=-1;
+function buildStrings(){
+  stringsEl.innerHTML='';
+  STRINGS.forEach((s,i)=>{
+    const hz=round(sruthiHz*s.r);
+    const b=document.createElement('button');
+    b.className='string-btn'+(i===playingString?' playing':'');
+    b.innerHTML=`<span class="sno">${s.no}</span>
+      <span class="smeta"><span class="stitle">${s.name}</span><br><span class="ssub">${s.sub}</span></span>
+      <span class="shz">${hz} Hz</span><span class="play-ic">${i===playingString?'⏹':'▶'}</span>`;
+    b.addEventListener('click',()=>{
+      if(playingString===i){ stopHold(); playingString=-1; }
+      else { startHold(hz); playingString=i; }
+      buildStrings();
+    });
+    stringsEl.appendChild(b);
+  });
+}
+
+/* ============ SWARA PAD ============ */
+const pad=document.getElementById('pad');
+const padBasicBtn=document.getElementById('padBasic');
+const padFullBtn=document.getElementById('padFull');
+let padMode='basic';
+function buildPad(){
+  const data = padMode==='basic'?SWARAS:FULL;
+  pad.className = 'pad'+(padMode==='full'?' pad-full':'');
+  pad.innerHTML='';
+  data.forEach(s=>{
+    const hz=round(sruthiHz*s.r);
+    const b=document.createElement('button');
+    b.className='swara'+(s.fixed?' fixed':'');
+    b.innerHTML=`<span class="sym">${s.sym}</span><span class="nm">${s.name.split(' ')[0]}</span><span class="shz">${hz} Hz</span>`;
+    b.addEventListener('click',()=>{
+      pad.querySelectorAll('.swara').forEach(x=>x.classList.remove('lit'));
+      b.classList.add('lit'); setTimeout(()=>b.classList.remove('lit'),420);
+      playNote(hz,1.1);
+    });
+    pad.appendChild(b);
+  });
+}
+padBasicBtn.addEventListener('click',()=>{ padMode='basic'; padBasicBtn.classList.add('on'); padFullBtn.classList.remove('on'); buildPad(); });
+padFullBtn.addEventListener('click',()=>{ padMode='full'; padFullBtn.classList.add('on'); padBasicBtn.classList.remove('on'); buildPad(); });
+
+/* ============ MIC TUNER ============ */
+const micBtn=document.getElementById('micBtn'), micMsg=document.getElementById('micMsg');
+const tuner=document.getElementById('tuner');
+const tSym=document.getElementById('tSym'), tName=document.getElementById('tName'), tHz=document.getElementById('tHz');
+const tNeedle=document.getElementById('tNeedle'), tStatus=document.getElementById('tStatus');
+let micStream=null, analyser=null, micData=null, micRAF=null, listening=false;
+let lastDetect=0, freqHistory=[];
+function showMicMsg(t){ micMsg.textContent=t; micMsg.style.display='block'; }
+function hideMicMsg(){ micMsg.style.display='none'; }
+async function startListening(){
+  hideMicMsg();
+  try{
+    micStream=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:false,noiseSuppression:false,autoGainControl:false}});
+  }catch(err){
+    let m="The microphone could not start. ";
+    if(!window.isSecureContext) m+="This page needs to be online (https) for the mic — it works on your academy website.";
+    else if(err && err.name==='NotAllowedError') m+="Please allow microphone access and tap again.";
+    else m+="Please check a microphone is connected and allowed.";
+    showMicMsg(m); return;
+  }
+  const c=getCtx();
+  const src=c.createMediaStreamSource(micStream);
+  analyser=c.createAnalyser(); analyser.fftSize=2048;
+  micData=new Float32Array(analyser.fftSize);
+  src.connect(analyser);
+  listening=true; tuner.style.display='block';
+  micBtn.textContent='⏹ Stop the mic'; micBtn.classList.remove('green');
+  detectLoop();
+}
+function stopListening(){
+  listening=false;
+  if(micRAF) cancelAnimationFrame(micRAF);
+  if(micStream){ micStream.getTracks().forEach(t=>t.stop()); micStream=null; }
+  micBtn.textContent='🎤 Check a string with the mic'; micBtn.classList.add('green');
+  tName.textContent='Bow one long, steady note…'; tSym.textContent='–'; tHz.textContent=''; tStatus.textContent='';
+  tuner.classList.remove('intune');
+}
+micBtn.addEventListener('click',()=> listening?stopListening():startListening());
+function detectPitch(buf, sr){
+  let size=buf.length, rms=0;
+  for(let i=0;i<size;i++){ rms+=buf[i]*buf[i]; }
+  rms=Math.sqrt(rms/size);
+  if(rms<0.012) return -1;
+  let r1=0, r2=size-1, th=0.2;
+  for(let i=0;i<size/2;i++){ if(Math.abs(buf[i])<th){ r1=i; break; } }
+  for(let i=1;i<size/2;i++){ if(Math.abs(buf[size-i])<th){ r2=size-i; break; } }
+  const b=buf.slice(r1,r2); size=b.length;
+  const corr=new Float32Array(size);
+  for(let i=0;i<size;i++){ let s=0; for(let j=0;j<size-i;j++){ s+=b[j]*b[j+i]; } corr[i]=s; }
+  let d=0; while(d<size-1 && corr[d]>corr[d+1]) d++;
+  let max=-1, pos=-1;
+  for(let i=d;i<size;i++){ if(corr[i]>max){ max=corr[i]; pos=i; } }
+  if(pos<=0) return -1;
+  let T=pos;
+  const x1=corr[T-1]||0, x2=corr[T], x3=corr[T+1]||0;
+  const a=(x1+x3-2*x2)/2, bb=(x3-x1)/2;
+  if(a) T=T-bb/(2*a);
+  const f=sr/T;
+  return (f>70 && f<1600)?f:-1;
+}
+function median(arr){ const s=[...arr].sort((a,b)=>a-b); return s[Math.floor(s.length/2)]; }
+function freqToSeat(f){
+  let rel=f/sruthiHz; while(rel<1) rel*=2; while(rel>=2) rel/=2;
+  let best=0,bestC=1e9;
+  SEATS.forEach((seat,i)=>{ let ref=seat.r; if(ref===2)ref=1; const cents=Math.abs(1200*Math.log2(rel/ref)); if(cents<bestC){bestC=cents;best=i;} });
+  let ref=SEATS[best].r; if(ref===2)ref=1;
+  return {idx:best, cents:1200*Math.log2(rel/ref)};
+}
+function detectLoop(){
+  if(!listening) return;
+  micRAF=requestAnimationFrame(detectLoop);
+  const now=performance.now();
+  if(now-lastDetect<80) return;
+  lastDetect=now;
+  analyser.getFloatTimeDomainData(micData);
+  const f=detectPitch(micData, getCtx().sampleRate);
+  if(f<0){
+    freqHistory=[]; tName.textContent='Bow one long, steady note…'; tSym.textContent='–'; tHz.textContent=''; tStatus.textContent='';
+    tuner.classList.remove('intune'); return;
+  }
+  freqHistory.push(f); if(freqHistory.length>5) freqHistory.shift();
+  const mf=median(freqHistory);
+  const {idx,cents}=freqToSeat(mf);
+  const seat=SEATS[idx];
+  tSym.textContent=seat.name; tName.textContent='nearest swara';
+  tHz.textContent=round(mf)+' Hz';
+  const clamped=Math.max(-50,Math.min(50,cents));
+  tNeedle.style.left=(50+clamped)+'%';
+  const inTune=Math.abs(cents)<18;
+  tuner.classList.toggle('intune', inTune);
+  tStatus.textContent = inTune ? '✓ In tune!' : (cents<0 ? '↓ a little low — tighten slightly' : '↑ a little high — loosen slightly');
+  tStatus.className='t-status'+(inTune?' good':'');
+}
+
+/* ============ INIT ============ */
+refreshAll();
+markPreset();
+</script>
+
+
+<!-- ═══ LVA uniform footer (shared across all pages) ═══ -->
+<div class="lva-footer">
+  <div class="lva-footer-notes" aria-hidden="true">♪&hairsp;♫&hairsp;𝄞&hairsp;♩&hairsp;♬</div>
+  <div class="lva-footer-brand">🎻 Lakshya's Violin Academy</div>
+  <p class="lva-footer-tag">Carnatic violin for young learners — where every note finds its voice ♩</p>
+  <p class="lva-footer-loc">Old Pallavaram, Chennai</p>
+  <div class="lva-footer-links">
+    <a href="https://wa.me/919003030454">💬 WhatsApp +91 90030 30454</a>
+    <a href="mailto:j.ajaychandran@gmail.com">✉️ j.ajaychandran@gmail.com</a>
+    <a href="index.html#contact">🎟️ Book a Free Trial</a>
+  </div>
+  <div class="lva-footer-quick">
+    <a href="index.html">Home</a><a href="index.html#about">About</a><a href="index.html#courses">Courses</a><a href="games.html">Games &amp; Labs</a><a href="blog-sound-vibration-carnatic.html">Blog</a><a href="index.html#contact">Enroll</a>
+  </div>
+  <p class="lva-footer-copy">© 2026 Lakshya's Violin Academy · Made with ♥ and music 🎶</p>
+</div>
+
+<!-- Analytics: GoatCounter (privacy-friendly) -->
+<script data-goatcounter="https://lakshyasviolinacademy.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
