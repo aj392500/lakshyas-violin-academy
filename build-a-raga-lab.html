@@ -27,7 +27,7 @@
   :root{
     --maroon:#5B54C9; --maroon-soft:#837DD9; --saffron:#F25C54; --saffron-light:#FFB84C;
     --gold:#FFD166; --gold-deep:#D97706; --cream:#F5F8FF; --cream2:#E7EEFC;
-    --border:#C5D3F0; --text-dark:#2E3350; --text-mid:#4D5378; --text-soft:#707795;
+    --border:#C5D3F0; --text-dark:#2E3350; --text-mid:#4D5378; --text-soft:#5C638A;
     --green:#16A34A; --green-bg:#e4f5ea; --teal:#0E9488;
   }
   html{scroll-behavior:smooth;}
@@ -48,8 +48,8 @@
   .hero .eyebrow{font-size:0.74rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--saffron-light);margin-bottom:0.7rem;}
   .hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,5vw,3rem);color:#FDFDFF;font-weight:700;line-height:1.15;}
   .hero h1 span{color:var(--gold);}
-  .hero .tamil{font-size:1rem;color:#CDD5FF;font-style:italic;margin:0.4rem 0 0.8rem;}
-  .hero p{color:#B4BEF5;max-width:660px;margin:0 auto;font-size:0.98rem;line-height:1.8;}
+  .hero .tamil{font-size:1rem;color:#E0E6FF;font-style:italic;margin:0.4rem 0 0.8rem;}
+  .hero p{color:#DDE3FF;max-width:660px;margin:0 auto;font-size:0.98rem;line-height:1.8;}
 
   .wrap{max-width:860px;margin:0 auto;padding:2rem 1.2rem 4rem;}
 
@@ -69,7 +69,7 @@
   .opt:hover{border-color:var(--saffron);}
   .opt.on{background:var(--maroon);border-color:var(--maroon);}
   .opt.on .osym{color:var(--gold);}
-  .opt.on .ocd{color:#CDD5FF;}
+  .opt.on .ocd{color:#E0E6FF;}
   .opt.off{font-size:0.74rem;color:var(--text-soft);min-width:44px;}
   .opt.off .ox{font-size:1rem;font-weight:700;display:block;}
   .station.fixed .opt.on{background:var(--gold-deep);border-color:var(--gold-deep);}
@@ -132,33 +132,12 @@
   .sruthi-row{display:flex;align-items:center;gap:0.5rem;font-size:0.78rem;color:var(--text-soft);margin-bottom:1.1rem;flex-wrap:wrap;}
   .sruthi-row select{font-family:'Noto Serif',serif;font-size:0.86rem;padding:0.35rem 0.6rem;border:1px solid var(--border);border-radius:7px;background:var(--cream);color:var(--text-dark);}
 
-  footer{background:#2F2973;color:#CDD5FF;text-align:center;padding:2rem 1.4rem;font-size:0.88rem;}
+  footer{background:#2F2973;color:#E0E6FF;text-align:center;padding:2rem 1.4rem;font-size:0.88rem;}
   footer .fname{font-family:'Playfair Display',serif;color:#FFD166;font-size:1.1rem;margin-bottom:6px;}
   footer a{color:var(--saffron-light);text-decoration:none;}
 
   @media(max-width:520px){.station{grid-template-columns:54px 1fr;}.opt{min-width:46px;padding:0.4rem 0.35rem;}.cell{width:42px;height:50px;}}
   @media(prefers-reduced-motion:reduce){.cell.cur{transform:none;}}
-</style>
-<style id="lva-mobnav">
-  .lva-toggle{display:none;background:transparent;border:none;cursor:pointer;padding:8px 2px;flex-direction:column;gap:5px;margin-left:auto;}
-  .lva-toggle span{display:block;width:26px;height:3px;border-radius:2px;background:#FFD166;transition:transform .25s ease,opacity .2s ease;}
-  .lva-toggle.open span:nth-child(1){transform:translateY(8px) rotate(45deg);}
-  .lva-toggle.open span:nth-child(2){opacity:0;}
-  .lva-toggle.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
-  @media(max-width:760px){
-    .lva-ribbon{flex-wrap:nowrap;align-items:center;}
-    .lva-toggle{display:flex;}
-    .lva-ribbon .lva-links{display:none !important;order:5;flex-basis:100%;width:100%;flex-direction:column;align-items:stretch;
-      max-height:min(68vh,440px);overflow-y:auto;-webkit-overflow-scrolling:touch;
-      border-top:1px solid rgba(255,209,102,0.25);margin-top:4px;padding:4px 0 8px;
-      scrollbar-width:thin;scrollbar-color:#D97706 rgba(255,255,255,0.12);}
-    .lva-ribbon.open .lva-links{display:flex !important;}
-    .lva-ribbon .lva-links::-webkit-scrollbar{width:8px;}
-    .lva-ribbon .lva-links::-webkit-scrollbar-thumb{background:#D97706;border-radius:8px;}
-    .lva-ribbon .lva-links a{padding:0.72rem 0.7rem !important;font-size:0.94rem !important;letter-spacing:0.03em !important;
-      border-bottom:1px solid rgba(255,209,102,0.12);white-space:normal !important;}
-    .lva-ribbon .lva-links a.cur{background:rgba(255,209,102,0.12);}
-  }
 </style>
 <style id="lva-share-css">
   .lva-share-row{text-align:center;margin:0.9rem 0 0.2rem;}
@@ -175,8 +154,8 @@
   .lva-share-actions button{flex:1 1 30%;min-width:96px;font-family:'Noto Serif',Georgia,serif;font-size:0.84rem;font-weight:700;
     padding:0.6rem 0.4rem;border:none;border-radius:9px;cursor:pointer;color:#fff;display:inline-flex;align-items:center;justify-content:center;gap:6px;}
   .lva-b-share{background:#16A34A;} .lva-b-fb{background:#1877F2;} .lva-b-dl{background:#5B54C9;}
-  .lva-b-close{background:#7C84A8;flex-basis:100%;margin-top:8px;}
-  .lva-modal-hint{font-size:0.72rem;color:#707795;margin-top:11px;line-height:1.5;}
+  .lva-b-close{background:#646D96;flex-basis:100%;margin-top:8px;}
+  .lva-modal-hint{font-size:0.72rem;color:#5C638A;margin-top:11px;line-height:1.5;}
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="site.css">
@@ -191,8 +170,10 @@
 <div class="lva-nav" id="lvaNav">
   <div class="lva-nav-inner">
     <a class="lva-brand" href="index.html">🎻&ensp;Lakshya's Violin Academy</a>
-    <button class="lva-burger" aria-label="Open menu" aria-expanded="false" aria-controls="lvaMenu"><span></span><span></span><span></span></button>
+    <button class="lva-burger" aria-label="Open menu" aria-expanded="false" aria-controls="lvaMenu"><svg class="ic-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg><svg class="ic-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg><span class="lva-burger-txt">Menu</span></button>
+    <div class="lva-nav-backdrop" aria-hidden="true"></div>
     <div class="lva-menu" id="lvaMenu">
+      <div class="lva-drawer-head"><span>🎻&ensp;Menu</span><button class="lva-drawer-close" aria-label="Close menu">✕</button></div>
       <a href="index.html">Home</a>
       <a href="index.html#about">About</a>
       <a href="index.html#courses">Courses</a>
@@ -663,7 +644,7 @@ window.LVAShare=(function(){
       x.fillStyle='#FDFDFF'; x.font='700 82px Georgia,serif'; x.fillText(String(ln.value),W/2,y+84); y+=176;
     });
     if(cfg.badge){ x.font='110px Georgia,serif'; x.fillText(cfg.badge,W/2,Math.min(y+26,928)); }
-    x.fillStyle='#CDD5FF'; x.font='400 27px Georgia,serif'; x.fillText('Carnatic Violin for Young Learners \u00B7 Old Pallavaram, Chennai',W/2,986);
+    x.fillStyle='#E0E6FF'; x.font='400 27px Georgia,serif'; x.fillText('Carnatic Violin for Young Learners \u00B7 Old Pallavaram, Chennai',W/2,986);
     x.fillStyle='#FFD166'; x.font='700 32px Georgia,serif'; x.fillText('lakshyasviolinacademy.live',W/2,1030);
   }
   function open(cfg){ build(); cur=cfg||{}; draw(cur); modal.classList.add('show'); }

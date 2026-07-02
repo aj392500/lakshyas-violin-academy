@@ -36,7 +36,7 @@
     --brown: #3A4066;
     --text-dark: #2E3350;
     --text-mid: #4D5378;
-    --text-soft: #707795;
+    --text-soft: #5C638A;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -97,7 +97,7 @@
   .nav-item > a::after { display: none; }
   .nav-dropdown { display: block; position: static; background: transparent; border: none; box-shadow: none; min-width: unset; }
   .nav-dropdown-label { display: none; }
-  .nav-dropdown a { padding: 0.6rem 0 0.6rem 1.5rem !important; color: #B4BEF5 !important; font-size: 0.85rem !important; border-bottom: 1px solid rgba(255,209,102,0.08) !important; }
+  .nav-dropdown a { padding: 0.6rem 0 0.6rem 1.5rem !important; color: #DDE3FF !important; font-size: 0.85rem !important; border-bottom: 1px solid rgba(255,209,102,0.08) !important; }
 }
   .hero {
     background: linear-gradient(135deg, var(--maroon) 0%, #443CA8 60%, #2F2973 100%);
@@ -114,7 +114,7 @@
   .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem, 5vw, 3.5rem); color: #FDFDFF; font-weight: 700; line-height: 1.2; position: relative; margin-bottom: 0.5rem; }
   .hero-title span { color: var(--gold-light); }
   .hero-subtitle { font-family: 'Crimson Pro', serif; font-size: 1.3rem; color: #F5C8A0; font-style: italic; margin: 0.5rem 0 1.5rem; position: relative; }
-  .hero-tagline { font-size: 1rem; color: #B4BEF5; max-width: 500px; margin: 0 auto 2rem; position: relative; line-height: 1.8; }
+  .hero-tagline { font-size: 1rem; color: #DDE3FF; max-width: 500px; margin: 0 auto 2rem; position: relative; line-height: 1.8; }
   .divider-ornament { color: var(--gold-light); font-size: 1.4rem; letter-spacing: 12px; opacity: 0.7; margin: 1rem 0; display: block; position: relative; }
   .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; position: relative; }
   .btn-primary { background: var(--saffron); color: white; padding: 0.8rem 2rem; border: none; border-radius: 4px; font-family: 'Noto Serif', serif; font-size: 1rem; cursor: pointer; text-decoration: none; display: inline-block; transition: background 0.2s, transform 0.1s; border-bottom: 3px solid #C23A2E; }
@@ -147,7 +147,7 @@
   .explore-icon { font-size: 2.2rem; line-height: 1; }
   .explore-tag { font-size: 0.64rem; letter-spacing: 0.1em; text-transform: uppercase; color: #F0B429; border: 1px solid rgba(255,209,102,0.3); border-radius: 99px; padding: 3px 10px; white-space: nowrap; }
   .explore-card h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; color: #FDFDFF; font-weight: 600; margin-bottom: 0.5rem; }
-  .explore-card p { font-size: 0.9rem; color: #B4BEF5; line-height: 1.7; flex: 1; margin-bottom: 1rem; }
+  .explore-card p { font-size: 0.9rem; color: #DDE3FF; line-height: 1.7; flex: 1; margin-bottom: 1rem; }
   .explore-cta { font-size: 0.9rem; color: #FFD166; font-weight: 500; }
   .explore-card:hover .explore-cta { text-decoration: underline; }
 
@@ -188,13 +188,13 @@
   .contact .section-title { color: var(--gold-light); }
   .contact .section-label { color: var(--saffron-light); }
   .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 3rem; align-items: start; margin-top: 1.5rem; }
-  .contact-info p { color: #B4BEF5; margin-bottom: 0.5rem; font-size: 0.95rem; }
+  .contact-info p { color: #DDE3FF; margin-bottom: 0.5rem; font-size: 0.95rem; }
   .contact-detail { display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,209,102,0.25); border-radius: 4px; padding: 0.8rem 1rem; margin-bottom: 0.8rem; }
   .contact-detail-icon { font-size: 1.2rem; }
   .contact-detail-text { color: #E3E8FF; font-size: 0.9rem; }
-  .contact-detail-label { font-size: 0.75rem; color: #9AA5E0; display: block; }
+  .contact-detail-label { font-size: 0.75rem; color: #C6CEF7; display: block; }
   .form-group { margin-bottom: 1rem; }
-  .form-group label { display: block; color: #B4BEF5; font-size: 0.85rem; margin-bottom: 0.4rem; letter-spacing: 0.5px; }
+  .form-group label { display: block; color: #DDE3FF; font-size: 0.85rem; margin-bottom: 0.4rem; letter-spacing: 0.5px; }
   .form-group input, .form-group select, .form-group textarea { width: 100%; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,209,102,0.3); border-radius: 4px; padding: 0.65rem 0.9rem; color: #FDFDFF; font-family: 'Noto Serif', serif; font-size: 0.9rem; outline: none; transition: border-color 0.2s; }
   .form-group input::placeholder, .form-group textarea::placeholder { color: #8A6A4A; }
   .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold-light); }
@@ -219,11 +219,11 @@
   .enquiry-label { font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; color: var(--saffron-light); font-weight: 600; }
   .enquiry-value { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: #FDFDFF; font-weight: 600; word-break: break-word; }
   .enquiry-cta { font-size: 0.82rem; color: var(--gold-light); margin-top: 0.2rem; }
-  .enquiry-meta { color: #9AA5E0; font-size: 0.85rem; margin-top: 1.6rem; }
+  .enquiry-meta { color: #C6CEF7; font-size: 0.85rem; margin-top: 1.6rem; }
   @media (max-width: 640px) { .enquiry-grid { grid-template-columns: 1fr; } }
 
   footer { background: #1E1A47; text-align: center; padding: 2rem; border-top: 2px solid var(--saffron); }
-  footer p { color: #707795; font-size: 0.85rem; }
+  footer p { color: #5C638A; font-size: 0.85rem; }
   footer span { color: var(--gold-light); }
 
   .sapa-section { background: var(--cream-dark); }
@@ -265,11 +265,11 @@
     color: #FFD166; line-height: 1;
   }
   .sapa-circle-label {
-    font-size: 0.6rem; color: #B4BEF5;
+    font-size: 0.6rem; color: #DDE3FF;
     text-transform: uppercase; letter-spacing: 1px; margin-top: 2px;
   }
   .sapa-node-name {
-    font-size: 0.72rem; color: #B4BEF5;
+    font-size: 0.72rem; color: #DDE3FF;
     font-style: italic; text-align: center;
     max-width: 88px; line-height: 1.3;
   }
@@ -281,7 +281,7 @@
   .sapa-octave-label {
     text-align: center;
     font-size: 0.72rem;
-    color: #9AA5E0;
+    color: #C6CEF7;
     letter-spacing: 2px;
     text-transform: uppercase;
     margin-bottom: 1rem;
@@ -386,7 +386,7 @@
   .science-item { text-align: center; }
   .science-icon { font-size: 1.8rem; display: block; margin-bottom: 0.5rem; }
   .science-title { font-family: 'Playfair Display', serif; font-size: 0.95rem; color: #FFD166; font-weight: 600; margin-bottom: 0.3rem; }
-  .science-desc { font-size: 0.8rem; color: #B4BEF5; line-height: 1.5; }
+  .science-desc { font-size: 0.8rem; color: #DDE3FF; line-height: 1.5; }
 
   /* ===== PHILOSOPHY SECTION ===== */
   .philosophy-section { background: var(--maroon); }
@@ -409,7 +409,7 @@
     font-style: italic;
     max-width: 680px; margin: 0 auto 1rem;
   }
-  .philosophy-hero-sub { font-size: 0.9rem; color: #9AA5E0; }
+  .philosophy-hero-sub { font-size: 0.9rem; color: #C6CEF7; }
   .philosophy-values {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -423,7 +423,7 @@
   }
   .philosophy-card-icon { font-size: 2rem; display: block; margin-bottom: 0.6rem; }
   .philosophy-card-title { font-family: 'Playfair Display', serif; font-size: 1rem; color: #FFD166; font-weight: 600; margin-bottom: 0.5rem; }
-  .philosophy-card-body { font-size: 0.85rem; color: #B4BEF5; line-height: 1.65; }
+  .philosophy-card-body { font-size: 0.85rem; color: #DDE3FF; line-height: 1.65; }
   .philosophy-letter {
     background: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,209,102,0.25);
@@ -431,7 +431,7 @@
     margin-top: 2rem;
   }
   .philosophy-letter-title { font-family: 'Playfair Display', serif; font-size: 1.1rem; color: #FFD166; margin-bottom: 1rem; }
-  .philosophy-letter p { color: #B4BEF5; font-size: 0.92rem; line-height: 1.85; margin-bottom: 0.8rem; }
+  .philosophy-letter p { color: #DDE3FF; font-size: 0.92rem; line-height: 1.85; margin-bottom: 0.8rem; }
   .philosophy-letter-sign { color: #F0B429; font-style: italic; font-size: 0.9rem; margin-top: 1rem; }
 
   @media (max-width: 640px) {
@@ -498,7 +498,7 @@
   .swara-definition { background: var(--maroon); border-radius: 10px; padding: 2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin: 1.5rem 0; }
   .swara-def-label { font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; color: #F0B429; margin-bottom: 0.3rem; }
   .swara-def-value { font-family: 'Playfair Display', serif; font-size: 1.5rem; color: #FDFDFF; font-weight: 700; margin-bottom: 0.3rem; }
-  .swara-def-desc { font-size: 0.85rem; color: #B4BEF5; line-height: 1.6; }
+  .swara-def-desc { font-size: 0.85rem; color: #DDE3FF; line-height: 1.6; }
   .ladder-header { display: flex; margin-bottom: 4px; font-size: 0.7rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-soft); font-weight: 600; }
   .lh-num { width: 32px; text-align: center; }
   .lh-swar { width: 80px; padding-left: 0.8rem; }
@@ -524,7 +524,7 @@
   .sthana-card.madhya { background: #5B54C9; border-color: #FFD166; }
   .sthana-card.tara   { background: #F25C54; }
   .sthana-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: #FFD166; margin-bottom: 0.2rem; }
-  .sthana-tamil { font-size: 0.8rem; color: #B4BEF5; font-style: italic; margin-bottom: 0.6rem; }
+  .sthana-tamil { font-size: 0.8rem; color: #DDE3FF; font-style: italic; margin-bottom: 0.6rem; }
   .sthana-desc { font-size: 0.8rem; color: #C5D3F0; line-height: 1.5; }
   .sthana-notes { margin-top: 0.6rem; display: flex; flex-wrap: wrap; gap: 4px; justify-content: center; }
   .sthana-note-pill { background: rgba(255,255,255,0.12); color: #FDFDFF; border-radius: 20px; padding: 2px 8px; font-size: 0.72rem; }
@@ -729,8 +729,10 @@
 <div class="lva-nav" id="lvaNav">
   <div class="lva-nav-inner">
     <a class="lva-brand" href="index.html">🎻&ensp;Lakshya's Violin Academy</a>
-    <button class="lva-burger" aria-label="Open menu" aria-expanded="false" aria-controls="lvaMenu"><span></span><span></span><span></span></button>
+    <button class="lva-burger" aria-label="Open menu" aria-expanded="false" aria-controls="lvaMenu"><svg class="ic-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg><svg class="ic-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg><span class="lva-burger-txt">Menu</span></button>
+    <div class="lva-nav-backdrop" aria-hidden="true"></div>
     <div class="lva-menu" id="lvaMenu">
+      <div class="lva-drawer-head"><span>🎻&ensp;Menu</span><button class="lva-drawer-close" aria-label="Close menu">✕</button></div>
       <a href="index.html">Home</a>
       <a href="index.html#about">About</a>
       <a href="index.html#courses">Courses</a>
@@ -1183,17 +1185,17 @@
       <div class="wave-row-label">Low frequency = low pitch (deep sound)</div>
       <svg width="100%" viewBox="0 0 700 60" xmlns="http://www.w3.org/2000/svg">
         <path d="M20 30 C70 5, 120 55, 170 30 C220 5, 270 55, 320 30 C370 5, 420 55, 470 30 C520 5, 570 55, 620 30 C645 18, 658 12, 670 30" fill="none" stroke="#5B54C9" stroke-width="2.5" stroke-linecap="round"/>
-        <text font-family="'Noto Serif', serif" font-size="11" fill="#707795" x="686" y="34" text-anchor="end">Sa (Mandra)</text>
+        <text font-family="'Noto Serif', serif" font-size="11" fill="#5C638A" x="686" y="34" text-anchor="end">Sa (Mandra)</text>
       </svg>
       <div class="wave-row-label" style="margin-top:0.8rem;">Medium frequency = medium pitch (middle sound)</div>
       <svg width="100%" viewBox="0 0 700 60" xmlns="http://www.w3.org/2000/svg">
         <path d="M20 30 C52 8, 84 52, 116 30 C148 8, 180 52, 212 30 C244 8, 276 52, 308 30 C340 8, 372 52, 404 30 C436 8, 468 52, 500 30 C532 8, 564 52, 596 30 C618 17, 632 12, 648 30" fill="none" stroke="#F25C54" stroke-width="2.5" stroke-linecap="round"/>
-        <text font-family="'Noto Serif', serif" font-size="11" fill="#707795" x="686" y="34" text-anchor="end">Sa (Madhya)</text>
+        <text font-family="'Noto Serif', serif" font-size="11" fill="#5C638A" x="686" y="34" text-anchor="end">Sa (Madhya)</text>
       </svg>
       <div class="wave-row-label" style="margin-top:0.8rem;">High frequency = high pitch (bright sound)</div>
       <svg width="100%" viewBox="0 0 700 60" xmlns="http://www.w3.org/2000/svg">
         <path d="M20 30 C38 12, 56 48, 74 30 C92 12, 110 48, 128 30 C146 12, 164 48, 182 30 C200 12, 218 48, 236 30 C254 12, 272 48, 290 30 C308 12, 326 48, 344 30 C362 12, 380 48, 398 30 C416 12, 434 48, 452 30 C470 12, 488 48, 506 30 C524 12, 542 48, 560 30 C578 12, 596 48, 614 30 C632 20, 641 14, 652 30" fill="none" stroke="#D97706" stroke-width="2.5" stroke-linecap="round"/>
-        <text font-family="'Noto Serif', serif" font-size="11" fill="#707795" x="686" y="34" text-anchor="end">Sa (Tara)</text>
+        <text font-family="'Noto Serif', serif" font-size="11" fill="#5C638A" x="686" y="34" text-anchor="end">Sa (Tara)</text>
       </svg>
       <div class="wave-row-desc">Each wave above has the same swara name (Sa) but a different frequency. The faster the vibration, the higher the pitch. On violin, pressing the string shorter makes it vibrate faster — raising the pitch.</div>
     </div>
@@ -1292,9 +1294,9 @@
         <circle cx="342" cy="285" r="4" fill="#1E1A47"/>
         <circle cx="341" cy="315" r="3.5" fill="#1E1A47"/>
         <!-- Bridge -->
-        <path d="M292 370 L294 385 L298 385 L298 370 Z" fill="#B4BEF5" stroke="#8B6020" stroke-width="0.5"/>
-        <path d="M318 370 L320 385 L324 385 L322 370 Z" fill="#B4BEF5" stroke="#8B6020" stroke-width="0.5"/>
-        <rect x="286" y="365" width="48" height="6" rx="2" fill="#B4BEF5" stroke="#8B6020" stroke-width="0.8"/>
+        <path d="M292 370 L294 385 L298 385 L298 370 Z" fill="#DDE3FF" stroke="#8B6020" stroke-width="0.5"/>
+        <path d="M318 370 L320 385 L324 385 L322 370 Z" fill="#DDE3FF" stroke="#8B6020" stroke-width="0.5"/>
+        <rect x="286" y="365" width="48" height="6" rx="2" fill="#DDE3FF" stroke="#8B6020" stroke-width="0.8"/>
         <!-- Tailpiece -->
         <path d="M293 450 L307 465 L313 465 L327 450 Q320 440 310 438 Q300 440 293 450 Z" fill="#1E1A47" stroke="#0A0501" stroke-width="0.8"/>
         <rect x="302" y="440" width="16" height="12" rx="2" fill="#2A1505" stroke="#1A0502" stroke-width="0.5"/>
@@ -1717,7 +1719,7 @@
     <div class="section-label">Get in Touch</div>
     <h2 class="section-title">Enroll Your Child</h2>
     <div class="border-accent"></div>
-    <p style="color:#B4BEF5; max-width:640px; margin-bottom:1.8rem;">We'd love to welcome your child into Lakshya's Violin Academy. For a free trial class or any enquiries, reach out on WhatsApp or email — we usually reply within 24 hours.</p>
+    <p style="color:#DDE3FF; max-width:640px; margin-bottom:1.8rem;">We'd love to welcome your child into Lakshya's Violin Academy. For a free trial class or any enquiries, reach out on WhatsApp or email — we usually reply within 24 hours.</p>
 
     <div class="enquiry-grid">
       <a class="enquiry-card" href="https://wa.me/919003030454" target="_blank" rel="noopener">

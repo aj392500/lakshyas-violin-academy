@@ -33,7 +33,7 @@
       --border: #DCE3F4;
       --text-dark: #262B45;
       --text-mid: #4D5378;
-      --text-light: #7C84A8;
+      --text-light: #646D96;
       --accent: #D9483B;
       --accent-light: #F07C3E;
       --gold: #F0B429;
@@ -566,7 +566,7 @@
       padding: 2rem;
       text-align: center;
     }
-    footer p { font-size: 0.8rem; color: #707795; line-height: 1.8; }
+    footer p { font-size: 0.8rem; color: #5C638A; line-height: 1.8; }
     footer a { color: #FFB84C; text-decoration: none; }
     footer strong { color: #FFD166; }
 
@@ -611,8 +611,10 @@
 <div class="lva-nav" id="lvaNav">
   <div class="lva-nav-inner">
     <a class="lva-brand" href="index.html">🎻&ensp;Lakshya's Violin Academy</a>
-    <button class="lva-burger" aria-label="Open menu" aria-expanded="false" aria-controls="lvaMenu"><span></span><span></span><span></span></button>
+    <button class="lva-burger" aria-label="Open menu" aria-expanded="false" aria-controls="lvaMenu"><svg class="ic-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg><svg class="ic-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg><span class="lva-burger-txt">Menu</span></button>
+    <div class="lva-nav-backdrop" aria-hidden="true"></div>
     <div class="lva-menu" id="lvaMenu">
+      <div class="lva-drawer-head"><span>🎻&ensp;Menu</span><button class="lva-drawer-close" aria-label="Close menu">✕</button></div>
       <a href="index.html">Home</a>
       <a href="index.html#about">About</a>
       <a href="index.html#courses">Courses</a>

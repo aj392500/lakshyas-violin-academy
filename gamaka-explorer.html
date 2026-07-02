@@ -27,7 +27,7 @@
   :root{
     --maroon:#5B54C9; --maroon-soft:#837DD9; --saffron:#F25C54; --saffron-light:#FFB84C;
     --gold:#FFD166; --gold-deep:#D97706; --cream:#F5F8FF; --cream2:#E7EEFC;
-    --border:#C5D3F0; --text-dark:#2E3350; --text-mid:#4D5378; --text-soft:#707795;
+    --border:#C5D3F0; --text-dark:#2E3350; --text-mid:#4D5378; --text-soft:#5C638A;
     --green:#16A34A; --green-bg:#e4f5ea; --teal:#0E9488;
   }
   html{scroll-behavior:smooth;}
@@ -49,8 +49,8 @@
   .hero .eyebrow{font-size:0.74rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--saffron-light);margin-bottom:0.7rem;}
   .hero h1{font-family:'Playfair Display',serif;font-size:clamp(1.9rem,5vw,3rem);color:#FDFDFF;font-weight:700;line-height:1.15;}
   .hero h1 span{color:var(--gold);}
-  .hero .tamil{font-size:1.05rem;color:#CDD5FF;font-style:italic;margin:0.4rem 0 0.8rem;}
-  .hero p{color:#B4BEF5;max-width:650px;margin:0 auto;font-size:0.98rem;line-height:1.8;}
+  .hero .tamil{font-size:1.05rem;color:#E0E6FF;font-style:italic;margin:0.4rem 0 0.8rem;}
+  .hero p{color:#DDE3FF;max-width:650px;margin:0 auto;font-size:0.98rem;line-height:1.8;}
 
   .wrap{max-width:960px;margin:0 auto;padding:2rem 1.2rem 4rem;}
 
@@ -117,30 +117,9 @@
   .dv-list li b{color:var(--maroon);font-family:'Playfair Display',serif;}
   .dv-list li .n{position:absolute;left:0;top:0;color:var(--gold-deep);font-weight:700;font-family:'Playfair Display',serif;}
 
-  .footer{background:var(--maroon);color:#CDD5FF;text-align:center;padding:1.6rem 1.2rem;font-size:0.85rem;border-top:3px solid var(--saffron-light);}
+  .footer{background:var(--maroon);color:#E0E6FF;text-align:center;padding:1.6rem 1.2rem;font-size:0.85rem;border-top:3px solid var(--saffron-light);}
   .footer a{color:var(--gold);text-decoration:none;}
-  .footer .tam{font-family:'Noto Serif',serif;font-style:italic;color:#B4BEF5;display:block;margin-top:0.3rem;font-size:0.82rem;}
-</style>
-<style id="lva-mobnav">
-  .lva-toggle{display:none;background:transparent;border:none;cursor:pointer;padding:8px 2px;flex-direction:column;gap:5px;margin-left:auto;}
-  .lva-toggle span{display:block;width:26px;height:3px;border-radius:2px;background:#FFD166;transition:transform .25s ease,opacity .2s ease;}
-  .lva-toggle.open span:nth-child(1){transform:translateY(8px) rotate(45deg);}
-  .lva-toggle.open span:nth-child(2){opacity:0;}
-  .lva-toggle.open span:nth-child(3){transform:translateY(-8px) rotate(-45deg);}
-  @media(max-width:760px){
-    .lva-ribbon{flex-wrap:nowrap;align-items:center;}
-    .lva-toggle{display:flex;}
-    .lva-ribbon .lva-links{display:none !important;order:5;flex-basis:100%;width:100%;flex-direction:column;align-items:stretch;
-      max-height:min(68vh,440px);overflow-y:auto;-webkit-overflow-scrolling:touch;
-      border-top:1px solid rgba(255,209,102,0.25);margin-top:4px;padding:4px 0 8px;
-      scrollbar-width:thin;scrollbar-color:#D97706 rgba(255,255,255,0.12);}
-    .lva-ribbon.open .lva-links{display:flex !important;}
-    .lva-ribbon .lva-links::-webkit-scrollbar{width:8px;}
-    .lva-ribbon .lva-links::-webkit-scrollbar-thumb{background:#D97706;border-radius:8px;}
-    .lva-ribbon .lva-links a{padding:0.72rem 0.7rem !important;font-size:0.94rem !important;letter-spacing:0.03em !important;
-      border-bottom:1px solid rgba(255,209,102,0.12);white-space:normal !important;}
-    .lva-ribbon .lva-links a.cur{background:rgba(255,209,102,0.12);}
-  }
+  .footer .tam{font-family:'Noto Serif',serif;font-style:italic;color:#DDE3FF;display:block;margin-top:0.3rem;font-size:0.82rem;}
 </style>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="site.css">
@@ -155,8 +134,10 @@
 <div class="lva-nav" id="lvaNav">
   <div class="lva-nav-inner">
     <a class="lva-brand" href="index.html">🎻&ensp;Lakshya's Violin Academy</a>
-    <button class="lva-burger" aria-label="Open menu" aria-expanded="false" aria-controls="lvaMenu"><span></span><span></span><span></span></button>
+    <button class="lva-burger" aria-label="Open menu" aria-expanded="false" aria-controls="lvaMenu"><svg class="ic-open" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg><svg class="ic-close" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg><span class="lva-burger-txt">Menu</span></button>
+    <div class="lva-nav-backdrop" aria-hidden="true"></div>
     <div class="lva-menu" id="lvaMenu">
+      <div class="lva-drawer-head"><span>🎻&ensp;Menu</span><button class="lva-drawer-close" aria-label="Close menu">✕</button></div>
       <a href="index.html">Home</a>
       <a href="index.html#about">About</a>
       <a href="index.html#courses">Courses</a>
