@@ -10,13 +10,13 @@
 <meta property="og:title" content="The 72 Melakarta Ragas — Lakshya&#x27;s Violin Academy" />
 <meta property="og:description" content="Interactive Carnatic violin lessons, games and labs for young learners at Lakshya&#39;s Violin Academy, Old Pallavaram, Chennai." />
 <meta property="og:url" content="https://lakshyasviolinacademy.live/melakarta-explorer.html" />
-<meta property="og:image" content="https://lakshyasviolinacademy.live/og-image.png" />
+<meta property="og:image" content="https://lakshyasviolinacademy.live/og-melakarta-explorer.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="The 72 Melakarta Ragas — Lakshya&#x27;s Violin Academy" />
 <meta name="twitter:description" content="Interactive Carnatic violin lessons, games and labs for young learners at Lakshya&#39;s Violin Academy, Old Pallavaram, Chennai." />
-<meta name="twitter:image" content="https://lakshyasviolinacademy.live/og-image.png" />
+<meta name="twitter:image" content="https://lakshyasviolinacademy.live/og-melakarta-explorer.png" />
 <meta name="theme-color" content="#5B54C9" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -279,6 +279,7 @@
           <a href="raga-jukebox.html">📻&ensp;Raga Jukebox</a>
           <a href="frequency-and-swaras.html">🔊&ensp;Frequency &amp; Swaras Lab</a>
           <a href="melakarta-explorer.html">🎼&ensp;72 Melakarta Explorer</a>
+          <a href="melakarta-master.html">🧠&ensp;Melakarta Master — memorise 72</a>
           <a href="gamaka-explorer.html">🌊&ensp;Gamaka Explorer</a>
           <a href="raga-mood-matcher.html">🎭&ensp;Raga Mood Matcher</a>
           <span class="lva-drop-label">🎮 Play &amp; Create</span>
@@ -413,6 +414,105 @@
     <div class="chakra-grid" id="chakraGrid"></div>
   </div>
 </section>
+
+<!-- ═══ Pictorial Chakra Wheel (visual memory aid) ═══ -->
+<section class="block" id="chakraWheel">
+  <div style="max-width:940px;margin:0 auto;text-align:center;">
+    <div class="eyebrow">See the twelve chakras</div>
+    <h2 style="font-family:'Playfair Display',serif;color:#5B54C9;">The Chakra Wheel</h2>
+    <p style="max-width:640px;margin:0.4rem auto 1.4rem;color:#4D5378;">Each chakra's name is a memory picture — <b>Indu</b> the one moon, <b>Netra</b> the two eyes, <b>Agni</b> the three fires… all the way to <b>Aditya</b>, the twelve suns. Tap a medallion to see its six ragas, then tap a raga to load and play it below. 🎧</p>
+    <div class="cw-ring" id="cwRing" role="group" aria-label="Twelve chakras"></div>
+    <div class="cw-detail" id="cwDetail" style="display:none;">
+      <h3 id="cwName" style="font-family:'Baloo 2',cursive;color:#5B54C9;margin:0 0 .15rem;"></h3>
+      <p id="cwMn" style="color:#5C638A;margin:0 0 .8rem;font-size:.9rem;"></p>
+      <div id="cwRagas" class="cw-ragas"></div>
+    </div>
+    <p style="margin-top:1.4rem;"><a href="melakarta-master.html" style="display:inline-block;font-family:'Baloo 2',cursive;font-weight:700;color:#fff;text-decoration:none;background:linear-gradient(135deg,#F25C54,#FF8A5C);padding:.7rem 1.6rem;border-radius:999px;box-shadow:0 6px 16px rgba(242,92,84,.4);">🧠 Ready to memorise all 72? Play Melakarta Master →</a></p>
+  </div>
+</section>
+
+<style>
+.cw-ring{position:relative;width:min(88vw,480px);height:min(88vw,480px);margin:0 auto;}
+.cw-ring::before{content:'𝄞';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:4.5rem;color:rgba(91,84,201,.18);}
+.cw-ring::after{content:'12 chakras · 72 ragas';position:absolute;top:58%;left:50%;transform:translateX(-50%);font-size:.72rem;font-weight:800;letter-spacing:1px;color:#837DD9;text-transform:uppercase;}
+.cw-med{position:absolute;top:50%;left:50%;width:74px;height:74px;margin:-37px 0 0 -37px;border-radius:50%;
+  background:radial-gradient(circle at 32% 28%,#FFFFFF,#EEF0FF);border:3px solid #C5D3F0;cursor:pointer;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;
+  box-shadow:0 6px 16px rgba(46,39,115,.18);transition:transform .15s,border-color .15s;-webkit-tap-highlight-color:transparent;}
+.cw-med:hover{transform:var(--cwt) scale(1.12) !important;border-color:#FFB84C;}
+.cw-med.on{border-color:#5B54C9;background:radial-gradient(circle at 32% 28%,#FFFFFF,#E3E0FF);box-shadow:0 8px 20px rgba(91,84,201,.35);}
+.cw-med .e{font-size:1.35rem;line-height:1.1;}
+.cw-med b{font-family:'Baloo 2',cursive;font-size:.62rem;color:#5B54C9;}
+.cw-med small{font-size:.52rem;color:#5C638A;font-weight:800;}
+@media(max-width:560px){.cw-med{width:62px;height:62px;margin:-31px 0 0 -31px;}.cw-med .e{font-size:1.1rem;}}
+.cw-detail{max-width:620px;margin:1.3rem auto 0;background:#fff;border:2px solid #E7EEFC;border-top:5px solid #FFB84C;border-radius:18px;padding:1.1rem 1.2rem;box-shadow:0 10px 26px rgba(46,39,115,.1);}
+.cw-ragas{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;}
+.cw-ragas button{font-family:'Nunito',sans-serif;font-weight:800;font-size:.85rem;padding:.5rem .9rem;border:2px solid #E7EEFC;border-radius:999px;background:#F5F8FF;color:#2E3350;cursor:pointer;transition:all .12s;}
+.cw-ragas button:hover{border-color:#5B54C9;background:#EEF0FF;color:#5B54C9;}
+</style>
+
+<script>
+(function(){
+'use strict';
+var CW=[
+ ['Indu','🌙','one moon'],['Netra','👀','two eyes'],['Agni','🔥','three sacred fires'],
+ ['Veda','📜','the four Vedas'],['Bana','🏹','five arrows of Manmatha'],['Rutu','🌦️','six seasons'],
+ ['Rishi','🧘','seven great sages'],['Vasu','💎','eight Vasus'],['Brahma','🕉️','nine Brahmas'],
+ ['Disi','🧭','ten directions'],['Rudra','🔱','eleven Rudras'],['Aditya','☀️','twelve Adityas']
+];
+var ring=document.getElementById('cwRing');
+var R = ring.clientWidth/2 - 40;
+function place(){
+  R = ring.clientWidth/2 - 40;
+  ring.querySelectorAll('.cw-med').forEach(function(m,i){
+    var ang=(i/12)*2*Math.PI - Math.PI/2;
+    var t='translate('+(Math.cos(ang)*R).toFixed(1)+'px,'+(Math.sin(ang)*R).toFixed(1)+'px)';
+    m.style.setProperty('--cwt',t);
+    m.style.transform=t;
+  });
+}
+CW.forEach(function(c,i){
+  var m=document.createElement('button');
+  m.className='cw-med';
+  m.innerHTML='<span class="e">'+c[1]+'</span><b>'+c[0]+'</b><small>'+((i*6)+1)+'–'+((i*6)+6)+'</small>';
+  m.addEventListener('click',function(){openCk(i,m);});
+  ring.appendChild(m);
+});
+place();window.addEventListener('resize',place);
+
+function openCk(i,med){
+  ring.querySelectorAll('.cw-med').forEach(function(x){x.classList.toggle('on',x===med);});
+  var d=document.getElementById('cwDetail');
+  document.getElementById('cwName').textContent=CW[i][1]+' Chakra '+(i+1)+' · '+CW[i][0];
+  document.getElementById('cwMn').textContent='Memory picture: '+CW[i][2]+'. Tap a raga to load it in the explorer below and press play.';
+  var rg=document.getElementById('cwRagas');rg.innerHTML='';
+  for(var k=0;k<6;k++){
+    (function(no){
+      var b=document.createElement('button');
+      b.textContent=no+'. '+(typeof NAMES!=='undefined'?NAMES[no-1]:'');
+      b.addEventListener('click',function(){
+        if(typeof select==='function'){select(no);
+          var ex=document.getElementById('explorer');
+          if(ex&&ex.scrollIntoView)ex.scrollIntoView({behavior:'smooth'});}
+      });
+      rg.appendChild(b);
+    })(i*6+k+1);
+  }
+  d.style.display='block';
+}
+
+/* deep link: melakarta-explorer.html?m=N loads raga N */
+try{
+  var qm=new URLSearchParams(location.search).get('m');
+  if(qm&&typeof select==='function'){
+    var N=Math.max(1,Math.min(72,parseInt(qm,10)||1));
+    select(N);
+    setTimeout(function(){var ex=document.getElementById('explorer');if(ex&&ex.scrollIntoView)ex.scrollIntoView();},300);
+  }
+}catch(e){}
+})();
+</script>
+
 
 <!-- 5. EXPLORER -->
 <section class="block" id="explorer" style="border-bottom:none">
@@ -854,7 +954,7 @@ document.addEventListener('DOMContentLoaded',init);
   <div class="lva-footer-quick">
     <a href="index.html">Home</a><a href="about.html">About</a><a href="courses.html">Courses</a><a href="learn.html">Learn</a><a href="games.html">Games &amp; Labs</a><a href="musical-journey.html">My Journey</a><a href="certificate.html">Rewards</a><a href="index.html#contact">Enroll</a>
   </div>
-  <p class="lva-footer-copy">© 2026 Lakshya's Violin Academy · Made with ♥ and music 🎶</p>
+  <p class="lva-footer-copy">© 2026 Lakshya's Violin Academy · Made with <span class="lva-heart">♥</span> and music <span class="lva-music">♫</span></p>
 </div>
 
 <!-- Analytics: GoatCounter (privacy-friendly) -->

@@ -9,13 +9,13 @@
 <meta property="og:title" content="Spin the Practice Wheel | Lakshya&#x27;s Violin Academy" />
 <meta property="og:description" content="Spin the colourful wheel and let it pick today&#x27;s violin practice mission — varisais, thala, ear training and more. Practice made playful!" />
 <meta property="og:url" content="https://lakshyasviolinacademy.live/practice-wheel.html" />
-<meta property="og:image" content="https://lakshyasviolinacademy.live/og-image.png" />
+<meta property="og:image" content="https://lakshyasviolinacademy.live/og-practice-wheel.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Spin the Practice Wheel | Lakshya&#x27;s Violin Academy" />
 <meta name="twitter:description" content="Spin the colourful wheel and let it pick today&#x27;s violin practice mission — varisais, thala, ear training and more. Practice made playful!" />
-<meta name="twitter:image" content="https://lakshyasviolinacademy.live/og-image.png" />
+<meta name="twitter:image" content="https://lakshyasviolinacademy.live/og-practice-wheel.png" />
 <meta name="description" content="Spin the colourful wheel and let it pick today&#x27;s violin practice mission — varisais, thala, ear training and more. Practice made playful!">
 <meta name="theme-color" content="#5B54C9" />
 <link rel="canonical" href="https://lakshyasviolinacademy.live/practice-wheel.html">
@@ -66,6 +66,7 @@
           <a href="raga-jukebox.html">📻&ensp;Raga Jukebox</a>
           <a href="frequency-and-swaras.html">🔊&ensp;Frequency &amp; Swaras Lab</a>
           <a href="melakarta-explorer.html">🎼&ensp;72 Melakarta Explorer</a>
+          <a href="melakarta-master.html">🧠&ensp;Melakarta Master — memorise 72</a>
           <a href="gamaka-explorer.html">🌊&ensp;Gamaka Explorer</a>
           <a href="raga-mood-matcher.html">🎭&ensp;Raga Mood Matcher</a>
           <span class="lva-drop-label">🎮 Play &amp; Create</span>
@@ -116,6 +117,7 @@
     <h2 id="pwTitle"></h2>
     <p id="pwDesc"></p>
     <a class="pw-btn" id="pwGo" href="#">▶ Let's do it</a>
+    <button class="pw-btn" id="pwShare" style="background:linear-gradient(135deg,#16A34A,#22C55E);box-shadow:0 5px 14px rgba(22,163,74,.4);">📤 Share</button>
     <button class="pw-btn" id="pwAgain" style="background:linear-gradient(135deg,#F25C54,#FF8A5C);box-shadow:0 5px 14px rgba(242,92,84,.4);">🔁 Spin again</button>
   </div>
 </div>
@@ -124,14 +126,14 @@
 (function(){
 'use strict';
 var SEGS=[
- {em:'🎶',t:'Sarali Varisai',d:'Play your sarali varisai slowly and clearly, twice through, in your sruthi.',url:'varisai-lab.html',c:'#5B54C9'},
- {em:'🪜',t:'Janta Varisai',d:'Double notes today! Keep both notes of each janta pair equally strong.',url:'varisai-lab.html',c:'#F25C54'},
- {em:'🥁',t:'Thala Time',d:'Open the Thala player and count Adi thala along with the glowing beats.',url:'thala-basics.html',c:'#0E9488'},
- {em:'🎚️',t:'Sruthi Practice',d:'Start the shruti box drone and hum Sa until it melts into the drone.',url:'shruti-box.html',c:'#FFB84C'},
- {em:'🎧',t:'Ear Training',d:'Play the Swara Guessing Game — can you score 8 out of 10?',url:'swara-guessing-game.html',c:'#837DD9'},
- {em:'🎼',t:'Raga Listening',d:'Open the Raga Jukebox and listen to two new ragas with your eyes closed.',url:'raga-jukebox.html',c:'#E64545'},
- {em:'🌊',t:'Gamaka Explorer',d:'Watch and listen to two gamakas — then try to sing their shapes!',url:'gamaka-explorer.html',c:'#14B0A0'},
- {em:'🕵️',t:'Sruthi Detective',d:'One note is out of tune… play Sruthi Detective and catch it!',url:'sruthi-detective.html',c:'#D97706'}
+ {em:'🎶',t:'Sarali Varisai',tt:'சரளி வரிசை',td:'உங்கள் சரளி வரிசையை மெதுவாகவும் தெளிவாகவும் இரண்டு முறை வாசியுங்கள்.',d:'Play your sarali varisai slowly and clearly, twice through, in your sruthi.',url:'varisai-lab.html',c:'#5B54C9'},
+ {em:'🪜',t:'Janta Varisai',tt:'ஜண்டை வரிசை',td:'இன்று இரட்டை ஸ்வரங்கள்! ஒவ்வொரு ஜோடியும் சம வலிமையுடன் ஒலிக்கட்டும்.',d:'Double notes today! Keep both notes of each janta pair equally strong.',url:'varisai-lab.html',c:'#F25C54'},
+ {em:'🥁',t:'Thala Time',tt:'தாள நேரம்',td:'தாள இயக்கியைத் திறந்து ஆதி தாளத்தை ஒளிரும் அக்ஷரங்களுடன் எண்ணுங்கள்.',d:'Open the Thala player and count Adi thala along with the glowing beats.',url:'thala-basics.html',c:'#0E9488'},
+ {em:'🎚️',t:'Sruthi Practice',tt:'சுருதிப் பயிற்சி',td:'சுருதிப் பெட்டியை இயக்கி ஸ ஸ்வரத்தை ட்ரோனுடன் கலக்கும்வரை பாடுங்கள்.',d:'Start the shruti box drone and hum Sa until it melts into the drone.',url:'shruti-box.html',c:'#FFB84C'},
+ {em:'🎧',t:'Ear Training',tt:'செவிப் பயிற்சி',td:'ஸ்வரம் கண்டுபிடி விளையாட்டை விளையாடுங்கள் — 10-இல் 8 பெற முடியுமா?',d:'Play the Swara Guessing Game — can you score 8 out of 10?',url:'swara-guessing-game.html',c:'#837DD9'},
+ {em:'🎼',t:'Raga Listening',tt:'ராகம் கேட்டல்',td:'ராக ஜூக்பாக்ஸில் கண்களை மூடிக்கொண்டு இரண்டு புதிய ராகங்களைக் கேளுங்கள்.',d:'Open the Raga Jukebox and listen to two new ragas with your eyes closed.',url:'raga-jukebox.html',c:'#E64545'},
+ {em:'🌊',t:'Gamaka Explorer',tt:'கமக ஆய்வு',td:'இரண்டு கமகங்களைப் பார்த்துக் கேளுங்கள் — பிறகு அவற்றின் வடிவங்களைப் பாட முயற்சியுங்கள்!',d:'Watch and listen to two gamakas — then try to sing their shapes!',url:'gamaka-explorer.html',c:'#14B0A0'},
+ {em:'🕵️',t:'Sruthi Detective',tt:'சுருதி துப்பறிவாளர்',td:'ஒரு ஸ்வரம் சுருதி தவறிவிட்டது… கண்டுபிடியுங்கள்!',d:'One note is out of tune… play Sruthi Detective and catch it!',url:'sruthi-detective.html',c:'#D97706'}
 ];
 var svg=document.getElementById('pwSvg'),N=SEGS.length,seg=360/N;
 var cx=200,cy=200,r=196;
@@ -172,8 +174,8 @@ btn.addEventListener('click',function(){
   setTimeout(function(){
     var s=SEGS[pick];
     document.getElementById('pwEm').textContent=s.em;
-    document.getElementById('pwTitle').textContent=s.t;
-    document.getElementById('pwDesc').textContent=s.d;
+    var __ta=(window.lvaLang&&lvaLang()==='ta');document.getElementById('pwTitle').textContent=__ta&&s.tt?s.tt:s.t;
+    document.getElementById('pwDesc').textContent=__ta&&s.td?s.td:s.d;
     document.getElementById('pwGo').href=s.url;
     res.style.display='block';res.scrollIntoView&&res.scrollIntoView({behavior:'smooth',block:'center'});
     tick(880);setTimeout(function(){tick(1100);},160);
@@ -181,6 +183,10 @@ btn.addEventListener('click',function(){
   },4300);
 });
 document.getElementById('pwAgain').addEventListener('click',function(){btn.click();});
+document.getElementById('pwShare').addEventListener('click',function(){
+  var t=document.getElementById('pwTitle').textContent;
+  if(window.lvaShare)lvaShare('The Practice Wheel gave me \u201C'+t+'\u201D as today\u2019s mission at Lakshya\u2019s Violin Academy! 🎡🎻');
+});
 })();
 </script>
 
@@ -198,7 +204,7 @@ document.getElementById('pwAgain').addEventListener('click',function(){btn.click
   <div class="lva-footer-quick">
     <a href="index.html">Home</a><a href="about.html">About</a><a href="courses.html">Courses</a><a href="learn.html">Learn</a><a href="games.html">Games &amp; Labs</a><a href="musical-journey.html">My Journey</a><a href="certificate.html">Rewards</a><a href="index.html#contact">Enroll</a>
   </div>
-  <p class="lva-footer-copy">© 2026 Lakshya's Violin Academy · Made with ♥ and music 🎶</p>
+  <p class="lva-footer-copy">© 2026 Lakshya's Violin Academy · Made with <span class="lva-heart">♥</span> and music <span class="lva-music">♫</span></p>
 </div>
 <!-- Analytics: GoatCounter (privacy-friendly) -->
 <script data-goatcounter="https://lakshyasviolinacademy.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>

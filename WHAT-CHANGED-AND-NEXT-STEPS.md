@@ -47,6 +47,19 @@ Every page now shows a friendly "👋 Welcome!" pop-up to first-time visitors ex
 - **Welcome tour rewritten** to teach the new structure: Journey first, then Learn, Games groups, and Rewards.
 - Everything remains fully mobile-friendly (same drawer menu) and uses the same indigo/coral/mango/sunshine palette.
 
+## Round 6 — Tamil/English toggle (added, then reverted on request)
+A full bilingual toggle was built and later removed at your request. The site is English-only again.
+
+## Round 7 — share thumbnails, sharing everywhere, Melakarta Master & more
+
+- **Beautiful share thumbnails on every page.** Each of the 25 pages now has its own 1200×630 share card (violin-with-bow badge in brownish red, big academy name, page title and a stylised preview of that page). WhatsApp, WhatsApp Status, Instagram, Facebook, LinkedIn and Twitter all pick these up automatically via the standard Open Graph / Twitter Card tags. The default `og-image.png` was also redesigned to match.
+- **📤 Share my result on every game & lab.** A friendly share bar now appears above the footer of all 17 game/lab pages — one tap shares a page-specific message (Web Share API on phones; WhatsApp fallback on desktop). Where an achievement applies (Build-a-Raga, Varisai Lab, Thala, ear-training games, Memory Match, Melakarta pages, Journey), a green "Claim my certificate" button sits beside it, pre-selecting the right achievement. Memory Match and the Practice Wheel additionally share their exact result (stars / mission).
+- **🧠 Melakarta Master (`melakarta-master.html`)** — a new gamified page to memorise all 72 melakarta ragas in order: twelve chakra chips with the classic memory hooks (Indu = 1 moon … Aditya = 12 suns), a Learn mode (six flashcards per chakra, each linking to hear that raga in the Explorer), a Recite mode (walk 1 → 72 name by name), and a Quiz mode (6 questions per chakra, 5+ correct earns the chakra's star, saved in the browser). Twelve stars = Melakarta Master, with confetti, a certificate and a share button.
+- **☸️ Pictorial Chakra Wheel inside the 72 Melakarta Explorer** — twelve medallions arranged in a circle, each with its memory picture (🌙 Indu, 👀 Netra, 🔥 Agni, 📜 Veda, 🏹 Bana, 🌦️ Rutu, 🧘 Rishi, 💎 Vasu, 🕉️ Brahma, 🧭 Disi, 🔱 Rudra, ☀️ Aditya). Tapping a medallion reveals its six ragas; tapping a raga loads it straight into the explorer below for playing. The Explorer also now supports deep links (`melakarta-explorer.html?m=29` opens raga 29), which the Master page uses.
+- **🌏 Online classes messaging** — a warm, diplomatic section on the Courses page and a line in the homepage contact area: online classes available across India; for students abroad, considered case by case guided by the student's interest; personalised one-on-one classes encouraged, especially online.
+- **Footer polish** — "Made with ♥" heart is now red with a soft glow, the music note glows golden, and the violin watermark in the footer corner is noticeably more visible against the indigo background.
+
 ## Still worth doing later
+- Translate the remaining lesson/blog prose to Tamil (the data-ta system is in place; needs native review).
 - Replace the sample testimonials with real quotes and add real student photos (with parents' permission).
 - Consider compressing the largest game pages further if mobile loading feels slow on 3G.

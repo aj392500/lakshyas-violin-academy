@@ -9,13 +9,13 @@
 <meta property="og:title" content="My Musical Journey — 14 Stops Through Every Lab | Lakshya&#x27;s Violin Academy" />
 <meta property="og:description" content="The adventure map that connects every game and lab on the site — 14 stops in 4 chapters, from your first bow-stroke to the Kutcheri Hall. Collect all the stars!" />
 <meta property="og:url" content="https://lakshyasviolinacademy.live/musical-journey.html" />
-<meta property="og:image" content="https://lakshyasviolinacademy.live/og-image.png" />
+<meta property="og:image" content="https://lakshyasviolinacademy.live/og-musical-journey.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="My Musical Journey — 14 Stops Through Every Lab | Lakshya&#x27;s Violin Academy" />
 <meta name="twitter:description" content="The adventure map that connects every game and lab on the site — 14 stops in 4 chapters, from your first bow-stroke to the Kutcheri Hall. Collect all the stars!" />
-<meta name="twitter:image" content="https://lakshyasviolinacademy.live/og-image.png" />
+<meta name="twitter:image" content="https://lakshyasviolinacademy.live/og-musical-journey.png" />
 <meta name="description" content="The adventure map that connects every game and lab on the site — 14 stops in 4 chapters, from your first bow-stroke to the Kutcheri Hall. Collect all the stars!">
 <meta name="theme-color" content="#5B54C9" />
 <link rel="canonical" href="https://lakshyasviolinacademy.live/musical-journey.html">
@@ -66,6 +66,7 @@
           <a href="raga-jukebox.html">📻&ensp;Raga Jukebox</a>
           <a href="frequency-and-swaras.html">🔊&ensp;Frequency &amp; Swaras Lab</a>
           <a href="melakarta-explorer.html">🎼&ensp;72 Melakarta Explorer</a>
+          <a href="melakarta-master.html">🧠&ensp;Melakarta Master — memorise 72</a>
           <a href="gamaka-explorer.html">🌊&ensp;Gamaka Explorer</a>
           <a href="raga-mood-matcher.html">🎭&ensp;Raga Mood Matcher</a>
           <span class="lva-drop-label">🎮 Play &amp; Create</span>
@@ -97,8 +98,7 @@
 .jm-chap{display:flex;align-items:center;gap:.8rem;margin:1.6rem 0 .4rem;}
 .jm-chap::before,.jm-chap::after{content:'';flex:1;height:2px;background:#C5D3F0;border-radius:2px;}
 .jm-chap span{font-family:'Baloo 2',cursive;font-weight:800;color:#837DD9;font-size:.95rem;letter-spacing:.5px;white-space:nowrap;}
-.jm-map{position:relative;}
-.jm-stops{position:relative;z-index:1;display:flex;flex-direction:column;gap:1.05rem;}
+.jm-stops{display:flex;flex-direction:column;gap:1.05rem;}
 .jm-stop{display:flex;align-items:center;gap:1rem;width:min(100%,430px);}
 .jm-stop.right{align-self:flex-end;flex-direction:row-reverse;text-align:right;}
 .jm-dot{flex:none;width:74px;height:74px;border-radius:50%;background:#fff;border:4px solid #C5D3F0;display:flex;align-items:center;justify-content:center;font-size:1.9rem;cursor:pointer;box-shadow:0 8px 20px rgba(46,39,115,.15);transition:transform .15s,border-color .2s;position:relative;-webkit-tap-highlight-color:transparent;}
@@ -128,9 +128,9 @@
 <div class="jm-wrap">
   <div class="jm-progress">
     <div class="jm-bar"><div class="jm-fill" id="jmFill"></div></div>
-    <div class="jm-count" id="jmCount">0 / 14 stars collected</div>
+    <div class="jm-count" id="jmCount">0 / 14</div>
   </div>
-  <div class="jm-map"><div class="jm-stops" id="jmStops"></div></div>
+  <div class="jm-stops" id="jmStops"></div>
   <div class="jm-finish" id="jmFinish">
     <h2>🎆 You completed the whole journey!</h2>
     <p>Fourteen stops, fourteen stars — every game and lab on this site, from your first bow-stroke to the Kutcheri Hall. What a musician you are becoming!</p>
@@ -154,62 +154,71 @@
 <script>
 (function(){
 'use strict';
-var CHAPTERS=['🎻 Chapter 1 · Foundations','🎧 Chapter 2 · Train Your Ear','🌸 Chapter 3 · The World of Ragas','🎆 Chapter 4 · Create & Perform'];
+function L(){return (window.lvaLang&&window.lvaLang()==='ta')?'ta':'en';}
+var CHAPTERS={
+ en:['🎻 Chapter 1 · Foundations','🎧 Chapter 2 · Train Your Ear','🌸 Chapter 3 · The World of Ragas','🎆 Chapter 4 · Create & Perform'],
+ ta:['🎻 அத்தியாயம் 1 · அடிப்படைகள்','🎧 அத்தியாயம் 2 · செவிப் பயிற்சி','🌸 அத்தியாயம் 3 · ராகங்களின் உலகம்','🎆 அத்தியாயம் 4 · உருவாக்கு & நிகழ்த்து']
+};
 var STOPS=[
- {ch:0,em:'🎻',t:'1 · First Bow',sub:'Sa & Pa strings',d:'Every journey begins with Sa! Learn how the violin\u2019s strings sing Sa\u2013Pa\u2013Sa\u2013Pa\u2013Sa.',url:'learn.html#sapa'},
- {ch:0,em:'🎚️',t:'2 · Sruthi Spring',sub:'Shruti Box',d:'Drink from the spring of perfect pitch \u2014 start the drone and hum Sa until it melts into it.',url:'shruti-box.html'},
- {ch:0,em:'🎶',t:'3 · Sarali Steps',sub:'Varisai Lab',d:'Climb the swara ladder! Play along with the sarali varisai slowly and clearly.',url:'varisai-lab.html'},
- {ch:0,em:'🥁',t:'4 · Thala Trail',sub:'Rhythm Player',d:'Feel the heartbeat of Carnatic music \u2014 count Adi thala with the glowing beats.',url:'thala-basics.html'},
- {ch:1,em:'🔊',t:'5 · Frequency Falls',sub:'Frequency & Swaras Lab',d:'Discover the secret speed of every swara \u2014 how fast wobbles make high notes!',url:'frequency-and-swaras.html'},
- {ch:1,em:'🎧',t:'6 · Ear Forest',sub:'Swara Guessing Game',d:'Listen carefully among the trees\u2026 can you name each swara you hear?',url:'swara-guessing-game.html'},
- {ch:1,em:'🕵️',t:'7 · Detective Den',sub:'Sruthi Detective',d:'One note slipped out of tune \u2014 use your sharp ears to catch the culprit!',url:'sruthi-detective.html'},
- {ch:1,em:'🃏',t:'8 · Memory Meadow',sub:'Memory Match',d:'Flip the cards and match swaras, ragas and instruments. Can you earn three stars?',url:'memory-match.html'},
- {ch:2,em:'📻',t:'9 · Jukebox Junction',sub:'Raga Jukebox',d:'Listen to the arohanam and avarohanam of the ragas children meet first.',url:'raga-jukebox.html'},
- {ch:2,em:'🎭',t:'10 · Raga Garden',sub:'Mood Matcher',d:'Every raga is a flower with its own fragrance. Match ragas to their moods!',url:'raga-mood-matcher.html'},
- {ch:2,em:'🎼',t:'11 · Melakarta Mountain',sub:'72 Melakarta Explorer',d:'Climb the great mountain of all 72 parent ragas \u2014 see and hear every scale.',url:'melakarta-explorer.html'},
- {ch:2,em:'🌊',t:'12 · Gamaka River',sub:'Gamaka Explorer',d:'Ride the beautiful waves and curls that give Carnatic music its life.',url:'gamaka-explorer.html'},
- {ch:3,em:'🛠️',t:'13 · Raga Builder\u2019s Bridge',sub:'Build-a-Raga Lab',d:'Choose your own swaras, build a scale, and discover which raga you invented!',url:'build-a-raga-lab.html'},
- {ch:3,em:'🎆',t:'14 · Kutcheri Hall',sub:'Compose-a-Geetham',d:'The grand finale \u2014 compose your own little geetham and perform it!',url:'compose-a-geetham.html'}
+ {ch:0,em:'🎻',t:'1 · First Bow',ta:'1 · முதல் வில்',s:'Sa & Pa strings',sa:'ஸ & ப தந்திகள்',d:'Every journey begins with Sa! Learn how the violin\u2019s strings sing Sa\u2013Pa\u2013Sa\u2013Pa\u2013Sa.',da:'ஒவ்வொரு பயணமும் ஸ-வில் தொடங்குகிறது! வயலின் தந்திகள் ஸ–ப–ஸ–ப–ஸ பாடுவதைக் கற்றுக்கொள்ளுங்கள்.',url:'learn.html#sapa'},
+ {ch:0,em:'🎚️',t:'2 · Sruthi Spring',ta:'2 · சுருதி ஊற்று',s:'Shruti Box',sa:'சுருதிப் பெட்டி',d:'Drink from the spring of perfect pitch \u2014 start the drone and hum Sa until it melts into it.',da:'சுருதிப் பெட்டியை இயக்கி, ஸ ஸ்வரம் ட்ரோனுடன் கலக்கும்வரை பாடுங்கள்.',url:'shruti-box.html'},
+ {ch:0,em:'🎶',t:'3 · Sarali Steps',ta:'3 · சரளிப் படிகள்',s:'Varisai Lab',sa:'வரிசை ஆய்வகம்',d:'Climb the swara ladder! Play along with the sarali varisai slowly and clearly.',da:'ஸ்வர ஏணியில் ஏறுங்கள்! சரளி வரிசையை மெதுவாகவும் தெளிவாகவும் வாசியுங்கள்.',url:'varisai-lab.html'},
+ {ch:0,em:'🥁',t:'4 · Thala Trail',ta:'4 · தாளப் பாதை',s:'Rhythm Player',sa:'லய இயக்கி',d:'Feel the heartbeat of Carnatic music \u2014 count Adi thala with the glowing beats.',da:'கர்நாடக இசையின் இதயத் துடிப்பை உணருங்கள் — ஒளிரும் அக்ஷரங்களுடன் ஆதி தாளம் எண்ணுங்கள்.',url:'thala-basics.html'},
+ {ch:1,em:'🔊',t:'5 · Frequency Falls',ta:'5 · அதிர்வெண் அருவி',s:'Frequency & Swaras Lab',sa:'அதிர்வெண் & ஸ்வர ஆய்வகம்',d:'Discover the secret speed of every swara \u2014 how fast wobbles make high notes!',da:'ஒவ்வொரு ஸ்வரத்தின் ரகசிய வேகத்தைக் கண்டறியுங்கள் — வேக அதிர்வுகள் உயர் ஸ்வரங்களை உருவாக்குகின்றன!',url:'frequency-and-swaras.html'},
+ {ch:1,em:'🎧',t:'6 · Ear Forest',ta:'6 · செவிக் காடு',s:'Swara Guessing Game',sa:'ஸ்வரம் கண்டுபிடி',d:'Listen carefully among the trees\u2026 can you name each swara you hear?',da:'கவனமாகக் கேளுங்கள்… கேட்கும் ஒவ்வொரு ஸ்வரத்தையும் சொல்ல முடியுமா?',url:'swara-guessing-game.html'},
+ {ch:1,em:'🕵️',t:'7 · Detective Den',ta:'7 · துப்பறிவாளர் குகை',s:'Sruthi Detective',sa:'சுருதி துப்பறிவாளர்',d:'One note slipped out of tune \u2014 use your sharp ears to catch the culprit!',da:'ஒரு ஸ்வரம் சுருதி தவறிவிட்டது — உங்கள் கூர்மையான காதுகளால் கண்டுபிடியுங்கள்!',url:'sruthi-detective.html'},
+ {ch:1,em:'🃏',t:'8 · Memory Meadow',ta:'8 · நினைவுப் புல்வெளி',s:'Memory Match',sa:'நினைவாற்றல் விளையாட்டு',d:'Flip the cards and match swaras, ragas and instruments. Can you earn three stars?',da:'அட்டைகளைத் திருப்பி ஸ்வரங்கள், ராகங்கள், கருவிகளைப் பொருத்துங்கள். மூன்று நட்சத்திரம் பெற முடியுமா?',url:'memory-match.html'},
+ {ch:2,em:'📻',t:'9 · Jukebox Junction',ta:'9 · ஜூக்பாக்ஸ் சந்திப்பு',s:'Raga Jukebox',sa:'ராக ஜூக்பாக்ஸ்',d:'Listen to the arohanam and avarohanam of the ragas children meet first.',da:'குழந்தைகள் முதலில் சந்திக்கும் ராகங்களின் ஆரோகண அவரோகணங்களைக் கேளுங்கள்.',url:'raga-jukebox.html'},
+ {ch:2,em:'🎭',t:'10 · Raga Garden',ta:'10 · ராகத் தோட்டம்',s:'Mood Matcher',sa:'உணர்வுப் பொருத்தம்',d:'Every raga is a flower with its own fragrance. Match ragas to their moods!',da:'ஒவ்வொரு ராகமும் தனி நறுமணம் கொண்ட மலர். ராகங்களை அவற்றின் உணர்வுகளுடன் பொருத்துங்கள்!',url:'raga-mood-matcher.html'},
+ {ch:2,em:'🎼',t:'11 · Melakarta Mountain',ta:'11 · மேளகர்த்தா மலை',s:'72 Melakarta Explorer',sa:'72 மேளகர்த்தா',d:'Climb the great mountain of all 72 parent ragas \u2014 see and hear every scale.',da:'72 மேளகர்த்தா ராகங்களின் பெரிய மலையில் ஏறுங்கள் — ஒவ்வொரு ஸ்கேலையும் பார்த்துக் கேளுங்கள்.',url:'melakarta-explorer.html'},
+ {ch:2,em:'🌊',t:'12 · Gamaka River',ta:'12 · கமக நதி',s:'Gamaka Explorer',sa:'கமக ஆய்வு',d:'Ride the beautiful waves and curls that give Carnatic music its life.',da:'கர்நாடக இசைக்கு உயிரூட்டும் அழகிய அலைகளில் பயணியுங்கள்.',url:'gamaka-explorer.html'},
+ {ch:3,em:'🛠️',t:'13 · Raga Builder\u2019s Bridge',ta:'13 · ராக உருவாக்கும் பாலம்',s:'Build-a-Raga Lab',sa:'ராகம் உருவாக்கு',d:'Choose your own swaras, build a scale, and discover which raga you invented!',da:'உங்கள் சொந்த ஸ்வரங்களைத் தேர்ந்தெடுத்து, எந்த ராகத்தை உருவாக்கினீர்கள் என்று கண்டறியுங்கள்!',url:'build-a-raga-lab.html'},
+ {ch:3,em:'🎆',t:'14 · Kutcheri Hall',ta:'14 · கச்சேரி மண்டபம்',s:'Compose-a-Geetham',sa:'கீதம் இயற்று',d:'The grand finale \u2014 compose your own little geetham and perform it!',da:'மாபெரும் நிறைவு — உங்கள் சொந்த சிறு கீதத்தை இயற்றி நிகழ்த்துங்கள்!',url:'compose-a-geetham.html'}
 ];
 var TOTAL=STOPS.length,KEY='lva_journey2';
 function load(){try{return JSON.parse(localStorage.getItem(KEY)||'[]');}catch(e){return[];}}
 function save(a){try{localStorage.setItem(KEY,JSON.stringify(a));}catch(e){}}
 var done=load(),cur=0;
-var stopsEl=document.getElementById('jmStops'),side=0,lastCh=-1;
+var stopsEl=document.getElementById('jmStops');
 
-STOPS.forEach(function(s,i){
-  if(s.ch!==lastCh){
-    lastCh=s.ch;
-    var ch=document.createElement('div');ch.className='jm-chap';
-    ch.innerHTML='<span>'+CHAPTERS[s.ch]+'</span>';
-    stopsEl.appendChild(ch);
-  }
-  var row=document.createElement('div');
-  row.className='jm-stop'+(side%2?' right':'');side++;
-  row.dataset.i=i;
-  row.innerHTML='<button class="jm-dot" aria-label="'+s.t+'">'+s.em+'</button><div class="jm-info"><b>'+s.t+'</b><span>'+s.sub+'</span></div>';
-  row.querySelector('.jm-dot').addEventListener('click',function(){openPanel(i);});
-  stopsEl.appendChild(row);
-});
+function render(){
+  var lang=L(),side=0,lastCh=-1;
+  stopsEl.innerHTML='';
+  STOPS.forEach(function(s,i){
+    if(s.ch!==lastCh){
+      lastCh=s.ch;
+      var ch=document.createElement('div');ch.className='jm-chap';
+      ch.innerHTML='<span>'+CHAPTERS[lang][s.ch]+'</span>';
+      stopsEl.appendChild(ch);
+    }
+    var row=document.createElement('div');
+    row.className='jm-stop'+(side%2?' right':'');side++;
+    row.dataset.i=i;
+    row.innerHTML='<button class="jm-dot" aria-label="'+(lang==='ta'?s.ta:s.t)+'">'+s.em+'</button><div class="jm-info"><b>'+(lang==='ta'?s.ta:s.t)+'</b><span>'+(lang==='ta'?s.sa:s.s)+'</span></div>';
+    row.querySelector('.jm-dot').addEventListener('click',function(){openPanel(i);});
+    stopsEl.appendChild(row);
+  });
+  refresh();
+}
 
 function refresh(){
-  var n=0;
+  var n=0,lang=L();
   document.querySelectorAll('.jm-stop').forEach(function(row){
     var d=done.indexOf(+row.dataset.i)>-1;
     row.classList.toggle('done',d);if(d)n++;
   });
   document.getElementById('jmFill').style.width=(n/TOTAL*100)+'%';
-  document.getElementById('jmCount').textContent=n+' / '+TOTAL+' stars collected';
+  document.getElementById('jmCount').textContent=lang==='ta'?(n+' / '+TOTAL+' நட்சத்திரங்கள்'):(n+' / '+TOTAL+' stars collected');
   document.getElementById('jmFinish').style.display=n===TOTAL?'block':'none';
   return n;
 }
 
 var panel=document.getElementById('jmPanel');
 function openPanel(i){
-  cur=i;var s=STOPS[i];
+  cur=i;var s=STOPS[i],lang=L();
   document.getElementById('jmEm').textContent=s.em;
-  document.getElementById('jmTitle').textContent=s.t;
-  document.getElementById('jmDesc').textContent=s.d;
+  document.getElementById('jmTitle').textContent=lang==='ta'?s.ta:s.t;
+  document.getElementById('jmDesc').textContent=lang==='ta'?s.da:s.d;
   document.getElementById('jmVisit').href=s.url;
   var isDone=done.indexOf(i)>-1;
   document.getElementById('jmMark').style.display=isDone?'none':'inline-block';
@@ -244,7 +253,7 @@ function confetti(){
     if(Date.now()-t0<2600)requestAnimationFrame(tick);else ctx.clearRect(0,0,cv.width,cv.height);
   })();
 }
-refresh();
+render();
 })();
 </script>
 
@@ -262,7 +271,7 @@ refresh();
   <div class="lva-footer-quick">
     <a href="index.html">Home</a><a href="about.html">About</a><a href="courses.html">Courses</a><a href="learn.html">Learn</a><a href="games.html">Games &amp; Labs</a><a href="musical-journey.html">My Journey</a><a href="certificate.html">Rewards</a><a href="index.html#contact">Enroll</a>
   </div>
-  <p class="lva-footer-copy">© 2026 Lakshya's Violin Academy · Made with ♥ and music 🎶</p>
+  <p class="lva-footer-copy">© 2026 Lakshya's Violin Academy · Made with <span class="lva-heart">♥</span> and music <span class="lva-music">♫</span></p>
 </div>
 <!-- Analytics: GoatCounter (privacy-friendly) -->
 <script data-goatcounter="https://lakshyasviolinacademy.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>

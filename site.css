@@ -234,7 +234,7 @@ html.lva-lock, html.lva-lock body { overflow: hidden !important; }
 }
 .lva-footer::after {
   content: '🎻'; position: absolute; bottom: -14px; right: 4%;
-  font-size: 5rem; opacity: 0.10; pointer-events: none;
+  font-size: 5rem; opacity: 0.28; filter: drop-shadow(0 0 14px rgba(255, 209, 102, 0.35)); pointer-events: none;
 }
 .lva-footer-notes { font-size: 1.15rem; letter-spacing: 0.9em; color: var(--lva-sunshine); opacity: 0.9; margin-bottom: 0.7rem; }
 .lva-footer-brand {
@@ -533,3 +533,29 @@ input:focus-visible, [tabindex]:focus-visible {
   transition: transform .15s, box-shadow .15s;
 }
 .lva-path-go:hover { transform: translateY(-2px); box-shadow: 0 11px 24px rgba(242, 92, 84, 0.55); }
+
+/* ── footer accents: red heart, golden music note ─────────────── */
+.lva-heart { color: #FF4B5C; font-size: 1.05em; text-shadow: 0 0 10px rgba(255, 75, 92, 0.45); }
+.lva-music { color: var(--lva-sunshine); font-size: 1.05em; text-shadow: 0 0 10px rgba(255, 209, 102, 0.45); }
+
+/* ═══════════════════════════════════════════════════════════════
+   SHARE MY RESULT bar (auto-inserted on game pages)
+   ═══════════════════════════════════════════════════════════════ */
+.lva-share-bar { padding: 0 1.2rem; margin: 2.2rem auto 0; max-width: 760px; font-family: var(--lva-font-body); }
+.lva-share-inner {
+  background: linear-gradient(135deg, var(--lva-primary), var(--lva-primary-deep));
+  border: 2px solid var(--lva-sunshine); border-radius: 22px;
+  padding: 1.1rem 1.3rem; display: flex; align-items: center; justify-content: center;
+  gap: 0.8rem 1.1rem; flex-wrap: wrap; text-align: center;
+  box-shadow: 0 12px 30px rgba(46, 39, 115, 0.25);
+}
+.lva-share-txt { color: var(--lva-on-dark); font-weight: 800; font-size: 1rem; }
+.lva-share-go, .lva-share-cert {
+  font-family: var(--lva-font-display); font-weight: 700; font-size: 0.95rem;
+  border: none; cursor: pointer; text-decoration: none; color: #FFF;
+  padding: 0.6rem 1.3rem; border-radius: 999px; display: inline-block;
+  transition: transform .15s, box-shadow .15s;
+}
+.lva-share-go { background: linear-gradient(135deg, var(--lva-coral), #FF8A5C); box-shadow: 0 5px 14px rgba(242, 92, 84, 0.45); }
+.lva-share-cert { background: linear-gradient(135deg, #16A34A, #22C55E); box-shadow: 0 5px 14px rgba(22, 163, 74, 0.45); }
+.lva-share-go:hover, .lva-share-cert:hover { transform: translateY(-2px); }

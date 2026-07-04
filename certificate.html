@@ -9,13 +9,13 @@
 <meta property="og:title" content="My Certificate — Print &amp; Share | Lakshya&#x27;s Violin Academy" />
 <meta property="og:description" content="Create a beautiful personalised music certificate, print it for your wall, or share it to Instagram, WhatsApp, Facebook and LinkedIn!" />
 <meta property="og:url" content="https://lakshyasviolinacademy.live/certificate.html" />
-<meta property="og:image" content="https://lakshyasviolinacademy.live/og-image.png" />
+<meta property="og:image" content="https://lakshyasviolinacademy.live/og-certificate.png" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="My Certificate — Print &amp; Share | Lakshya&#x27;s Violin Academy" />
 <meta name="twitter:description" content="Create a beautiful personalised music certificate, print it for your wall, or share it to Instagram, WhatsApp, Facebook and LinkedIn!" />
-<meta name="twitter:image" content="https://lakshyasviolinacademy.live/og-image.png" />
+<meta name="twitter:image" content="https://lakshyasviolinacademy.live/og-certificate.png" />
 <meta name="description" content="Create a beautiful personalised music certificate, print it for your wall, or share it to Instagram, WhatsApp, Facebook and LinkedIn!">
 <meta name="theme-color" content="#5B54C9" />
 <link rel="canonical" href="https://lakshyasviolinacademy.live/certificate.html">
@@ -66,6 +66,7 @@
           <a href="raga-jukebox.html">📻&ensp;Raga Jukebox</a>
           <a href="frequency-and-swaras.html">🔊&ensp;Frequency &amp; Swaras Lab</a>
           <a href="melakarta-explorer.html">🎼&ensp;72 Melakarta Explorer</a>
+          <a href="melakarta-master.html">🧠&ensp;Melakarta Master — memorise 72</a>
           <a href="gamaka-explorer.html">🌊&ensp;Gamaka Explorer</a>
           <a href="raga-mood-matcher.html">🎭&ensp;Raga Mood Matcher</a>
           <span class="lva-drop-label">🎮 Play &amp; Create</span>
@@ -110,7 +111,7 @@
 <div class="ct-wrap">
   <div class="ct-form" id="ctForm">
     <label for="ctName">Your name (as it should appear) ✍️</label>
-    <input id="ctName" maxlength="30" placeholder="e.g. Lakshya A" autocomplete="off">
+    <input id="ctName" maxlength="30" placeholder="e.g. Lakshya R" autocomplete="off">
     <label for="ctAch">What did you achieve? 🌟</label>
     <select id="ctAch">
       <option value="memory">Completed the Memory Match game</option>
@@ -119,6 +120,8 @@
       <option value="thala">Mastered Adi Thala counting</option>
       <option value="ear">Became a Swara-listening star</option>
       <option value="week">Practised every day this week</option>
+      <option value="raga">Built my own raga / composed a geetham</option>
+      <option value="melakarta">Learning the 72 Melakarta ragas</option>
     </select>
     <button class="ct-make" id="ctMake">✨ Make my certificate!</button>
   </div>
@@ -142,19 +145,22 @@
 (function(){
 'use strict';
 var ACH={
- memory:'for brilliantly completing the Memory Match game',
- journey:'for completing the whole Musical Journey — all fourteen stops!',
- varisai:'for practising all five varisais with care and joy',
- thala:'for mastering the counting of Adi Thala',
- ear:'for becoming a true Swara-listening star',
- week:'for practising the violin every single day this week'
+ memory:{en:'for brilliantly completing the Memory Match game',ta:'நினைவாற்றல் விளையாட்டை சிறப்பாக முடித்ததற்காக'},
+ journey:{en:'for completing the whole Musical Journey — all fourteen stops!',ta:'முழு இசைப் பயணத்தையும் — பதினான்கு நிலைகளையும் — முடித்ததற்காக!'},
+ varisai:{en:'for practising all five varisais with care and joy',ta:'ஐந்து வரிசைகளையும் அக்கறையுடனும் மகிழ்ச்சியுடனும் பயிற்சி செய்ததற்காக'},
+ thala:{en:'for mastering the counting of Adi Thala',ta:'ஆதி தாளம் எண்ணுவதில் தேர்ச்சி பெற்றதற்காக'},
+ ear:{en:'for becoming a true Swara-listening star',ta:'உண்மையான ஸ்வரம் கேட்கும் நட்சத்திரமானதற்காக'},
+ week:{en:'for practising the violin every single day this week',ta:''},
+ raga:{en:'for creating their very own raga and musical ideas in the labs',ta:''},
+ melakarta:{en:'for the wonderful effort of learning the 72 melakarta ragas',ta:''}
 };
+function achText(k){var l=(window.lvaLang&&lvaLang()==='ta')?'ta':'en';return ACH[k][l];}
 var qs=new URLSearchParams(location.search);
 if(qs.get('ach')&&ACH[qs.get('ach')])document.getElementById('ctAch').value=qs.get('ach');
 
 var cv=document.getElementById('ctCanvas'),ctx=cv.getContext('2d');if(!ctx)return;
 
-function draw(name,achKey){
+function draw(name,achKey){var __ta2=(window.lvaLang&&lvaLang()==='ta');
   var W=1200,H=850;
   var g=ctx.createLinearGradient(0,0,W,H);
   g.addColorStop(0,'#F5F8FF');g.addColorStop(1,'#E7EEFC');
@@ -171,12 +177,12 @@ function draw(name,achKey){
   ctx.fillStyle='#5B54C9';ctx.font='700 44px "Baloo 2", cursive';
   ctx.fillText("\uD83C\uDFBB Lakshya's Violin Academy",W/2,150);
   ctx.fillStyle='#5C638A';ctx.font='600 22px Nunito, sans-serif';
-  ctx.fillText('Carnatic Violin for Young Learners \u00B7 Chennai',W/2,188);
+  ctx.fillText(__ta2?'இளம் இசைக்கலைஞர்களுக்கான கர்நாடக வயலின் \u00B7 சென்னை':'Carnatic Violin for Young Learners \u00B7 Chennai',W/2,188);
   // title
   ctx.fillStyle='#F25C54';ctx.font='800 64px "Baloo 2", cursive';
-  ctx.fillText('Certificate of Achievement',W/2,300);
+  var __ta=(window.lvaLang&&lvaLang()==='ta');ctx.fillText(__ta?'சாதனைச் சான்றிதழ்':'Certificate of Achievement',W/2,300);
   ctx.fillStyle='#5C638A';ctx.font='600 26px Nunito, sans-serif';
-  ctx.fillText('proudly presented to',W/2,360);
+  ctx.fillText(__ta?'பெருமையுடன் வழங்கப்படுகிறது':'proudly presented to',W/2,360);
   // name
   ctx.fillStyle='#2E3350';ctx.font='800 76px "Baloo 2", cursive';
   ctx.fillText(name,W/2,455);
@@ -185,7 +191,7 @@ function draw(name,achKey){
   ctx.beginPath();ctx.moveTo(W/2-260,485);ctx.lineTo(W/2+260,485);ctx.stroke();
   // achievement
   ctx.fillStyle='#4D5378';ctx.font='600 30px Nunito, sans-serif';
-  var txt=ACH[achKey],words=txt.split(' '),line='',lines=[];
+  var txt=achText(achKey),words=txt.split(' '),line='',lines=[];
   words.forEach(function(w){var t=line?line+' '+w:w;if(ctx.measureText(t).width>820){lines.push(line);line=w;}else line=t;});
   lines.push(line);
   lines.forEach(function(l,i){ctx.fillText(l,W/2,545+i*42);});
@@ -256,7 +262,7 @@ document.getElementById('ctIg').addEventListener('click',function(){shareFile('I
   <div class="lva-footer-quick">
     <a href="index.html">Home</a><a href="about.html">About</a><a href="courses.html">Courses</a><a href="learn.html">Learn</a><a href="games.html">Games &amp; Labs</a><a href="musical-journey.html">My Journey</a><a href="certificate.html">Rewards</a><a href="index.html#contact">Enroll</a>
   </div>
-  <p class="lva-footer-copy">© 2026 Lakshya's Violin Academy · Made with ♥ and music 🎶</p>
+  <p class="lva-footer-copy">© 2026 Lakshya's Violin Academy · Made with <span class="lva-heart">♥</span> and music <span class="lva-music">♫</span></p>
 </div>
 <!-- Analytics: GoatCounter (privacy-friendly) -->
 <script data-goatcounter="https://lakshyasviolinacademy.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
