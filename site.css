@@ -41,7 +41,7 @@ img, svg, video { max-width: 100%; }
 }
 .lva-nav *, .lva-footer * { box-sizing: border-box; }
 .lva-nav-inner {
-  max-width: 1180px; margin: 0 auto; padding: 0 1.1rem;
+  max-width: 1280px; margin: 0 auto; padding: 0 1.1rem;
   display: flex; align-items: center; justify-content: space-between;
   flex-wrap: wrap;
 }
@@ -317,6 +317,79 @@ input:focus-visible, [tabindex]:focus-visible {
 .lva-testi-card .who b { color: var(--lva-primary); font-size: 0.9rem; display: block; }
 .lva-testi-card .who span { color: var(--lva-ink-soft); font-size: 0.78rem; }
 .lva-testi-stars { color: var(--lva-mango); letter-spacing: 2px; font-size: 0.85rem; margin-bottom: 0.5rem; }
+
+/* ═══════════════════════════════════════════════════════════════
+   BOOKS PAGE  (books.html)
+   ═══════════════════════════════════════════════════════════════ */
+.lva-books {
+  background: var(--lva-sky);
+  padding: 2.6rem 1.3rem 2rem;
+  font-family: var(--lva-font-body);
+}
+.lva-books-list {
+  display: flex; flex-direction: column; gap: 1.6rem;
+  max-width: 900px; margin: 0 auto;
+}
+.lva-book-card {
+  background: #FFFFFF; border-radius: 20px; padding: 1.8rem;
+  border: 2px solid var(--lva-sky-deep); border-left: 6px solid var(--lva-mango);
+  box-shadow: 0 10px 26px rgba(46, 39, 115, 0.10);
+  display: flex; align-items: flex-start; gap: 2rem;
+}
+.lva-book-card:nth-child(2) { border-left-color: var(--lva-coral); }
+.lva-book-card:nth-child(3) { border-left-color: var(--lva-teal); }
+.lva-book-card:nth-child(4) { border-left-color: var(--lva-primary-soft); }
+.lva-book-cover {
+  width: 190px; height: auto; flex: none;
+  border-radius: 3px 8px 8px 3px; border: 1px solid var(--lva-line);
+  box-shadow: 6px 8px 18px rgba(46, 39, 115, 0.28);
+}
+.lva-book-info { flex: 1; min-width: 0; }
+.lva-book-info h2 {
+  font-family: var(--lva-font-display); color: var(--lva-primary);
+  font-size: clamp(1.3rem, 3.4vw, 1.7rem); line-height: 1.2; margin: 0 0 0.25rem;
+}
+.lva-book-subtitle { color: var(--lva-ink-soft); font-size: 1rem; font-style: italic; line-height: 1.5; margin: 0 0 0.45rem; }
+.lva-book-author {
+  font-size: 0.72rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--lva-ink-soft); margin: 0 0 0.9rem;
+}
+.lva-book-desc { color: var(--lva-ink); font-size: 0.96rem; line-height: 1.7; margin: 0 0 1.2rem; }
+.lva-book-buy {
+  margin: 0; padding-top: 1rem; border-top: 2px solid var(--lva-sky-deep);
+  display: grid; gap: 0.7rem;
+}
+.lva-book-buy > div { display: flex; align-items: center; flex-wrap: wrap; gap: 0.5rem 0.9rem; }
+.lva-book-buy dt {
+  width: 7.5rem; flex: none;
+  font-size: 0.7rem; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--lva-ink-soft);
+}
+.lva-book-buy dd { margin: 0; display: flex; align-items: center; flex-wrap: wrap; gap: 0.5rem; }
+.lva-book-buy dd span { font-size: 0.78rem; font-weight: 700; color: var(--lva-ink-soft); }
+.lva-book-buy a {
+  font-family: var(--lva-font-display); font-weight: 700; font-size: 0.85rem;
+  text-decoration: none; padding: 0.4rem 1.05rem; border-radius: 999px;
+  border: 2px solid var(--lva-primary); color: var(--lva-primary); background: #FFFFFF;
+  transition: transform .15s, box-shadow .15s, background .15s;
+}
+.lva-book-buy a.in {
+  border-color: transparent; color: #FFF;
+  background: linear-gradient(135deg, var(--lva-coral), #FF8A5C);
+  box-shadow: 0 4px 10px rgba(242, 92, 84, 0.35);
+}
+.lva-book-buy a:hover { transform: translateY(-2px); }
+.lva-book-buy a.com:hover { background: var(--lva-sky-deep); }
+.lva-books-all { color: var(--lva-ink-soft); font-size: 0.9rem; text-align: center; margin: 2rem 0 0; }
+.lva-books-all a, .lva-books-teaser a { color: var(--lva-primary); font-weight: 700; }
+.lva-books-teaser { margin-top: 1.2rem; }
+@media (max-width: 640px) {
+  .lva-book-card { flex-direction: column; align-items: center; text-align: center; gap: 1.2rem; padding: 1.5rem 1.2rem; }
+  .lva-book-cover { width: 160px; }
+  .lva-book-buy > div { flex-direction: column; gap: 0.45rem; }
+  .lva-book-buy dt { width: auto; }
+  .lva-book-buy dd { justify-content: center; }
+}
 
 /* ═══════════════════════════════════════════════════════════════
    GAMES GALLERY PAGE  (games.html)
